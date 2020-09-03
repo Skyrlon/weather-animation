@@ -1,0 +1,362 @@
+/*DECOR*/
+@keyframes chemin-deroule {
+  0% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+}
+@keyframes chemin-status {
+  0% {
+    transform-origin: center center;
+    transform: perspective(0px) rotateX(0deg);
+  }
+  100% {
+    transform-origin: center center;
+    transform: perspective(50px) rotateX(10deg);
+  }
+}
+@keyframes herbe-etendre {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes ciel-monter {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes soleil-monter {
+  0% {
+    transform: translateY(500%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/*BONHOMME*/
+@keyframes container-monter {
+  0% {
+    transform: translateY(999px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes corps-rotate {
+  0% {
+    transform: rotateY(-0.5turn);
+  }
+  100% {
+    transform: rotateY(0turn);
+  }
+}
+@keyframes visage-decouvert {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+@keyframes bras-leve {
+  0% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(135deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+@keyframes coucou-apparition {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.ciel {
+  background: #00BFFF;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 1s 2s;
+  overflow: hidden;
+}
+.ciel > .soleil {
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  background-color: yellow;
+  border-radius: 125px;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(500%);
+  transition: transform 1s 3s;
+}
+.ciel > .soleil > .yeux {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 87.5px;
+}
+.ciel > .soleil > .yeux .oeil {
+  width: 25px;
+  height: 25px;
+  border-radius: 125px;
+  transform-origin: bottom;
+  background: black;
+}
+.ciel > .soleil > .bouche {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  height: 25px;
+  border-radius: 0 0 62.5px 62.5px;
+  background: black;
+}
+
+.sol {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+.sol > .herbe {
+  width: 100%;
+  height: 100%;
+  background: #269627;
+  transform: scaleX(0);
+  transition: transform 1s 1s;
+}
+.sol > .chemin {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform: scaleY(0);
+}
+.sol > .chemin > .chemin-status {
+  position: absolute;
+  left: 45%;
+  top: -75px;
+  background-color: brown;
+  width: 10%;
+  height: 100%;
+}
+
+.container {
+  width: 500px;
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 99;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(999px);
+  transition: transform 1s 4s;
+}
+
+.corps {
+  margin-top: 50px;
+  transform: rotateY(-0.5turn);
+  transition: transform 1s 5s;
+}
+
+.tete {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  height: 50px;
+  background: black;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.tete > .yeux {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 35px;
+}
+.tete > .yeux .oeil {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  transform-origin: bottom;
+  background: white;
+}
+.tete > .yeux .oeil > .paupiere {
+  margin-left: auto;
+  margin-right: auto;
+  width: inherit;
+  height: inherit;
+  background: black;
+  transform: scaleY(1);
+  transition: transform 1s 6s;
+  transform-origin: top;
+}
+.tete > .bouche {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20px;
+  height: 10px;
+  border-radius: 0 0 25px 25px;
+  background: white;
+}
+.tete > .bouche > .levre {
+  margin-left: auto;
+  margin-right: auto;
+  width: inherit;
+  height: inherit;
+  background: black;
+  transform: scaleY(1);
+  transition: transform 1s 6s;
+  transform-origin: bottom;
+}
+
+.partie_intermediaire {
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.tronc {
+  background: black;
+  width: 50px;
+  height: 125px;
+  border-radius: 125px 125px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bras {
+  width: 25px;
+  height: 125px;
+  background: black;
+  border-radius: 50px;
+  margin-top: 15px;
+}
+.bras_gauche {
+  height: 62.5px;
+  transform-origin: 50% 0;
+  transform: rotate(25deg);
+  margin-right: -50px;
+  border-radius: 50px 50px 0px 0px;
+  transition: transform 700ms 7s;
+}
+.bras_gauche-inferieur {
+  margin-top: 50px;
+  height: 75px;
+  transform-origin: 50% 17%;
+  transform: rotate(0deg);
+}
+.bras_droit {
+  transform-origin: 50% 0;
+  transform: rotate(-25deg);
+  margin-left: -50px;
+}
+
+.bas_corps {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 50px;
+}
+
+.jambe {
+  width: 22.5px;
+  height: 125px;
+  background: black;
+  border-radius: 0px 0px 50px 50px;
+  margin-top: -16px;
+}
+
+.coucou {
+  position: absolute;
+  background-color: white;
+  top: 0px;
+  right: 0px;
+  border: 10px solid black;
+  font-size: 35px;
+  padding: 0.5em;
+  border-radius: 50px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1s;
+}
+.coucou::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: -25px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 25px 0px 0px;
+  border-color: transparent black transparent transparent;
+  transform: rotate(-30deg);
+}
+
+body {
+  overflow: hidden;
+}
+
+.btn {
+  font-size: 50px;
+  position: absolute;
+  width: 20%;
+  background: yellow;
+  color: blue;
+  left: 40%;
+  bottom: 0%;
+  border: 5px solid blue;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+/*# sourceMappingURL=coucou.css.map */

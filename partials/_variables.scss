@@ -1,0 +1,157 @@
+﻿$cd-corps: black;
+$cd-btn: yellow;
+$cd-soleil: yellow;
+$cd-soleil-visage: black;
+$cd-sol: #269627;
+$size: 50px;
+$size-btn: 20%;
+$size-soleil: $size*2.5;
+
+$timing-chemin: 0s;
+$timing-herbe: 1s;
+$timing-ciel: $timing-herbe + 1s;
+$timing-soleil: $timing-ciel + 1s;
+$timing-container: $timing-soleil + 1s;
+$timing-corps-rotate: $timing-container + 1s;
+$timing-visage: $timing-corps-rotate + 1s;
+$timing-bras: $timing-visage + 1s;
+$timing-wave: $timing-bras + 1s;
+
+
+@mixin position {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin visage-color ($color) {
+    @if (lightness($color) < 15%) or (saturation($color) < 10%) {
+        background: white;
+    }
+    @else {
+        background: complement($color);
+    }
+}
+
+
+/*DECOR*/
+
+
+@keyframes chemin-deroule {
+    0% {
+        transform-origin: bottom;
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform-origin: bottom;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes chemin-status {
+    0% {
+        transform-origin: center center;
+        transform: perspective(00px) rotateX(0deg);
+    }
+
+    100% {
+        transform-origin: center center;
+        transform: perspective(50px) rotateX(10deg);
+    }
+}
+
+@keyframes herbe-etendre {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes ciel-monter {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes soleil-monter {
+    0% {
+        transform: translateY(500%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+/*BONHOMME*/
+
+@keyframes container-monter {
+    0% {
+        transform: translateY(999px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes corps-rotate {
+    0% {
+        transform: rotateY(-0.5turn);
+    }
+
+    100% {
+        transform: rotateY(0turn);
+    }
+}
+
+@keyframes visage-decouvert {
+    0% {
+        transform: scaleY(1);
+    }
+
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes bras-leve {
+    0% {
+        transform: rotate(25deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(135deg);
+    }
+
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes coucou-apparition {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}

@@ -1,0 +1,89 @@
+﻿/// <reference path="_variables.scss" />
+
+.ciel {
+    background: #00BFFF;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 1s $timing-ciel;
+    overflow: hidden;
+
+    & > .soleil {
+        position: absolute;
+        width: $size-soleil;
+        height: $size-soleil;
+        background-color: $cd-soleil;
+        border-radius: $size-soleil;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transform: translateY(500%);
+        transition: transform 1s $timing-soleil;
+
+        & > .yeux {
+            @include position;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: $size-soleil * 0.7;
+
+            & .oeil {
+                width: $size-soleil * 0.2;
+                height: $size-soleil * 0.2;
+                border-radius: $size-soleil;
+                transform-origin: bottom;
+                background: $cd-soleil-visage;
+            }
+        }
+
+        & > .bouche {
+            @include position;
+            width: $size-soleil * 0.4;
+            height: $size-soleil * 0.2;
+            border-radius: 0 0 $size-soleil * 0.5 $size-soleil * 0.5;
+            background: $cd-soleil-visage;
+        }
+    }
+}
+
+
+.sol {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    & > .herbe {
+        width: 100%;
+        height: 100%;
+        background: $cd-sol;
+        transform: scaleX(0);
+        transition: transform 1s 1s;
+    }
+
+    & > .chemin {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transform: scaleY(0);
+
+        & > .chemin-status {
+            position: absolute;
+            left: 45%;
+            top: -$size*1.5;
+            background-color: brown;
+            width: $size-btn*0.5;
+            height: $size-btn*5;
+        }
+    }
+}
