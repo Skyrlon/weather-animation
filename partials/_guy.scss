@@ -14,23 +14,23 @@
 }
 
 
-.corps {
+.body {
     margin-top: $size;
     transform: rotateY(-0.5turn);
-    transition: transform 1s $timing-corps-rotate;
+    transition: transform 1s $timing-body-rotate;
 }
 
-.tete {
+.head {
     @include position;
     width: $size;
     height: $size;
-    background: $cd-corps;
+    background: $cd-body;
     border-radius: $size;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
-    & > .yeux {
+    & > .eyes {
         @include position;
         margin-top: 5px;
         display: flex;
@@ -38,45 +38,45 @@
         justify-content: space-between;
         width: $size * 0.7;
 
-        & .oeil {
+        & .eye {
             width: $size * 0.2;
             height: $size * 0.2;
             border-radius: $size;
             transform-origin: bottom;
-            @include visage-color($cd-corps);
+            @include face-color($cd-body);
 
-            & > .paupiere {
+            & > .eyelid {
                 @include position;
                 width: inherit;
                 height: inherit;
-                background: $cd-corps;
+                background: $cd-body;
                 transform: scaleY(1);
-                transition: transform 1s $timing-visage;
+                transition: transform 1s $timing-face;
                 transform-origin: top;
             }
         }
     }
 
-    & > .bouche {
+    & > .mouth {
         @include position;
         width: $size * 0.4;
         height: $size * 0.2;
         border-radius: 0 0 $size * 0.5 $size * 0.5;
-        @include visage-color($cd-corps);
+        @include face-color($cd-body);
 
-        & > .levre {
+        & > .lip {
             @include position;
             width: inherit;
             height: inherit;
-            background: $cd-corps;
+            background: $cd-body;
             transform: scaleY(1);
-            transition: transform 1s $timing-visage;
+            transition: transform 1s $timing-face;
             transform-origin: bottom;
         }
     }
 }
 
-.partie_intermediaire {
+.middle_part {
     width: $size * 3;
     @include position;
     display: flex;
@@ -84,8 +84,8 @@
     justify-content: center;
 }
 
-.tronc {
-    background: $cd-corps;
+.torso {
+    background: $cd-body;
     width: $size;
     height: $size * 2.5;
     border-radius: $size * 2.5 $size * 2.5 0px 0px;
@@ -94,22 +94,22 @@
     justify-content: space-between;
 }
 
-.bras {
+.arm {
     width: $size * 0.5;
     height: $size * 2.5;
-    background: $cd-corps;
+    background: $cd-body;
     border-radius: $size;
     margin-top: 15px;
 
-    &_gauche {
+    &_left {
         height: $size * 1.25;
         transform-origin: 50% 0;
         transform: rotate(25deg);
         margin-right: -50px;
         border-radius: $size $size 0px 0px;
-        transition: transform 700ms $timing-bras;
+        transition: transform 700ms $timing-arm;
 
-        &-inferieur {
+        &-inferior {
             margin-top: $size;
             height: $size * 1.5;
             transform-origin: 50% 17%;
@@ -118,14 +118,14 @@
         }
     }
 
-    &_droit {
+    &_right {
         transform-origin: 50% 0;
         transform: rotate(-25deg);
         margin-left: -50px;
     }
 }
 
-.bas_corps {
+.lower_body {
     @include position;
     display: flex;
     justify-content: space-between;
@@ -133,20 +133,20 @@
     width: $size;
 }
 
-.jambe {
+.leg {
     width: $size * 0.45;
     height: $size * 2.5;
-    background: $cd-corps;
+    background: $cd-body;
     border-radius: 0px 0px $size $size;
     margin-top: -16px;
 }
 
-.coucou {
+.hello {
     position: absolute;
     background-color: white;
     top: 0px;
     right: 0px;
-    border: 10px solid $cd-corps;
+    border: 10px solid $cd-body;
     font-size: $size*0.7;
     padding: 0.5em;
     border-radius: $size;
@@ -163,7 +163,7 @@
         height: 0;
         border-style: solid;
         border-width: $size*0.5 $size*0.5 0px 0px;
-        border-color: transparent $cd-corps transparent transparent;
+        border-color: transparent $cd-body transparent transparent;
         transform: rotate(-30deg);
     }
 }

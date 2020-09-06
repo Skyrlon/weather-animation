@@ -1,6 +1,6 @@
 ﻿/// <reference path="_variables.scss" />
 
-.ciel {
+.sky {
     background: #00BFFF;
     position: absolute;
     width: 100%;
@@ -9,51 +9,51 @@
     left: 0;
     transform-origin: bottom;
     transform: scaleY(0);
-    transition: transform 1s $timing-ciel;
+    transition: transform 1s $timing-sky;
     overflow: hidden;
 
-    & > .soleil {
+    & > .sun {
         position: absolute;
-        width: $size-soleil;
-        height: $size-soleil;
-        background-color: $cd-soleil;
-        border-radius: $size-soleil;
+        width: $size-sun;
+        height: $size-sun;
+        background-color: $cd-sun;
+        border-radius: $size-sun;
         top: 0;
         right: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         transform: translateY(500%);
-        transition: transform 1s $timing-soleil;
+        transition: transform 1s $timing-sun;
 
-        & > .yeux {
+        & > .eyes {
             @include position;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            width: $size-soleil * 0.7;
+            width: $size-sun * 0.7;
 
-            & .oeil {
-                width: $size-soleil * 0.2;
-                height: $size-soleil * 0.2;
-                border-radius: $size-soleil;
+            & .eye {
+                width: $size-sun * 0.2;
+                height: $size-sun * 0.2;
+                border-radius: $size-sun;
                 transform-origin: bottom;
-                background: $cd-soleil-visage;
+                background: $cd-sun-face;
             }
         }
 
-        & > .bouche {
+        & > .mouth {
             @include position;
-            width: $size-soleil * 0.4;
-            height: $size-soleil * 0.2;
-            border-radius: 0 0 $size-soleil * 0.5 $size-soleil * 0.5;
-            background: $cd-soleil-visage;
+            width: $size-sun * 0.4;
+            height: $size-sun * 0.2;
+            border-radius: 0 0 $size-sun * 0.5 $size-sun * 0.5;
+            background: $cd-sun-face;
         }
     }
 }
 
 
-.sol {
+.ground {
     position: absolute;
     width: 100%;
     height: 50%;
@@ -61,15 +61,15 @@
     left: 0;
     overflow: hidden;
 
-    & > .herbe {
+    & > .grass {
         width: 100%;
         height: 100%;
-        background: $cd-sol;
+        background: $cd-ground;
         transform: scaleX(0);
         transition: transform 1s 1s;
     }
 
-    & > .chemin {
+    & > .road {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -77,7 +77,7 @@
         top: 0;
         transform: scaleY(0);
 
-        & > .chemin-status {
+        & > .road-status {
             position: absolute;
             left: 45%;
             top: -$size*1.5;

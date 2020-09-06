@@ -1,21 +1,21 @@
-﻿$cd-corps: black;
+﻿$cd-body: black;
 $cd-btn: yellow;
-$cd-soleil: yellow;
-$cd-soleil-visage: black;
-$cd-sol: #269627;
+$cd-sun: yellow;
+$cd-sun-face: black;
+$cd-ground: #269627;
 $size: 50px;
 $size-btn: 20%;
-$size-soleil: $size*2.5;
+$size-sun: $size*2.5;
 
-$timing-chemin: 0s;
-$timing-herbe: 1s;
-$timing-ciel: $timing-herbe + 1s;
-$timing-soleil: $timing-ciel + 1s;
-$timing-container: $timing-soleil + 1s;
-$timing-corps-rotate: $timing-container + 1s;
-$timing-visage: $timing-corps-rotate + 1s;
-$timing-bras: $timing-visage + 1s;
-$timing-wave: $timing-bras + 1s;
+$timing-road: 0s;
+$timing-grass: 1s;
+$timing-sky: $timing-grass + 1s;
+$timing-sun: $timing-sky + 1s;
+$timing-container: $timing-sun + 1s;
+$timing-body-rotate: $timing-container + 1s;
+$timing-face: $timing-body-rotate + 1s;
+$timing-arm: $timing-face + 1s;
+$timing-wave: $timing-arm + 1s;
 
 
 @mixin position {
@@ -23,7 +23,7 @@ $timing-wave: $timing-bras + 1s;
     margin-right: auto;
 }
 
-@mixin visage-color ($color) {
+@mixin face-color ($color) {
     @if (lightness($color) < 15%) or (saturation($color) < 10%) {
         background: white;
     }
@@ -36,7 +36,7 @@ $timing-wave: $timing-bras + 1s;
 /*DECOR*/
 
 
-@keyframes chemin-deroule {
+@keyframes road-rollout {
     0% {
         transform-origin: bottom;
         transform: scaleY(0);
@@ -48,7 +48,7 @@ $timing-wave: $timing-bras + 1s;
     }
 }
 
-@keyframes chemin-status {
+@keyframes road-status {
     0% {
         transform-origin: center center;
         transform: perspective(00px) rotateX(0deg);
@@ -60,7 +60,7 @@ $timing-wave: $timing-bras + 1s;
     }
 }
 
-@keyframes herbe-etendre {
+@keyframes grass-expansion {
     0% {
         transform: scaleX(0);
     }
@@ -70,7 +70,7 @@ $timing-wave: $timing-bras + 1s;
     }
 }
 
-@keyframes ciel-monter {
+@keyframes sky-ascend {
     0% {
         transform: scaleY(0);
     }
@@ -80,7 +80,7 @@ $timing-wave: $timing-bras + 1s;
     }
 }
 
-@keyframes soleil-monter {
+@keyframes sun-ascend {
     0% {
         transform: translateY(500%);
     }
@@ -92,7 +92,7 @@ $timing-wave: $timing-bras + 1s;
 
 /*BONHOMME*/
 
-@keyframes container-monter {
+@keyframes container-showup {
     0% {
         transform: translateY(999px);
     }
@@ -102,7 +102,7 @@ $timing-wave: $timing-bras + 1s;
     }
 }
 
-@keyframes corps-rotate {
+@keyframes body-rotate {
     0% {
         transform: rotateY(-0.5turn);
     }
@@ -112,7 +112,7 @@ $timing-wave: $timing-bras + 1s;
     }
 }
 
-@keyframes visage-decouvert {
+@keyframes face-uncovered {
     0% {
         transform: scaleY(1);
     }
@@ -122,7 +122,7 @@ $timing-wave: $timing-bras + 1s;
     }
 }
 
-@keyframes bras-leve {
+@keyframes arm-raised {
     0% {
         transform: rotate(25deg);
     }
@@ -146,7 +146,7 @@ $timing-wave: $timing-bras + 1s;
     }
 }
 
-@keyframes coucou-apparition {
+@keyframes hello-appearance {
     0% {
         transform: scaleX(0);
     }
