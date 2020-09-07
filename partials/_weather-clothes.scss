@@ -133,7 +133,7 @@ $short-color: blue;
 		}
 
 		&-right {
-			left: $sleeve-width - $shirt-width/4;
+			right: -$shirt-width;
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}
@@ -203,7 +203,7 @@ $glasses-height: $glasses-width/1.5;
 	}
 }
 
-$head-size: $size;
+$head-size: $size*3;
 $arc-width: $head-size/3;
 $arc-height: $arc-width/3;
 $stick-size: $head-size*0.05;
@@ -318,7 +318,7 @@ $umbrella-color: purple;
 	}
 }
 
-$coat-width: 10vw;
+$coat-width: $size;
 $coat-height: $coat-width*2;
 $zip-width: $coat-width/20;
 $sleeve-width: $coat-height;
@@ -329,7 +329,7 @@ $coat-color: olive;
 #coat {
 	position: absolute;
 	top: 20%;
-	left: 50%;
+	left: 70%;
 	width: $coat-width;
 	height: $coat-height;
 	background-color: $coat-color;
@@ -401,7 +401,7 @@ $coat-color: olive;
 	}
 }
 
-$rain-coat-width: 7vw;
+$rain-coat-width: $size;
 $rain-coat-height: $rain-coat-width*2;
 $zip-width: $rain-coat-width/20;
 $rain-hood-height: $rain-coat-width;
@@ -417,7 +417,7 @@ $rain-coat-color: #e9c500;
 #rain-coat {
 	position: absolute;
 	top: 20%;
-	left: 50%;
+	left: 20%;
 	width: $rain-coat-width;
 	height: $rain-coat-height;
 	background-color: $rain-coat-color;

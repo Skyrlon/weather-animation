@@ -9,14 +9,12 @@
     position: relative;
     z-index: 99;
     @include position;
-    transform: translateY(999px);
     transition: transform 1s $timing-container;
 }
 
 
 .body {
     margin-top: $size;
-    transform: rotateY(-0.5turn);
     transition: transform 1s $timing-body-rotate;
 }
 
@@ -50,9 +48,8 @@
                 width: inherit;
                 height: inherit;
                 background: $cd-body;
-                transform: scaleY(1);
-                transition: transform 1s $timing-face;
                 transform-origin: top;
+                transform: scale(0);
             }
         }
     }
@@ -69,9 +66,8 @@
             width: inherit;
             height: inherit;
             background: $cd-body;
-            transform: scaleY(1);
-            transition: transform 1s $timing-face;
             transform-origin: bottom;
+            transform: scale(0);
         }
     }
 }
@@ -151,8 +147,7 @@
     padding: 0.5em;
     border-radius: $size;
     transform-origin: left;
-    transform: scaleX(0);
-    transition: transform 1s;
+
 
     &::after {
         content: '';
