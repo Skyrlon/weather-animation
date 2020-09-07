@@ -109,10 +109,10 @@
 }
 .sky > .sun {
   position: absolute;
-  width: 125px;
-  height: 125px;
+  width: 7.5vw;
+  height: 7.5vw;
   background-color: yellow;
-  border-radius: 125px;
+  border-radius: 7.5vw;
   top: 0;
   right: 0;
   display: flex;
@@ -127,21 +127,21 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 87.5px;
+  width: 5.25vw;
 }
 .sky > .sun > .eyes .eye {
-  width: 25px;
-  height: 25px;
-  border-radius: 125px;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 7.5vw;
   transform-origin: bottom;
   background: black;
 }
 .sky > .sun > .mouth {
   margin-left: auto;
   margin-right: auto;
-  width: 50px;
-  height: 25px;
-  border-radius: 0 0 62.5px 62.5px;
+  width: 3vw;
+  height: 1.5vw;
+  border-radius: 0 0 3.75vw 3.75vw;
   background: black;
 }
 
@@ -171,14 +171,14 @@
 .ground > .road > .road-status {
   position: absolute;
   left: 45%;
-  top: -75px;
+  top: -4.5vw;
   background-color: brown;
-  width: 10%;
-  height: 100%;
+  width: 10vw;
+  height: 100vw;
 }
 
 .container {
-  width: 500px;
+  width: 30vw;
   margin-top: 15%;
   display: flex;
   justify-content: center;
@@ -192,7 +192,7 @@
 }
 
 .body {
-  margin-top: 50px;
+  margin-top: 3vw;
   transform: rotateY(-0.5turn);
   transition: transform 1s 5s;
 }
@@ -200,10 +200,10 @@
 .head {
   margin-left: auto;
   margin-right: auto;
-  width: 50px;
-  height: 50px;
+  width: 3vw;
+  height: 3vw;
   background: black;
-  border-radius: 50px;
+  border-radius: 3vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -215,12 +215,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 35px;
+  width: 2.1vw;
 }
 .head > .eyes .eye {
-  width: 10px;
-  height: 10px;
-  border-radius: 50px;
+  width: 0.6vw;
+  height: 0.6vw;
+  border-radius: 3vw;
   transform-origin: bottom;
   background: white;
 }
@@ -237,9 +237,9 @@
 .head > .mouth {
   margin-left: auto;
   margin-right: auto;
-  width: 20px;
-  height: 10px;
-  border-radius: 0 0 25px 25px;
+  width: 1.2vw;
+  height: 0.6vw;
+  border-radius: 0 0 1.5vw 1.5vw;
   background: white;
 }
 .head > .mouth > .lip {
@@ -254,7 +254,7 @@
 }
 
 .middle_part {
-  width: 150px;
+  width: 9vw;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -264,32 +264,32 @@
 
 .torso {
   background: black;
-  width: 50px;
-  height: 125px;
-  border-radius: 125px 125px 0px 0px;
+  width: 3vw;
+  height: 7.5vw;
+  border-radius: 7.5vw 7.5vw 0px 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .arm {
-  width: 25px;
-  height: 125px;
+  width: 1.5vw;
+  height: 7.5vw;
   background: black;
-  border-radius: 50px;
+  border-radius: 3vw;
   margin-top: 15px;
 }
 .arm_left {
-  height: 62.5px;
+  height: 3.75vw;
   transform-origin: 50% 0;
   transform: rotate(25deg);
   margin-right: -50px;
-  border-radius: 50px 50px 0px 0px;
+  border-radius: 3vw 3vw 0px 0px;
   transition: transform 700ms 7s;
 }
 .arm_left-inferior {
-  margin-top: 50px;
-  height: 75px;
+  margin-top: 3vw;
+  height: 4.5vw;
   transform-origin: 50% 17%;
   transform: rotate(0deg);
 }
@@ -305,14 +305,14 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 50px;
+  width: 3vw;
 }
 
 .leg {
-  width: 22.5px;
-  height: 125px;
+  width: 1.35vw;
+  height: 7.5vw;
   background: black;
-  border-radius: 0px 0px 50px 50px;
+  border-radius: 0px 0px 3vw 3vw;
   margin-top: -16px;
 }
 
@@ -322,9 +322,9 @@
   top: 0px;
   right: 0px;
   border: 10px solid black;
-  font-size: 35px;
+  font-size: 2.1vw;
   padding: 0.5em;
-  border-radius: 50px;
+  border-radius: 3vw;
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 1s;
@@ -333,11 +333,11 @@
   content: "";
   position: absolute;
   top: 60%;
-  left: -25px;
+  left: -1.5vw;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 25px 25px 0px 0px;
+  border-width: 1.5vw 1.5vw 0px 0px;
   border-color: transparent black transparent transparent;
   transform: rotate(-30deg);
 }
@@ -345,165 +345,165 @@
 #ushanka {
   position: absolute;
   top: 10%;
-  left: 50%;
-  width: 15vw;
-  height: 10vw;
+  left: 60%;
+  width: 3vw;
+  height: 2vw;
   background-color: black;
-  border-radius: 6.6666666667vw;
+  border-radius: 2vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 #ushanka::after {
   content: "";
   position: absolute;
-  top: 3vw;
-  left: 2.5vw;
-  width: 10vw;
-  height: 7vw;
+  bottom: 0;
+  left: 0.3vw;
+  width: 2.4vw;
+  height: 1.4vw;
   background-color: grey;
-  border-radius: 6.6666666667vw;
+  border-radius: 1.3333333333vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 #ushanka > .flap {
   position: absolute;
-  top: 10vw;
-  width: 1.25vw;
-  height: 10vw;
+  top: 2vw;
+  width: 0.25vw;
+  height: 2vw;
 }
 #ushanka > .flap-left {
   background-color: black;
-  border-bottom-left-radius: 1.25vw;
+  border-bottom-left-radius: 0.25vw;
 }
 #ushanka > .flap-left::after {
   content: "";
   position: absolute;
-  left: 1.25vw;
-  width: 1.25vw;
-  height: 10vw;
+  left: 0.25vw;
+  width: 0.25vw;
+  height: 2vw;
   background-color: grey;
-  border-bottom-right-radius: 1.25vw;
+  border-bottom-right-radius: 0.25vw;
 }
 #ushanka > .flap-right {
-  left: 13.75vw;
+  left: 2.75vw;
   background-color: black;
-  border-bottom-right-radius: 1.25vw;
+  border-bottom-right-radius: 0.25vw;
 }
 #ushanka > .flap-right::after {
   content: "";
   position: absolute;
-  left: -1.25vw;
-  width: 1.25vw;
-  height: 10vw;
+  left: -0.25vw;
+  width: 0.25vw;
+  height: 2vw;
   background-color: grey;
-  border-bottom-left-radius: 1.25vw;
+  border-bottom-left-radius: 0.25vw;
 }
 
 #shirt {
   position: absolute;
   top: 10%;
   left: 50%;
-  width: 10vw;
-  height: 20vw;
+  width: 3vw;
+  height: 8.1vw;
   background-color: lightgreen;
-  border-radius: 10vw;
+  border-radius: 3vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 #shirt::before {
   content: "";
   position: absolute;
-  left: 2.5vw;
+  left: 0.75vw;
   width: 0;
   height: 0;
-  border-left: 2.5vw solid transparent;
-  border-right: 2.5vw solid transparent;
-  border-top: 5vw solid white;
+  border-left: 0.75vw solid transparent;
+  border-right: 0.75vw solid transparent;
+  border-top: 1.5vw solid white;
 }
 #shirt > #apperture {
   position: absolute;
-  left: 4.5vw;
-  width: 1vw;
-  height: 16vw;
+  left: 1.35vw;
+  width: 0.3vw;
+  height: 6.48vw;
   background-color: white;
 }
 #shirt > #apperture::after {
   content: "";
   position: absolute;
-  top: 16vw;
-  width: 1vw;
-  height: 4vw;
+  top: 6.48vw;
+  width: 0.3vw;
+  height: 1.62vw;
   background-color: blue;
 }
 #shirt > .sleeve {
   position: absolute;
-  top: 2vw;
-  width: 10vw;
-  height: 4vw;
-  border-radius: 10vw;
+  top: 0.81vw;
+  width: 4.05vw;
+  height: 1.2vw;
+  border-radius: 4.05vw;
   background-color: lightgreen;
 }
 #shirt > .sleeve-left {
-  left: -6.6666666667vw;
+  left: -3.05vw;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 #shirt > .sleeve-right {
-  left: 6.6666666667vw;
+  left: 3.3vw;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 #short {
   position: absolute;
-  top: 20vw;
-  width: 10vw;
-  height: 4vw;
+  top: 8.1vw;
+  width: 3vw;
+  height: 1.62vw;
   background-color: blue;
 }
 #short::before {
   content: "";
   position: absolute;
-  top: 4vw;
-  width: 4.5vw;
-  height: 4vw;
+  top: 1.62vw;
+  width: 1.35vw;
+  height: 1.62vw;
   background-color: blue;
 }
 #short::after {
   content: "";
   position: absolute;
-  top: 4vw;
-  left: 5.5vw;
-  width: 4.5vw;
-  height: 4vw;
+  top: 1.62vw;
+  left: 1.65vw;
+  width: 1.35vw;
+  height: 1.62vw;
   background-color: blue;
 }
 
 #sunglasses {
   position: absolute;
-  width: 20vw;
-  height: 1vw;
+  width: 3vw;
+  height: 0.15vw;
   background-color: black;
 }
 #sunglasses::before {
   content: "";
   position: absolute;
-  left: 0.6vw;
+  left: 0.09vw;
   background-color: black;
-  width: 8vw;
-  height: 5.3333333333vw;
-  border-radius: 1.6vw;
+  width: 1.2vw;
+  height: 0.8vw;
+  border-radius: 0.24vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 #sunglasses::after {
   content: "";
   position: absolute;
-  left: 11.4vw;
+  left: 1.71vw;
   background-color: black;
-  width: 8vw;
-  height: 5.3333333333vw;
-  border-radius: 1.6vw;
+  width: 1.2vw;
+  height: 0.8vw;
+  border-radius: 0.24vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -513,19 +513,19 @@
   left: 25%;
   top: 10%;
   background-color: purple;
-  width: 50vw;
-  height: 25vw;
-  border-top-left-radius: 50vw;
-  border-top-right-radius: 50vw;
+  width: 3vw;
+  height: 1.5vw;
+  border-top-left-radius: 3vw;
+  border-top-right-radius: 3vw;
 }
 #head > span {
   content: "";
   background-color: white;
-  width: 16.6666666667vw;
-  height: 5.5555555556vw;
+  width: 1vw;
+  height: 0.3333333333vw;
   position: absolute;
-  top: 19.4444444444vw;
-  left: 16.6666666667vw;
+  top: 1.1666666667vw;
+  left: 1vw;
   border-radius: 50%/100%;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -533,10 +533,10 @@
 #head > span::after {
   content: "";
   background-color: white;
-  width: 16.6666666667vw;
-  height: 5.5555555556vw;
+  width: 1vw;
+  height: 0.3333333333vw;
   position: absolute;
-  left: 16.6666666667vw;
+  left: 1vw;
   border-radius: 50%/100%;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -544,10 +544,10 @@
 #head > span::before {
   content: "";
   background-color: white;
-  width: 16.6666666667vw;
-  height: 5.5555555556vw;
+  width: 1vw;
+  height: 0.3333333333vw;
   position: absolute;
-  right: 16.6666666667vw;
+  right: 1vw;
   border-radius: 50%/100%;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -555,43 +555,43 @@
 
 #stick {
   position: absolute;
-  width: 2.5vw;
-  height: 25vw;
+  width: 0.15vw;
+  height: 1.5vw;
   background-color: #793906;
-  left: 23.75vw;
-  top: 19.4444444444vw;
+  left: 1.425vw;
+  top: 1.1666666667vw;
 }
 #stick::before {
   content: "";
   position: absolute;
-  top: -21.9444444444vw;
-  width: 2.5vw;
-  height: 2.5vw;
+  top: -1.3166666667vw;
+  width: 0.15vw;
+  height: 0.15vw;
   background-color: #793906;
-  border-radius: 2.5vw;
+  border-radius: 0.15vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 #crook {
   position: absolute;
-  width: 10vw;
-  height: 5vw;
-  top: 25vw;
-  left: -7.5vw;
+  width: 0.6vw;
+  height: 0.3vw;
+  top: 1.5vw;
+  left: -0.45vw;
   background-color: #793906;
-  border-radius: 10vw;
+  border-radius: 0.6vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 #crook::before {
   content: "";
   position: absolute;
-  width: 5vw;
-  height: 2.5vw;
-  left: 2.5vw;
+  width: 0.3vw;
+  height: 0.15vw;
+  left: 0.15vw;
   background-color: white;
-  border-radius: 10vw;
+  border-radius: 0.6vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -599,13 +599,156 @@
   content: "";
   position: absolute;
   left: 0;
-  top: -2.5vw;
-  width: 2.5vw;
-  height: 2.5vw;
+  top: -0.15vw;
+  width: 0.15vw;
+  height: 0.15vw;
   background-color: #793906;
-  border-radius: 10vw;
+  border-radius: 0.6vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+#coat {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 10vw;
+  height: 20vw;
+  background-color: olive;
+  border-top-left-radius: 10vw;
+  border-top-right-radius: 10vw;
+}
+#coat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 4.75vw;
+  width: 0.5vw;
+  height: 20vw;
+  background-color: black;
+}
+#coat > #scarf {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1vw;
+  width: 8vw;
+  height: 2vw;
+  background-color: red;
+}
+#coat > #scarf::after {
+  content: "";
+  position: absolute;
+  top: 2vw;
+  left: 5.2vw;
+  z-index: 5;
+  width: 2vw;
+  height: 6.6666666667vw;
+  background-color: red;
+}
+#coat > .sleeve {
+  position: absolute;
+  top: 2vw;
+  width: 20vw;
+  height: 4vw;
+  border-radius: 20vw;
+  background-color: olive;
+}
+#coat > .sleeve-left {
+  left: -16.6666666667vw;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#coat > .sleeve-right {
+  left: 6.6666666667vw;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#coat > .pants-leg {
+  position: absolute;
+  top: 20vw;
+  width: 4.5vw;
+  height: 10vw;
+  background-color: blue;
+}
+#coat > .pants-leg-right {
+  left: 5.5vw;
+}
+
+#rain-coat {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 7vw;
+  height: 14vw;
+  background-color: #e9c500;
+  border-top-left-radius: 7vw;
+  border-top-right-radius: 7vw;
+}
+#rain-coat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3.325vw;
+  width: 0.35vw;
+  height: 14vw;
+  background-color: black;
+}
+#rain-coat > .sleeve {
+  position: absolute;
+  top: 1.4vw;
+  width: 14vw;
+  height: 2.8vw;
+  border-radius: 14vw;
+  background-color: #e9c500;
+}
+#rain-coat > .sleeve-left {
+  left: -11.6666666667vw;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#rain-coat > .sleeve-right {
+  left: 4.6666666667vw;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#rain-coat > .pants-leg {
+  position: absolute;
+  top: 14vw;
+  width: 3.15vw;
+  height: 7vw;
+  background-color: blue;
+}
+#rain-coat > .pants-leg-right {
+  left: 3.85vw;
+}
+#rain-coat > .pants-leg > .shoe {
+  position: absolute;
+  bottom: 0;
+  width: 3.15vw;
+  height: 3.5vw;
+  background-color: red;
+}
+#rain-coat > .pants-leg > .shoe::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 3.15vw;
+  height: 1.75vw;
+  background-color: red;
+  border-top: 1px solid black;
+  border-top-left-radius: 3.15vw;
+  border-top-right-radius: 3.15vw;
+}
+
+#rain-hood {
+  position: absolute;
+  top: -7vw;
+  left: 0vw;
+  width: 7vw;
+  height: 7vw;
+  border-radius: 7vw;
+  background: radial-gradient(circle at center, transparent 50%, #e9c500 50%);
 }
 
 body {
@@ -613,9 +756,9 @@ body {
 }
 
 .btn {
-  font-size: 50px;
+  font-size: 3vw;
   position: absolute;
-  width: 20%;
+  width: 20vw;
   background: yellow;
   color: blue;
   left: 40%;

@@ -1,4 +1,6 @@
-$ushanka-width: 15vw;
+/// <reference path="_variables.scss" />
+
+$ushanka-width: $size;
 $ushanka-height: $ushanka-width/1.5;
 $flap-width: $ushanka-width/12;
 
@@ -7,21 +9,21 @@ $color-ushanka: black;
 #ushanka {
 	position: absolute;
 	top: 10%;
-	left: 50%;
+	left: 60%;
 	width: $ushanka-width;
 	height: $ushanka-height;
 	background-color: $color-ushanka;
-	border-radius: $ushanka-height/1.5;
+	border-radius: $ushanka-height;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 
 	&::after {
 		content: '';
 		position: absolute;
-		top: $ushanka-height - $ushanka-height + 3vw;
-		left: $ushanka-width - $ushanka-width + 2.5vw;
-		width: $ushanka-width - 5vw;
-		height: $ushanka-height - 3vw;
+		bottom: 0;
+		left: $ushanka-width*0.1;
+		width: $ushanka-width*0.8;
+		height: $ushanka-height*0.7;
 		background-color: grey;
 		border-radius: $ushanka-height/1.5;
 		border-bottom-left-radius: 0;
@@ -67,8 +69,8 @@ $color-ushanka: black;
 	}
 }
 
-$shirt-width: 10vw;
-$shirt-height: $shirt-width*2;
+$shirt-width: $size;
+$shirt-height: $shirt-width*2.7;
 $sleeve-width: $shirt-height/2;
 $sleeve-height: $shirt-width/2.5;
 $short-top-position: $shirt-height;
@@ -131,7 +133,7 @@ $short-color: blue;
 		}
 
 		&-right {
-			left: $sleeve-width - $shirt-width/3;
+			left: $sleeve-width - $shirt-width/4;
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}
@@ -165,8 +167,8 @@ $short-color: blue;
 	}
 }
 
-$sunglasses-width: 20vw;
-$sunglasses-height: 1vw;
+$sunglasses-width: $size;
+$sunglasses-height: $size/20;
 $glasses-width: $sunglasses-width*0.4;
 $glasses-height: $glasses-width/1.5;
 
@@ -201,7 +203,7 @@ $glasses-height: $glasses-width/1.5;
 	}
 }
 
-$head-size: 50vw;
+$head-size: $size;
 $arc-width: $head-size/3;
 $arc-height: $arc-width/3;
 $stick-size: $head-size*0.05;
@@ -314,4 +316,184 @@ $umbrella-color: purple;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 	}
+}
+
+$coat-width: 10vw;
+$coat-height: $coat-width*2;
+$zip-width: $coat-width/20;
+$sleeve-width: $coat-height;
+$sleeve-height: $coat-width/2.5;
+
+$coat-color: olive;
+
+#coat {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	width: $coat-width;
+	height: $coat-height;
+	background-color: $coat-color;
+	border-top-left-radius: $coat-width;
+	border-top-right-radius: $coat-width;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: ($coat-width - $zip-width)/2;
+		width: $zip-width;
+		height: $coat-height;
+		background-color: black;
+	}
+
+	& > #scarf {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: $coat-width*0.20/2;
+		width: $coat-width*0.80;
+		height: $coat-height/10;
+		background-color: red;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: $coat-height/10;
+			left: $coat-width*0.80*0.65;
+			z-index: 5;
+			width: $coat-width*0.80/4;
+			height: $coat-height/3;
+			background-color: red;
+		}
+	}
+
+	& > .sleeve {
+		position: absolute;
+		top: $coat-height/10;
+		width: $sleeve-width;
+		height: $sleeve-height;
+		border-radius: $sleeve-width;
+		background-color: $coat-color;
+
+		&-left {
+			left: -$sleeve-width + $coat-width/3;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		&-right {
+			left: $coat-width - $sleeve-width/6;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+
+	& > .pants-leg {
+		position: absolute;
+		top: $coat-height;
+		width: $coat-width*0.45;
+		height: $coat-height/2;
+		background-color: blue;
+
+		&-right {
+			left: $coat-width - $coat-width*0.45;
+		}
+	}
+}
+
+$rain-coat-width: 7vw;
+$rain-coat-height: $rain-coat-width*2;
+$zip-width: $rain-coat-width/20;
+$rain-hood-height: $rain-coat-width;
+$rain-sleeve-width: $rain-coat-height;
+$rain-sleeve-height: $rain-coat-width/2.5;
+$rain-pants-width: $rain-coat-width*0.45;
+$rain-pants-height: $rain-coat-height/2;
+$rain-shoe-height: $rain-pants-height/2;
+
+
+$rain-coat-color: #e9c500;
+
+#rain-coat {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	width: $rain-coat-width;
+	height: $rain-coat-height;
+	background-color: $rain-coat-color;
+	border-top-left-radius: $rain-coat-width;
+	border-top-right-radius: $rain-coat-width;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: ($rain-coat-width - $zip-width)/2;
+		width: $zip-width;
+		height: $rain-coat-height;
+		background-color: black;
+	}
+
+	& > .sleeve {
+		position: absolute;
+		top: $rain-coat-height/10;
+		width: $rain-sleeve-width;
+		height: $rain-sleeve-height;
+		border-radius: $rain-sleeve-width;
+		background-color: $rain-coat-color;
+
+		&-left {
+			left: -$rain-sleeve-width + $rain-coat-width/3;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		&-right {
+			left: $rain-coat-width - $rain-sleeve-width/6;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+
+	& > .pants-leg {
+		position: absolute;
+		top: $rain-coat-height;
+		width: $rain-pants-width;
+		height: $rain-pants-height;
+		background-color: blue;
+
+		&-right {
+			left: $rain-coat-width - $rain-pants-width;
+		}
+
+		& > .shoe {
+			position: absolute;
+			bottom: 0;
+			width: $rain-pants-width;
+			height: $rain-shoe-height;
+			background-color: red;
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				width: $rain-pants-width;
+				height: $rain-shoe-height/2;
+				background-color: red;
+				border-top: 1px solid black;
+				border-top-left-radius: $rain-coat-width*0.45;
+				border-top-right-radius: $rain-coat-width*0.45;
+			}
+		}
+	}
+}
+
+#rain-hood {
+	position: absolute;
+	top: -$rain-hood-height;
+	left: ($rain-coat-width - $rain-hood-height)/2;
+	width: $rain-hood-height;
+	height: $rain-hood-height;
+	border-radius: $rain-hood-height;
+	background: radial-gradient(circle at center, transparent 50%, rgba($rain-coat-color,1) 50%);
 }
