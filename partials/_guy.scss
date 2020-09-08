@@ -12,129 +12,63 @@
     transition: transform 1s $timing-container;
 }
 
+.body, .head, .arm, .leg {
+    position: absolute;
+    background-color: black;
+}
 
 .body {
-    margin-top: $size;
-    transition: transform 1s $timing-body-rotate;
+    top: 25%;
+    left: 50%;
+    width: $size;
+    height: $size*3;
+    border-radius: $size $size 0px 0px;
 }
 
 .head {
-    @include position;
+    top: -$size;
     width: $size;
     height: $size;
-    background: $cd-body;
     border-radius: $size;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    & > .eyes {
-        @include position;
-        margin-top: 5px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: $size * 0.7;
-
-        & .eye {
-            width: $size * 0.2;
-            height: $size * 0.2;
-            border-radius: $size;
-            transform-origin: bottom;
-            @include face-color($cd-body);
-
-            & > .eyelid {
-                @include position;
-                width: inherit;
-                height: inherit;
-                background: $cd-body;
-                transform-origin: top;
-                transform: scale(0);
-            }
-        }
-    }
-
-    & > .mouth {
-        @include position;
-        width: $size * 0.4;
-        height: $size * 0.2;
-        border-radius: 0 0 $size * 0.5 $size * 0.5;
-        @include face-color($cd-body);
-
-        & > .lip {
-            @include position;
-            width: inherit;
-            height: inherit;
-            background: $cd-body;
-            transform-origin: bottom;
-            transform: scale(0);
-        }
-    }
-}
-
-.middle_part {
-    width: $size * 3;
-    @include position;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.torso {
-    background: $cd-body;
-    width: $size;
-    height: $size * 2.5;
-    border-radius: $size * 2.5 $size * 2.5 0px 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 .arm {
-    width: $size * 0.5;
-    height: $size * 2.5;
-    background: $cd-body;
+    top: $size/5;
+    height: $arm-height;
     border-radius: $size;
-    margin-top: 15px;
 
     &_left {
-        height: $size * 1.25;
-        transform-origin: 50% 0;
-        transform: rotate(25deg);
-        margin-right: -50px;
-        border-radius: $size $size 0px 0px;
-        transition: transform 700ms $timing-arm;
+        width: $size*1.25;
+        right: $arm-height;
+        transform-origin: ($size*1.25 - $size/4) 50%;
+        transform: rotate(-0deg);
 
         &-inferior {
-            margin-top: $size;
-            height: $size * 1.5;
-            transform-origin: 50% 17%;
+            top: 0;
+            left: -($size*2 - $size/4);
+            width: $size*2;
+            height: $arm-height;
+            transform-origin: ($size*2 - $size/4) 50%;
             transform: rotate(0deg);
-            
         }
     }
 
     &_right {
-        transform-origin: 50% 0;
-        transform: rotate(-25deg);
-        margin-left: -50px;
+        width: $arm-width;
+        left: $arm-height;
+        transform-origin: $arm-height/2 50%;
+        transform: rotate(0deg);
     }
 }
 
-.lower_body {
-    @include position;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: $size;
-}
-
 .leg {
-    width: $size * 0.45;
-    height: $size * 2.5;
-    background: $cd-body;
-    border-radius: 0px 0px $size $size;
-    margin-top: -16px;
+    top: $size*2.5;
+    width: $leg-width;
+    height: $leg-height;
+
+    &_right {
+        right: 0;
+    }
 }
 
 .hello {

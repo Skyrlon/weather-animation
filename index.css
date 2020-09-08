@@ -1,3 +1,6 @@
+/*guy size variables*/
+/*decor size variables*/
+/*weather-clothes variables*/
 /*DECOR*/
 @keyframes road-rollout {
   0% {
@@ -190,126 +193,59 @@
   transition: transform 1s 4s;
 }
 
+.body, .head, .arm, .leg {
+  position: absolute;
+  background-color: black;
+}
+
 .body {
-  margin-top: 3vw;
-  transition: transform 1s 5s;
+  top: 25%;
+  left: 50%;
+  width: 3vw;
+  height: 9vw;
+  border-radius: 3vw 3vw 0px 0px;
 }
 
 .head {
-  margin-left: auto;
-  margin-right: auto;
+  top: -3vw;
   width: 3vw;
   height: 3vw;
-  background: black;
   border-radius: 3vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.head > .eyes {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 2.1vw;
-}
-.head > .eyes .eye {
-  width: 0.6vw;
-  height: 0.6vw;
-  border-radius: 3vw;
-  transform-origin: bottom;
-  background: white;
-}
-.head > .eyes .eye > .eyelid {
-  margin-left: auto;
-  margin-right: auto;
-  width: inherit;
-  height: inherit;
-  background: black;
-  transform-origin: top;
-  transform: scale(0);
-}
-.head > .mouth {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1.2vw;
-  height: 0.6vw;
-  border-radius: 0 0 1.5vw 1.5vw;
-  background: white;
-}
-.head > .mouth > .lip {
-  margin-left: auto;
-  margin-right: auto;
-  width: inherit;
-  height: inherit;
-  background: black;
-  transform-origin: bottom;
-  transform: scale(0);
-}
-
-.middle_part {
-  width: 9vw;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.torso {
-  background: black;
-  width: 3vw;
-  height: 7.5vw;
-  border-radius: 7.5vw 7.5vw 0px 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .arm {
-  width: 1.5vw;
-  height: 7.5vw;
-  background: black;
+  top: 0.6vw;
+  height: 1.5vw;
   border-radius: 3vw;
-  margin-top: 15px;
 }
 .arm_left {
-  height: 3.75vw;
-  transform-origin: 50% 0;
-  transform: rotate(25deg);
-  margin-right: -50px;
-  border-radius: 3vw 3vw 0px 0px;
-  transition: transform 700ms 7s;
+  width: 3.75vw;
+  right: 1.5vw;
+  transform-origin: 3vw 50%;
+  transform: rotate(0deg);
 }
 .arm_left-inferior {
-  margin-top: 3vw;
-  height: 4.5vw;
-  transform-origin: 50% 17%;
+  top: 0;
+  left: -5.25vw;
+  width: 6vw;
+  height: 1.5vw;
+  transform-origin: 5.25vw 50%;
   transform: rotate(0deg);
 }
 .arm_right {
-  transform-origin: 50% 0;
-  transform: rotate(-25deg);
-  margin-left: -50px;
-}
-
-.lower_body {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 3vw;
+  width: 9vw;
+  left: 1.5vw;
+  transform-origin: 0.75vw 50%;
+  transform: rotate(0deg);
 }
 
 .leg {
+  top: 7.5vw;
   width: 1.35vw;
-  height: 7.5vw;
-  background: black;
-  border-radius: 0px 0px 3vw 3vw;
-  margin-top: -16px;
+  height: 9vw;
+}
+.leg_right {
+  right: 0;
 }
 
 .hello {
@@ -432,13 +368,13 @@
 #shirt > .sleeve {
   position: absolute;
   top: 0.81vw;
-  width: 4.05vw;
+  width: 6vw;
   height: 1.2vw;
-  border-radius: 4.05vw;
+  border-radius: 6vw;
   background-color: lightgreen;
 }
 #shirt > .sleeve-left {
-  left: -3.05vw;
+  left: -5vw;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
