@@ -88,9 +88,7 @@
 
     &_right {
         width: $arm-width;
-        left: $arm-height;
-        transform-origin: $arm-height/2 50%;
-        transform: rotate(0deg);
+        @include right-arm-pos;
     }
 }
 

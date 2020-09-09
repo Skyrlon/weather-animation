@@ -107,7 +107,7 @@
 
 	& > .snow-sleeve {
 		position: absolute;
-		top: $coat-height/10;
+		top: $size/5;
 		width: $sleeve-width;
 		height: $arm-height;
 		border-radius: $sleeve-width;
@@ -120,7 +120,8 @@
 		}
 
 		&-right {
-			left: $coat-width - $sleeve-width/6;
+			width: $arm-width*0.8;
+			@include right-arm-pos;
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}
@@ -180,7 +181,7 @@
 
 	& > .sleeve {
 		position: absolute;
-		top: $shirt-height/10;
+		top: $size/5;
 		width: $sleeve-width;
 		height: $sleeve-height;
 		border-radius: $sleeve-width;
@@ -193,7 +194,7 @@
 		}
 
 		&-right {
-			right: -$shirt-width;
+			@include right-arm-pos;
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}
@@ -386,7 +387,7 @@
 
 	& > .rain-sleeve {
 		position: absolute;
-		top: $rain-coat-height/10;
+		top: $size/5;
 		width: $rain-sleeve-width;
 		height: $rain-sleeve-height;
 		border-radius: $rain-sleeve-width;
@@ -399,7 +400,7 @@
 		}
 
 		&-right {
-			left: $rain-coat-width - $rain-sleeve-width/6;
+			@include right-arm-pos;
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}

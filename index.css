@@ -367,7 +367,7 @@
   top: 25%;
   left: 50%;
   width: 3vw;
-  height: 9vw;
+  height: 10.5vw;
   background-color: olive;
   border-top-left-radius: 3vw;
   border-top-right-radius: 3vw;
@@ -378,7 +378,7 @@
   top: 0;
   left: 1.425vw;
   width: 0.15vw;
-  height: 9vw;
+  height: 10.5vw;
   background-color: black;
 }
 #snow-coat > #scarf {
@@ -387,42 +387,45 @@
   top: 0;
   left: 0.3vw;
   width: 2.4vw;
-  height: 0.9vw;
+  height: 1.05vw;
   background-color: red;
 }
 #snow-coat > #scarf::after {
   content: "";
   position: absolute;
-  top: 0.9vw;
+  top: 1.05vw;
   left: 1.56vw;
   z-index: 5;
   width: 0.6vw;
-  height: 3vw;
+  height: 3.5vw;
   background-color: red;
 }
 #snow-coat > .snow-sleeve {
   position: absolute;
-  top: 0.9vw;
-  width: 9vw;
+  top: 0.6vw;
+  width: 10.5vw;
   height: 1.5vw;
-  border-radius: 9vw;
+  border-radius: 10.5vw;
   background-color: olive;
 }
 #snow-coat > .snow-sleeve-left {
-  left: -8vw;
+  left: -9.5vw;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 #snow-coat > .snow-sleeve-right {
+  width: 7.2vw;
   left: 1.5vw;
+  transform-origin: 0.75vw 50%;
+  transform: rotate(0deg);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 #snow-coat > .snow-pants-leg {
   position: absolute;
-  top: 9vw;
+  top: 10.5vw;
   width: 1.35vw;
-  height: 4.5vw;
+  height: 5.25vw;
   background-color: blue;
 }
 #snow-coat > .snow-pants-leg-right {
@@ -467,19 +470,21 @@
 }
 #shirt > .sleeve {
   position: absolute;
-  top: 0.81vw;
-  width: 9vw;
+  top: 0.6vw;
+  width: 10.5vw;
   height: 1.2vw;
-  border-radius: 9vw;
+  border-radius: 10.5vw;
   background-color: lightgreen;
 }
 #shirt > .sleeve-left {
-  left: -8vw;
+  left: -9.5vw;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 #shirt > .sleeve-right {
-  right: -3vw;
+  left: 1.5vw;
+  transform-origin: 0.75vw 50%;
+  transform: rotate(0deg);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -671,7 +676,9 @@
   border-bottom-left-radius: 0;
 }
 #rain-coat > .rain-sleeve-right {
-  left: 2vw;
+  left: 1.5vw;
+  transform-origin: 0.75vw 50%;
+  transform: rotate(0deg);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }

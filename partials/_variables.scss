@@ -49,7 +49,7 @@ $stick-size: $head-size*0.05;
 $crook-size: $head-size/5;
 
 $coat-width: $size;
-$coat-height: $coat-width*3;
+$coat-height: $coat-width*3.5;
 $zip-width: $coat-width/20;
 $sleeve-width: $coat-height;
 $sleeve-height: $coat-width/2.5;
@@ -91,6 +91,11 @@ $timing-wave: $timing-arm + 1s;
     }
 }
 
+@mixin right-arm-pos {
+    left: $arm-height;
+    transform-origin: $arm-height/2 50%;
+    transform: rotate(0deg);
+}
 
 /*DECOR*/
 
