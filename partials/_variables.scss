@@ -3,7 +3,7 @@ $cd-btn: yellow;
 $cd-sun: yellow;
 $cd-sun-face: black;
 $cd-ground: #269627;
-$color-ushanka: black;
+$color-ushanka: #000048;
 $shirt-color: lightgreen;
 $short-color: blue;
 $stick-color: #793906;
@@ -13,10 +13,14 @@ $rain-coat-color: #e9c500;
 
 /*guy size variables*/
 $size: 3vw;
+$eye-width: $size/5;
+$mouth-width: $size/2;
 $arm-width: $size*3;
 $arm-height: $size/2;
+$upper-arm-width: $size*1.5;
+$inferior-arm-width: $size*2;
 $leg-width: $size*0.45;
-$leg-height: $size*3;
+$leg-height: $size*2.5;
 $size-btn: 20vw;
 
 /*decor size variables*/
@@ -26,25 +30,30 @@ $size-sun: $size*2.5;
 $ushanka-width: $size;
 $ushanka-height: $ushanka-width/1.5;
 $flap-width: $ushanka-width/12;
+
 $shirt-width: $size;
 $shirt-height: $shirt-width*2.7;
 $sleeve-width: $shirt-height/2;
 $sleeve-height: $shirt-width/2.5;
 $short-top-position: $shirt-height;
+
 $sunglasses-width: $size;
 $sunglasses-height: $size/20;
 $glasses-width: $sunglasses-width*0.4;
 $glasses-height: $glasses-width/1.5;
+
 $head-size: $size*3;
 $arc-width: $head-size/3;
 $arc-height: $arc-width/3;
 $stick-size: $head-size*0.05;
 $crook-size: $head-size/5;
+
 $coat-width: $size;
-$coat-height: $coat-width*2;
+$coat-height: $coat-width*3;
 $zip-width: $coat-width/20;
 $sleeve-width: $coat-height;
 $sleeve-height: $coat-width/2.5;
+
 $rain-coat-width: $size;
 $rain-coat-height: $rain-coat-width*2;
 $zip-width: $rain-coat-width/20;

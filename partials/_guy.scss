@@ -14,7 +14,12 @@
 
 .body, .head, .arm, .leg {
     position: absolute;
-    background-color: black;
+    background-color: $cd-body;
+}
+
+.eye, .mouth {
+    position: absolute;
+    background-color: white;
 }
 
 .body {
@@ -32,23 +37,51 @@
     border-radius: $size;
 }
 
+.eye {
+    position: absolute;
+    top: $size/4;
+    width: $eye-width;
+    height: $eye-width;
+    border-radius: $eye-width;
+
+    &-left {
+        left: $eye-width;
+    }
+
+    &-right {
+        right: $eye-width;
+    }
+}
+
+.mouth {
+    background-color: white;
+    top: $size*2/3;
+    left: $mouth-width/2;
+    width: $mouth-width;
+    height: $mouth-width/3;
+    border-radius: 50% / 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
 .arm {
     top: $size/5;
     height: $arm-height;
     border-radius: $size;
 
     &_left {
-        width: $size*1.25;
+        width: $upper-arm-width;
         right: $arm-height;
-        transform-origin: ($size*1.25 - $size/4) 50%;
-        transform: rotate(-0deg);
+        transform-origin: ($upper-arm-width - $arm-height/2) 50%;
+        transform: rotate(0deg);
 
         &-inferior {
+            background-color: black;
             top: 0;
-            left: -($size*2 - $size/4);
-            width: $size*2;
+            right: $upper-arm-width - $arm-height;
+            width: $inferior-arm-width;
             height: $arm-height;
-            transform-origin: ($size*2 - $size/4) 50%;
+            transform-origin: ($inferior-arm-width - $arm-height/2) 50%;
             transform: rotate(0deg);
         }
     }
@@ -62,9 +95,10 @@
 }
 
 .leg {
-    top: $size*2.5;
+    top: $size*3;
     width: $leg-width;
     height: $leg-height;
+    background-color: black;
 
     &_right {
         right: 0;
@@ -74,8 +108,8 @@
 .hello {
     position: absolute;
     background-color: white;
-    top: 0px;
-    right: 0px;
+    top: 20%;
+    left: 70%;
     border: 10px solid $cd-body;
     font-size: $size*0.7;
     padding: 0.5em;

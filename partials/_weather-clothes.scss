@@ -2,8 +2,9 @@
 
 #ushanka {
 	position: absolute;
-	top: 10%;
-	left: 60%;
+	z-index: 100;
+	top: 15%;
+	left: 50%;
 	width: $ushanka-width;
 	height: $ushanka-height;
 	background-color: $color-ushanka;
@@ -28,10 +29,10 @@
 		position: absolute;
 		top: $ushanka-height;
 		width: $flap-width;
-		height: $ushanka-height;
+		height: $ushanka-height*1.25;
+		background-color: $color-ushanka;
 
 		&-left {
-			background-color: black;
 			border-bottom-left-radius: $flap-width;
 
 			&::after {
@@ -39,7 +40,7 @@
 				position: absolute;
 				left: $flap-width;
 				width: $flap-width;
-				height: $ushanka-height;
+				height: $ushanka-height*1.25;
 				background-color: grey;
 				border-bottom-right-radius: $flap-width;
 			}
@@ -47,7 +48,6 @@
 
 		&-right {
 			left: $ushanka-width - $flap-width;
-			background-color: black;
 			border-bottom-right-radius: $flap-width;
 
 			&::after {
@@ -55,7 +55,7 @@
 				position: absolute;
 				left: -$flap-width;
 				width: $flap-width;
-				height: $ushanka-height;
+				height: $ushanka-height*1.25;
 				background-color: grey;
 				border-bottom-left-radius: $flap-width;
 			}
@@ -63,9 +63,85 @@
 	}
 }
 
+#snow-coat {
+	position: absolute;
+	z-index: 100;
+	top: 25%;
+	left: 50%;
+	width: $coat-width;
+	height: $coat-height;
+	background-color: $coat-color;
+	border-top-left-radius: $coat-width;
+	border-top-right-radius: $coat-width;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: ($coat-width - $zip-width)/2;
+		width: $zip-width;
+		height: $coat-height;
+		background-color: black;
+	}
+
+	& > #scarf {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: $coat-width*0.20/2;
+		width: $coat-width*0.80;
+		height: $coat-height/10;
+		background-color: red;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: $coat-height/10;
+			left: $coat-width*0.80*0.65;
+			z-index: 5;
+			width: $coat-width*0.80/4;
+			height: $coat-height/3;
+			background-color: red;
+		}
+	}
+
+	& > .snow-sleeve {
+		position: absolute;
+		top: $coat-height/10;
+		width: $sleeve-width;
+		height: $arm-height;
+		border-radius: $sleeve-width;
+		background-color: $coat-color;
+
+		&-left {
+			left: -$sleeve-width + $coat-width/3;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		&-right {
+			left: $coat-width - $sleeve-width/6;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+
+	& > .snow-pants-leg {
+		position: absolute;
+		top: $coat-height;
+		width: $coat-width*0.45;
+		height: $coat-height/2;
+		background-color: blue;
+
+		&-right {
+			left: $coat-width - $coat-width*0.45;
+		}
+	}
+}
+
 #shirt {
 	position: absolute;
-	top: 10%;
+	top: 70%;
 	left: 50%;
 	width: $shirt-width;
 	height: $shirt-height;
@@ -182,7 +258,7 @@
 	}
 }
 
-#head {
+#umbrella {
 	position: absolute;
 	left: 25%;
 	top: 10%;
@@ -288,81 +364,6 @@
 	}
 }
 
-#coat {
-	position: absolute;
-	top: 20%;
-	left: 70%;
-	width: $coat-width;
-	height: $coat-height;
-	background-color: $coat-color;
-	border-top-left-radius: $coat-width;
-	border-top-right-radius: $coat-width;
-
-	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: ($coat-width - $zip-width)/2;
-		width: $zip-width;
-		height: $coat-height;
-		background-color: black;
-	}
-
-	& > #scarf {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: $coat-width*0.20/2;
-		width: $coat-width*0.80;
-		height: $coat-height/10;
-		background-color: red;
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: $coat-height/10;
-			left: $coat-width*0.80*0.65;
-			z-index: 5;
-			width: $coat-width*0.80/4;
-			height: $coat-height/3;
-			background-color: red;
-		}
-	}
-
-	& > .sleeve {
-		position: absolute;
-		top: $coat-height/10;
-		width: $sleeve-width;
-		height: $sleeve-height;
-		border-radius: $sleeve-width;
-		background-color: $coat-color;
-
-		&-left {
-			left: -$sleeve-width + $coat-width/3;
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
-		}
-
-		&-right {
-			left: $coat-width - $sleeve-width/6;
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
-		}
-	}
-
-	& > .pants-leg {
-		position: absolute;
-		top: $coat-height;
-		width: $coat-width*0.45;
-		height: $coat-height/2;
-		background-color: blue;
-
-		&-right {
-			left: $coat-width - $coat-width*0.45;
-		}
-	}
-}
-
 #rain-coat {
 	position: absolute;
 	top: 20%;
@@ -383,7 +384,7 @@
 		background-color: black;
 	}
 
-	& > .sleeve {
+	& > .rain-sleeve {
 		position: absolute;
 		top: $rain-coat-height/10;
 		width: $rain-sleeve-width;
@@ -404,7 +405,7 @@
 		}
 	}
 
-	& > .pants-leg {
+	& > .rain-pants-leg {
 		position: absolute;
 		top: $rain-coat-height;
 		width: $rain-pants-width;

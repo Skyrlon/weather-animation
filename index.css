@@ -198,6 +198,11 @@
   background-color: black;
 }
 
+.eye, .mouth {
+  position: absolute;
+  background-color: white;
+}
+
 .body {
   top: 25%;
   left: 50%;
@@ -213,20 +218,46 @@
   border-radius: 3vw;
 }
 
+.eye {
+  position: absolute;
+  top: 0.75vw;
+  width: 0.6vw;
+  height: 0.6vw;
+  border-radius: 0.6vw;
+}
+.eye-left {
+  left: 0.6vw;
+}
+.eye-right {
+  right: 0.6vw;
+}
+
+.mouth {
+  background-color: white;
+  top: 2vw;
+  left: 0.75vw;
+  width: 1.5vw;
+  height: 0.5vw;
+  border-radius: 50%/100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 .arm {
   top: 0.6vw;
   height: 1.5vw;
   border-radius: 3vw;
 }
 .arm_left {
-  width: 3.75vw;
+  width: 4.5vw;
   right: 1.5vw;
-  transform-origin: 3vw 50%;
+  transform-origin: 3.75vw 50%;
   transform: rotate(0deg);
 }
 .arm_left-inferior {
+  background-color: black;
   top: 0;
-  left: -5.25vw;
+  right: 3vw;
   width: 6vw;
   height: 1.5vw;
   transform-origin: 5.25vw 50%;
@@ -240,9 +271,10 @@
 }
 
 .leg {
-  top: 7.5vw;
+  top: 9vw;
   width: 1.35vw;
-  height: 9vw;
+  height: 7.5vw;
+  background-color: black;
 }
 .leg_right {
   right: 0;
@@ -251,8 +283,8 @@
 .hello {
   position: absolute;
   background-color: white;
-  top: 0px;
-  right: 0px;
+  top: 20%;
+  left: 70%;
   border: 10px solid black;
   font-size: 2.1vw;
   padding: 0.5em;
@@ -274,11 +306,12 @@
 
 #ushanka {
   position: absolute;
-  top: 10%;
-  left: 60%;
+  z-index: 100;
+  top: 15%;
+  left: 50%;
   width: 3vw;
   height: 2vw;
-  background-color: black;
+  background-color: #000048;
   border-radius: 2vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -299,10 +332,10 @@
   position: absolute;
   top: 2vw;
   width: 0.25vw;
-  height: 2vw;
+  height: 2.5vw;
+  background-color: #000048;
 }
 #ushanka > .flap-left {
-  background-color: black;
   border-bottom-left-radius: 0.25vw;
 }
 #ushanka > .flap-left::after {
@@ -310,13 +343,12 @@
   position: absolute;
   left: 0.25vw;
   width: 0.25vw;
-  height: 2vw;
+  height: 2.5vw;
   background-color: grey;
   border-bottom-right-radius: 0.25vw;
 }
 #ushanka > .flap-right {
   left: 2.75vw;
-  background-color: black;
   border-bottom-right-radius: 0.25vw;
 }
 #ushanka > .flap-right::after {
@@ -324,14 +356,82 @@
   position: absolute;
   left: -0.25vw;
   width: 0.25vw;
-  height: 2vw;
+  height: 2.5vw;
   background-color: grey;
   border-bottom-left-radius: 0.25vw;
 }
 
+#snow-coat {
+  position: absolute;
+  z-index: 100;
+  top: 25%;
+  left: 50%;
+  width: 3vw;
+  height: 9vw;
+  background-color: olive;
+  border-top-left-radius: 3vw;
+  border-top-right-radius: 3vw;
+}
+#snow-coat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.425vw;
+  width: 0.15vw;
+  height: 9vw;
+  background-color: black;
+}
+#snow-coat > #scarf {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.3vw;
+  width: 2.4vw;
+  height: 0.9vw;
+  background-color: red;
+}
+#snow-coat > #scarf::after {
+  content: "";
+  position: absolute;
+  top: 0.9vw;
+  left: 1.56vw;
+  z-index: 5;
+  width: 0.6vw;
+  height: 3vw;
+  background-color: red;
+}
+#snow-coat > .snow-sleeve {
+  position: absolute;
+  top: 0.9vw;
+  width: 9vw;
+  height: 1.5vw;
+  border-radius: 9vw;
+  background-color: olive;
+}
+#snow-coat > .snow-sleeve-left {
+  left: -8vw;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#snow-coat > .snow-sleeve-right {
+  left: 1.5vw;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#snow-coat > .snow-pants-leg {
+  position: absolute;
+  top: 9vw;
+  width: 1.35vw;
+  height: 4.5vw;
+  background-color: blue;
+}
+#snow-coat > .snow-pants-leg-right {
+  left: 1.65vw;
+}
+
 #shirt {
   position: absolute;
-  top: 10%;
+  top: 70%;
   left: 50%;
   width: 3vw;
   height: 8.1vw;
@@ -368,13 +468,13 @@
 #shirt > .sleeve {
   position: absolute;
   top: 0.81vw;
-  width: 6vw;
+  width: 9vw;
   height: 1.2vw;
-  border-radius: 6vw;
+  border-radius: 9vw;
   background-color: lightgreen;
 }
 #shirt > .sleeve-left {
-  left: -5vw;
+  left: -8vw;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -438,7 +538,7 @@
   border-top-right-radius: 0;
 }
 
-#head {
+#umbrella {
   position: absolute;
   left: 25%;
   top: 10%;
@@ -448,7 +548,7 @@
   border-top-left-radius: 9vw;
   border-top-right-radius: 9vw;
 }
-#head > span {
+#umbrella > span {
   content: "";
   background-color: white;
   width: 3vw;
@@ -460,7 +560,7 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-#head > span::after {
+#umbrella > span::after {
   content: "";
   background-color: white;
   width: 3vw;
@@ -471,7 +571,7 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-#head > span::before {
+#umbrella > span::before {
   content: "";
   background-color: white;
   width: 3vw;
@@ -538,73 +638,6 @@
   border-bottom-right-radius: 0;
 }
 
-#coat {
-  position: absolute;
-  top: 20%;
-  left: 70%;
-  width: 3vw;
-  height: 6vw;
-  background-color: olive;
-  border-top-left-radius: 3vw;
-  border-top-right-radius: 3vw;
-}
-#coat::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 1.425vw;
-  width: 0.15vw;
-  height: 6vw;
-  background-color: black;
-}
-#coat > #scarf {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0.3vw;
-  width: 2.4vw;
-  height: 0.6vw;
-  background-color: red;
-}
-#coat > #scarf::after {
-  content: "";
-  position: absolute;
-  top: 0.6vw;
-  left: 1.56vw;
-  z-index: 5;
-  width: 0.6vw;
-  height: 2vw;
-  background-color: red;
-}
-#coat > .sleeve {
-  position: absolute;
-  top: 0.6vw;
-  width: 6vw;
-  height: 1.2vw;
-  border-radius: 6vw;
-  background-color: olive;
-}
-#coat > .sleeve-left {
-  left: -5vw;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-#coat > .sleeve-right {
-  left: 2vw;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-#coat > .pants-leg {
-  position: absolute;
-  top: 6vw;
-  width: 1.35vw;
-  height: 3vw;
-  background-color: blue;
-}
-#coat > .pants-leg-right {
-  left: 1.65vw;
-}
-
 #rain-coat {
   position: absolute;
   top: 20%;
@@ -624,7 +657,7 @@
   height: 6vw;
   background-color: black;
 }
-#rain-coat > .sleeve {
+#rain-coat > .rain-sleeve {
   position: absolute;
   top: 0.6vw;
   width: 6vw;
@@ -632,34 +665,34 @@
   border-radius: 6vw;
   background-color: #e9c500;
 }
-#rain-coat > .sleeve-left {
+#rain-coat > .rain-sleeve-left {
   left: -5vw;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-#rain-coat > .sleeve-right {
+#rain-coat > .rain-sleeve-right {
   left: 2vw;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-#rain-coat > .pants-leg {
+#rain-coat > .rain-pants-leg {
   position: absolute;
   top: 6vw;
   width: 1.35vw;
   height: 3vw;
   background-color: blue;
 }
-#rain-coat > .pants-leg-right {
+#rain-coat > .rain-pants-leg-right {
   left: 1.65vw;
 }
-#rain-coat > .pants-leg > .shoe {
+#rain-coat > .rain-pants-leg > .shoe {
   position: absolute;
   bottom: 0;
   width: 1.35vw;
   height: 1.5vw;
   background-color: red;
 }
-#rain-coat > .pants-leg > .shoe::after {
+#rain-coat > .rain-pants-leg > .shoe::after {
   content: "";
   position: absolute;
   bottom: 0;
