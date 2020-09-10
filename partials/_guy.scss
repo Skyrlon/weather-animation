@@ -82,7 +82,7 @@
             width: $inferior-arm-width;
             height: $arm-height;
             transform-origin: ($inferior-arm-width - $arm-height/2) 50%;
-            transform: rotate(0deg);
+            transform: rotate(90deg);
         }
     }
 

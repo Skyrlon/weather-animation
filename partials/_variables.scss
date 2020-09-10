@@ -13,6 +13,7 @@ $rain-coat-color: #e9c500;
 
 /*guy size variables*/
 $size: 3vw;
+$body-height: $size*3;
 $eye-width: $size/5;
 $mouth-width: $size/2;
 $arm-width: $size*3;
@@ -94,6 +95,12 @@ $timing-wave: $timing-arm + 1s;
 @mixin right-arm-pos {
     left: $arm-height;
     transform-origin: $arm-height/2 50%;
+    transform: rotate(0deg);
+}
+
+@mixin left-upper-arm-pos {
+    right: $arm-height;
+    transform-origin: ($upper-arm-width - $arm-height/2) 50%;
     transform: rotate(0deg);
 }
 

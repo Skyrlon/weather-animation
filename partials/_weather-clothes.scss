@@ -4,7 +4,7 @@
 	position: absolute;
 	z-index: 100;
 	top: 15%;
-	left: 50%;
+	left: 20%;
 	width: $ushanka-width;
 	height: $ushanka-height;
 	background-color: $color-ushanka;
@@ -47,7 +47,7 @@
 		}
 
 		&-right {
-			left: $ushanka-width - $flap-width;
+			right: 0;
 			border-bottom-right-radius: $flap-width;
 
 			&::after {
@@ -131,19 +131,19 @@
 		position: absolute;
 		top: $coat-height;
 		width: $coat-width*0.45;
-		height: $coat-height/2;
+		height: $body-height + $leg-height - $coat-height;
 		background-color: blue;
 
 		&-right {
-			left: $coat-width - $coat-width*0.45;
+			right: 0;
 		}
 	}
 }
 
 #shirt {
 	position: absolute;
-	top: 70%;
-	left: 50%;
+	top: 25%;
+	left: 80%;
 	width: $shirt-width;
 	height: $shirt-height;
 	background-color: $shirt-color;
@@ -182,18 +182,19 @@
 	& > .sleeve {
 		position: absolute;
 		top: $size/5;
-		width: $sleeve-width;
-		height: $sleeve-height;
+		height: $arm-height;
 		border-radius: $sleeve-width;
 		background-color: $shirt-color;
 
 		&-left {
-			left: -$sleeve-width + $shirt-width/3;
+			width: $arm-width*0.3;
+			@include left-upper-arm-pos; 
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}
 
 		&-right {
+			width: $arm-width*0.3;
 			@include right-arm-pos;
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
@@ -367,10 +368,10 @@
 
 #rain-coat {
 	position: absolute;
-	top: 20%;
+	top: 25%;
 	left: 20%;
 	width: $rain-coat-width;
-	height: $rain-coat-height;
+	height: $body-height;
 	background-color: $rain-coat-color;
 	border-top-left-radius: $rain-coat-width;
 	border-top-right-radius: $rain-coat-width;
@@ -381,7 +382,7 @@
 		top: 0;
 		left: ($rain-coat-width - $zip-width)/2;
 		width: $zip-width;
-		height: $rain-coat-height;
+		height: $body-height;
 		background-color: black;
 	}
 
@@ -389,17 +390,18 @@
 		position: absolute;
 		top: $size/5;
 		width: $rain-sleeve-width;
-		height: $rain-sleeve-height;
+		height: $arm-height;
 		border-radius: $rain-sleeve-width;
 		background-color: $rain-coat-color;
 
 		&-left {
-			left: -$rain-sleeve-width + $rain-coat-width/3;
+			@include left-upper-arm-pos;
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}
 
 		&-right {
+			width: $arm-width*0.8;
 			@include right-arm-pos;
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
@@ -408,20 +410,20 @@
 
 	& > .rain-pants-leg {
 		position: absolute;
-		top: $rain-coat-height;
-		width: $rain-pants-width;
-		height: $rain-pants-height;
+		top: $body-height;
+		width: $leg-width;
+		height: $leg-height;
 		background-color: blue;
 
 		&-right {
-			left: $rain-coat-width - $rain-pants-width;
+			right: 0;
 		}
 
-		& > .shoe {
+		& > .rain-shoe {
 			position: absolute;
 			bottom: 0;
-			width: $rain-pants-width;
-			height: $rain-shoe-height;
+			width: $leg-width;
+			height: $leg-height/3;
 			background-color: red;
 
 			&::after {
@@ -429,7 +431,7 @@
 				position: absolute;
 				bottom: 0;
 				width: $rain-pants-width;
-				height: $rain-shoe-height/2;
+				height: $leg-height/3/3;
 				background-color: red;
 				border-top: 1px solid black;
 				border-top-left-radius: $rain-coat-width*0.45;
