@@ -195,7 +195,7 @@
 
 .body, .head, .arm, .leg {
   position: absolute;
-  background-color: black;
+  background-color: #FFCD94;
 }
 
 .eye, .mouth {
@@ -255,7 +255,6 @@
   transform: rotate(0deg);
 }
 .arm_left-inferior {
-  background-color: black;
   top: 0;
   right: 3vw;
   width: 6vw;
@@ -274,7 +273,6 @@
   top: 9vw;
   width: 1.35vw;
   height: 7.5vw;
-  background-color: black;
 }
 .leg_right {
   right: 0;
@@ -365,7 +363,7 @@
   position: absolute;
   z-index: 100;
   top: 25%;
-  left: 50%;
+  left: 80%;
   width: 3vw;
   height: 10.5vw;
   background-color: olive;
@@ -409,9 +407,23 @@
   background-color: olive;
 }
 #snow-coat > .snow-sleeve-left {
-  left: -9.5vw;
+  width: 4.5vw;
+  right: 1.5vw;
+  transform-origin: 3.75vw 50%;
+  transform: rotate(0deg);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+#snow-coat > .snow-sleeve-left::after {
+  content: "";
+  position: absolute;
+  background-color: olive;
+  top: 0;
+  right: 3vw;
+  width: 4.2vw;
+  height: 1.5vw;
+  transform-origin: 3.45vw 50%;
+  transform: rotate(90deg);
 }
 #snow-coat > .snow-sleeve-right {
   width: 7.2vw;
@@ -435,9 +447,9 @@
 #shirt {
   position: absolute;
   top: 25%;
-  left: 80%;
+  left: 50%;
   width: 3vw;
-  height: 8.1vw;
+  height: 9vw;
   background-color: lightgreen;
   border-radius: 3vw;
   border-bottom-left-radius: 0;
@@ -445,27 +457,31 @@
 }
 #shirt::before {
   content: "";
+  z-index: 101;
   position: absolute;
-  left: 0.75vw;
-  width: 0;
-  height: 0;
-  border-left: 0.75vw solid transparent;
-  border-right: 0.75vw solid transparent;
-  border-top: 1.5vw solid white;
+  left: 0.45vw;
+  width: 0.6vw;
+  box-sizing: content-box;
+  border-width: 1.5vw 0.75vw 0;
+  border-style: solid;
+  border-color: #FFCD94 transparent;
+  border-radius: 3vw;
 }
 #shirt > #apperture {
   position: absolute;
-  left: 1.35vw;
-  width: 0.3vw;
-  height: 6.48vw;
-  background-color: white;
+  top: 0;
+  z-index: 101;
+  left: 1.125vw;
+  width: 0.75vw;
+  height: 7.2vw;
+  background-color: #FFCD94;
 }
 #shirt > #apperture::after {
   content: "";
   position: absolute;
   top: 6.48vw;
-  width: 0.3vw;
-  height: 1.62vw;
+  width: 0.75vw;
+  height: 1.701vw;
   background-color: blue;
 }
 #shirt > .sleeve {
@@ -519,6 +535,8 @@
 
 #sunglasses {
   position: absolute;
+  top: 20%;
+  left: 50%;
   width: 3vw;
   height: 0.15vw;
   background-color: black;
@@ -674,11 +692,23 @@
   background-color: #e9c500;
 }
 #rain-coat > .rain-sleeve-left {
+  width: 4.5vw;
   right: 1.5vw;
   transform-origin: 3.75vw 50%;
   transform: rotate(0deg);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+#rain-coat > .rain-sleeve-left::after {
+  content: "";
+  position: absolute;
+  background-color: #e9c500;
+  top: 0;
+  right: 3vw;
+  width: 4.2vw;
+  height: 1.5vw;
+  transform-origin: 3.45vw 50%;
+  transform: rotate(90deg);
 }
 #rain-coat > .rain-sleeve-right {
   width: 7.2vw;

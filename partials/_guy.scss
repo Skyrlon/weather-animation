@@ -76,7 +76,6 @@
         transform: rotate(0deg);
 
         &-inferior {
-            background-color: black;
             top: 0;
             right: $upper-arm-width - $arm-height;
             width: $inferior-arm-width;
@@ -96,7 +95,6 @@
     top: $size*3;
     width: $leg-width;
     height: $leg-height;
-    background-color: black;
 
     &_right {
         right: 0;
@@ -108,7 +106,7 @@
     background-color: white;
     top: 20%;
     left: 70%;
-    border: 10px solid $cd-body;
+    border: 10px solid black;
     font-size: $size*0.7;
     padding: 0.5em;
     border-radius: $size;
@@ -124,7 +122,7 @@
         height: 0;
         border-style: solid;
         border-width: $size*0.5 $size*0.5 0px 0px;
-        border-color: transparent $cd-body transparent transparent;
+        border-color: transparent black transparent transparent;
         transform: rotate(-30deg);
     }
 }

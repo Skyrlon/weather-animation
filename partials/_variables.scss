@@ -1,4 +1,4 @@
-﻿$cd-body: black;
+﻿$cd-body: #FFCD94;
 $cd-btn: yellow;
 $cd-sun: yellow;
 $cd-sun-face: black;
@@ -28,6 +28,8 @@ $size-btn: 20vw;
 $size-sun: $size*2.5;
 
 /*weather-clothes variables*/
+$sleeve-inferior-width: $inferior-arm-width - $arm-width*0.2;
+
 $ushanka-width: $size;
 $ushanka-height: $ushanka-width/1.5;
 $flap-width: $ushanka-width/12;
@@ -102,6 +104,15 @@ $timing-wave: $timing-arm + 1s;
     right: $arm-height;
     transform-origin: ($upper-arm-width - $arm-height/2) 50%;
     transform: rotate(0deg);
+}
+
+@mixin left-lower-arm-pos {
+    top: 0;
+    right: $upper-arm-width - $arm-height;
+    width: $sleeve-inferior-width;
+    height: $arm-height;
+    transform-origin: ($sleeve-inferior-width - $arm-height/2) 50%;
+    transform: rotate(90deg);
 }
 
 /*DECOR*/

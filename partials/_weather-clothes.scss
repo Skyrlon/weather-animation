@@ -67,7 +67,7 @@
 	position: absolute;
 	z-index: 100;
 	top: 25%;
-	left: 50%;
+	left: 80%;
 	width: $coat-width;
 	height: $coat-height;
 	background-color: $coat-color;
@@ -114,9 +114,17 @@
 		background-color: $coat-color;
 
 		&-left {
-			left: -$sleeve-width + $coat-width/3;
+			width: $upper-arm-width;
+			@include left-upper-arm-pos;
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
+
+			&::after {
+				content: '';
+				position: absolute;
+				background-color: $coat-color;
+				@include left-lower-arm-pos;
+			}
 		}
 
 		&-right {
@@ -143,9 +151,9 @@
 #shirt {
 	position: absolute;
 	top: 25%;
-	left: 80%;
+	left: 50%;
 	width: $shirt-width;
-	height: $shirt-height;
+	height: $body-height;
 	background-color: $shirt-color;
 	border-radius: $shirt-width;
 	border-bottom-left-radius: 0;
@@ -153,28 +161,32 @@
 
 	&::before {
 		content: '';
+		z-index: 101;
 		position: absolute;
-		left: $shirt-width/2 - $shirt-width/4;
-		width: 0;
-		height: 0;
-		border-left: $shirt-width/4 solid transparent;
-		border-right: $shirt-width/4 solid transparent;
-		border-top: $shirt-width/2 solid white;
+		left: ($size/2 - $size/5)/2;
+		width: $size/5;
+		box-sizing: content-box;
+		border-width: $size/2 $size/4 0;
+		border-style: solid;
+		border-color: $cd-body transparent;
+		border-radius: $size;
 	}
 
 	& > #apperture {
 		position: absolute;
-		left: $shirt-width/2 - $shirt-width/20;
-		width: $shirt-width/10;
-		height: $shirt-height - $shirt-height*0.2;
-		background-color: white;
+		top: 0;
+		z-index: 101;
+		left: ($size - $size/4)/2;
+		width: $size/4;
+		height: $body-height*0.8;
+		background-color: $cd-body;
 
 		&::after {
 			content: '';
 			position: absolute;
-			top: $shirt-height - $shirt-height*0.2;
-			width: $shirt-width/10;
-			height: $shirt-height*0.2;
+			top: $shirt-height*0.8;
+			width: $size/4;
+			height: $shirt-height*0.21;
 			background-color: blue;
 		}
 	}
@@ -188,7 +200,7 @@
 
 		&-left {
 			width: $arm-width*0.3;
-			@include left-upper-arm-pos; 
+			@include left-upper-arm-pos;
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}
@@ -231,6 +243,8 @@
 
 #sunglasses {
 	position: absolute;
+	top: 20%;
+	left: 50%;
 	width: $sunglasses-width;
 	height: $sunglasses-height;
 	background-color: black;
@@ -395,9 +409,17 @@
 		background-color: $rain-coat-color;
 
 		&-left {
+			width: $upper-arm-width;
 			@include left-upper-arm-pos;
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
+
+			&::after {
+				content: '';
+				position: absolute;
+				background-color: $rain-coat-color;
+				@include left-lower-arm-pos;
+			}
 		}
 
 		&-right {
