@@ -151,7 +151,7 @@
 #shirt {
 	position: absolute;
 	top: 25%;
-	left: 50%;
+	left: 20%;
 	width: $shirt-width;
 	height: $body-height;
 	background-color: $shirt-color;
@@ -244,7 +244,7 @@
 #sunglasses {
 	position: absolute;
 	top: 20%;
-	left: 50%;
+	left: 20%;
 	width: $sunglasses-width;
 	height: $sunglasses-height;
 	background-color: black;
@@ -471,4 +471,106 @@
 	height: $rain-hood-height;
 	border-radius: $rain-hood-height;
 	background: radial-gradient(circle at center, transparent 50%, rgba($rain-coat-color,1) 50%);
+}
+
+.suit {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	width: $size;
+	height: $size*3;
+	border-radius: $size $size 0px 0px;
+	background-color: $color-suit;
+}
+
+.suit-shirt {
+	position: absolute;
+	left: $size/2 - $size/3;
+	width: 0px;
+	border-width: $size $size/3 0;
+	border-style: solid;
+	border-color: lightblue transparent;
+	border-top-left-radius: $size/4;
+	border-top-right-radius: $size/4;
+}
+
+.tie {
+	position: absolute;
+	top: $knot-size;
+	left: ($size - $tie-width)/2;
+	width: $tie-width;
+	height: $tie-height;
+	background-color: $color-tie;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -$knot-size;
+		left: -$knot-size/4;
+		width: $knot-size;
+		height: $knot-size;
+		background-color: $color-tie;
+		border-radius: $knot-size;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: $tie-height;
+		left: 0;
+		border-width: $size*0.2 $tie-width/2 0;
+		border-style: solid;
+		border-color: red transparent;
+	}
+}
+
+.suit-sleeve {
+	position: absolute;
+	top: $size/5;
+	height: $arm-height;
+	background-color: $color-suit;
+	border-radius: $arm-width;
+
+	&_left {
+		width: $upper-arm-width;
+		@include left-upper-arm-pos;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+
+		&::after {
+			content: '';
+			position: absolute;
+			background-color: $color-suit;
+			@include left-lower-arm-pos;
+		}
+	}
+
+	&_right {
+		width: $arm-width*0.8;
+		@include right-arm-pos;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+
+.suit-pants-leg {
+	position: absolute;
+	top: $body-height;
+	width: $size*0.45;
+	height: $leg-height;
+	background-color: $color-suit;
+
+	&-right {
+		right: 0;
+	}
+
+	& > .suit-shoe {
+		position: absolute;
+		bottom: 0;
+		width: $leg-width;
+		height: $leg-height/10;
+		background-color: $color-suit-shoe;
+		border-top-left-radius: $leg-width;
+		border-top-right-radius: $leg-width;
+	}
 }
