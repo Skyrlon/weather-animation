@@ -32,3 +32,28 @@ eltBtn[0].addEventListener("click", function () {
     armLeftInferior[0].style.animation = "wave 1s 7.3s ease-in-out alternate infinite both";
     hello[0].style.animation = "hello-appearance 1s 8s both";
 });
+
+function drawSuitShirt() {
+    const canvas = document.getElementsByClassName('suit-shirt')[0];
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'lightblue';
+    ctx.beginPath();
+    ctx.moveTo(25, 0);
+    ctx.lineTo(75, 0);
+    ctx.lineTo(50, 100);
+    ctx.fill();
+};
+
+function drawTieBottom() {
+    const canvas = document.getElementsByClassName('tie-bottom')[0];
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'red';
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(100, 0);
+    ctx.lineTo(50, 75);
+    ctx.fill();
+};
+
+drawSuitShirt();
+drawTieBottom();

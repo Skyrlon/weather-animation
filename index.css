@@ -769,13 +769,11 @@
 
 .suit-shirt {
   position: absolute;
-  left: 0.5vw;
-  width: 0px;
-  border-width: 3vw 1vw 0;
-  border-style: solid;
-  border-color: lightblue transparent;
-  border-top-left-radius: 0.75vw;
-  border-top-right-radius: 0.75vw;
+  background-color: black;
+  width: 3vw;
+  height: 3vw;
+  border-top-left-radius: 3vw;
+  border-top-right-radius: 3vw;
 }
 
 .tie {
@@ -796,14 +794,11 @@
   background-color: red;
   border-radius: 0.6vw;
 }
-.tie::after {
-  content: "";
+.tie-bottom {
   position: absolute;
   top: 1.86vw;
-  left: 0;
-  border-width: 0.6vw 0.18vw 0;
-  border-style: solid;
-  border-color: red transparent;
+  width: 0.36vw;
+  height: 1.14vw;
 }
 
 .suit-sleeve {

@@ -485,13 +485,11 @@
 
 .suit-shirt {
 	position: absolute;
-	left: $size/2 - $size/3;
-	width: 0px;
-	border-width: $size $size/3 0;
-	border-style: solid;
-	border-color: lightblue transparent;
-	border-top-left-radius: $size/4;
-	border-top-right-radius: $size/4;
+	background-color: $color-suit;
+	width: $size;
+	height: $size;
+	border-top-left-radius: $size;
+	border-top-right-radius: $size;
 }
 
 .tie {
@@ -513,14 +511,11 @@
 		border-radius: $knot-size;
 	}
 
-	&::after {
-		content: '';
+	&-bottom {
 		position: absolute;
 		top: $tie-height;
-		left: 0;
-		border-width: $size*0.2 $tie-width/2 0;
-		border-style: solid;
-		border-color: red transparent;
+		width: $tie-width;
+		height: $size - $tie-height;
 	}
 }
 
