@@ -4,7 +4,7 @@
 	position: absolute;
 	z-index: 100;
 	top: 15%;
-	left: 20%;
+	left: 80%;
 	width: $ushanka-width;
 	height: $ushanka-height;
 	background-color: $color-ushanka;
@@ -70,7 +70,7 @@
 	left: 80%;
 	width: $coat-width;
 	height: $coat-height;
-	background-color: $coat-color;
+	background-color: $color-coat;
 	border-top-left-radius: $coat-width;
 	border-top-right-radius: $coat-width;
 
@@ -111,7 +111,7 @@
 		width: $sleeve-width;
 		height: $arm-height;
 		border-radius: $sleeve-width;
-		background-color: $coat-color;
+		background-color: $color-coat;
 
 		&-left {
 			width: $upper-arm-width;
@@ -122,7 +122,7 @@
 			&::after {
 				content: '';
 				position: absolute;
-				background-color: $coat-color;
+				background-color: $color-coat;
 				@include left-lower-arm-pos;
 			}
 		}
@@ -151,11 +151,11 @@
 #shirt {
 	position: absolute;
 	top: 25%;
-	left: 20%;
-	width: $shirt-width;
+	left: 10%;
+	width: $size;
 	height: $body-height;
-	background-color: $shirt-color;
-	border-radius: $shirt-width;
+	background-color: $color-shirt;
+	border-radius: $size;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 
@@ -168,7 +168,7 @@
 		box-sizing: content-box;
 		border-width: $size/2 $size/4 0;
 		border-style: solid;
-		border-color: $cd-body transparent;
+		border-color: $color-body transparent;
 		border-radius: $size;
 	}
 
@@ -179,14 +179,14 @@
 		left: ($size - $size/4)/2;
 		width: $size/4;
 		height: $body-height*0.8;
-		background-color: $cd-body;
+		background-color: $color-body;
 
 		&::after {
 			content: '';
 			position: absolute;
-			top: $shirt-height*0.8;
+			top: $body-height*0.8;
 			width: $size/4;
-			height: $shirt-height*0.21;
+			height: $body-height*0.21;
 			background-color: blue;
 		}
 	}
@@ -196,7 +196,7 @@
 		top: $size/5;
 		height: $arm-height;
 		border-radius: $sleeve-width;
-		background-color: $shirt-color;
+		background-color: $color-shirt;
 
 		&-left {
 			width: $arm-width*0.3;
@@ -216,27 +216,27 @@
 
 #short {
 	position: absolute;
-	top: $short-top-position;
-	width: $shirt-width;
-	height: $shirt-height/5;
+	top: $body-height;
+	width: $size;
+	height: $body-height/5;
 	background-color: blue;
 
 	&::before {
 		content: '';
 		position: absolute;
-		top: $shirt-height/5;
-		width: $shirt-width*0.45;
-		height: $shirt-height/5;
+		top: $size/5;
+		width: $leg-width;
+		height: $body-height/5;
 		background-color: blue;
 	}
 
 	&::after {
 		content: '';
 		position: absolute;
-		top: $shirt-height/5;
-		left: $shirt-width - $shirt-width*0.45;
-		width: $shirt-width*0.45;
-		height: $shirt-height/5;
+		top: $size/5;
+		right: 0;
+		width: $leg-width;
+		height: $body-height/5;
 		background-color: blue;
 	}
 }
@@ -244,7 +244,7 @@
 #sunglasses {
 	position: absolute;
 	top: 20%;
-	left: 20%;
+	left: 10%;
 	width: $sunglasses-width;
 	height: $sunglasses-height;
 	background-color: black;
@@ -278,11 +278,11 @@
 	position: absolute;
 	left: 25%;
 	top: 10%;
-	background-color: $umbrella-color;
-	width: $head-size;
-	height: $head-size/2;
-	border-top-left-radius: $head-size;
-	border-top-right-radius: $head-size;
+	background-color: $color-umbrella;
+	width: $umbrella-width;
+	height: $umbrella-height;
+	border-top-left-radius: $umbrella-width;
+	border-top-right-radius: $umbrella-width;
 
 	& > span {
 		content: '';
@@ -290,7 +290,7 @@
 		width: $arc-width;
 		height: $arc-height;
 		position: absolute;
-		top: $head-size/2 - $arc-height;
+		top: $umbrella-height - $arc-height;
 		left: $arc-width;
 		border-radius: 50% / 100%;
 		border-bottom-left-radius: 0;
@@ -325,18 +325,18 @@
 #stick {
 	position: absolute;
 	width: $stick-size;
-	height: $head-size/2;
-	background-color: $stick-color;
-	left: ($head-size - $stick-size)/2;
-	top: $head-size/2 - $arc-height;
+	height: $umbrella-width/2;
+	background-color: $color-stick;
+	left: ($arm-width - $stick-size)/2;
+	top: $umbrella-height - $arc-height;
 
 	&::before {
 		content: '';
 		position: absolute;
-		top: $arc-height - $head-size/2 - $stick-size;
+		top: $arc-height - $umbrella-height - $stick-size;
 		width: $stick-size;
-		height: $head-size*0.05;
-		background-color: $stick-color;
+		height: $umbrella-width*0.05;
+		background-color: $color-stick;
 		border-radius: $stick-size;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
@@ -347,9 +347,9 @@
 	position: absolute;
 	width: $crook-size;
 	height: $crook-size/2;
-	top: $head-size/2;
+	top: $umbrella-height;
 	left: -$crook-size + $stick-size;
-	background-color: $stick-color;
+	background-color: $color-stick;
 	border-radius: $crook-size;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
@@ -373,7 +373,7 @@
 		top: -$stick-size;
 		width: $stick-size;
 		height: $stick-size;
-		background-color: $stick-color;
+		background-color: $color-stick;
 		border-radius: $crook-size;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
@@ -386,7 +386,7 @@
 	left: 20%;
 	width: $rain-coat-width;
 	height: $body-height;
-	background-color: $rain-coat-color;
+	background-color: $color-rain-coat;
 	border-top-left-radius: $rain-coat-width;
 	border-top-right-radius: $rain-coat-width;
 
@@ -406,7 +406,7 @@
 		width: $rain-sleeve-width;
 		height: $arm-height;
 		border-radius: $rain-sleeve-width;
-		background-color: $rain-coat-color;
+		background-color: $color-rain-coat;
 
 		&-left {
 			width: $upper-arm-width;
@@ -417,7 +417,7 @@
 			&::after {
 				content: '';
 				position: absolute;
-				background-color: $rain-coat-color;
+				background-color: $color-rain-coat;
 				@include left-lower-arm-pos;
 			}
 		}
@@ -452,12 +452,12 @@
 				content: '';
 				position: absolute;
 				bottom: 0;
-				width: $rain-pants-width;
+				width: $leg-width;
 				height: $leg-height/3/3;
 				background-color: red;
 				border-top: 1px solid black;
-				border-top-left-radius: $rain-coat-width*0.45;
-				border-top-right-radius: $rain-coat-width*0.45;
+				border-top-left-radius: $leg-width;
+				border-top-right-radius: $leg-width;
 			}
 		}
 	}
@@ -470,7 +470,7 @@
 	width: $rain-hood-height;
 	height: $rain-hood-height;
 	border-radius: $rain-hood-height;
-	background: radial-gradient(circle at center, transparent 50%, rgba($rain-coat-color,1) 50%);
+	background: radial-gradient(circle at center, transparent 50%, rgba($color-rain-coat,1) 50%);
 }
 
 .suit {

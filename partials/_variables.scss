@@ -1,15 +1,17 @@
-﻿$cd-body: #FFCD94;
-$cd-btn: yellow;
-$cd-sun: yellow;
-$cd-sun-face: black;
-$cd-ground: #269627;
+﻿$color-body: #FFCD94;
+$color-sun: yellow;
+$color-sun-face: black;
+$color-ground: #269627;
 $color-ushanka: #000048;
-$shirt-color: lightgreen;
-$short-color: blue;
-$stick-color: #793906;
-$umbrella-color: purple;
-$coat-color: olive;
-$rain-coat-color: #e9c500;
+$color-shirt: lightgreen;
+$color-short: blue;
+$color-stick: #793906;
+$color-umbrella: purple;
+$color-coat: olive;
+$color-rain-coat: #e9c500;
+$color-suit: black;
+$color-tie: red;
+$color-suit-shoe: #481d20;
 
 /*guy size variables*/
 $size: 3vw;
@@ -22,7 +24,6 @@ $upper-arm-width: $size*1.5;
 $inferior-arm-width: $size*2;
 $leg-width: $size*0.45;
 $leg-height: $size*2.5;
-$size-btn: 20vw;
 
 /*decor size variables*/
 $size-sun: $size*2.5;
@@ -34,22 +35,18 @@ $ushanka-width: $size;
 $ushanka-height: $ushanka-width/1.5;
 $flap-width: $ushanka-width/12;
 
-$shirt-width: $size;
-$shirt-height: $shirt-width*2.7;
-$sleeve-width: $shirt-height/2;
-$sleeve-height: $shirt-width/2.5;
-$short-top-position: $shirt-height;
 
 $sunglasses-width: $size;
 $sunglasses-height: $size/20;
 $glasses-width: $sunglasses-width*0.4;
 $glasses-height: $glasses-width/1.5;
 
-$head-size: $size*3;
-$arc-width: $head-size/3;
+$umbrella-width: $size*3;
+$umbrella-height: $umbrella-width/2;
+$arc-width: $umbrella-width/3;
 $arc-height: $arc-width/3;
-$stick-size: $head-size*0.05;
-$crook-size: $head-size/5;
+$stick-size: $umbrella-width*0.05;
+$crook-size: $umbrella-width/5;
 
 $coat-width: $size;
 $coat-height: $coat-width*3.5;
@@ -63,34 +60,15 @@ $zip-width: $rain-coat-width/20;
 $rain-hood-height: $rain-coat-width;
 $rain-sleeve-width: $rain-coat-height;
 $rain-sleeve-height: $rain-coat-width/2.5;
-$rain-pants-width: $rain-coat-width*0.45;
 $rain-pants-height: $rain-coat-height/2;
 $rain-shoe-height: $rain-pants-height/2;
 
-$color-suit: black;
-$color-tie: red;
-$color-suit-shoe: #481d20;
+
 $knot-size: $size/5;
 $tie-width: $knot-size*0.6;
 $tie-height: $size*0.62;
 
 
-
-$timing-road: 0s;
-$timing-grass: 1s;
-$timing-sky: $timing-grass + 1s;
-$timing-sun: $timing-sky + 1s;
-$timing-container: $timing-sun + 1s;
-$timing-body-rotate: $timing-container + 1s;
-$timing-face: $timing-body-rotate + 1s;
-$timing-arm: $timing-face + 1s;
-$timing-wave: $timing-arm + 1s;
-
-
-@mixin position {
-    margin-left: auto;
-    margin-right: auto;
-}
 
 @mixin face-color ($color) {
     @if (lightness($color) < 15%) or (saturation($color) < 10%) {

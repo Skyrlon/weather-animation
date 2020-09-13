@@ -1,20 +1,8 @@
 ﻿/// <reference path="_variables.scss" />
 
-.container {
-    width: $size * 10;
-    margin-top: 15%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    z-index: 99;
-    @include position;
-    transition: transform 1s $timing-container;
-}
-
 .body, .head, .arm, .leg {
     position: absolute;
-    background-color: $cd-body;
+    background-color: $color-body;
 }
 
 .eye, .mouth {

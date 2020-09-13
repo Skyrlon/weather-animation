@@ -107,8 +107,6 @@
   left: 0;
   transform-origin: bottom;
   transform: scaleY(0);
-  transition: transform 1s 2s;
-  overflow: hidden;
 }
 .sky > .sun {
   position: absolute;
@@ -121,12 +119,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transform: translateY(500%);
-  transition: transform 1s 3s;
 }
 .sky > .sun > .eyes {
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -140,8 +134,6 @@
   background: black;
 }
 .sky > .sun > .mouth {
-  margin-left: auto;
-  margin-right: auto;
   width: 3vw;
   height: 1.5vw;
   border-radius: 0 0 3.75vw 3.75vw;
@@ -176,21 +168,6 @@
   left: 45%;
   top: -4.5vw;
   background-color: brown;
-  width: 10vw;
-  height: 100vw;
-}
-
-.container {
-  width: 30vw;
-  margin-top: 15%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  z-index: 99;
-  margin-left: auto;
-  margin-right: auto;
-  transition: transform 1s 4s;
 }
 
 .body, .head, .arm, .leg {
@@ -306,7 +283,7 @@
   position: absolute;
   z-index: 100;
   top: 15%;
-  left: 20%;
+  left: 80%;
   width: 3vw;
   height: 2vw;
   background-color: #000048;
@@ -447,7 +424,7 @@
 #shirt {
   position: absolute;
   top: 25%;
-  left: 20%;
+  left: 10%;
   width: 3vw;
   height: 9vw;
   background-color: lightgreen;
@@ -479,9 +456,9 @@
 #shirt > #apperture::after {
   content: "";
   position: absolute;
-  top: 6.48vw;
+  top: 7.2vw;
   width: 0.75vw;
-  height: 1.701vw;
+  height: 1.89vw;
   background-color: blue;
 }
 #shirt > .sleeve {
@@ -510,33 +487,33 @@
 
 #short {
   position: absolute;
-  top: 8.1vw;
+  top: 9vw;
   width: 3vw;
-  height: 1.62vw;
+  height: 1.8vw;
   background-color: blue;
 }
 #short::before {
   content: "";
   position: absolute;
-  top: 1.62vw;
+  top: 0.6vw;
   width: 1.35vw;
-  height: 1.62vw;
+  height: 1.8vw;
   background-color: blue;
 }
 #short::after {
   content: "";
   position: absolute;
-  top: 1.62vw;
-  left: 1.65vw;
+  top: 0.6vw;
+  right: 0;
   width: 1.35vw;
-  height: 1.62vw;
+  height: 1.8vw;
   background-color: blue;
 }
 
 #sunglasses {
   position: absolute;
   top: 20%;
-  left: 20%;
+  left: 10%;
   width: 3vw;
   height: 0.15vw;
   background-color: black;
@@ -858,19 +835,6 @@
 
 body {
   overflow: hidden;
-}
-
-.btn {
-  font-size: 3vw;
-  position: absolute;
-  width: 20vw;
-  background: yellow;
-  color: blue;
-  left: 40%;
-  bottom: 0%;
-  border: 5px solid blue;
-  border-radius: 10px;
-  z-index: 100;
 }
 
 /*# sourceMappingURL=index.css.map */

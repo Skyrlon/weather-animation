@@ -6,16 +6,3 @@
 body {
     overflow: hidden;
 }
-
-.btn {
-    font-size: $size;
-    position: absolute;
-    width: $size-btn;
-    background: $cd-btn;
-    color: complement($cd-btn);
-    left: 40%;
-    bottom: 0%;
-    border: 5px solid blue;
-    border-radius: 10px;
-    z-index: 100;
-}
