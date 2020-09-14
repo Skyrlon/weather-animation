@@ -1,5 +1,7 @@
 ﻿$color-body: #FFCD94;
 $color-sun: yellow;
+$color-moon: #d7d7d7;
+$color-moon-crater: #b6b6b6;
 $color-sun-face: black;
 $color-ground: #269627;
 $color-ushanka: #000048;
@@ -27,6 +29,9 @@ $leg-height: $size*2.5;
 
 /*decor size variables*/
 $size-sun: $size*2.5;
+$moon-size: $size*2.5;
+$moon-eye-size: $moon-size/6;
+$moon-mouth-width: $moon-size/2;
 
 /*weather-clothes variables*/
 $sleeve-inferior-width: $inferior-arm-width - $arm-width*0.2;

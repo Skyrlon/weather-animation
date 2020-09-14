@@ -105,8 +105,6 @@
   height: 50%;
   top: 0;
   left: 0;
-  transform-origin: bottom;
-  transform: scaleY(0);
 }
 .sky > .sun {
   position: absolute;
@@ -152,8 +150,6 @@
   width: 100%;
   height: 100%;
   background: #269627;
-  transform: scaleX(0);
-  transition: transform 1s 1s;
 }
 .ground > .road {
   position: absolute;
@@ -161,13 +157,73 @@
   height: 100%;
   left: 0;
   top: 0;
-  transform: scaleY(0);
 }
 .ground > .road > .road-status {
   position: absolute;
   left: 45%;
-  top: -4.5vw;
   background-color: brown;
+}
+
+.moon {
+  position: absolute;
+  width: 7.5vw;
+  height: 7.5vw;
+  background-color: #d7d7d7;
+  border-radius: 7.5vw;
+}
+.moon-eye {
+  position: absolute;
+  top: 2.5vw;
+  width: 1.25vw;
+  height: 1.25vw;
+  border-radius: 1.25vw;
+  background-color: black;
+}
+.moon-eye-left {
+  left: 1.25vw;
+}
+.moon-eye-right {
+  right: 1.25vw;
+}
+.moon-mouth {
+  position: absolute;
+  top: 5vw;
+  left: 1.875vw;
+  width: 3.75vw;
+  height: 1.875vw;
+  border-bottom-left-radius: 3.75vw;
+  border-bottom-right-radius: 3.75vw;
+  background-color: black;
+}
+.moon-crater1 {
+  position: absolute;
+  top: 0.75vw;
+  left: 1.5vw;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 1.5vw;
+  background-color: #b6b6b6;
+  transform: skewY(-15deg);
+}
+.moon-crater2 {
+  position: absolute;
+  top: 6vw;
+  left: 1.5vw;
+  width: 1.0714285714vw;
+  height: 1.0714285714vw;
+  border-radius: 1.0714285714vw;
+  background-color: #b6b6b6;
+  transform: skewX(30deg);
+}
+.moon-crater3 {
+  position: absolute;
+  top: 0.9375vw;
+  left: 5.625vw;
+  width: 1.0714285714vw;
+  height: 1.0714285714vw;
+  border-radius: 1.5vw;
+  background-color: #b6b6b6;
+  transform: skew(10deg, 10deg) rotate(0.75turn);
 }
 
 .body, .head, .arm, .leg {

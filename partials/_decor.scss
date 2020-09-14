@@ -7,8 +7,6 @@
     height: 50%;
     top: 0;
     left: 0;
-    transform-origin: bottom;
-    transform: scaleY(0);
 
     & > .sun {
         position: absolute;
@@ -59,8 +57,6 @@
         width: 100%;
         height: 100%;
         background: $color-ground;
-        transform: scaleX(0);
-        transition: transform 1s 1s;
     }
 
     & > .road {
@@ -69,14 +65,81 @@
         height: 100%;
         left: 0;
         top: 0;
-        transform: scaleY(0);
 
         & > .road-status {
             position: absolute;
             left: 45%;
-            top: -$size*1.5;
             background-color: brown;
             
         }
+    }
+}
+
+.moon {
+    position: absolute;
+    width: $moon-size;
+    height: $moon-size;
+    background-color: $color-moon;
+    border-radius: $moon-size;
+
+    &-eye {
+        position: absolute;
+        top: $moon-size/3;
+        width: $moon-eye-size;
+        height: $moon-eye-size;
+        border-radius: $moon-eye-size;
+        background-color: black;
+
+        &-left {
+            left: $moon-eye-size;
+        }
+
+        &-right {
+            right: $moon-eye-size;
+        }
+    }
+
+    &-mouth {
+        position: absolute;
+        top: $moon-size*2/3;
+        left: $moon-mouth-width/2;
+        width: $moon-mouth-width;
+        height: $moon-mouth-width/2;
+        border-bottom-left-radius: $moon-mouth-width;
+        border-bottom-right-radius: $moon-mouth-width;
+        background-color: black;
+    }
+
+    &-crater1 {
+        position: absolute;
+        top: $moon-size/10;
+        left: $moon-size/5;
+        width: $moon-size/5;
+        height: $moon-size/5;
+        border-radius: $moon-size/5;
+        background-color: $color-moon-crater;
+        transform: skewY(-15deg);
+    }
+
+    &-crater2 {
+        position: absolute;
+        top: $moon-size*0.8;
+        left: $moon-size/5;
+        width: $moon-size/7;
+        height: $moon-size/7;
+        border-radius: $moon-size/7;
+        background-color: $color-moon-crater;
+        transform: skewX(30deg);
+    }
+
+    &-crater3 {
+        position: absolute;
+        top: $moon-size/8;
+        left: $moon-size*0.75;
+        width: $moon-size/7;
+        height: $moon-size/7;
+        border-radius: $moon-size/5;
+        background-color: $color-moon-crater;
+        transform: skew(10deg, 10deg) rotate(0.75turn);
     }
 }
