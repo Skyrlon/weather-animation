@@ -7,42 +7,50 @@
     height: 50%;
     top: 0;
     left: 0;
+}
 
-    & > .sun {
+.sun {
+    position: absolute;
+    width: $celestial-size;
+    height: $celestial-size;
+    background-color: $color-sun;
+    border-radius: $celestial-size;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &_eye {
         position: absolute;
-        width: $size-sun;
-        height: $size-sun;
-        background-color: $color-sun;
-        border-radius: $size-sun;
-        top: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        top: $celestial-size/3;
+        width: $celestial-eye-size;
+        height: $celestial-eye-size;
+        border-radius: $celestial-eye-size;
+        background-color: black;
 
-        & > .eyes {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: $size-sun * 0.7;
-
-            & .eye {
-                width: $size-sun * 0.2;
-                height: $size-sun * 0.2;
-                border-radius: $size-sun;
-                transform-origin: bottom;
-                background: $color-sun-face;
-            }
+        &-left {
+            left: $celestial-eye-size;
         }
 
-        & > .mouth {
-            width: $size-sun * 0.4;
-            height: $size-sun * 0.2;
-            border-radius: 0 0 $size-sun * 0.5 $size-sun * 0.5;
-            background: $color-sun-face;
+        &-right {
+            right: $celestial-eye-size;
         }
     }
+
+    &_mouth {
+        position: absolute;
+        top: $celestial-size*2/3;
+        left: $celestial-mouth-width/2;
+        width: $celestial-mouth-width;
+        height: $celestial-mouth-width/2.5;
+        border-radius: 50% / 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: black;
+    }
 }
+
 
 
 .ground {
@@ -70,76 +78,148 @@
             position: absolute;
             left: 45%;
             background-color: brown;
-            
         }
     }
 }
 
 .moon {
     position: absolute;
-    width: $moon-size;
-    height: $moon-size;
+    width: $celestial-size;
+    height: $celestial-size;
     background-color: $color-moon;
-    border-radius: $moon-size;
+    border-radius: $celestial-size;
 
-    &-eye {
+    &_eye {
         position: absolute;
-        top: $moon-size/3;
-        width: $moon-eye-size;
-        height: $moon-eye-size;
-        border-radius: $moon-eye-size;
+        top: $celestial-size/3;
+        width: $celestial-eye-size;
+        height: $celestial-eye-size;
+        border-radius: $celestial-eye-size;
         background-color: black;
 
         &-left {
-            left: $moon-eye-size;
+            left: $celestial-eye-size;
         }
 
         &-right {
-            right: $moon-eye-size;
+            right: $celestial-eye-size;
         }
     }
 
-    &-mouth {
+    &_mouth {
         position: absolute;
-        top: $moon-size*2/3;
-        left: $moon-mouth-width/2;
-        width: $moon-mouth-width;
-        height: $moon-mouth-width/2;
-        border-bottom-left-radius: $moon-mouth-width;
-        border-bottom-right-radius: $moon-mouth-width;
+        top: $celestial-size*2/3;
+        left: $celestial-mouth-width/2;
+        width: $celestial-mouth-width;
+        height: $celestial-mouth-width/2.5;
+        border-radius: 50% / 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         background-color: black;
     }
 
-    &-crater1 {
+    &_crater1 {
         position: absolute;
-        top: $moon-size/10;
-        left: $moon-size/5;
-        width: $moon-size/5;
-        height: $moon-size/5;
-        border-radius: $moon-size/5;
+        top: $celestial-size/10;
+        left: $celestial-size/5;
+        width: $celestial-size/5;
+        height: $celestial-size/5;
+        border-radius: $celestial-size/5;
         background-color: $color-moon-crater;
         transform: skewY(-15deg);
     }
 
-    &-crater2 {
+    &_crater2 {
         position: absolute;
-        top: $moon-size*0.8;
-        left: $moon-size/5;
-        width: $moon-size/7;
-        height: $moon-size/7;
-        border-radius: $moon-size/7;
+        top: $celestial-size*0.8;
+        left: $celestial-size/5;
+        width: $celestial-size/7;
+        height: $celestial-size/7;
+        border-radius: $celestial-size/7;
         background-color: $color-moon-crater;
         transform: skewX(30deg);
     }
 
-    &-crater3 {
+    &_crater3 {
         position: absolute;
-        top: $moon-size/8;
-        left: $moon-size*0.75;
-        width: $moon-size/7;
-        height: $moon-size/7;
-        border-radius: $moon-size/5;
+        top: $celestial-size/8;
+        left: $celestial-size*0.75;
+        width: $celestial-size/7;
+        height: $celestial-size/7;
+        border-radius: $celestial-size/5;
         background-color: $color-moon-crater;
         transform: skew(10deg, 10deg) rotate(0.75turn);
+    }
+}
+
+.cloud {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    height: $cloud-size/3;
+    width: $cloud-size;
+    background: lightgray;
+    border-radius: $cloud-size/9*4;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -$cloud-size/9;
+        box-sizing: border-box;
+        height: $cloud-size/9*2;
+        width: $cloud-size/9*2;
+        left: $cloud-size/9*1.5;
+        border-radius: 50%;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        background: lightgray;
+        transform: rotate(40deg);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: $cloud-size/9*4;
+        width: $cloud-size/9*4;
+        top: -$cloud-size/9*2;
+        left: $cloud-size/9*3;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border-bottom-color: transparent;
+        background: lightgray;
+        border-right-color: transparent;
+        transform: rotate(55deg);
+    }
+
+    &_eye {
+        position: absolute;
+        top: 0;
+        width: $celestial-eye-size;
+        height: $celestial-eye-size;
+        border-radius: $celestial-eye-size;
+        background-color: black;
+
+        &-left {
+            left: $celestial-size/2;
+        }
+
+        &-right {
+            z-index: 2;
+            right: $celestial-size/2;
+        }
+    }
+
+    &_mouth {
+        z-index: 2;
+        position: absolute;
+        top: $cloud-size/2/3;
+        left: ($cloud-size - $celestial-mouth-width)/2;
+        width: $celestial-mouth-width;
+        height: $celestial-mouth-width/2.5;
+        border-radius: 50% / 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: black;
     }
 }

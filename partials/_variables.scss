@@ -28,10 +28,10 @@ $leg-width: $size*0.45;
 $leg-height: $size*2.5;
 
 /*decor size variables*/
-$size-sun: $size*2.5;
-$moon-size: $size*2.5;
-$moon-eye-size: $moon-size/6;
-$moon-mouth-width: $moon-size/2;
+$celestial-size: $size*2.5;
+$celestial-eye-size: $celestial-size/6;
+$celestial-mouth-width: $celestial-size/2;
+$cloud-size: $size*5;
 
 /*weather-clothes variables*/
 $sleeve-inferior-width: $inferior-arm-width - $arm-width*0.2;
