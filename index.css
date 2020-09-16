@@ -240,34 +240,34 @@
   left: 20%;
   height: 5vw;
   width: 15vw;
-  background: lightgray;
-  border-radius: 6.6666666667vw;
+  background: white;
+  border-radius: 5vw;
 }
 .cloud::before {
   content: "";
   position: absolute;
   top: -1.6666666667vw;
   box-sizing: border-box;
-  height: 3.3333333333vw;
-  width: 3.3333333333vw;
+  height: 5vw;
+  width: 5vw;
   left: 2.5vw;
   border-radius: 50%;
   border-bottom-color: transparent;
   border-right-color: transparent;
-  background: lightgray;
+  background: white;
   transform: rotate(40deg);
 }
 .cloud::after {
   content: "";
   position: absolute;
-  height: 6.6666666667vw;
-  width: 6.6666666667vw;
-  top: -3.3333333333vw;
+  height: 7.5vw;
+  width: 7.5vw;
+  top: -2.5vw;
   left: 5vw;
   border-radius: 50%;
   box-sizing: border-box;
   border-bottom-color: transparent;
-  background: lightgray;
+  background: white;
   border-right-color: transparent;
   transform: rotate(55deg);
 }
@@ -297,6 +297,34 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   background-color: black;
+}
+
+.thunder {
+  position: absolute;
+  top: 5vw;
+  left: 5.625vw;
+  width: 1.875vw;
+  height: 2.34375vw;
+  background-color: yellow;
+  transform: skew(-40deg);
+}
+.thunder::before {
+  content: "";
+  position: absolute;
+  top: 1.5625vw;
+  left: 1.875vw;
+  width: 1.875vw;
+  height: 2.34375vw;
+  background-color: yellow;
+}
+.thunder::after {
+  content: "";
+  position: absolute;
+  top: 3.90625vw;
+  left: 1.875vw;
+  border-style: solid;
+  border-width: 0 0 1.171875vw 1.875vw;
+  border-color: transparent transparent transparent yellow;
 }
 
 .body, .head, .arm, .leg {

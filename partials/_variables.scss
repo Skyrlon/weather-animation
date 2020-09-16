@@ -31,7 +31,10 @@ $leg-height: $size*2.5;
 $celestial-size: $size*2.5;
 $celestial-eye-size: $celestial-size/6;
 $celestial-mouth-width: $celestial-size/2;
-$cloud-size: $size*5;
+$cloud-width: $size*5;
+$cloud-height: $cloud-width/3;
+$thunder-width: $cloud-width/8;
+$thunder-height: $thunder-width*1.25;
 
 /*weather-clothes variables*/
 $sleeve-inferior-width: $inferior-arm-width - $arm-width*0.2;
