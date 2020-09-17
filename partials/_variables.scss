@@ -230,3 +230,13 @@ $tie-height: $size*0.62;
         transform: scaleX(1);
     }
 }
+
+@keyframes tornado-spin {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
