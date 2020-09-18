@@ -35,6 +35,9 @@ $cloud-width: $size*5;
 $cloud-height: $cloud-width/3;
 $thunder-width: $cloud-width/8;
 $thunder-height: $thunder-width*1.25;
+$tornado-radius: 4vw;
+$tornado-height: $tornado-radius/2;
+$tornado-parts-width: $tornado-radius*2*3.15/23;
 
 /*weather-clothes variables*/
 $sleeve-inferior-width: $inferior-arm-width - $arm-width*0.2;

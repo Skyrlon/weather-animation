@@ -255,15 +255,46 @@
     top: 20%;
     width: 10vw;
     transform-style: preserve-3d;
-    transform: rotateX(5deg) rotateY(45deg) translate3d(325px,-70px,50px);
+    transform: rotateX(5deg) rotateY(45deg) translate3d(50vw,10%,50px);
 }
 
 .tornado1 div {
     position: absolute;
-    height: 10vw;
-    width: 8vw;
+    height: $tornado-height;
+    width: $tornado-parts-width;
     transform-style: preserve-3d;
     background: red;
+    opacity: 1;
+}
+
+
+.tornado2 div {
+    position: absolute;
+    top: $tornado-height*1.5;
+    height: $tornado-height;
+    width: $tornado-parts-width;
+    transform-style: preserve-3d;
+    background: blue;
+    opacity: 1;
+}
+
+.tornado3 div {
+    position: absolute;
+    top: $tornado-height*1.5*2;
+    height: $tornado-height;
+    width: $tornado-parts-width;
+    transform-style: preserve-3d;
+    background: orange;
+    opacity: 1;
+}
+
+.tornado4 div {
+    position: absolute;
+    top: $tornado-height*1.5*3;
+    height: $tornado-height;
+    width: $tornado-parts-width;
+    transform-style: preserve-3d;
+    background: purple;
     opacity: 1;
 }
 
@@ -272,152 +303,98 @@
     animation: 1s infinite linear tornado-spin;
 
     & .a {
-        background-position: 0 0;
-        transform: rotateY(0deg) translateZ(124px);
+        transform: rotateY(0deg) translateZ($tornado-radius);
     }
 
     & .b {
-        background-position: 759px 0;
-        transform: rotateY(15deg) translateZ(124px);
+        transform: rotateY(15deg) translateZ($tornado-radius);
     }
 
     & .c {
-        background-position: 726px 0;
-        transform: rotateY(30deg) translateZ(124px);
+        transform: rotateY(30deg) translateZ($tornado-radius);
     }
 
     & .d {
-        background-position: 693px 0;
-        transform: rotateY(45deg) translateZ(124px);
+        transform: rotateY(45deg) translateZ($tornado-radius);
     }
 
     & .e {
-        background-position: 660px 0;
-        transform: rotateY(60deg) translateZ(124px);
+        transform: rotateY(60deg) translateZ($tornado-radius);
     }
 
     & .f {
-        background-position: 627px 0;
-        transform: rotateY(75deg) translateZ(124px);
+        transform: rotateY(75deg) translateZ($tornado-radius);
     }
 
     & .g {
-        background-position: 594px 0;
-        transform: rotateY(90deg) translateZ(124px);
+        transform: rotateY(90deg) translateZ($tornado-radius);
     }
 
     & .h {
-        background-position: 561px 0;
-        transform: rotateY(105deg) translateZ(124px);
+        transform: rotateY(105deg) translateZ($tornado-radius);
     }
 
     & .i {
-        background-position: 528px 0;
-        transform: rotateY(120deg) translateZ(124px);
+        transform: rotateY(120deg) translateZ($tornado-radius);
     }
 
     & .j {
-        background-position: 495px 0;
-        transform: rotateY(135deg) translateZ(124px);
+        transform: rotateY(135deg) translateZ($tornado-radius);
     }
 
     & .k {
-        background-position: 462px 0;
-        transform: rotateY(150deg) translateZ(124px);
+        transform: rotateY(150deg) translateZ($tornado-radius);
     }
 
     & .l {
-        background-position: 429px 0;
-        transform: rotateY(165deg) translateZ(124px);
+        transform: rotateY(165deg) translateZ($tornado-radius);
     }
 
     & .m {
-        background-position: 396px 0;
-        transform: rotateY(180deg) translateZ(124px);
+        transform: rotateY(180deg) translateZ($tornado-radius);
     }
 
     & .n {
-        background-position: 363px 0;
-        transform: rotateY(195deg) translateZ(124px);
+        transform: rotateY(195deg) translateZ($tornado-radius);
     }
 
     & .o {
-        background-position: 330px 0;
-        transform: rotateY(210deg) translateZ(124px);
+        transform: rotateY(210deg) translateZ($tornado-radius);
     }
 
     & .p {
-        background-position: 297px 0;
-        transform: rotateY(225deg) translateZ(124px);
+        transform: rotateY(225deg) translateZ($tornado-radius);
     }
 
     & .q {
-        background-position: 264px 0;
-        transform: rotateY(240deg) translateZ(124px);
+        transform: rotateY(240deg) translateZ($tornado-radius);
     }
 
     & .r {
-        background-position: 231px 0;
-        transform: rotateY(255deg) translateZ(124px);
+        transform: rotateY(255deg) translateZ($tornado-radius);
     }
 
     & .s {
-        background-position: 198px 0;
-        transform: rotateY(270deg) translateZ(124px);
+        transform: rotateY(270deg) translateZ($tornado-radius);
     }
 
     & .t {
-        background-position: 165px 0;
-        transform: rotateY(285deg) translateZ(124px);
+        transform: rotateY(285deg) translateZ($tornado-radius);
     }
 
     & .u {
-        background-position: 132px 0;
-        transform: rotateY(300deg) translateZ(124px);
+        transform: rotateY(300deg) translateZ($tornado-radius);
     }
 
     & .v {
-        background-position: 99px 0;
-        transform: rotateY(315deg) translateZ(124px);
+        transform: rotateY(315deg) translateZ($tornado-radius);
     }
 
     & .w {
-        background-position: 66px 0;
-        transform: rotateY(330deg) translateZ(124px);
+        transform: rotateY(330deg) translateZ($tornado-radius);
     }
 
     & .x {
-        background-position: 33px 0;
-        transform: rotateY(345deg) translateZ(124px);
+        transform: rotateY(345deg) translateZ($tornado-radius);
     }
-}
-
-.tornado2 div {
-    position: absolute;
-    top: 14vw;
-    height: 10vw;
-    width: 8vw;
-    transform-style: preserve-3d;
-    background: blue;
-    opacity: 1;
-}
-
-.tornado3 div {
-    position: absolute;
-    top: 28vw;
-    height: 10vw;
-    width: 8vw;
-    transform-style: preserve-3d;
-    background: orange;
-    opacity: 1;
-}
-
-.tornado4 div {
-    position: absolute;
-    top: 42vw;
-    height: 10vw;
-    width: 8vw;
-    transform-style: preserve-3d;
-    background: purple;
-    opacity: 1;
 }
