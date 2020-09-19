@@ -9,6 +9,36 @@
     transform: rotateY(360deg);
   }
 }
+@keyframes bids {
+  0% {
+    transform: rotateY(0deg) rotateX(5deg) translate3d(50vw, 10%, 50px);
+    left: -40px;
+  }
+  100% {
+    transform: rotateY(1deg) rotateX(5deg) translate3d(50vw, 10%, 50px);
+    left: 40px;
+  }
+}
+@keyframes bids2 {
+  0% {
+    transform: rotateY(0deg) rotateX(5deg) translate3d(50vw, 10%, 50px);
+    left: -40px;
+  }
+  100% {
+    transform: rotateY(1deg) rotateX(5deg) translate3d(50vw, 10%, 50px);
+    left: 40px;
+  }
+}
+@keyframes bids3 {
+  0% {
+    transform: rotateY(0deg) rotateX(5deg) translate3d(50vw, 10%, 50px);
+    left: -40px;
+  }
+  100% {
+    transform: rotateY(1deg) rotateX(5deg) translate3d(50vw, 10%, 50px);
+    left: 40px;
+  }
+}
 .sky {
   background: #00BFFF;
   position: absolute;
@@ -242,6 +272,21 @@
   transform: rotateX(5deg) rotateY(45deg) translate3d(50vw, 10%, 50px);
 }
 
+.one {
+  left: -40px;
+  animation: bids 3s linear alternate infinite;
+}
+
+.two {
+  left: 5px;
+  animation: bids2 2s linear alternate infinite;
+}
+
+.three {
+  left: 30px;
+  animation: bids3 4s linear alternate infinite;
+}
+
 .tornado1 div {
   position: absolute;
   height: 2vw;
@@ -278,6 +323,26 @@
   width: 1.0956521739vw;
   transform-style: preserve-3d;
   background: purple;
+  opacity: 1;
+}
+
+.tornado5 div {
+  position: absolute;
+  top: 12vw;
+  height: 2vw;
+  width: 1.0956521739vw;
+  transform-style: preserve-3d;
+  background: brown;
+  opacity: 1;
+}
+
+.tornado6 div {
+  position: absolute;
+  top: 15vw;
+  height: 2vw;
+  width: 1.0956521739vw;
+  transform-style: preserve-3d;
+  background: green;
   opacity: 1;
 }
 

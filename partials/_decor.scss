@@ -258,6 +258,21 @@
     transform: rotateX(5deg) rotateY(45deg) translate3d(50vw,10%,50px);
 }
 
+.one {
+    left: -40px;
+    animation: bids 3s linear alternate infinite;
+}
+
+.two {
+    left: 5px;
+    animation: bids2 2s linear alternate infinite;
+}
+
+.three {
+    left: 30px;
+    animation: bids3 4s linear alternate infinite;
+}
+
 .tornado1 div {
     position: absolute;
     height: $tornado-height;
@@ -298,6 +313,25 @@
     opacity: 1;
 }
 
+.tornado5 div {
+    position: absolute;
+    top: $tornado-height*1.5*4;
+    height: $tornado-height;
+    width: $tornado-parts-width;
+    transform-style: preserve-3d;
+    background: brown;
+    opacity: 1;
+}
+
+.tornado6 div {
+    position: absolute;
+    top: $tornado-height*1.5*5;
+    height: $tornado-height;
+    width: $tornado-parts-width;
+    transform-style: preserve-3d;
+    background: green;
+    opacity: 1;
+}
 .tornado {
     transform-style: preserve-3d;
     animation: 1s infinite linear tornado-spin;
