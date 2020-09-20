@@ -121,38 +121,38 @@ $tie-height: $size*0.62;
     }
 }
 
-@keyframes bids {
+@keyframes stage-one-rotation {
     0% {
         transform: rotateY(0deg) rotateX(5deg) translate3d(50vw,10%,50px);
-        left: -40px;
+        left: -1vw;
     }
 
     100% {
         transform: rotateY(1deg)rotateX(5deg) translate3d(50vw,10%,50px);
-        left: 40px;
+        left: 1vw;
     }
 }
 
-@keyframes bids2 {
+@keyframes stage-two-rotation {
     0% {
         transform: rotateY(0deg) rotateX(5deg) translate3d(50vw,10%,50px);
-        left: -40px;
+        left: -1vw;
     }
 
     100% {
         transform: rotateY(1deg)rotateX(5deg) translate3d(50vw,10%,50px);
-        left: 40px;
+        left: 1vw;
     }
 }
 
-@keyframes bids3 {
+@keyframes stage-three-rotation {
     0% {
         transform: rotateY(0deg) rotateX(5deg) translate3d(50vw,10%,50px);
-        left: -40px;
+        left: -1vw;
     }
 
     100% {
         transform: rotateY(1deg)rotateX(5deg) translate3d(50vw,10%,50px);
-        left: 40px;
+        left: 1vw;
     }
 }

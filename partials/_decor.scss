@@ -250,7 +250,7 @@
     }
 }
 
-.frame {
+.stage {
     position: absolute;
     top: 20%;
     width: 10vw;
@@ -259,18 +259,15 @@
 }
 
 .one {
-    left: -40px;
-    animation: bids 3s linear alternate infinite;
+    animation: stage-one-rotation 3s linear alternate infinite;
 }
 
 .two {
-    left: 5px;
-    animation: bids2 2s linear alternate infinite;
+    animation: stage-two-rotation 2s linear alternate infinite;
 }
 
 .three {
-    left: 30px;
-    animation: bids3 4s linear alternate infinite;
+    animation: stage-three-rotation 4s linear alternate infinite;
 }
 
 .tornado1 div {

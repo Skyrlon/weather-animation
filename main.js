@@ -24,45 +24,16 @@ drawSuitShirt();
 drawTieBottom();
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-let tornado1 = document.getElementsByClassName('tornado')[0];
-let tornado2 = document.getElementsByClassName('tornado')[1];
-let tornado3 = document.getElementsByClassName('tornado')[2];
-let tornado4 = document.getElementsByClassName('tornado')[3];
-let tornado5 = document.getElementsByClassName('tornado')[4];
-let tornado6 = document.getElementsByClassName('tornado')[5];
+let tornado = document.getElementsByClassName('tornado');
 
-for (let i = 0; i < 24; i++) {
-    let div = document.createElement('div');
-    div.setAttribute('class', alphabet[i]);
-    tornado1.appendChild(div);
-}
+function createTornadoParts(parent) {
+    for (let i = 0; i < 24; i++) {
+        let div = document.createElement('div');
+        div.setAttribute('class', alphabet[i]);
+        parent.appendChild(div);
+    }
+};
 
-for (let i = 0; i < 24; i++) {
-    let div = document.createElement('div');
-    div.setAttribute('class', alphabet[i]);
-    tornado2.appendChild(div);
-}
-
-for (let i = 0; i < 24; i++) {
-    let div = document.createElement('div');
-    div.setAttribute('class', alphabet[i]);
-    tornado3.appendChild(div);
-}
-
-for (let i = 0; i < 24; i++) {
-    let div = document.createElement('div');
-    div.setAttribute('class', alphabet[i]);
-    tornado4.appendChild(div);
-}
-
-for (let i = 0; i < 24; i++) {
-    let div = document.createElement('div');
-    div.setAttribute('class', alphabet[i]);
-    tornado5.appendChild(div);
-}
-
-for (let i = 0; i < 24; i++) {
-    let div = document.createElement('div');
-    div.setAttribute('class', alphabet[i]);
-    tornado6.appendChild(div);
-} 
+for (let i = 0; i < tornado.length; i++) {
+    createTornadoParts(tornado[i]);
+};
