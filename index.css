@@ -343,81 +343,466 @@
   opacity: 1;
 }
 
-.tornado {
+.tornado1 {
   transform-style: preserve-3d;
   animation: 1s infinite linear tornado-spin;
 }
-.tornado .a {
+.tornado1 .a {
   transform: rotateY(0deg) translateZ(4vw);
 }
-.tornado .b {
+.tornado1 .b {
   transform: rotateY(15deg) translateZ(4vw);
 }
-.tornado .c {
+.tornado1 .c {
   transform: rotateY(30deg) translateZ(4vw);
 }
-.tornado .d {
+.tornado1 .d {
   transform: rotateY(45deg) translateZ(4vw);
 }
-.tornado .e {
+.tornado1 .e {
   transform: rotateY(60deg) translateZ(4vw);
 }
-.tornado .f {
+.tornado1 .f {
   transform: rotateY(75deg) translateZ(4vw);
 }
-.tornado .g {
+.tornado1 .g {
   transform: rotateY(90deg) translateZ(4vw);
 }
-.tornado .h {
+.tornado1 .h {
   transform: rotateY(105deg) translateZ(4vw);
 }
-.tornado .i {
+.tornado1 .i {
   transform: rotateY(120deg) translateZ(4vw);
 }
-.tornado .j {
+.tornado1 .j {
   transform: rotateY(135deg) translateZ(4vw);
 }
-.tornado .k {
+.tornado1 .k {
   transform: rotateY(150deg) translateZ(4vw);
 }
-.tornado .l {
+.tornado1 .l {
   transform: rotateY(165deg) translateZ(4vw);
 }
-.tornado .m {
+.tornado1 .m {
   transform: rotateY(180deg) translateZ(4vw);
 }
-.tornado .n {
+.tornado1 .n {
   transform: rotateY(195deg) translateZ(4vw);
 }
-.tornado .o {
+.tornado1 .o {
   transform: rotateY(210deg) translateZ(4vw);
 }
-.tornado .p {
+.tornado1 .p {
   transform: rotateY(225deg) translateZ(4vw);
 }
-.tornado .q {
+.tornado1 .q {
   transform: rotateY(240deg) translateZ(4vw);
 }
-.tornado .r {
+.tornado1 .r {
   transform: rotateY(255deg) translateZ(4vw);
 }
-.tornado .s {
+.tornado1 .s {
   transform: rotateY(270deg) translateZ(4vw);
 }
-.tornado .t {
+.tornado1 .t {
   transform: rotateY(285deg) translateZ(4vw);
 }
-.tornado .u {
+.tornado1 .u {
   transform: rotateY(300deg) translateZ(4vw);
 }
-.tornado .v {
+.tornado1 .v {
   transform: rotateY(315deg) translateZ(4vw);
 }
-.tornado .w {
+.tornado1 .w {
   transform: rotateY(330deg) translateZ(4vw);
 }
-.tornado .x {
+.tornado1 .x {
   transform: rotateY(345deg) translateZ(4vw);
+}
+
+.tornado2 {
+  transform-style: preserve-3d;
+  animation: 1s infinite linear tornado-spin;
+}
+.tornado2 .a {
+  transform: rotateY(0deg) translateZ(3.2vw);
+}
+.tornado2 .b {
+  transform: rotateY(15deg) translateZ(3.2vw);
+}
+.tornado2 .c {
+  transform: rotateY(30deg) translateZ(3.2vw);
+}
+.tornado2 .d {
+  transform: rotateY(45deg) translateZ(3.2vw);
+}
+.tornado2 .e {
+  transform: rotateY(60deg) translateZ(3.2vw);
+}
+.tornado2 .f {
+  transform: rotateY(75deg) translateZ(3.2vw);
+}
+.tornado2 .g {
+  transform: rotateY(90deg) translateZ(3.2vw);
+}
+.tornado2 .h {
+  transform: rotateY(105deg) translateZ(3.2vw);
+}
+.tornado2 .i {
+  transform: rotateY(120deg) translateZ(3.2vw);
+}
+.tornado2 .j {
+  transform: rotateY(135deg) translateZ(3.2vw);
+}
+.tornado2 .k {
+  transform: rotateY(150deg) translateZ(3.2vw);
+}
+.tornado2 .l {
+  transform: rotateY(165deg) translateZ(3.2vw);
+}
+.tornado2 .m {
+  transform: rotateY(180deg) translateZ(3.2vw);
+}
+.tornado2 .n {
+  transform: rotateY(195deg) translateZ(3.2vw);
+}
+.tornado2 .o {
+  transform: rotateY(210deg) translateZ(3.2vw);
+}
+.tornado2 .p {
+  transform: rotateY(225deg) translateZ(3.2vw);
+}
+.tornado2 .q {
+  transform: rotateY(240deg) translateZ(3.2vw);
+}
+.tornado2 .r {
+  transform: rotateY(255deg) translateZ(3.2vw);
+}
+.tornado2 .s {
+  transform: rotateY(270deg) translateZ(3.2vw);
+}
+.tornado2 .t {
+  transform: rotateY(285deg) translateZ(3.2vw);
+}
+.tornado2 .u {
+  transform: rotateY(300deg) translateZ(3.2vw);
+}
+.tornado2 .v {
+  transform: rotateY(315deg) translateZ(3.2vw);
+}
+.tornado2 .w {
+  transform: rotateY(330deg) translateZ(3.2vw);
+}
+.tornado2 .x {
+  transform: rotateY(345deg) translateZ(3.2vw);
+}
+
+.tornado3 {
+  transform-style: preserve-3d;
+  animation: 1s infinite linear tornado-spin;
+}
+.tornado3 .a {
+  transform: rotateY(0deg) translateZ(2.6666666667vw);
+}
+.tornado3 .b {
+  transform: rotateY(15deg) translateZ(2.6666666667vw);
+}
+.tornado3 .c {
+  transform: rotateY(30deg) translateZ(2.6666666667vw);
+}
+.tornado3 .d {
+  transform: rotateY(45deg) translateZ(2.6666666667vw);
+}
+.tornado3 .e {
+  transform: rotateY(60deg) translateZ(2.6666666667vw);
+}
+.tornado3 .f {
+  transform: rotateY(75deg) translateZ(2.6666666667vw);
+}
+.tornado3 .g {
+  transform: rotateY(90deg) translateZ(2.6666666667vw);
+}
+.tornado3 .h {
+  transform: rotateY(105deg) translateZ(2.6666666667vw);
+}
+.tornado3 .i {
+  transform: rotateY(120deg) translateZ(2.6666666667vw);
+}
+.tornado3 .j {
+  transform: rotateY(135deg) translateZ(2.6666666667vw);
+}
+.tornado3 .k {
+  transform: rotateY(150deg) translateZ(2.6666666667vw);
+}
+.tornado3 .l {
+  transform: rotateY(165deg) translateZ(2.6666666667vw);
+}
+.tornado3 .m {
+  transform: rotateY(180deg) translateZ(2.6666666667vw);
+}
+.tornado3 .n {
+  transform: rotateY(195deg) translateZ(2.6666666667vw);
+}
+.tornado3 .o {
+  transform: rotateY(210deg) translateZ(2.6666666667vw);
+}
+.tornado3 .p {
+  transform: rotateY(225deg) translateZ(2.6666666667vw);
+}
+.tornado3 .q {
+  transform: rotateY(240deg) translateZ(2.6666666667vw);
+}
+.tornado3 .r {
+  transform: rotateY(255deg) translateZ(2.6666666667vw);
+}
+.tornado3 .s {
+  transform: rotateY(270deg) translateZ(2.6666666667vw);
+}
+.tornado3 .t {
+  transform: rotateY(285deg) translateZ(2.6666666667vw);
+}
+.tornado3 .u {
+  transform: rotateY(300deg) translateZ(2.6666666667vw);
+}
+.tornado3 .v {
+  transform: rotateY(315deg) translateZ(2.6666666667vw);
+}
+.tornado3 .w {
+  transform: rotateY(330deg) translateZ(2.6666666667vw);
+}
+.tornado3 .x {
+  transform: rotateY(345deg) translateZ(2.6666666667vw);
+}
+
+.tornado4 {
+  transform-style: preserve-3d;
+  animation: 1s infinite linear tornado-spin;
+}
+.tornado4 .a {
+  transform: rotateY(0deg) translateZ(2vw);
+}
+.tornado4 .b {
+  transform: rotateY(15deg) translateZ(2vw);
+}
+.tornado4 .c {
+  transform: rotateY(30deg) translateZ(2vw);
+}
+.tornado4 .d {
+  transform: rotateY(45deg) translateZ(2vw);
+}
+.tornado4 .e {
+  transform: rotateY(60deg) translateZ(2vw);
+}
+.tornado4 .f {
+  transform: rotateY(75deg) translateZ(2vw);
+}
+.tornado4 .g {
+  transform: rotateY(90deg) translateZ(2vw);
+}
+.tornado4 .h {
+  transform: rotateY(105deg) translateZ(2vw);
+}
+.tornado4 .i {
+  transform: rotateY(120deg) translateZ(2vw);
+}
+.tornado4 .j {
+  transform: rotateY(135deg) translateZ(2vw);
+}
+.tornado4 .k {
+  transform: rotateY(150deg) translateZ(2vw);
+}
+.tornado4 .l {
+  transform: rotateY(165deg) translateZ(2vw);
+}
+.tornado4 .m {
+  transform: rotateY(180deg) translateZ(2vw);
+}
+.tornado4 .n {
+  transform: rotateY(195deg) translateZ(2vw);
+}
+.tornado4 .o {
+  transform: rotateY(210deg) translateZ(2vw);
+}
+.tornado4 .p {
+  transform: rotateY(225deg) translateZ(2vw);
+}
+.tornado4 .q {
+  transform: rotateY(240deg) translateZ(2vw);
+}
+.tornado4 .r {
+  transform: rotateY(255deg) translateZ(2vw);
+}
+.tornado4 .s {
+  transform: rotateY(270deg) translateZ(2vw);
+}
+.tornado4 .t {
+  transform: rotateY(285deg) translateZ(2vw);
+}
+.tornado4 .u {
+  transform: rotateY(300deg) translateZ(2vw);
+}
+.tornado4 .v {
+  transform: rotateY(315deg) translateZ(2vw);
+}
+.tornado4 .w {
+  transform: rotateY(330deg) translateZ(2vw);
+}
+.tornado4 .x {
+  transform: rotateY(345deg) translateZ(2vw);
+}
+
+.tornado5 {
+  transform-style: preserve-3d;
+  animation: 1s infinite linear tornado-spin;
+}
+.tornado5 .a {
+  transform: rotateY(0deg) translateZ(1.3333333333vw);
+}
+.tornado5 .b {
+  transform: rotateY(15deg) translateZ(1.3333333333vw);
+}
+.tornado5 .c {
+  transform: rotateY(30deg) translateZ(1.3333333333vw);
+}
+.tornado5 .d {
+  transform: rotateY(45deg) translateZ(1.3333333333vw);
+}
+.tornado5 .e {
+  transform: rotateY(60deg) translateZ(1.3333333333vw);
+}
+.tornado5 .f {
+  transform: rotateY(75deg) translateZ(1.3333333333vw);
+}
+.tornado5 .g {
+  transform: rotateY(90deg) translateZ(1.3333333333vw);
+}
+.tornado5 .h {
+  transform: rotateY(105deg) translateZ(1.3333333333vw);
+}
+.tornado5 .i {
+  transform: rotateY(120deg) translateZ(1.3333333333vw);
+}
+.tornado5 .j {
+  transform: rotateY(135deg) translateZ(1.3333333333vw);
+}
+.tornado5 .k {
+  transform: rotateY(150deg) translateZ(1.3333333333vw);
+}
+.tornado5 .l {
+  transform: rotateY(165deg) translateZ(1.3333333333vw);
+}
+.tornado5 .m {
+  transform: rotateY(180deg) translateZ(1.3333333333vw);
+}
+.tornado5 .n {
+  transform: rotateY(195deg) translateZ(1.3333333333vw);
+}
+.tornado5 .o {
+  transform: rotateY(210deg) translateZ(1.3333333333vw);
+}
+.tornado5 .p {
+  transform: rotateY(225deg) translateZ(1.3333333333vw);
+}
+.tornado5 .q {
+  transform: rotateY(240deg) translateZ(1.3333333333vw);
+}
+.tornado5 .r {
+  transform: rotateY(255deg) translateZ(1.3333333333vw);
+}
+.tornado5 .s {
+  transform: rotateY(270deg) translateZ(1.3333333333vw);
+}
+.tornado5 .t {
+  transform: rotateY(285deg) translateZ(1.3333333333vw);
+}
+.tornado5 .u {
+  transform: rotateY(300deg) translateZ(1.3333333333vw);
+}
+.tornado5 .v {
+  transform: rotateY(315deg) translateZ(1.3333333333vw);
+}
+.tornado5 .w {
+  transform: rotateY(330deg) translateZ(1.3333333333vw);
+}
+.tornado5 .x {
+  transform: rotateY(345deg) translateZ(1.3333333333vw);
+}
+
+.tornado6 {
+  transform-style: preserve-3d;
+  animation: 1s infinite linear tornado-spin;
+}
+.tornado6 .a {
+  transform: rotateY(0deg) translateZ(1vw);
+}
+.tornado6 .b {
+  transform: rotateY(15deg) translateZ(1vw);
+}
+.tornado6 .c {
+  transform: rotateY(30deg) translateZ(1vw);
+}
+.tornado6 .d {
+  transform: rotateY(45deg) translateZ(1vw);
+}
+.tornado6 .e {
+  transform: rotateY(60deg) translateZ(1vw);
+}
+.tornado6 .f {
+  transform: rotateY(75deg) translateZ(1vw);
+}
+.tornado6 .g {
+  transform: rotateY(90deg) translateZ(1vw);
+}
+.tornado6 .h {
+  transform: rotateY(105deg) translateZ(1vw);
+}
+.tornado6 .i {
+  transform: rotateY(120deg) translateZ(1vw);
+}
+.tornado6 .j {
+  transform: rotateY(135deg) translateZ(1vw);
+}
+.tornado6 .k {
+  transform: rotateY(150deg) translateZ(1vw);
+}
+.tornado6 .l {
+  transform: rotateY(165deg) translateZ(1vw);
+}
+.tornado6 .m {
+  transform: rotateY(180deg) translateZ(1vw);
+}
+.tornado6 .n {
+  transform: rotateY(195deg) translateZ(1vw);
+}
+.tornado6 .o {
+  transform: rotateY(210deg) translateZ(1vw);
+}
+.tornado6 .p {
+  transform: rotateY(225deg) translateZ(1vw);
+}
+.tornado6 .q {
+  transform: rotateY(240deg) translateZ(1vw);
+}
+.tornado6 .r {
+  transform: rotateY(255deg) translateZ(1vw);
+}
+.tornado6 .s {
+  transform: rotateY(270deg) translateZ(1vw);
+}
+.tornado6 .t {
+  transform: rotateY(285deg) translateZ(1vw);
+}
+.tornado6 .u {
+  transform: rotateY(300deg) translateZ(1vw);
+}
+.tornado6 .v {
+  transform: rotateY(315deg) translateZ(1vw);
+}
+.tornado6 .w {
+  transform: rotateY(330deg) translateZ(1vw);
+}
+.tornado6 .x {
+  transform: rotateY(345deg) translateZ(1vw);
 }
 
 .body, .head, .arm, .leg {
