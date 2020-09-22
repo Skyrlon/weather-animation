@@ -37,3 +37,22 @@ function createTornadoParts(parent) {
 for (let i = 0; i < tornado.length; i++) {
     createTornadoParts(tornado[i]);
 };
+
+let tornado1A = document.querySelector('.tornado1 .a');
+
+let matrix = window.getComputedStyle(tornado1A).getPropertyValue('transform');
+
+const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+
+
+const tornado2 = document.getElementsByClassName('tornado2')[0];
+
+
+let k = -15;
+for (let j = 0; j < tornado2.childNodes.length; j++) {
+    k += 15;
+    if (tornado2.childNodes[j].nodeName.toLowerCase() == 'div') {
+        tornado2.childNodes[j].style.transform = "rotateY(" + k + "deg)" + " " + "translateZ(" + matrixValues[14] + "px)";
+        console.log(k);
+    }
+};
