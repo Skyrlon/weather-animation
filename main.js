@@ -1,3 +1,7 @@
+const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+let tornado = document.getElementsByClassName('tornado');
+const numberTornadoParts = 24;
+
 function drawSuitShirt() {
     const canvas = document.getElementsByClassName('suit-shirt')[0];
     const ctx = canvas.getContext('2d');
@@ -23,36 +27,31 @@ function drawTieBottom() {
 drawSuitShirt();
 drawTieBottom();
 
-const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-let tornado = document.getElementsByClassName('tornado');
+
+
+for (let i = 0; i < tornado.length; i++) {
+    createTornadoParts(tornado[i]);
+    transformTornadoParts(tornado[i]);
+};
 
 function createTornadoParts(parent) {
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < numberTornadoParts; i++) {
         let div = document.createElement('div');
         div.setAttribute('class', alphabet[i]);
         parent.appendChild(div);
     }
 };
 
-for (let i = 0; i < tornado.length; i++) {
-    createTornadoParts(tornado[i]);
-};
-
-let tornado1A = document.querySelector('.tornado1 .a');
-
-let matrix = window.getComputedStyle(tornado1A).getPropertyValue('transform');
-
-const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
-
-
-const tornado2 = document.getElementsByClassName('tornado2')[0];
-
-
-let k = -15;
-for (let j = 0; j < tornado2.childNodes.length; j++) {
-    k += 15;
-    if (tornado2.childNodes[j].nodeName.toLowerCase() == 'div') {
-        tornado2.childNodes[j].style.transform = "rotateY(" + k + "deg)" + " " + "translateZ(" + matrixValues[14] + "px)";
-        console.log(k);
+function transformTornadoParts(parent) {
+    let rotateValue = -(360/numberTornadoParts);
+    let matrix = window.getComputedStyle(document.querySelector('.a')).getPropertyValue('transform');
+    const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+    for (let j = 0; j < parent.childNodes.length; j++) {
+        rotateValue += (360/numberTornadoParts);
+        if (parent.childNodes[j].nodeName.toLowerCase() == 'div') {
+            parent.childNodes[j].style.transform = "rotateY(" + rotateValue + "deg)" + " " + "translateZ(" + matrixValues[14] + "px)";
+        }
     }
 };
+
+
