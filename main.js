@@ -57,3 +57,12 @@ transformTornadoParts(tornado[2], 1.5);
 transformTornadoParts(tornado[3], 1.75);
 transformTornadoParts(tornado[4], 2);
 transformTornadoParts(tornado[5], 2.25);
+
+function createTornadoEye(parent, number) {
+        let div = document.createElement('div');
+        div.setAttribute('class', "tornado-eye tornado-eye-" + number);
+        parent.appendChild(div);
+};
+
+createTornadoEye(tornado[1].childNodes[1], 1);
+createTornadoEye(tornado[1].childNodes[4], 2);

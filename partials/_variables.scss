@@ -37,7 +37,7 @@ $thunder-width: $cloud-width/8;
 $thunder-height: $thunder-width*1.25;
 $tornado-radius: 4vw;
 $tornado-height: $tornado-radius/2;
-$tornado-parts-width: $tornado-radius*2*3.14/25;
+$tornado-parts-width: $tornado-radius*2*3.14/23;
 
 /*weather-clothes variables*/
 $sleeve-inferior-width: $inferior-arm-width - $arm-width*0.2;
@@ -123,12 +123,12 @@ $tie-height: $size*0.62;
 
 @keyframes stage-one-rotation {
     0% {
-        transform: rotateY(0deg) rotateX(0deg) translate3d(40vw,10%,50px);
+        transform: rotateY(0deg) rotateX(5deg) translate3d(40vw,10%,50px);
         left: -1vw;
     }
 
     100% {
-        transform: rotateY(1deg)rotateX(0deg) translate3d(40vw,10%,50px);
+        transform: rotateY(1deg)rotateX(5deg) translate3d(40vw,10%,50px);
         left: 1vw;
     }
 }

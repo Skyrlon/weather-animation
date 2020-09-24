@@ -271,7 +271,7 @@
     animation: 4s linear alternate infinite stage-three-rotation;
 }
 
-.tornado1 div {
+.tornado1 > div {
     position: absolute;
     height: $tornado-height;
     width: $tornado-parts-width;
@@ -292,7 +292,7 @@
     overflow: hidden;
 }
 
-.tornado3 div {
+.tornado3 > div {
     position: absolute;
     top: $tornado-height*1.4*2;
     height: $tornado-height;
@@ -302,7 +302,7 @@
     opacity: 1;
 }
 
-.tornado4 div {
+.tornado4 > div {
     position: absolute;
     top: $tornado-height*1.4*3;
     height: $tornado-height;
@@ -312,7 +312,7 @@
     opacity: 1;
 }
 
-.tornado5 div {
+.tornado5 > div {
     position: absolute;
     top: $tornado-height*1.4*4;
     height: $tornado-height;
@@ -322,7 +322,7 @@
     opacity: 1;
 }
 
-.tornado6 div {
+.tornado6 > div {
     position: absolute;
     top: $tornado-height*1.4*5;
     height: $tornado-height;
@@ -333,7 +333,7 @@
 }
 .tornado1 {
     transform-style: preserve-3d;
-    animation: 1s infinite linear tornado-spin;
+    animation: 100s infinite linear tornado-spin;
 
     & .a {
         transform: rotateY(0deg) translateZ($tornado-radius);
@@ -363,4 +363,20 @@
 .tornado6 {
     transform-style: preserve-3d;
     animation: 1s infinite linear tornado-spin;
+}
+
+.tornado-eye {
+    position: absolute;
+    height: $tornado-parts-width/1.25;
+    width: $tornado-parts-width/1.25;
+    background-color: black;
+    border-radius: $tornado-parts-width/1.25;
+
+    &-1 {
+        left: 0;
+    }
+
+    &-2 {
+        left: 0;
+    }
 }
