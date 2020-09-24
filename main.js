@@ -27,13 +27,6 @@ function drawTieBottom() {
 drawSuitShirt();
 drawTieBottom();
 
-
-
-for (let i = 0; i < tornado.length; i++) {
-    createTornadoParts(tornado[i]);
-    transformTornadoParts(tornado[i]);
-};
-
 function createTornadoParts(parent) {
     for (let i = 0; i < numberTornadoParts; i++) {
         let div = document.createElement('div');
@@ -42,16 +35,25 @@ function createTornadoParts(parent) {
     }
 };
 
-function transformTornadoParts(parent) {
+function transformTornadoParts(parent, divisorRadius) {
     let rotateValue = -(360/numberTornadoParts);
     let matrix = window.getComputedStyle(document.querySelector('.a')).getPropertyValue('transform');
     const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
     for (let j = 0; j < parent.childNodes.length; j++) {
         rotateValue += (360/numberTornadoParts);
         if (parent.childNodes[j].nodeName.toLowerCase() == 'div') {
-            parent.childNodes[j].style.transform = "rotateY(" + rotateValue + "deg)" + " " + "translateZ(" + matrixValues[14] + "px)";
+            parent.childNodes[j].style.transform = "rotateY(" + rotateValue + "deg)" + " " + "translateZ(" + matrixValues[14]/divisorRadius + "px)";
         }
     }
 };
 
+for (let i = 0; i < tornado.length; i++) {
+    createTornadoParts(tornado[i]);
+};
 
+transformTornadoParts(tornado[0], 1);
+transformTornadoParts(tornado[1], 1.25);
+transformTornadoParts(tornado[2], 1.5);
+transformTornadoParts(tornado[3], 1.75);
+transformTornadoParts(tornado[4], 2);
+transformTornadoParts(tornado[5], 2.25);

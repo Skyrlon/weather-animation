@@ -253,21 +253,22 @@
 .stage {
     position: absolute;
     top: 20%;
+    left: 10%;
     width: 10vw;
     transform-style: preserve-3d;
-    transform: rotateX(5deg) rotateY(45deg) translate3d(50vw,10%,50px);
+    transform: rotateX(5deg) rotateY(45deg) translate3d(100vw,10%,50px);
 }
 
 .one {
-    animation: stage-one-rotation 3s linear alternate infinite;
+    animation: 3s linear alternate infinite stage-one-rotation;
 }
 
 .two {
-    animation: stage-two-rotation 2s linear alternate infinite;
+    animation: 2s linear alternate infinite stage-two-rotation;
 }
 
 .three {
-    animation: stage-three-rotation 4s linear alternate infinite;
+    animation: 4s linear alternate infinite stage-three-rotation;
 }
 
 .tornado1 div {
@@ -280,19 +281,20 @@
 }
 
 
-.tornado2 div {
+.tornado2 > div {
     position: absolute;
-    top: $tornado-height*1.5;
+    top: $tornado-height*1.4;
     height: $tornado-height;
     width: $tornado-parts-width;
     transform-style: preserve-3d;
     background: blue;
     opacity: 1;
+    overflow: hidden;
 }
 
 .tornado3 div {
     position: absolute;
-    top: $tornado-height*1.5*2;
+    top: $tornado-height*1.4*2;
     height: $tornado-height;
     width: $tornado-parts-width;
     transform-style: preserve-3d;
@@ -302,7 +304,7 @@
 
 .tornado4 div {
     position: absolute;
-    top: $tornado-height*1.5*3;
+    top: $tornado-height*1.4*3;
     height: $tornado-height;
     width: $tornado-parts-width;
     transform-style: preserve-3d;
@@ -312,7 +314,7 @@
 
 .tornado5 div {
     position: absolute;
-    top: $tornado-height*1.5*4;
+    top: $tornado-height*1.4*4;
     height: $tornado-height;
     width: $tornado-parts-width;
     transform-style: preserve-3d;
@@ -322,7 +324,7 @@
 
 .tornado6 div {
     position: absolute;
-    top: $tornado-height*1.5*5;
+    top: $tornado-height*1.4*5;
     height: $tornado-height;
     width: $tornado-parts-width;
     transform-style: preserve-3d;
@@ -340,7 +342,7 @@
 
 .tornado2 {
     transform-style: preserve-3d;
-    animation: 1s infinite linear tornado-spin;
+    animation: 10s infinite linear tornado-spin;
 }
 
 .tornado3 {
