@@ -285,7 +285,7 @@
     position: absolute;
     top: $tornado-height*1.4;
     height: $tornado-height;
-    width: $tornado-parts-width;
+    width: $tornado-parts-width/1.25;
     transform-style: preserve-3d;
     background: blue;
     opacity: 1;
@@ -296,10 +296,11 @@
     position: absolute;
     top: $tornado-height*1.4*2;
     height: $tornado-height;
-    width: $tornado-parts-width;
+    width: $tornado-parts-width/1.5;
     transform-style: preserve-3d;
     background: orange;
     opacity: 1;
+    overflow: hidden;
 }
 
 .tornado4 > div {
@@ -347,7 +348,7 @@
 
 .tornado3 {
     transform-style: preserve-3d;
-    animation: 1s infinite linear tornado-spin;
+    animation: 10s infinite linear tornado-spin;
 }
 
 .tornado4 {
@@ -367,6 +368,7 @@
 
 .tornado-eye {
     position: absolute;
+    top: ($tornado-height - $tornado-parts-width/1.25)/2;
     height: $tornado-parts-width/1.25;
     width: $tornado-parts-width/1.25;
     background-color: black;
@@ -378,5 +380,32 @@
 
     &-2 {
         left: 0;
+    }
+}
+
+.tornado-mouth {
+    position: absolute;
+    top: ($tornado-height - $tornado-parts-width/1.25)/2;
+    height: $tornado-height/2;
+    width: $tornado-parts-width*5/1.5;
+    border-radius: $tornado-height;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: black;
+
+    &-2 {
+        left: -$tornado-parts-width/1.5;
+    }
+
+    &-3 {
+        left: -$tornado-parts-width*2/1.5;
+    }
+
+    &-4 {
+        left: -$tornado-parts-width*3/1.5;
+    }
+
+    &-5 {
+        left: -$tornado-parts-width*4/1.5;
     }
 }

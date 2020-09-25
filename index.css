@@ -288,7 +288,7 @@
 .tornado1 > div {
   position: absolute;
   height: 2vw;
-  width: 1.092173913vw;
+  width: 1.0927279723vw;
   transform-style: preserve-3d;
   background: red;
   opacity: 1;
@@ -298,7 +298,7 @@
   position: absolute;
   top: 2.8vw;
   height: 2vw;
-  width: 1.092173913vw;
+  width: 0.8741823778vw;
   transform-style: preserve-3d;
   background: blue;
   opacity: 1;
@@ -309,17 +309,18 @@
   position: absolute;
   top: 5.6vw;
   height: 2vw;
-  width: 1.092173913vw;
+  width: 0.7284853149vw;
   transform-style: preserve-3d;
   background: orange;
   opacity: 1;
+  overflow: hidden;
 }
 
 .tornado4 > div {
   position: absolute;
   top: 8.4vw;
   height: 2vw;
-  width: 1.092173913vw;
+  width: 1.0927279723vw;
   transform-style: preserve-3d;
   background: purple;
   opacity: 1;
@@ -329,7 +330,7 @@
   position: absolute;
   top: 11.2vw;
   height: 2vw;
-  width: 1.092173913vw;
+  width: 1.0927279723vw;
   transform-style: preserve-3d;
   background: brown;
   opacity: 1;
@@ -339,7 +340,7 @@
   position: absolute;
   top: 14vw;
   height: 2vw;
-  width: 1.092173913vw;
+  width: 1.0927279723vw;
   transform-style: preserve-3d;
   background: green;
   opacity: 1;
@@ -360,7 +361,7 @@
 
 .tornado3 {
   transform-style: preserve-3d;
-  animation: 1s infinite linear tornado-spin;
+  animation: 10s infinite linear tornado-spin;
 }
 
 .tornado4 {
@@ -380,16 +381,40 @@
 
 .tornado-eye {
   position: absolute;
-  height: 0.8737391304vw;
-  width: 0.8737391304vw;
+  top: 0.5629088111vw;
+  height: 0.8741823778vw;
+  width: 0.8741823778vw;
   background-color: black;
-  border-radius: 0.8737391304vw;
+  border-radius: 0.8741823778vw;
 }
 .tornado-eye-1 {
   left: 0;
 }
 .tornado-eye-2 {
   left: 0;
+}
+
+.tornado-mouth {
+  position: absolute;
+  top: 0.5629088111vw;
+  height: 1vw;
+  width: 3.6424265743vw;
+  border-radius: 2vw;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: black;
+}
+.tornado-mouth-2 {
+  left: -0.7284853149vw;
+}
+.tornado-mouth-3 {
+  left: -1.4569706297vw;
+}
+.tornado-mouth-4 {
+  left: -2.1854559446vw;
+}
+.tornado-mouth-5 {
+  left: -2.9139412595vw;
 }
 
 .body, .head, .arm, .leg {

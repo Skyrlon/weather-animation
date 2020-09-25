@@ -66,3 +66,13 @@ function createTornadoEye(parent, number) {
 
 createTornadoEye(tornado[1].childNodes[1], 1);
 createTornadoEye(tornado[1].childNodes[4], 2);
+
+function createTornadoMouth(parent, number) {
+    let div = document.createElement('div');
+    div.setAttribute('class', "tornado-mouth tornado-mouth-" + number);
+    parent.appendChild(div);
+};
+
+for (let i = 0; i < 5; i++) {
+    createTornadoMouth(tornado[2].childNodes[i], i+1);
+};
