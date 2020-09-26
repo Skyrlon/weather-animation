@@ -39,10 +39,12 @@ function transformTornadoParts(parent, divisorRadius) {
     let rotateValue = -(360/numberTornadoParts);
     let matrix = window.getComputedStyle(document.querySelector('.a')).getPropertyValue('transform');
     const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+    const tornadoRadius = matrixValues[14];
+    let widthValue = (Math.sqrt(Math.pow(tornadoRadius / (Math.cos(90 - ((360 / numberTornadoParts) / 2))), 2) - (Math.pow(tornadoRadius, 2))))*2;
     for (let j = 0; j < parent.childNodes.length; j++) {
         rotateValue += (360/numberTornadoParts);
         if (parent.childNodes[j].nodeName.toLowerCase() == 'div') {
-            parent.childNodes[j].style.transform = "rotateY(" + rotateValue + "deg)" + " " + "translateZ(" + matrixValues[14]/divisorRadius + "px)";
+            parent.childNodes[j].style.cssText = "transform: rotateY(" + rotateValue + "deg)" + " " + "translateZ(" + tornadoRadius / divisorRadius + "px); width: " + widthValue / divisorRadius + "px;";
         }
     }
 };
@@ -76,3 +78,5 @@ function createTornadoMouth(parent, number) {
 for (let i = 0; i < 5; i++) {
     createTornadoMouth(tornado[2].childNodes[i], i+1);
 };
+
+console.log(window.getComputedStyle(document.querySelector('.a')).getPropertyValue('width'));

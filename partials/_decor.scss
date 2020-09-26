@@ -385,10 +385,10 @@
 
 .tornado-mouth {
     position: absolute;
-    top: ($tornado-height - $tornado-parts-width/1.25)/2;
+    top: ($tornado-height - $tornado-parts-width/1.5)/2;
     height: $tornado-height/2;
     width: $tornado-parts-width*5/1.5;
-    border-radius: $tornado-height;
+    border-radius: 50% / 100%;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     background-color: black;
