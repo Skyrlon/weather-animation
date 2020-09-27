@@ -35,34 +35,25 @@ function createTornadoParts(parent) {
     }
 };
 
+for (let i = 0; i < tornado.length; i++) {
+    createTornadoParts(tornado[i]);
+};
+
 function transformTornadoParts(parent, divisorRadius) {
-    let rotateValue = -(360/numberTornadoParts);
-    let matrix = window.getComputedStyle(document.querySelector('.a')).getPropertyValue('transform');
-    const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
-    const tornadoRadius = matrixValues[14];
-    const tornadoPartsAngle = 360 / numberTornadoParts;
-    const tornadoPartsAngleRad = tornadoPartsAngle/2 * Math.PI / 180;
-    const tornadoPartsAngleCos = Math.cos(tornadoPartsAngleRad);
-    const tornadoPartsHyp = tornadoRadius / tornadoPartsAngleCos;
-    const tornadoPartsHalfWidth = Math.sqrt((tornadoPartsHyp ** 2) - (tornadoRadius ** 2));
-    const widthValue = Math.ceil(tornadoPartsHalfWidth*2);
+    let rotateValue = -(360 / numberTornadoParts);
+    let tornadoRadius = 4;
+    let tornadoPartsAngle = 360 / numberTornadoParts;
+    let tornadoPartsAngleRad = tornadoPartsAngle/2 * Math.PI / 180;
+    let tornadoPartsAngleCos = Math.cos(tornadoPartsAngleRad);
+    let tornadoPartsHyp = tornadoRadius / tornadoPartsAngleCos;
+    let tornadoPartsHalfWidth = Math.sqrt((tornadoPartsHyp ** 2) - (tornadoRadius ** 2));
+    let widthValue = (Math.ceil(tornadoPartsHalfWidth * 2 * 10)/10);
     for (let j = 0; j < parent.childNodes.length; j++) {
         rotateValue += (360/numberTornadoParts);
         if (parent.childNodes[j].nodeName.toLowerCase() == 'div') {
-            parent.childNodes[j].style.cssText = "transform: rotateY(" + rotateValue + "deg)" + " " + "translateZ(" + tornadoRadius / divisorRadius + "px); width: " + widthValue / divisorRadius + "px";
+            parent.childNodes[j].style.cssText = "transform: rotateY(" + rotateValue + "deg)" + " " + "translateZ(" + (tornadoRadius / divisorRadius) + "vw); width: " + widthValue / divisorRadius + "vw";
         }
     }
-    console.log("tornadoRadius = " + tornadoRadius);
-    console.log("tornadoPartsAngle = " + tornadoPartsAngle);
-    console.log("tornadoPartsAngleRad = " + tornadoPartsAngleRad);
-    console.log("tornadoPartsAngleCos = " + tornadoPartsAngleCos);
-    console.log("tornadoPartsHyp = " + tornadoPartsHyp);
-    console.log("tornadoPartsHalfWidth = " + tornadoPartsHalfWidth);
-    console.log("widthValue = " + widthValue);
-};
-
-for (let i = 0; i < tornado.length; i++) {
-    createTornadoParts(tornado[i]);
 };
 
 transformTornadoParts(tornado[0], 1);
