@@ -3,6 +3,7 @@ $color-sun: yellow;
 $color-moon: #d7d7d7;
 $color-moon-crater: #b6b6b6;
 $color-sun-face: black;
+$color-tornado: grey;
 $color-ground: #269627;
 $color-ushanka: #000048;
 $color-shirt: lightgreen;
@@ -124,35 +125,35 @@ $tie-height: $size*0.62;
 @keyframes stage-one-rotation {
     0% {
         transform: rotateY(0deg) rotateX(4deg);
-        left: -5vw;
+        left: -$tornado-radius/3;
     }
 
     100% {
-        transform: rotateY(1deg) rotateX(4deg);
-        left: 5vw;
+        transform: rotateY(0deg) rotateX(4deg);
+        left: $tornado-radius/3;
     }
 }
 
 @keyframes stage-two-rotation {
     0% {
         transform: rotateY(0deg) rotateX(4deg);
-        left: -5vw;
+        left: -$tornado-radius/4;
     }
 
     100% {
-        transform: rotateY(1deg) rotateX(4deg);
-        left: 5vw;
+        transform: rotateY(0deg) rotateX(4deg);
+        left: $tornado-radius/4;
     }
 }
 
 @keyframes stage-three-rotation {
     0% {
         transform: rotateY(0deg) rotateX(4deg);
-        left: -1vw;
+        left: -$tornado-radius/2;
     }
 
     100% {
-        transform: rotateY(1deg) rotateX(4deg);
-        left: 5vw;
+        transform: rotateY(0deg) rotateX(4deg);
+        left: $tornado-radius/2;
     }
 }

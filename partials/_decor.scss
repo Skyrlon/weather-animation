@@ -264,11 +264,11 @@
 }
 
 .two {
-    animation: 2s linear alternate infinite stage-two-rotation;
+    animation: 1s linear alternate infinite stage-two-rotation;
 }
 
 .three {
-    animation: 4s linear alternate infinite stage-three-rotation;
+    animation: 3s linear alternate infinite stage-three-rotation;
 }
 
 .tornado {
@@ -277,46 +277,37 @@
     left: 35%;
 }
 
+.tornado-parts {
+    transform-style: preserve-3d;
+    animation: 2s infinite linear tornado-spin;
+}
+
 .tornado-parts > div {
     position: absolute;
     height: $tornado-height;
+    background: $color-tornado;
     transform-style: preserve-3d;
     overflow: hidden;
 }
 
-.tornado-parts-1 > div { 
-    background: red;
-    opacity: 1;
-}
-
 .tornado-parts-2 > div {
     top: $tornado-height*1.4;
-    background: blue;
 }
 
 .tornado-parts-3 > div {
     top: $tornado-height*1.4*2;
-    background: orange;
 }
 
 .tornado-parts-4 > div {
     top: $tornado-height*1.4*3;
-    background: purple;
-    opacity: 1;
 }
 
 .tornado-parts-5 > div {
     top: $tornado-height*1.4*4;
-    background: brown;
 }
 
 .tornado-parts-6 > div {
     top: $tornado-height*1.4*5;
-    background: green;
-}
-.tornado-parts {
-    transform-style: preserve-3d;
-    animation: 2s infinite linear tornado-spin;
 }
 
 .tornado-eye {
