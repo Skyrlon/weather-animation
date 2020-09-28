@@ -123,36 +123,36 @@ $tie-height: $size*0.62;
 
 @keyframes stage-one-rotation {
     0% {
-        transform: rotateY(0deg) rotateX(5deg) translate3d(40vw,10%,50px);
-        left: -1vw;
+        transform: rotateY(0deg) rotateX(4deg);
+        left: -5vw;
     }
 
     100% {
-        transform: rotateY(1deg)rotateX(5deg) translate3d(40vw,10%,50px);
-        left: 1vw;
+        transform: rotateY(1deg) rotateX(4deg);
+        left: 5vw;
     }
 }
 
 @keyframes stage-two-rotation {
     0% {
-        transform: rotateY(0deg) rotateX(5deg) translate3d(40vw,10%,50px);
-        left: -1vw;
+        transform: rotateY(0deg) rotateX(4deg);
+        left: -5vw;
     }
 
     100% {
-        transform: rotateY(1deg)rotateX(5deg) translate3d(40vw,10%,50px);
-        left: 1vw;
+        transform: rotateY(1deg) rotateX(4deg);
+        left: 5vw;
     }
 }
 
 @keyframes stage-three-rotation {
     0% {
-        transform: rotateY(0deg) rotateX(5deg) translate3d(40vw,10%,50px);
+        transform: rotateY(0deg) rotateX(4deg);
         left: -1vw;
     }
 
     100% {
-        transform: rotateY(1deg)rotateX(5deg) translate3d(40vw,10%,50px);
-        left: 1vw;
+        transform: rotateY(1deg) rotateX(4deg);
+        left: 5vw;
     }
 }

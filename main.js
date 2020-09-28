@@ -1,5 +1,5 @@
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-let tornado = document.getElementsByClassName('tornado');
+let tornadoParts = document.getElementsByClassName('tornado-parts');
 const numberTornadoParts = 24;
 
 function drawSuitShirt() {
@@ -27,7 +27,7 @@ function drawTieBottom() {
 drawSuitShirt();
 drawTieBottom();
 
-function createTornadoParts(parent) {
+function createTornadoPartsChildren(parent) {
     for (let i = 0; i < numberTornadoParts; i++) {
         let div = document.createElement('div');
         div.setAttribute('class', alphabet[i]);
@@ -35,33 +35,33 @@ function createTornadoParts(parent) {
     }
 };
 
-for (let i = 0; i < tornado.length; i++) {
-    createTornadoParts(tornado[i]);
+for (let i = 0; i < tornadoParts.length; i++) {
+    createTornadoPartsChildren(tornadoParts[i]);
 };
 
-function transformTornadoParts(parent, divisorRadius) {
+function styleTornadoParts(parent, divisorRadius) {
     let rotateValue = -(360 / numberTornadoParts);
     let tornadoRadius = 4;
     let tornadoPartsAngle = 360 / numberTornadoParts;
-    let tornadoPartsAngleRad = tornadoPartsAngle/2 * Math.PI / 180;
+    let tornadoPartsAngleRad = tornadoPartsAngle / 2 * Math.PI / 180;
     let tornadoPartsAngleCos = Math.cos(tornadoPartsAngleRad);
     let tornadoPartsHyp = tornadoRadius / tornadoPartsAngleCos;
     let tornadoPartsHalfWidth = Math.sqrt((tornadoPartsHyp ** 2) - (tornadoRadius ** 2));
-    let widthValue = (Math.ceil(tornadoPartsHalfWidth * 2 * 10)/10);
+    let widthValue = (Math.ceil(tornadoPartsHalfWidth * 2 * 10) / 10);
     for (let j = 0; j < parent.childNodes.length; j++) {
-        rotateValue += (360/numberTornadoParts);
+        rotateValue += (360 / numberTornadoParts);
         if (parent.childNodes[j].nodeName.toLowerCase() == 'div') {
-            parent.childNodes[j].style.cssText = "transform: rotateY(" + rotateValue + "deg)" + " " + "translateZ(" + (tornadoRadius / divisorRadius) + "vw); width: " + widthValue / divisorRadius + "vw";
+            parent.childNodes[j].style.cssText = `transform: rotateY(${rotateValue}deg) translateZ(${tornadoRadius / divisorRadius}vw); width: ${widthValue / divisorRadius}vw`;
         }
     }
 };
 
-transformTornadoParts(tornado[0], 1);
-transformTornadoParts(tornado[1], 1.25);
-transformTornadoParts(tornado[2], 1.5);
-transformTornadoParts(tornado[3], 1.75);
-transformTornadoParts(tornado[4], 2);
-transformTornadoParts(tornado[5], 2.25);
+styleTornadoParts(tornadoParts[0], 1);
+styleTornadoParts(tornadoParts[1], 6/5);
+styleTornadoParts(tornadoParts[2], 3/2);
+styleTornadoParts(tornadoParts[3], 2);
+styleTornadoParts(tornadoParts[4], 3);
+styleTornadoParts(tornadoParts[5], 15/4);
 
 function createTornadoEye(parent, number) {
         let div = document.createElement('div');
@@ -69,8 +69,8 @@ function createTornadoEye(parent, number) {
         parent.appendChild(div);
 };
 
-createTornadoEye(tornado[1].childNodes[1], 1);
-createTornadoEye(tornado[1].childNodes[4], 2);
+createTornadoEye(tornadoParts[1].childNodes[1], 1);
+createTornadoEye(tornadoParts[1].childNodes[4], 2);
 
 function createTornadoMouth(parent, number) {
     let div = document.createElement('div');
@@ -79,5 +79,5 @@ function createTornadoMouth(parent, number) {
 };
 
 for (let i = 0; i < 5; i++) {
-    createTornadoMouth(tornado[2].childNodes[i], i+1);
+    createTornadoMouth(tornadoParts[2].childNodes[i], i+1);
 };

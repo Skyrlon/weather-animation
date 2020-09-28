@@ -271,99 +271,52 @@
     animation: 4s linear alternate infinite stage-three-rotation;
 }
 
-.tornado1 > div {
+.tornado {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+}
+
+.tornado-parts > div {
     position: absolute;
     height: $tornado-height;
-    width: $tornado-parts-width;
     transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.tornado-parts-1 > div { 
     background: red;
     opacity: 1;
 }
 
-
-.tornado2 > div {
-    position: absolute;
+.tornado-parts-2 > div {
     top: $tornado-height*1.4;
-    height: $tornado-height;
-    width: $tornado-parts-width/1.25;
-    transform-style: preserve-3d;
     background: blue;
-    opacity: 1;
-    overflow: hidden;
 }
 
-.tornado3 > div {
-    position: absolute;
+.tornado-parts-3 > div {
     top: $tornado-height*1.4*2;
-    height: $tornado-height;
-    width: $tornado-parts-width/1.5;
-    transform-style: preserve-3d;
     background: orange;
-    opacity: 1;
-    overflow: hidden;
 }
 
-.tornado4 > div {
-    position: absolute;
+.tornado-parts-4 > div {
     top: $tornado-height*1.4*3;
-    height: $tornado-height;
-    width: $tornado-parts-width;
-    transform-style: preserve-3d;
     background: purple;
     opacity: 1;
 }
 
-.tornado5 > div {
-    position: absolute;
+.tornado-parts-5 > div {
     top: $tornado-height*1.4*4;
-    height: $tornado-height;
-    width: $tornado-parts-width;
-    transform-style: preserve-3d;
     background: brown;
-    opacity: 1;
 }
 
-.tornado6 > div {
-    position: absolute;
+.tornado-parts-6 > div {
     top: $tornado-height*1.4*5;
-    height: $tornado-height;
-    width: $tornado-parts-width;
-    transform-style: preserve-3d;
     background: green;
-    opacity: 1;
 }
-.tornado1 {
+.tornado-parts {
     transform-style: preserve-3d;
-    animation: 100s infinite linear tornado-spin;
-
-    & .a {
-        transform: rotateY(0deg) translateZ($tornado-radius);
-    }
-}
-
-.tornado2 {
-    transform-style: preserve-3d;
-    animation: 10s infinite linear tornado-spin;
-}
-
-.tornado3 {
-    transform-style: preserve-3d;
-    animation: 10s infinite linear tornado-spin;
-}
-
-.tornado4 {
-    transform-style: preserve-3d;
-    animation: 1s infinite linear tornado-spin;
-}
-
-.tornado5 {
-    transform-style: preserve-3d;
-    animation: 1s infinite linear tornado-spin;
-}
-
-.tornado6 {
-    transform-style: preserve-3d;
-    animation: 1s infinite linear tornado-spin;
+    animation: 2s infinite linear tornado-spin;
 }
 
 .tornado-eye {
