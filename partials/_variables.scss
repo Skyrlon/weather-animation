@@ -4,6 +4,7 @@ $color-moon: #d7d7d7;
 $color-moon-crater: #b6b6b6;
 $color-sun-face: black;
 $color-tornado: grey;
+$color-volcano: #9c4110;
 $color-ground: #269627;
 $color-ushanka: #000048;
 $color-shirt: lightgreen;
@@ -39,6 +40,11 @@ $thunder-height: $thunder-width*1.25;
 $tornado-radius: 4vw;
 $tornado-height: $tornado-radius/2;
 $tornado-parts-width: $tornado-radius*6.39/24;
+$volcano-width: 50vw;
+$volcano-height: $volcano-width/3;
+$volcano-tube-width: $volcano-width/5;
+$volcano-side-width: ($volcano-width - $volcano-tube-width)/2;
+$volcano-side-height: $volcano-width + $volcano-height;
 
 /*weather-clothes variables*/
 $sleeve-inferior-width: $inferior-arm-width - $arm-width*0.2;

@@ -362,6 +362,75 @@
   left: -2.84vw;
 }
 
+.volcano {
+  position: absolute;
+  bottom: 0;
+  left: 50vw;
+  width: 50vw;
+  height: 16.6666666667vw;
+  overflow: hidden;
+}
+
+.volcano-tube {
+  position: absolute;
+  left: 20vw;
+  width: 10vw;
+  height: 16.6666666667vw;
+  background-color: #9c4110;
+}
+.volcano-tube::before {
+  content: "";
+  position: absolute;
+  top: -50vw;
+  left: -20vw;
+  width: 20vw;
+  height: 66.6666666667vw;
+  background-color: transparent;
+  border-bottom-right-radius: 16.6666666667vw;
+  box-shadow: 0 16.6666666667vw 0 0 #9c4110;
+}
+.volcano-tube::after {
+  content: "";
+  position: absolute;
+  top: -50vw;
+  left: 10vw;
+  width: 20vw;
+  height: 66.6666666667vw;
+  background-color: transparent;
+  border-bottom-left-radius: 16.6666666667vw;
+  box-shadow: 0 16.6666666667vw 0 0 #9c4110;
+}
+
+.lava {
+  position: absolute;
+  width: 10vw;
+  height: 2.0833333333vw;
+  background-color: red;
+  border-radius: 50%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.lava-flow-1 {
+  position: absolute;
+  left: 2.5vw;
+  background-color: red;
+  width: 2vw;
+  height: 8.3333333333vw;
+  border-radius: 8.3333333333vw;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.lava-flow-2 {
+  position: absolute;
+  left: 6.6666666667vw;
+  background-color: red;
+  width: 2vw;
+  height: 5.5555555556vw;
+  border-radius: 8.3333333333vw;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 .body, .head, .arm, .leg {
   position: absolute;
   background-color: #FFCD94;
@@ -450,8 +519,8 @@
 .hello {
   position: absolute;
   background-color: white;
-  top: 20%;
-  left: 70%;
+  top: 60%;
+  left: 30%;
   border: 10px solid black;
   font-size: 2.1vw;
   padding: 0.5em;
@@ -474,7 +543,7 @@
 #ushanka {
   position: absolute;
   z-index: 100;
-  top: 15%;
+  top: 45%;
   left: 80%;
   width: 3vw;
   height: 2vw;
@@ -735,7 +804,7 @@
 
 #umbrella {
   position: absolute;
-  left: 55%;
+  left: 10%;
   top: 10%;
   background-color: purple;
   width: 9vw;

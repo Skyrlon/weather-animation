@@ -353,3 +353,76 @@
         left: -$tornado-parts-width*4/1.5;
     }
 }
+
+.volcano {
+    position: absolute;
+    bottom: 0;
+    left: 50vw;
+    width: $volcano-width;
+    height: $volcano-height;
+    overflow: hidden;
+}
+
+.volcano-tube {
+    position: absolute;
+    left: ($volcano-width - $volcano-tube-width)/2;
+    width: $volcano-tube-width;
+    height: $volcano-height;
+    background-color: $color-volcano;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -$volcano-width;
+        left: -$volcano-side-width;
+        width: $volcano-side-width;
+        height: $volcano-side-height;
+        background-color: transparent;
+        border-bottom-right-radius: $volcano-height;
+        box-shadow: 0 $volcano-height 0 0 $color-volcano;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -$volcano-width;
+        left: $volcano-tube-width;
+        width: $volcano-side-width;
+        height: $volcano-side-height;
+        background-color: transparent;
+        border-bottom-left-radius: $volcano-height;
+        box-shadow: 0 $volcano-height 0 0 $color-volcano;
+    }
+}
+
+.lava {
+    position: absolute;
+    width: $volcano-tube-width;
+    height: $volcano-height/8;
+    background-color: red;
+    border-radius: 50%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    &-flow-1 {
+        position: absolute;
+        left: $volcano-tube-width/4;
+        background-color: red;
+        width: $volcano-tube-width/5;
+        height: $volcano-height/2;
+        border-radius: $volcano-height/2;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    &-flow-2 {
+        position: absolute;
+        left: $volcano-tube-width*2/3;
+        background-color: red;
+        width: $volcano-tube-width/5;
+        height: $volcano-height/3;
+        border-radius: $volcano-height/2;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
