@@ -45,6 +45,9 @@ $volcano-height: $volcano-width/3;
 $volcano-tube-width: $volcano-width/5;
 $volcano-side-width: ($volcano-width - $volcano-tube-width)/2;
 $volcano-side-height: $volcano-width + $volcano-height;
+$water-drop-width: 5vw;
+$snowflake-height: 5vw;
+$snowflake-width: $snowflake-height/10;
 
 /*weather-clothes variables*/
 $sleeve-inferior-width: $inferior-arm-width - $arm-width*0.2;

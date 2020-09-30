@@ -500,6 +500,209 @@
   box-shadow: 0 -1.6666666667vw 0 0 red;
 }
 
+.water-drop {
+  position: absolute;
+  top: 10vw;
+  left: 80vw;
+  width: 5vw;
+  height: 5vw;
+  background-color: lightblue;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(45deg);
+}
+
+.snowflake {
+  position: absolute;
+  top: 5vw;
+  left: 70vw;
+  background-color: red;
+}
+.snowflake-branch-n {
+  position: absolute;
+  width: 0.5vw;
+  height: 5vw;
+  border-radius: 5vw;
+  background-color: white;
+}
+.snowflake-branch-n::before {
+  content: "";
+  position: absolute;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: bottom;
+  transform: rotate(-45deg);
+}
+.snowflake-branch-n::after {
+  content: "";
+  position: absolute;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: bottom;
+  transform: rotate(45deg);
+}
+.snowflake-branch-s {
+  position: absolute;
+  top: 5vw;
+  width: 0.5vw;
+  height: 5vw;
+  border-radius: 5vw;
+  background-color: white;
+}
+.snowflake-branch-s::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(45deg);
+}
+.snowflake-branch-s::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(-45deg);
+}
+.snowflake-branch-nw {
+  position: absolute;
+  top: 5vw;
+  width: 0.5vw;
+  height: 5vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(120deg);
+}
+.snowflake-branch-nw::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(45deg);
+}
+.snowflake-branch-nw::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(-45deg);
+}
+.snowflake-branch-ne {
+  position: absolute;
+  top: 5vw;
+  width: 0.5vw;
+  height: 5vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(-120deg);
+}
+.snowflake-branch-ne::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(45deg);
+}
+.snowflake-branch-ne::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(-45deg);
+}
+.snowflake-branch-se {
+  position: absolute;
+  top: 5vw;
+  width: 0.5vw;
+  height: 5vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(-60deg);
+}
+.snowflake-branch-se::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(45deg);
+}
+.snowflake-branch-se::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(-45deg);
+}
+.snowflake-branch-sw {
+  position: absolute;
+  top: 5vw;
+  width: 0.5vw;
+  height: 5vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(60deg);
+}
+.snowflake-branch-sw::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(45deg);
+}
+.snowflake-branch-sw::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vw;
+  height: 2vw;
+  border-radius: 5vw;
+  background-color: white;
+  transform-origin: top;
+  transform: rotate(-45deg);
+}
+
 .body, .head, .arm, .leg {
   position: absolute;
   background-color: #FFCD94;

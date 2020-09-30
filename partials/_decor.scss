@@ -503,3 +503,227 @@
         }
     }
 }
+
+.water-drop {
+    position: absolute;
+    top: 10vw;
+    left: 80vw;
+    width: $water-drop-width;
+    height: $water-drop-width;
+    background-color: lightblue;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+}
+
+.snowflake {
+    position: absolute;
+    top: 5vw;
+    left: 70vw;
+    background-color: red;
+
+    &-branch {
+
+        &-n {
+            position: absolute;
+            width: $snowflake-width;
+            height: $snowflake-height;
+            border-radius: $snowflake-height;
+            background-color: white;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: bottom;
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: bottom;
+                transform: rotate(45deg);
+            }
+        }
+
+        &-s {
+            position: absolute;
+            top: $snowflake-height;
+            width: $snowflake-width;
+            height: $snowflake-height;
+            border-radius: $snowflake-height;
+            background-color: white;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: top;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: top;
+                transform: rotate(-45deg);
+            }
+        }
+
+        &-nw {
+            position: absolute;
+            top: $snowflake-height;
+            width: $snowflake-width;
+            height: $snowflake-height;
+            border-radius: $snowflake-height;
+            background-color: white;
+            transform-origin: top;
+            transform: rotate(120deg);
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: top;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: top;
+                transform: rotate(-45deg);
+            }
+        }
+
+        &-ne {
+            position: absolute;
+            top: $snowflake-height;
+            width: $snowflake-width;
+            height: $snowflake-height;
+            border-radius: $snowflake-height;
+            background-color: white;
+            transform-origin: top;
+            transform: rotate(-120deg);
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: top;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: top;
+                transform: rotate(-45deg);
+            }
+        }
+
+        &-se {
+            position: absolute;
+            top: $snowflake-height;
+            width: $snowflake-width;
+            height: $snowflake-height;
+            border-radius: $snowflake-height;
+            background-color: white;
+            transform-origin: top;
+            transform: rotate(-60deg);
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: top;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: top;
+                transform: rotate(-45deg);
+            }
+        }
+
+        &-sw {
+            position: absolute;
+            top: $snowflake-height;
+            width: $snowflake-width;
+            height: $snowflake-height;
+            border-radius: $snowflake-height;
+            background-color: white;
+            transform-origin: top;
+            transform: rotate(60deg);
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: top;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: $snowflake-width;
+                height: $snowflake-height/2.5;
+                border-radius: $snowflake-height;
+                background-color: white;
+                transform-origin: top;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
