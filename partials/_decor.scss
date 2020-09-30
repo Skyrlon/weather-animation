@@ -357,7 +357,7 @@
 .volcano {
     position: absolute;
     bottom: 0;
-    left: 50vw;
+    left: 55vw;
     width: $volcano-width;
     height: $volcano-height;
     overflow: hidden;
@@ -413,6 +413,30 @@
         border-radius: $volcano-height/2;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            top: $volcano-height/8*0.85;
+            right: $volcano-tube-width/5;
+            height: $volcano-height/2;
+            width: $volcano-tube-width/5/2;
+            border-top-right-radius: 25px;
+            box-shadow: 0 (-$volcano-height/4) 0 0 red;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            top: $volcano-height/8;
+            left: $volcano-tube-width/5;
+            height: $volcano-height/2;
+            width: $volcano-tube-width/5/2;
+            border-top-left-radius: 25px;
+            box-shadow: 0 (-$volcano-height/4) 0 0 red;
+        }
     }
 
     &-flow-2 {
@@ -424,5 +448,29 @@
         border-radius: $volcano-height/2;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            top: $volcano-height/8;
+            right: $volcano-tube-width/5;
+            height: $volcano-height/2;
+            width: $volcano-tube-width/5/2;
+            border-top-right-radius: 25px;
+            box-shadow: 0 (-$volcano-height/4) 0 0 red;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            top: $volcano-height/8*0.70;
+            left: $volcano-tube-width/5;
+            height: $volcano-height/2;
+            width: $volcano-tube-width/5/2;
+            border-top-left-radius: 25px;
+            box-shadow: 0 (-$volcano-height/4) 0 0 red;
+        }
     }
 }

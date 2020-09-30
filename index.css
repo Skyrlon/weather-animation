@@ -365,46 +365,46 @@
 .volcano {
   position: absolute;
   bottom: 0;
-  left: 50vw;
-  width: 50vw;
-  height: 16.6666666667vw;
+  left: 55vw;
+  width: 20vw;
+  height: 6.6666666667vw;
   overflow: hidden;
 }
 
 .volcano-tube {
   position: absolute;
-  left: 20vw;
-  width: 10vw;
-  height: 16.6666666667vw;
+  left: 8vw;
+  width: 4vw;
+  height: 6.6666666667vw;
   background-color: #9c4110;
 }
 .volcano-tube::before {
   content: "";
   position: absolute;
-  top: -50vw;
-  left: -20vw;
-  width: 20vw;
-  height: 66.6666666667vw;
+  top: -20vw;
+  left: -8vw;
+  width: 8vw;
+  height: 26.6666666667vw;
   background-color: transparent;
-  border-bottom-right-radius: 16.6666666667vw;
-  box-shadow: 0 16.6666666667vw 0 0 #9c4110;
+  border-bottom-right-radius: 6.6666666667vw;
+  box-shadow: 0 6.6666666667vw 0 0 #9c4110;
 }
 .volcano-tube::after {
   content: "";
   position: absolute;
-  top: -50vw;
-  left: 10vw;
-  width: 20vw;
-  height: 66.6666666667vw;
+  top: -20vw;
+  left: 4vw;
+  width: 8vw;
+  height: 26.6666666667vw;
   background-color: transparent;
-  border-bottom-left-radius: 16.6666666667vw;
-  box-shadow: 0 16.6666666667vw 0 0 #9c4110;
+  border-bottom-left-radius: 6.6666666667vw;
+  box-shadow: 0 6.6666666667vw 0 0 #9c4110;
 }
 
 .lava {
   position: absolute;
-  width: 10vw;
-  height: 2.0833333333vw;
+  width: 4vw;
+  height: 0.8333333333vw;
   background-color: red;
   border-radius: 50%;
   border-top-left-radius: 0;
@@ -412,23 +412,67 @@
 }
 .lava-flow-1 {
   position: absolute;
-  left: 2.5vw;
+  left: 1vw;
   background-color: red;
-  width: 2vw;
-  height: 8.3333333333vw;
-  border-radius: 8.3333333333vw;
+  width: 0.8vw;
+  height: 3.3333333333vw;
+  border-radius: 3.3333333333vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.lava-flow-1::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 0.7083333333vw;
+  right: 0.8vw;
+  height: 3.3333333333vw;
+  width: 0.4vw;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -1.6666666667vw 0 0 red;
+}
+.lava-flow-1::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 0.8333333333vw;
+  left: 0.8vw;
+  height: 3.3333333333vw;
+  width: 0.4vw;
+  border-top-left-radius: 25px;
+  box-shadow: 0 -1.6666666667vw 0 0 red;
+}
 .lava-flow-2 {
   position: absolute;
-  left: 6.6666666667vw;
+  left: 2.6666666667vw;
   background-color: red;
-  width: 2vw;
-  height: 5.5555555556vw;
-  border-radius: 8.3333333333vw;
+  width: 0.8vw;
+  height: 2.2222222222vw;
+  border-radius: 3.3333333333vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.lava-flow-2::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 0.8333333333vw;
+  right: 0.8vw;
+  height: 3.3333333333vw;
+  width: 0.4vw;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -1.6666666667vw 0 0 red;
+}
+.lava-flow-2::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 0.5833333333vw;
+  left: 0.8vw;
+  height: 3.3333333333vw;
+  width: 0.4vw;
+  border-top-left-radius: 25px;
+  box-shadow: 0 -1.6666666667vw 0 0 red;
 }
 
 .body, .head, .arm, .leg {
