@@ -361,6 +361,35 @@
     width: $volcano-width;
     height: $volcano-height;
     overflow: hidden;
+
+    &_eye {
+        position: absolute;
+        top: $volcano-height/2;
+        width: $celestial-eye-size;
+        height: $celestial-eye-size;
+        border-radius: $celestial-eye-size;
+        background-color: black;
+
+        &-left {
+            left: ($volcano-width - $volcano-tube-width)/2;
+        }
+
+        &-right {
+            right: ($volcano-width - $volcano-tube-width)/2;
+        }
+    }
+
+    &_mouth {
+        position: absolute;
+        top: $celestial-size*2/3;
+        left: ($volcano-width - $volcano-tube-width)/2;
+        width: $celestial-mouth-width;
+        height: $celestial-mouth-width/2.5;
+        border-radius: 50% / 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: black;
+    }
 }
 
 .volcano-tube {
