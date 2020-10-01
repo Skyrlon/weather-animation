@@ -17,8 +17,11 @@ $color-suit: black;
 $color-tie: red;
 $color-suit-shoe: #481d20;
 
+$flat-screen-width: 40vw;
+$flat-screen-height: 20vw;
+
 /*guy size variables*/
-$size: 3vw;
+$size: $flat-screen-width*3/100;
 $body-height: $size*3;
 $eye-width: $size/5;
 $mouth-width: $size/2;
@@ -37,16 +40,16 @@ $cloud-width: $size*5;
 $cloud-height: $cloud-width/3;
 $thunder-width: $cloud-width/8;
 $thunder-height: $thunder-width*1.25;
-$tornado-radius: 4vw;
+$tornado-radius: $flat-screen-width*4/100;
 $tornado-height: $tornado-radius/2;
 $tornado-parts-width: $tornado-radius*6.39/24;
-$volcano-width: 20vw;
+$volcano-width: $flat-screen-width*20/100;
 $volcano-height: $volcano-width/3;
 $volcano-tube-width: $volcano-width/5;
 $volcano-side-width: ($volcano-width - $volcano-tube-width)/2;
 $volcano-side-height: $volcano-width + $volcano-height;
-$water-drop-width: 5vw;
-$snowflake-height: 5vw;
+$water-drop-width: $flat-screen-width * 5/100;
+$snowflake-height: $flat-screen-width * 5/100;
 $snowflake-width: $snowflake-height/10;
 
 /*weather-clothes variables*/

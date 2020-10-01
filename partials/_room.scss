@@ -1,0 +1,41 @@
+/// <reference path="_variables.scss" />
+
+.flat-screen {
+    position: absolute;
+    top: 10vw;
+    left: 30vw;
+    width: $flat-screen-width;
+    height: $flat-screen-height;
+    background-color: black;
+    border-radius: 1%;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: $flat-screen-height;
+        left: ($flat-screen-width -$flat-screen-width/20)/2;
+        width: $flat-screen-width/20;
+        height: $flat-screen-height/10;
+        background-color: black;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: $flat-screen-height + $flat-screen-height/10;
+        left: ($flat-screen-width -$flat-screen-width/2)/2;
+        width: $flat-screen-width/2;
+        height: $flat-screen-height/20;
+        background-color: black;
+    }
+}
+
+.screen {
+    position: absolute;
+    top: $flat-screen-height/20;
+    left: $flat-screen-width/30;
+    width: $flat-screen-width - $flat-screen-width/15;
+    height: $flat-screen-height - $flat-screen-height/10;
+    background-color: grey;
+    border-radius: 1%;
+}

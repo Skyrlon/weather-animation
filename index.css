@@ -12,33 +12,71 @@
 @keyframes stage-one-rotation {
   0% {
     transform: rotateY(0deg) rotateX(4deg);
-    left: -1.3333333333vw;
+    left: -0.5333333333vw;
   }
   100% {
     transform: rotateY(0deg) rotateX(4deg);
-    left: 1.3333333333vw;
+    left: 0.5333333333vw;
   }
 }
 @keyframes stage-two-rotation {
   0% {
     transform: rotateY(0deg) rotateX(4deg);
-    left: -1vw;
+    left: -0.4vw;
   }
   100% {
     transform: rotateY(0deg) rotateX(4deg);
-    left: 1vw;
+    left: 0.4vw;
   }
 }
 @keyframes stage-three-rotation {
   0% {
     transform: rotateY(0deg) rotateX(4deg);
-    left: -2vw;
+    left: -0.8vw;
   }
   100% {
     transform: rotateY(0deg) rotateX(4deg);
-    left: 2vw;
+    left: 0.8vw;
   }
 }
+.flat-screen {
+  position: absolute;
+  top: 10vw;
+  left: 30vw;
+  width: 40vw;
+  height: 20vw;
+  background-color: black;
+  border-radius: 1%;
+}
+.flat-screen::before {
+  content: "";
+  position: absolute;
+  top: 20vw;
+  left: 19vw;
+  width: 2vw;
+  height: 2vw;
+  background-color: black;
+}
+.flat-screen::after {
+  content: "";
+  position: absolute;
+  top: 22vw;
+  left: 10vw;
+  width: 20vw;
+  height: 1vw;
+  background-color: black;
+}
+
+.screen {
+  position: absolute;
+  top: 1vw;
+  left: 1.3333333333vw;
+  width: 37.3333333333vw;
+  height: 18vw;
+  background-color: grey;
+  border-radius: 1%;
+}
+
 .sky {
   background: #00BFFF;
   position: absolute;
@@ -50,33 +88,33 @@
 
 .sun {
   position: absolute;
-  width: 7.5vw;
-  height: 7.5vw;
+  width: 3vw;
+  height: 3vw;
   background-color: yellow;
-  border-radius: 7.5vw;
+  border-radius: 3vw;
   top: 0;
   right: 0;
 }
 .sun_eye {
   position: absolute;
-  top: 2.5vw;
-  width: 1.25vw;
-  height: 1.25vw;
-  border-radius: 1.25vw;
+  top: 1vw;
+  width: 0.5vw;
+  height: 0.5vw;
+  border-radius: 0.5vw;
   background-color: black;
 }
 .sun_eye-left {
-  left: 1.25vw;
+  left: 0.5vw;
 }
 .sun_eye-right {
-  right: 1.25vw;
+  right: 0.5vw;
 }
 .sun_mouth {
   position: absolute;
-  top: 5vw;
-  left: 1.875vw;
-  width: 3.75vw;
-  height: 1.5vw;
+  top: 2vw;
+  left: 0.75vw;
+  width: 1.5vw;
+  height: 0.6vw;
   border-radius: 50%/100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -110,31 +148,31 @@
 
 .moon {
   position: absolute;
-  width: 7.5vw;
-  height: 7.5vw;
+  width: 3vw;
+  height: 3vw;
   background-color: #d7d7d7;
-  border-radius: 7.5vw;
+  border-radius: 3vw;
 }
 .moon_eye {
   position: absolute;
-  top: 2.5vw;
-  width: 1.25vw;
-  height: 1.25vw;
-  border-radius: 1.25vw;
+  top: 1vw;
+  width: 0.5vw;
+  height: 0.5vw;
+  border-radius: 0.5vw;
   background-color: black;
 }
 .moon_eye-left {
-  left: 1.25vw;
+  left: 0.5vw;
 }
 .moon_eye-right {
-  right: 1.25vw;
+  right: 0.5vw;
 }
 .moon_mouth {
   position: absolute;
-  top: 5vw;
-  left: 1.875vw;
-  width: 3.75vw;
-  height: 1.5vw;
+  top: 2vw;
+  left: 0.75vw;
+  width: 1.5vw;
+  height: 0.6vw;
   border-radius: 50%/100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -142,31 +180,31 @@
 }
 .moon_crater1 {
   position: absolute;
-  top: 0.75vw;
-  left: 1.5vw;
-  width: 1.5vw;
-  height: 1.5vw;
-  border-radius: 1.5vw;
+  top: 0.3vw;
+  left: 0.6vw;
+  width: 0.6vw;
+  height: 0.6vw;
+  border-radius: 0.6vw;
   background-color: #b6b6b6;
   transform: skewY(-15deg);
 }
 .moon_crater2 {
   position: absolute;
-  top: 6vw;
-  left: 1.5vw;
-  width: 1.0714285714vw;
-  height: 1.0714285714vw;
-  border-radius: 1.0714285714vw;
+  top: 2.4vw;
+  left: 0.6vw;
+  width: 0.4285714286vw;
+  height: 0.4285714286vw;
+  border-radius: 0.4285714286vw;
   background-color: #b6b6b6;
   transform: skewX(30deg);
 }
 .moon_crater3 {
   position: absolute;
-  top: 0.9375vw;
-  left: 5.625vw;
-  width: 1.0714285714vw;
-  height: 1.0714285714vw;
-  border-radius: 1.5vw;
+  top: 0.375vw;
+  left: 2.25vw;
+  width: 0.4285714286vw;
+  height: 0.4285714286vw;
+  border-radius: 0.6vw;
   background-color: #b6b6b6;
   transform: skew(10deg, 10deg) rotate(0.75turn);
 }
@@ -175,19 +213,19 @@
   position: absolute;
   top: 20%;
   left: 20%;
-  height: 5vw;
-  width: 15vw;
+  height: 2vw;
+  width: 6vw;
   background: white;
-  border-radius: 5vw;
+  border-radius: 2vw;
 }
 .cloud::before {
   content: "";
   position: absolute;
-  top: -1.6666666667vw;
+  top: -0.6666666667vw;
   box-sizing: border-box;
-  height: 5vw;
-  width: 5vw;
-  left: 2.5vw;
+  height: 2vw;
+  width: 2vw;
+  left: 1vw;
   border-radius: 50%;
   border-bottom-color: transparent;
   border-right-color: transparent;
@@ -197,10 +235,10 @@
 .cloud::after {
   content: "";
   position: absolute;
-  height: 7.5vw;
-  width: 7.5vw;
-  top: -2.5vw;
-  left: 5vw;
+  height: 3vw;
+  width: 3vw;
+  top: -1vw;
+  left: 2vw;
   border-radius: 50%;
   box-sizing: border-box;
   border-bottom-color: transparent;
@@ -211,25 +249,25 @@
 .cloud_eye {
   position: absolute;
   top: 0;
-  width: 1.25vw;
-  height: 1.25vw;
-  border-radius: 1.25vw;
+  width: 0.5vw;
+  height: 0.5vw;
+  border-radius: 0.5vw;
   background-color: black;
 }
 .cloud_eye-left {
-  left: 3.75vw;
+  left: 1.5vw;
 }
 .cloud_eye-right {
   z-index: 2;
-  right: 3.75vw;
+  right: 1.5vw;
 }
 .cloud_mouth {
   z-index: 2;
   position: absolute;
-  top: 2.5vw;
-  left: 5.625vw;
-  width: 3.75vw;
-  height: 1.5vw;
+  top: 1vw;
+  left: 2.25vw;
+  width: 1.5vw;
+  height: 0.6vw;
   border-radius: 50%/100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -238,29 +276,29 @@
 
 .thunder {
   position: absolute;
-  top: 5vw;
-  left: 5.625vw;
-  width: 1.875vw;
-  height: 2.34375vw;
+  top: 2vw;
+  left: 2.25vw;
+  width: 0.75vw;
+  height: 0.9375vw;
   background-color: yellow;
   transform: skew(-40deg);
 }
 .thunder::before {
   content: "";
   position: absolute;
-  top: 1.5625vw;
-  left: 1.875vw;
-  width: 1.875vw;
-  height: 2.34375vw;
+  top: 0.625vw;
+  left: 0.75vw;
+  width: 0.75vw;
+  height: 0.9375vw;
   background-color: yellow;
 }
 .thunder::after {
   content: "";
   position: absolute;
-  top: 3.90625vw;
-  left: 1.875vw;
+  top: 1.5625vw;
+  left: 0.75vw;
   border-style: solid;
-  border-width: 0 0 1.171875vw 1.875vw;
+  border-width: 0 0 0.46875vw 0.75vw;
   border-color: transparent transparent transparent yellow;
 }
 
@@ -298,39 +336,39 @@
 
 .tornado-parts > div {
   position: absolute;
-  height: 2vw;
+  height: 0.8vw;
   background: grey;
   transform-style: preserve-3d;
   overflow: hidden;
 }
 
 .tornado-parts-2 > div {
-  top: 2.8vw;
+  top: 1.12vw;
 }
 
 .tornado-parts-3 > div {
-  top: 5.6vw;
+  top: 2.24vw;
 }
 
 .tornado-parts-4 > div {
-  top: 8.4vw;
+  top: 3.36vw;
 }
 
 .tornado-parts-5 > div {
-  top: 11.2vw;
+  top: 4.48vw;
 }
 
 .tornado-parts-6 > div {
-  top: 14vw;
+  top: 5.6vw;
 }
 
 .tornado-eye {
   position: absolute;
-  top: 0.574vw;
-  height: 0.852vw;
-  width: 0.852vw;
+  top: 0.2296vw;
+  height: 0.3408vw;
+  width: 0.3408vw;
   background-color: black;
-  border-radius: 0.852vw;
+  border-radius: 0.3408vw;
 }
 .tornado-eye-1 {
   left: 0;
@@ -341,55 +379,55 @@
 
 .tornado-mouth {
   position: absolute;
-  top: 0.645vw;
-  height: 1vw;
-  width: 3.55vw;
+  top: 0.258vw;
+  height: 0.4vw;
+  width: 1.42vw;
   border-radius: 50%/100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   background-color: black;
 }
 .tornado-mouth-2 {
-  left: -0.71vw;
+  left: -0.284vw;
 }
 .tornado-mouth-3 {
-  left: -1.42vw;
+  left: -0.568vw;
 }
 .tornado-mouth-4 {
-  left: -2.13vw;
+  left: -0.852vw;
 }
 .tornado-mouth-5 {
-  left: -2.84vw;
+  left: -1.136vw;
 }
 
 .volcano {
   position: absolute;
   bottom: 0;
-  left: 55vw;
-  width: 20vw;
-  height: 6.6666666667vw;
+  left: 55%;
+  width: 8vw;
+  height: 2.6666666667vw;
   overflow: hidden;
 }
 .volcano_eye {
   position: absolute;
-  top: 3.3333333333vw;
-  width: 1.25vw;
-  height: 1.25vw;
-  border-radius: 1.25vw;
+  top: 1.3333333333vw;
+  width: 0.5vw;
+  height: 0.5vw;
+  border-radius: 0.5vw;
   background-color: black;
 }
 .volcano_eye-left {
-  left: 8vw;
+  left: 3.2vw;
 }
 .volcano_eye-right {
-  right: 8vw;
+  right: 3.2vw;
 }
 .volcano_mouth {
   position: absolute;
-  top: 5vw;
-  left: 8vw;
-  width: 3.75vw;
-  height: 1.5vw;
+  top: 2vw;
+  left: 3.2vw;
+  width: 1.5vw;
+  height: 0.6vw;
   border-radius: 50%/100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -398,38 +436,38 @@
 
 .volcano-tube {
   position: absolute;
-  left: 8vw;
-  width: 4vw;
-  height: 6.6666666667vw;
+  left: 3.2vw;
+  width: 1.6vw;
+  height: 2.6666666667vw;
   background-color: #9c4110;
 }
 .volcano-tube::before {
   content: "";
   position: absolute;
-  top: -20vw;
-  left: -8vw;
-  width: 8vw;
-  height: 26.6666666667vw;
+  top: -8vw;
+  left: -3.2vw;
+  width: 3.2vw;
+  height: 10.6666666667vw;
   background-color: transparent;
-  border-bottom-right-radius: 6.6666666667vw;
-  box-shadow: 0 6.6666666667vw 0 0 #9c4110;
+  border-bottom-right-radius: 2.6666666667vw;
+  box-shadow: 0 2.6666666667vw 0 0 #9c4110;
 }
 .volcano-tube::after {
   content: "";
   position: absolute;
-  top: -20vw;
-  left: 4vw;
-  width: 8vw;
-  height: 26.6666666667vw;
+  top: -8vw;
+  left: 1.6vw;
+  width: 3.2vw;
+  height: 10.6666666667vw;
   background-color: transparent;
-  border-bottom-left-radius: 6.6666666667vw;
-  box-shadow: 0 6.6666666667vw 0 0 #9c4110;
+  border-bottom-left-radius: 2.6666666667vw;
+  box-shadow: 0 2.6666666667vw 0 0 #9c4110;
 }
 
 .lava {
   position: absolute;
-  width: 4vw;
-  height: 0.8333333333vw;
+  width: 1.6vw;
+  height: 0.3333333333vw;
   background-color: red;
   border-radius: 50%;
   border-top-left-radius: 0;
@@ -437,11 +475,11 @@
 }
 .lava-flow-1 {
   position: absolute;
-  left: 1vw;
+  left: 0.4vw;
   background-color: red;
-  width: 0.8vw;
-  height: 3.3333333333vw;
-  border-radius: 3.3333333333vw;
+  width: 0.32vw;
+  height: 1.3333333333vw;
+  border-radius: 1.3333333333vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -449,31 +487,31 @@
   content: "";
   position: absolute;
   background-color: transparent;
-  top: 0.7083333333vw;
-  right: 0.8vw;
-  height: 3.3333333333vw;
-  width: 0.4vw;
+  top: 0.2833333333vw;
+  right: 0.32vw;
+  height: 1.3333333333vw;
+  width: 0.16vw;
   border-top-right-radius: 25px;
-  box-shadow: 0 -1.6666666667vw 0 0 red;
+  box-shadow: 0 -0.6666666667vw 0 0 red;
 }
 .lava-flow-1::after {
   content: "";
   position: absolute;
   background-color: transparent;
-  top: 0.8333333333vw;
-  left: 0.8vw;
-  height: 3.3333333333vw;
-  width: 0.4vw;
+  top: 0.3333333333vw;
+  left: 0.32vw;
+  height: 1.3333333333vw;
+  width: 0.16vw;
   border-top-left-radius: 25px;
-  box-shadow: 0 -1.6666666667vw 0 0 red;
+  box-shadow: 0 -0.6666666667vw 0 0 red;
 }
 .lava-flow-2 {
   position: absolute;
-  left: 2.6666666667vw;
+  left: 1.0666666667vw;
   background-color: red;
-  width: 0.8vw;
-  height: 2.2222222222vw;
-  border-radius: 3.3333333333vw;
+  width: 0.32vw;
+  height: 0.8888888889vw;
+  border-radius: 1.3333333333vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -481,31 +519,31 @@
   content: "";
   position: absolute;
   background-color: transparent;
-  top: 0.8333333333vw;
-  right: 0.8vw;
-  height: 3.3333333333vw;
-  width: 0.4vw;
+  top: 0.3333333333vw;
+  right: 0.32vw;
+  height: 1.3333333333vw;
+  width: 0.16vw;
   border-top-right-radius: 25px;
-  box-shadow: 0 -1.6666666667vw 0 0 red;
+  box-shadow: 0 -0.6666666667vw 0 0 red;
 }
 .lava-flow-2::after {
   content: "";
   position: absolute;
   background-color: transparent;
-  top: 0.5833333333vw;
-  left: 0.8vw;
-  height: 3.3333333333vw;
-  width: 0.4vw;
+  top: 0.2333333333vw;
+  left: 0.32vw;
+  height: 1.3333333333vw;
+  width: 0.16vw;
   border-top-left-radius: 25px;
-  box-shadow: 0 -1.6666666667vw 0 0 red;
+  box-shadow: 0 -0.6666666667vw 0 0 red;
 }
 
 .water-drop {
   position: absolute;
-  top: 10vw;
-  left: 80vw;
-  width: 5vw;
-  height: 5vw;
+  top: 10%;
+  left: 80%;
+  width: 2vw;
+  height: 2vw;
   background-color: lightblue;
   border-radius: 0 50% 50% 50%;
   transform: rotate(45deg);
@@ -513,23 +551,23 @@
 
 .snowflake {
   position: absolute;
-  top: 5vw;
-  left: 70vw;
+  top: 5%;
+  left: 70%;
   background-color: red;
 }
 .snowflake-branch-n {
   position: absolute;
-  width: 0.5vw;
-  height: 5vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 2vw;
+  border-radius: 2vw;
   background-color: white;
 }
 .snowflake-branch-n::before {
   content: "";
   position: absolute;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: bottom;
   transform: rotate(-45deg);
@@ -537,28 +575,28 @@
 .snowflake-branch-n::after {
   content: "";
   position: absolute;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: bottom;
   transform: rotate(45deg);
 }
 .snowflake-branch-s {
   position: absolute;
-  top: 5vw;
-  width: 0.5vw;
-  height: 5vw;
-  border-radius: 5vw;
+  top: 2vw;
+  width: 0.2vw;
+  height: 2vw;
+  border-radius: 2vw;
   background-color: white;
 }
 .snowflake-branch-s::before {
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(45deg);
@@ -567,19 +605,19 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-45deg);
 }
 .snowflake-branch-nw {
   position: absolute;
-  top: 5vw;
-  width: 0.5vw;
-  height: 5vw;
-  border-radius: 5vw;
+  top: 2vw;
+  width: 0.2vw;
+  height: 2vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(120deg);
@@ -588,9 +626,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(45deg);
@@ -599,19 +637,19 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-45deg);
 }
 .snowflake-branch-ne {
   position: absolute;
-  top: 5vw;
-  width: 0.5vw;
-  height: 5vw;
-  border-radius: 5vw;
+  top: 2vw;
+  width: 0.2vw;
+  height: 2vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-120deg);
@@ -620,9 +658,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(45deg);
@@ -631,19 +669,19 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-45deg);
 }
 .snowflake-branch-se {
   position: absolute;
-  top: 5vw;
-  width: 0.5vw;
-  height: 5vw;
-  border-radius: 5vw;
+  top: 2vw;
+  width: 0.2vw;
+  height: 2vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-60deg);
@@ -652,9 +690,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(45deg);
@@ -663,19 +701,19 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-45deg);
 }
 .snowflake-branch-sw {
   position: absolute;
-  top: 5vw;
-  width: 0.5vw;
-  height: 5vw;
-  border-radius: 5vw;
+  top: 2vw;
+  width: 0.2vw;
+  height: 2vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(60deg);
@@ -684,9 +722,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(45deg);
@@ -695,9 +733,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.5vw;
-  height: 2vw;
-  border-radius: 5vw;
+  width: 0.2vw;
+  height: 0.8vw;
+  border-radius: 2vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-45deg);
@@ -716,73 +754,73 @@
 .body {
   top: 55%;
   left: 50%;
-  width: 3vw;
-  height: 9vw;
-  border-radius: 3vw 3vw 0px 0px;
+  width: 1.2vw;
+  height: 3.6vw;
+  border-radius: 1.2vw 1.2vw 0px 0px;
 }
 
 .head {
-  top: -3vw;
-  width: 3vw;
-  height: 3vw;
-  border-radius: 3vw;
+  top: -1.2vw;
+  width: 1.2vw;
+  height: 1.2vw;
+  border-radius: 1.2vw;
 }
 
 .eye {
   position: absolute;
-  top: 0.75vw;
-  width: 0.6vw;
-  height: 0.6vw;
-  border-radius: 0.6vw;
+  top: 0.3vw;
+  width: 0.24vw;
+  height: 0.24vw;
+  border-radius: 0.24vw;
 }
 .eye-left {
-  left: 0.6vw;
+  left: 0.24vw;
 }
 .eye-right {
-  right: 0.6vw;
+  right: 0.24vw;
 }
 
 .mouth {
   background-color: white;
-  top: 2vw;
-  left: 0.75vw;
-  width: 1.5vw;
-  height: 0.5vw;
+  top: 0.8vw;
+  left: 0.3vw;
+  width: 0.6vw;
+  height: 0.2vw;
   border-radius: 50%/100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
 .arm {
-  top: 0.6vw;
-  height: 1.5vw;
-  border-radius: 3vw;
+  top: 0.24vw;
+  height: 0.6vw;
+  border-radius: 1.2vw;
 }
 .arm_left {
-  width: 4.5vw;
-  right: 1.5vw;
-  transform-origin: 3.75vw 50%;
+  width: 1.8vw;
+  right: 0.6vw;
+  transform-origin: 1.5vw 50%;
   transform: rotate(0deg);
 }
 .arm_left-inferior {
   top: 0;
-  right: 3vw;
-  width: 6vw;
-  height: 1.5vw;
-  transform-origin: 5.25vw 50%;
+  right: 1.2vw;
+  width: 2.4vw;
+  height: 0.6vw;
+  transform-origin: 2.1vw 50%;
   transform: rotate(90deg);
 }
 .arm_right {
-  width: 9vw;
-  left: 1.5vw;
-  transform-origin: 0.75vw 50%;
+  width: 3.6vw;
+  left: 0.6vw;
+  transform-origin: 0.3vw 50%;
   transform: rotate(0deg);
 }
 
 .leg {
-  top: 9vw;
-  width: 1.35vw;
-  height: 7.5vw;
+  top: 3.6vw;
+  width: 0.54vw;
+  height: 3vw;
 }
 .leg_right {
   right: 0;
@@ -794,20 +832,20 @@
   top: 60%;
   left: 30%;
   border: 10px solid black;
-  font-size: 2.1vw;
+  font-size: 0.84vw;
   padding: 0.5em;
-  border-radius: 3vw;
+  border-radius: 1.2vw;
   transform-origin: left;
 }
 .hello::after {
   content: "";
   position: absolute;
   top: 60%;
-  left: -1.5vw;
+  left: -0.6vw;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 1.5vw 1.5vw 0px 0px;
+  border-width: 0.6vw 0.6vw 0px 0px;
   border-color: transparent black transparent transparent;
   transform: rotate(-30deg);
 }
@@ -817,10 +855,10 @@
   z-index: 100;
   top: 45%;
   left: 80%;
-  width: 3vw;
-  height: 2vw;
+  width: 1.2vw;
+  height: 0.8vw;
   background-color: #000048;
-  border-radius: 2vw;
+  border-radius: 0.8vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -828,45 +866,45 @@
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0.3vw;
-  width: 2.4vw;
-  height: 1.4vw;
+  left: 0.12vw;
+  width: 0.96vw;
+  height: 0.56vw;
   background-color: grey;
-  border-radius: 1.3333333333vw;
+  border-radius: 0.5333333333vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 #ushanka > .flap {
   position: absolute;
-  top: 2vw;
-  width: 0.25vw;
-  height: 2.5vw;
+  top: 0.8vw;
+  width: 0.1vw;
+  height: 1vw;
   background-color: #000048;
 }
 #ushanka > .flap-left {
-  border-bottom-left-radius: 0.25vw;
+  border-bottom-left-radius: 0.1vw;
 }
 #ushanka > .flap-left::after {
   content: "";
   position: absolute;
-  left: 0.25vw;
-  width: 0.25vw;
-  height: 2.5vw;
+  left: 0.1vw;
+  width: 0.1vw;
+  height: 1vw;
   background-color: grey;
-  border-bottom-right-radius: 0.25vw;
+  border-bottom-right-radius: 0.1vw;
 }
 #ushanka > .flap-right {
   right: 0;
-  border-bottom-right-radius: 0.25vw;
+  border-bottom-right-radius: 0.1vw;
 }
 #ushanka > .flap-right::after {
   content: "";
   position: absolute;
-  left: -0.25vw;
-  width: 0.25vw;
-  height: 2.5vw;
+  left: -0.1vw;
+  width: 0.1vw;
+  height: 1vw;
   background-color: grey;
-  border-bottom-left-radius: 0.25vw;
+  border-bottom-left-radius: 0.1vw;
 }
 
 #snow-coat {
@@ -874,52 +912,52 @@
   z-index: 100;
   top: 55%;
   left: 80%;
-  width: 3vw;
-  height: 10.5vw;
+  width: 1.2vw;
+  height: 4.2vw;
   background-color: olive;
-  border-top-left-radius: 3vw;
-  border-top-right-radius: 3vw;
+  border-top-left-radius: 1.2vw;
+  border-top-right-radius: 1.2vw;
 }
 #snow-coat::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 1.425vw;
-  width: 0.15vw;
-  height: 10.5vw;
+  left: 0.57vw;
+  width: 0.06vw;
+  height: 4.2vw;
   background-color: black;
 }
 #snow-coat > #scarf {
   content: "";
   position: absolute;
   top: 0;
-  left: 0.3vw;
-  width: 2.4vw;
-  height: 1.05vw;
+  left: 0.12vw;
+  width: 0.96vw;
+  height: 0.42vw;
   background-color: red;
 }
 #snow-coat > #scarf::after {
   content: "";
   position: absolute;
-  top: 1.05vw;
-  left: 1.56vw;
+  top: 0.42vw;
+  left: 0.624vw;
   z-index: 5;
-  width: 0.6vw;
-  height: 3.5vw;
+  width: 0.24vw;
+  height: 1.4vw;
   background-color: red;
 }
 #snow-coat > .snow-sleeve {
   position: absolute;
-  top: 0.6vw;
-  width: 10.5vw;
-  height: 1.5vw;
-  border-radius: 10.5vw;
+  top: 0.24vw;
+  width: 4.2vw;
+  height: 0.6vw;
+  border-radius: 4.2vw;
   background-color: olive;
 }
 #snow-coat > .snow-sleeve-left {
-  width: 4.5vw;
-  right: 1.5vw;
-  transform-origin: 3.75vw 50%;
+  width: 1.8vw;
+  right: 0.6vw;
+  transform-origin: 1.5vw 50%;
   transform: rotate(0deg);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -929,25 +967,25 @@
   position: absolute;
   background-color: olive;
   top: 0;
-  right: 3vw;
-  width: 4.2vw;
-  height: 1.5vw;
-  transform-origin: 3.45vw 50%;
+  right: 1.2vw;
+  width: 1.68vw;
+  height: 0.6vw;
+  transform-origin: 1.38vw 50%;
   transform: rotate(90deg);
 }
 #snow-coat > .snow-sleeve-right {
-  width: 7.2vw;
-  left: 1.5vw;
-  transform-origin: 0.75vw 50%;
+  width: 2.88vw;
+  left: 0.6vw;
+  transform-origin: 0.3vw 50%;
   transform: rotate(0deg);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 #snow-coat > .snow-pants-leg {
   position: absolute;
-  top: 10.5vw;
-  width: 1.35vw;
-  height: 6vw;
+  top: 4.2vw;
+  width: 0.54vw;
+  height: 2.4vw;
   background-color: blue;
 }
 #snow-coat > .snow-pants-leg-right {
@@ -958,10 +996,10 @@
   position: absolute;
   top: 55%;
   left: 10%;
-  width: 3vw;
-  height: 9vw;
+  width: 1.2vw;
+  height: 3.6vw;
   background-color: lightgreen;
-  border-radius: 3vw;
+  border-radius: 1.2vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -969,50 +1007,50 @@
   content: "";
   z-index: 101;
   position: absolute;
-  left: 0.45vw;
-  width: 0.6vw;
+  left: 0.18vw;
+  width: 0.24vw;
   box-sizing: content-box;
-  border-width: 1.5vw 0.75vw 0;
+  border-width: 0.6vw 0.3vw 0;
   border-style: solid;
   border-color: #FFCD94 transparent;
-  border-radius: 3vw;
+  border-radius: 1.2vw;
 }
 #shirt > #apperture {
   position: absolute;
   top: 0;
   z-index: 101;
-  left: 1.125vw;
-  width: 0.75vw;
-  height: 7.2vw;
+  left: 0.45vw;
+  width: 0.3vw;
+  height: 2.88vw;
   background-color: #FFCD94;
 }
 #shirt > #apperture::after {
   content: "";
   position: absolute;
-  top: 7.2vw;
-  width: 0.75vw;
-  height: 1.89vw;
+  top: 2.88vw;
+  width: 0.3vw;
+  height: 0.756vw;
   background-color: blue;
 }
 #shirt > .sleeve {
   position: absolute;
-  top: 0.6vw;
-  height: 1.5vw;
-  border-radius: 10.5vw;
+  top: 0.24vw;
+  height: 0.6vw;
+  border-radius: 4.2vw;
   background-color: lightgreen;
 }
 #shirt > .sleeve-left {
-  width: 2.7vw;
-  right: 1.5vw;
-  transform-origin: 3.75vw 50%;
+  width: 1.08vw;
+  right: 0.6vw;
+  transform-origin: 1.5vw 50%;
   transform: rotate(0deg);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 #shirt > .sleeve-right {
-  width: 2.7vw;
-  left: 1.5vw;
-  transform-origin: 0.75vw 50%;
+  width: 1.08vw;
+  left: 0.6vw;
+  transform-origin: 0.3vw 50%;
   transform: rotate(0deg);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -1020,26 +1058,26 @@
 
 #short {
   position: absolute;
-  top: 9vw;
-  width: 3vw;
-  height: 1.8vw;
+  top: 3.6vw;
+  width: 1.2vw;
+  height: 0.72vw;
   background-color: blue;
 }
 #short::before {
   content: "";
   position: absolute;
-  top: 0.6vw;
-  width: 1.35vw;
-  height: 1.8vw;
+  top: 0.24vw;
+  width: 0.54vw;
+  height: 0.72vw;
   background-color: blue;
 }
 #short::after {
   content: "";
   position: absolute;
-  top: 0.6vw;
+  top: 0.24vw;
   right: 0;
-  width: 1.35vw;
-  height: 1.8vw;
+  width: 0.54vw;
+  height: 0.72vw;
   background-color: blue;
 }
 
@@ -1047,29 +1085,29 @@
   position: absolute;
   top: 50%;
   left: 10%;
-  width: 3vw;
-  height: 0.15vw;
+  width: 1.2vw;
+  height: 0.06vw;
   background-color: black;
 }
 #sunglasses::before {
   content: "";
   position: absolute;
-  left: 0.09vw;
+  left: 0.036vw;
   background-color: black;
-  width: 1.2vw;
-  height: 0.8vw;
-  border-radius: 0.24vw;
+  width: 0.48vw;
+  height: 0.32vw;
+  border-radius: 0.096vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 #sunglasses::after {
   content: "";
   position: absolute;
-  left: 1.71vw;
+  left: 0.684vw;
   background-color: black;
-  width: 1.2vw;
-  height: 0.8vw;
-  border-radius: 0.24vw;
+  width: 0.48vw;
+  height: 0.32vw;
+  border-radius: 0.096vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -1079,19 +1117,19 @@
   left: 10%;
   top: 10%;
   background-color: purple;
-  width: 9vw;
-  height: 4.5vw;
-  border-top-left-radius: 9vw;
-  border-top-right-radius: 9vw;
+  width: 3.6vw;
+  height: 1.8vw;
+  border-top-left-radius: 3.6vw;
+  border-top-right-radius: 3.6vw;
 }
 #umbrella > span {
   content: "";
   background-color: white;
-  width: 3vw;
-  height: 1vw;
+  width: 1.2vw;
+  height: 0.4vw;
   position: absolute;
-  top: 3.5vw;
-  left: 3vw;
+  top: 1.4vw;
+  left: 1.2vw;
   border-radius: 50%/100%;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -1099,10 +1137,10 @@
 #umbrella > span::after {
   content: "";
   background-color: white;
-  width: 3vw;
-  height: 1vw;
+  width: 1.2vw;
+  height: 0.4vw;
   position: absolute;
-  left: 3vw;
+  left: 1.2vw;
   border-radius: 50%/100%;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -1110,10 +1148,10 @@
 #umbrella > span::before {
   content: "";
   background-color: white;
-  width: 3vw;
-  height: 1vw;
+  width: 1.2vw;
+  height: 0.4vw;
   position: absolute;
-  right: 3vw;
+  right: 1.2vw;
   border-radius: 50%/100%;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -1121,43 +1159,43 @@
 
 #stick {
   position: absolute;
-  width: 0.45vw;
-  height: 4.5vw;
+  width: 0.18vw;
+  height: 1.8vw;
   background-color: #793906;
-  left: 4.275vw;
-  top: 3.5vw;
+  left: 1.71vw;
+  top: 1.4vw;
 }
 #stick::before {
   content: "";
   position: absolute;
-  top: -3.95vw;
-  width: 0.45vw;
-  height: 0.45vw;
+  top: -1.58vw;
+  width: 0.18vw;
+  height: 0.18vw;
   background-color: #793906;
-  border-radius: 0.45vw;
+  border-radius: 0.18vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 #crook {
   position: absolute;
-  width: 1.8vw;
-  height: 0.9vw;
-  top: 4.5vw;
-  left: -1.35vw;
+  width: 0.72vw;
+  height: 0.36vw;
+  top: 1.8vw;
+  left: -0.54vw;
   background-color: #793906;
-  border-radius: 1.8vw;
+  border-radius: 0.72vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 #crook::before {
   content: "";
   position: absolute;
-  width: 0.9vw;
-  height: 0.45vw;
-  left: 0.45vw;
+  width: 0.36vw;
+  height: 0.18vw;
+  left: 0.18vw;
   background-color: white;
-  border-radius: 1.8vw;
+  border-radius: 0.72vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -1165,11 +1203,11 @@
   content: "";
   position: absolute;
   left: 0;
-  top: -0.45vw;
-  width: 0.45vw;
-  height: 0.45vw;
+  top: -0.18vw;
+  width: 0.18vw;
+  height: 0.18vw;
   background-color: #793906;
-  border-radius: 1.8vw;
+  border-radius: 0.72vw;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -1178,33 +1216,33 @@
   position: absolute;
   top: 55%;
   left: 20%;
-  width: 3vw;
-  height: 9vw;
+  width: 1.2vw;
+  height: 3.6vw;
   background-color: #e9c500;
-  border-top-left-radius: 3vw;
-  border-top-right-radius: 3vw;
+  border-top-left-radius: 1.2vw;
+  border-top-right-radius: 1.2vw;
 }
 #rain-coat::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 1.425vw;
-  width: 0.15vw;
-  height: 9vw;
+  left: 0.57vw;
+  width: 0.06vw;
+  height: 3.6vw;
   background-color: black;
 }
 #rain-coat > .rain-sleeve {
   position: absolute;
-  top: 0.6vw;
-  width: 6vw;
-  height: 1.5vw;
-  border-radius: 6vw;
+  top: 0.24vw;
+  width: 2.4vw;
+  height: 0.6vw;
+  border-radius: 2.4vw;
   background-color: #e9c500;
 }
 #rain-coat > .rain-sleeve-left {
-  width: 4.5vw;
-  right: 1.5vw;
-  transform-origin: 3.75vw 50%;
+  width: 1.8vw;
+  right: 0.6vw;
+  transform-origin: 1.5vw 50%;
   transform: rotate(0deg);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -1214,25 +1252,25 @@
   position: absolute;
   background-color: #e9c500;
   top: 0;
-  right: 3vw;
-  width: 4.2vw;
-  height: 1.5vw;
-  transform-origin: 3.45vw 50%;
+  right: 1.2vw;
+  width: 1.68vw;
+  height: 0.6vw;
+  transform-origin: 1.38vw 50%;
   transform: rotate(90deg);
 }
 #rain-coat > .rain-sleeve-right {
-  width: 7.2vw;
-  left: 1.5vw;
-  transform-origin: 0.75vw 50%;
+  width: 2.88vw;
+  left: 0.6vw;
+  transform-origin: 0.3vw 50%;
   transform: rotate(0deg);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 #rain-coat > .rain-pants-leg {
   position: absolute;
-  top: 9vw;
-  width: 1.35vw;
-  height: 7.5vw;
+  top: 3.6vw;
+  width: 0.54vw;
+  height: 3vw;
   background-color: blue;
 }
 #rain-coat > .rain-pants-leg-right {
@@ -1241,29 +1279,29 @@
 #rain-coat > .rain-pants-leg > .rain-shoe {
   position: absolute;
   bottom: 0;
-  width: 1.35vw;
-  height: 2.5vw;
+  width: 0.54vw;
+  height: 1vw;
   background-color: red;
 }
 #rain-coat > .rain-pants-leg > .rain-shoe::after {
   content: "";
   position: absolute;
   bottom: 0;
-  width: 1.35vw;
-  height: 0.8333333333vw;
+  width: 0.54vw;
+  height: 0.3333333333vw;
   background-color: red;
   border-top: 1px solid black;
-  border-top-left-radius: 1.35vw;
-  border-top-right-radius: 1.35vw;
+  border-top-left-radius: 0.54vw;
+  border-top-right-radius: 0.54vw;
 }
 
 #rain-hood {
   position: absolute;
-  top: -3vw;
+  top: -1.2vw;
   left: 0vw;
-  width: 3vw;
-  height: 3vw;
-  border-radius: 3vw;
+  width: 1.2vw;
+  height: 1.2vw;
+  border-radius: 1.2vw;
   background: radial-gradient(circle at center, transparent 50%, #e9c500 50%);
 }
 
@@ -1271,57 +1309,57 @@
   position: absolute;
   top: 55%;
   left: 50%;
-  width: 3vw;
-  height: 9vw;
-  border-radius: 3vw 3vw 0px 0px;
+  width: 1.2vw;
+  height: 3.6vw;
+  border-radius: 1.2vw 1.2vw 0px 0px;
   background-color: black;
 }
 
 .suit-shirt {
   position: absolute;
   background-color: black;
-  width: 3vw;
-  height: 3vw;
-  border-top-left-radius: 3vw;
-  border-top-right-radius: 3vw;
+  width: 1.2vw;
+  height: 1.2vw;
+  border-top-left-radius: 1.2vw;
+  border-top-right-radius: 1.2vw;
 }
 
 .tie {
   position: absolute;
-  top: 0.6vw;
-  left: 1.32vw;
-  width: 0.36vw;
-  height: 1.86vw;
+  top: 0.24vw;
+  left: 0.528vw;
+  width: 0.144vw;
+  height: 0.744vw;
   background-color: red;
 }
 .tie::before {
   content: "";
   position: absolute;
-  top: -0.6vw;
-  left: -0.15vw;
-  width: 0.6vw;
-  height: 0.6vw;
+  top: -0.24vw;
+  left: -0.06vw;
+  width: 0.24vw;
+  height: 0.24vw;
   background-color: red;
-  border-radius: 0.6vw;
+  border-radius: 0.24vw;
 }
 .tie-bottom {
   position: absolute;
-  top: 1.86vw;
-  width: 0.36vw;
-  height: 1.14vw;
+  top: 0.744vw;
+  width: 0.144vw;
+  height: 0.456vw;
 }
 
 .suit-sleeve {
   position: absolute;
-  top: 0.6vw;
-  height: 1.5vw;
+  top: 0.24vw;
+  height: 0.6vw;
   background-color: black;
-  border-radius: 9vw;
+  border-radius: 3.6vw;
 }
 .suit-sleeve_left {
-  width: 4.5vw;
-  right: 1.5vw;
-  transform-origin: 3.75vw 50%;
+  width: 1.8vw;
+  right: 0.6vw;
+  transform-origin: 1.5vw 50%;
   transform: rotate(0deg);
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -1331,16 +1369,16 @@
   position: absolute;
   background-color: black;
   top: 0;
-  right: 3vw;
-  width: 4.2vw;
-  height: 1.5vw;
-  transform-origin: 3.45vw 50%;
+  right: 1.2vw;
+  width: 1.68vw;
+  height: 0.6vw;
+  transform-origin: 1.38vw 50%;
   transform: rotate(90deg);
 }
 .suit-sleeve_right {
-  width: 7.2vw;
-  left: 1.5vw;
-  transform-origin: 0.75vw 50%;
+  width: 2.88vw;
+  left: 0.6vw;
+  transform-origin: 0.3vw 50%;
   transform: rotate(0deg);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -1348,9 +1386,9 @@
 
 .suit-pants-leg {
   position: absolute;
-  top: 9vw;
-  width: 1.35vw;
-  height: 7.5vw;
+  top: 3.6vw;
+  width: 0.54vw;
+  height: 3vw;
   background-color: black;
 }
 .suit-pants-leg-right {
@@ -1359,11 +1397,11 @@
 .suit-pants-leg > .suit-shoe {
   position: absolute;
   bottom: 0;
-  width: 1.35vw;
-  height: 0.75vw;
+  width: 0.54vw;
+  height: 0.3vw;
   background-color: #481d20;
-  border-top-left-radius: 1.35vw;
-  border-top-right-radius: 1.35vw;
+  border-top-left-radius: 0.54vw;
+  border-top-right-radius: 0.54vw;
 }
 
 body {
