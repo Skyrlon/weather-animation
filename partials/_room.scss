@@ -1,5 +1,79 @@
 /// <reference path="_variables.scss" />
 
+.wall-front {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: $front-wall-width;
+    height: $front-wall-height;
+    background-color: red;
+}
+
+.wall-left {
+    position: absolute;
+    top: 10%;
+    right: 80%;
+    width: $front-wall-width;
+    height: $front-wall-height;
+    background-color: blue;
+    transform-origin: right;
+    transform: perspective(100vw) rotateY(80deg);
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: $front-wall-width/5;
+        height: $front-wall-height*0.9;
+        background-color: #b24018;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: $front-wall-height/2;
+        right: $front-wall-width/5 - $front-wall-height/20;
+        width: $front-wall-height/20;
+        height: $front-wall-height/20;
+        border-radius: $front-wall-height/20;
+        background-color: black;
+    }
+}
+
+.wall-right {
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    width: $front-wall-width;
+    height: $front-wall-height;
+    background-color: green;
+    transform-origin: left;
+    transform: perspective(100vw) rotateY(-80deg);
+}
+
+.floor {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: $front-wall-width;
+    height: $front-wall-height;
+    background-color: yellow;
+    transform-origin: bottom;
+    transform: perspective(100vw) rotateX(254deg);
+}
+
+.ceiling {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: $front-wall-width;
+    height: $front-wall-height;
+    background-color: purple;
+    transform-origin: top;
+    transform: perspective(100vw) rotateX(-254deg);
+}
+
 .flat-screen {
     position: absolute;
     top: 10vw;
