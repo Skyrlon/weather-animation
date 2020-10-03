@@ -3,17 +3,35 @@
 .wall-front {
     position: absolute;
     top: 10%;
-    left: 20%;
+    left: 30%;
     width: $front-wall-width;
     height: $front-wall-height;
     background-color: red;
 }
 
+.ceiling {
+    position: absolute;
+    bottom: $front-wall-height;
+    left: -30vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: purple;
+}
+
+.floor {
+    position: absolute;
+    top: $front-wall-height;
+    left: -30vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: yellow;
+}
+
 .wall-left {
     position: absolute;
     top: 10%;
-    right: 80%;
-    width: $front-wall-width;
+    right: 70%;
+    width: 100vw;
     height: $front-wall-height;
     background-color: blue;
     transform-origin: right;
@@ -44,40 +62,18 @@
 .wall-right {
     position: absolute;
     top: 10%;
-    left: 80%;
-    width: $front-wall-width;
+    left: 70%;
+    width: 100vw;
     height: $front-wall-height;
     background-color: green;
     transform-origin: left;
     transform: perspective(100vw) rotateY(-80deg);
 }
 
-.floor {
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    width: $front-wall-width;
-    height: $front-wall-height;
-    background-color: yellow;
-    transform-origin: bottom;
-    transform: perspective(100vw) rotateX(254deg);
-}
-
-.ceiling {
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    width: $front-wall-width;
-    height: $front-wall-height;
-    background-color: purple;
-    transform-origin: top;
-    transform: perspective(100vw) rotateX(-254deg);
-}
-
 .flat-screen {
     position: absolute;
-    top: 10vw;
-    left: 30vw;
+    top: 20%;
+    left: 40%;
     width: $flat-screen-width;
     height: $flat-screen-height;
     background-color: black;

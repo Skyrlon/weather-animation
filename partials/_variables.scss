@@ -17,10 +17,10 @@ $color-suit: black;
 $color-tie: red;
 $color-suit-shoe: #481d20;
 
-$front-wall-width: 60vw;
+$front-wall-width: 40vw;
 $front-wall-height: $front-wall-width/16*9;
-$flat-screen-width: 40vw;
-$flat-screen-height: 20vw;
+$flat-screen-width: 20vw;
+$flat-screen-height: $flat-screen-width/2;
 
 /*guy size variables*/
 $size: $flat-screen-width*3/100;

@@ -41,7 +41,7 @@ for (let i = 0; i < tornadoParts.length; i++) {
 
 function styleTornadoParts(parent, divisorRadius) {
     let rotateValue = -(360 / numberTornadoParts);
-    let tornadoRadius = 40 *4/100;
+    let tornadoRadius = 20 *4/100;
     let tornadoPartsAngle = 360 / numberTornadoParts;
     let tornadoPartsAngleRad = tornadoPartsAngle / 2 * Math.PI / 180;
     let tornadoPartsAngleCos = Math.cos(tornadoPartsAngleRad);
