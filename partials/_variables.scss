@@ -1,4 +1,5 @@
-﻿$color-body: #FFCD94;
+﻿$color-tv-stand: #a38659;
+$color-body: #FFCD94;
 $color-sun: yellow;
 $color-moon: #d7d7d7;
 $color-moon-crater: #b6b6b6;
@@ -21,6 +22,12 @@ $front-wall-width: 40vw;
 $front-wall-height: $front-wall-width/16*9;
 $flat-screen-width: 20vw;
 $flat-screen-height: $flat-screen-width/2;
+$tv-stand-width: 20vw;
+$tv-stand-height: $tv-stand-width/5.5;
+$drawer-width: $tv-stand-width/3;
+$drawer-height: $tv-stand-height*0.4;
+$shelf-width: $tv-stand-width/4;
+$shelf-height: $tv-stand-height*0.3;
 
 /*guy size variables*/
 $size: $flat-screen-width*3/100;
