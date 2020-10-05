@@ -39,6 +39,30 @@
     left: 0.4vw;
   }
 }
+.remote-control {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  width: 6.6666666667vw;
+  height: 20vw;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 2000vw;
+  background-color: black;
+  animation: truc 1s alternate infinite;
+}
+.remote-control::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 6.6666666667vw;
+  height: 2vw;
+  transform-origin: bottom;
+  background-color: grey;
+  transform: rotateX(-90deg);
+}
+
 .wall-front {
   position: absolute;
   top: 10%;

@@ -1,5 +1,30 @@
 /// <reference path="_variables.scss" />
 
+.remote-control {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: $remote-width;
+    height: $remote-height;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    perspective: $remote-height*100;
+    background-color: black;
+    animation: truc 1s alternate infinite;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: $remote-width;
+        height: $remote-height/10;
+        transform-origin: bottom;
+        background-color: grey;
+        transform: rotateX(-90deg);
+    }
+}
+
 .wall-front {
     position: absolute;
     top: 10%;
