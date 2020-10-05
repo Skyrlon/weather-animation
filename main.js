@@ -1,6 +1,8 @@
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 let tornadoParts = document.getElementsByClassName('tornado-parts');
 const numberTornadoParts = 24;
+const buttonRemote = document.getElementsByClassName('remote-button-center');
+const numberButtonParts = 24;
 
 function drawSuitShirt() {
     const canvas = document.getElementsByClassName('suit-shirt')[0];
@@ -81,3 +83,31 @@ function createTornadoMouth(parent, number) {
 for (let i = 0; i < 5; i++) {
     createTornadoMouth(tornadoParts[2].childNodes[i], i+1);
 };
+
+function createButtonCenterChildren(parent) {
+    for (let i = 0; i < numberButtonParts; i++) {
+        let div = document.createElement('div');
+        div.setAttribute('class', alphabet[i]);
+        parent.appendChild(div);
+    }
+};
+
+function styleButtonParts(parent, divisorRadius) {
+    let rotateValue = -(360 / numberButtonParts);
+    let buttonRadius = 10;
+    let buttonPartsAngle = 360 / numberButtonParts;
+    let buttonPartsAngleRad = buttonPartsAngle / 2 * Math.PI / 180;
+    let buttonPartsAngleCos = Math.cos(buttonPartsAngleRad);
+    let buttonPartsHyp = buttonRadius / buttonPartsAngleCos;
+    let buttonPartsHalfWidth = Math.sqrt((buttonPartsHyp ** 2) - (buttonRadius ** 2));
+    let widthValue = (Math.ceil(buttonPartsHalfWidth * 2 * 10) / 10);
+    for (let j = 0; j < parent.childNodes.length; j++) {
+        rotateValue += (360 / numberButtonParts);
+        if (parent.childNodes[j].nodeName.toLowerCase() == 'div') {
+            parent.childNodes[j].style.cssText = `transform: rotateY(${rotateValue}deg) translateZ(${buttonRadius / divisorRadius}vw); width: ${widthValue / divisorRadius}vw`;
+        }
+    }
+};
+
+createButtonCenterChildren(buttonRemote[0]);
+styleButtonParts(buttonRemote[0], 2)
