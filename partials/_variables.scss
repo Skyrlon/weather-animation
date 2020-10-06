@@ -18,9 +18,9 @@ $color-suit: black;
 $color-tie: red;
 $color-suit-shoe: #481d20;
 
-$remote-height: 20vw;
-$remote-width: $remote-height/3;
-$button-size: 10vw;
+$remote-width: 7vw;
+$remote-height: $remote-width*3;
+$button-size: $remote-width/5;
 
 $front-wall-width: 40vw;
 $front-wall-height: $front-wall-width/16*9;
