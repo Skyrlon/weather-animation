@@ -33,39 +33,30 @@ drawSuitShirt();
 drawTieBottom();
 
 for (let i = 0; i < tornadoParts.length; i++) {
-    createChildren(tornadoParts[i], numberTornadoParts);
+    createChildren(tornadoParts[i], numberTornadoParts, '', alphabet);
 };
 
 styleParts(tornadoParts[0], tornadoRadius, 1, numberTornadoParts);
-styleParts(tornadoParts[1], tornadoRadius, 6/5, numberTornadoParts);
-styleParts(tornadoParts[2], tornadoRadius, 3/2, numberTornadoParts);
+styleParts(tornadoParts[1], tornadoRadius, 6 / 5, numberTornadoParts);
+styleParts(tornadoParts[2], tornadoRadius, 3 / 2, numberTornadoParts);
 styleParts(tornadoParts[3], tornadoRadius, 2, numberTornadoParts);
 styleParts(tornadoParts[4], tornadoRadius, 3, numberTornadoParts);
-styleParts(tornadoParts[5], tornadoRadius, 15/4, numberTornadoParts);
+styleParts(tornadoParts[5], tornadoRadius, 15 / 4, numberTornadoParts);
 
-function createTornadoEye(parent, number) {
-        let div = document.createElement('div');
-        div.setAttribute('class', "tornado-eye tornado-eye-" + number);
-        parent.appendChild(div);
-};
+createChildren(buttonRemote[0], numberButtonParts, '', alphabet);
+styleParts(buttonRemote[0], buttonRadius, 1, numberButtonParts);
 
 createTornadoEye(tornadoParts[1].childNodes[1], 1);
 createTornadoEye(tornadoParts[1].childNodes[4], 2);
-
-function createTornadoMouth(parent, number) {
-    let div = document.createElement('div');
-    div.setAttribute('class', "tornado-mouth tornado-mouth-" + number);
-    parent.appendChild(div);
-};
 
 for (let i = 0; i < 5; i++) {
     createTornadoMouth(tornadoParts[2].childNodes[i], i+1);
 };
 
-function createChildren(parent, numberParts) {
-    for (let i = 0; i < numberParts; i++) {
+function createChildren(parent, numberChildren, nameChildren, arrayChildren) {
+    for (let i = 0; i < numberChildren; i++) {
         let div = document.createElement('div');
-        div.setAttribute('class', alphabet[i]);
+        div.setAttribute('class', nameChildren + arrayChildren[i]);
         parent.appendChild(div);
     }
 };
@@ -86,5 +77,14 @@ function styleParts(parent, radius, divisorRadius, numberParts) {
     }
 };
 
-createChildren(buttonRemote[0], numberButtonParts);
-styleParts(buttonRemote[0], buttonRadius, 1, numberButtonParts);
+function createTornadoEye(parent, number) {
+    let div = document.createElement('div');
+    div.setAttribute('class', `tornado-eye tornado-eye-${number}`);
+    parent.appendChild(div);
+};
+
+function createTornadoMouth(parent, number) {
+    let div = document.createElement('div');
+    div.setAttribute('class', `tornado-mouth tornado-mouth-${number}`);
+    parent.appendChild(div);
+};
