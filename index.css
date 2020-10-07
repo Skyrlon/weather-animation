@@ -39,6 +39,121 @@
     left: 0.4vw;
   }
 }
+.palm {
+  z-index: 1;
+  position: absolute;
+  top: 80%;
+  left: 70%;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 825vw;
+  transform: rotateX(0deg) rotateY(0deg);
+}
+.palm__face {
+  position: absolute;
+  width: 8.25vw;
+  height: 5.5vw;
+}
+.palm__face--front {
+  background-color: blue;
+  transform: translateZ(0.375vw);
+}
+.palm__face--back {
+  transform: rotateY(180deg) translateZ(0.375vw);
+  background-color: grey;
+}
+.palm__face--right {
+  width: 0.75vw;
+  transform: rotateY(90deg) translateZ(7.875vw);
+  background-color: orange;
+}
+.palm__face--left {
+  width: 0.75vw;
+  transform: rotateY(-90deg) translateZ(0.375vw);
+  background-color: purple;
+}
+.palm__face--top {
+  height: 0.75vw;
+  transform: rotateX(90deg) translateZ(0.375vw);
+  background-color: red;
+}
+.palm__face--bottom {
+  height: 0.75vw;
+  transform: rotateX(-90deg) translateZ(5.125vw);
+  background-color: green;
+}
+
+.finger {
+  position: absolute;
+  bottom: 9vw;
+}
+
+.index {
+  left: 0;
+}
+
+.middle {
+  left: 2.25vw;
+}
+
+.ring {
+  left: 4.5vw;
+}
+
+.little {
+  left: 6.75vw;
+}
+
+.phalanx {
+  position: absolute;
+  width: 1.5vw;
+  height: 3vw;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 300vw;
+}
+.phalanx_middle {
+  position: absolute;
+  top: 3vw;
+}
+.phalanx_inferior {
+  position: absolute;
+  top: 6vw;
+}
+.phalanx__face {
+  position: absolute;
+  width: 1.5vw;
+  height: 3vw;
+}
+.phalanx__face--front {
+  background-color: blue;
+  transform: translateZ(0.375vw);
+}
+.phalanx__face--back {
+  transform: rotateY(180deg) translateZ(0.375vw);
+  background-color: grey;
+}
+.phalanx__face--right {
+  width: 0.75vw;
+  transform: rotateY(90deg) translateZ(1.125vw);
+  background-color: orange;
+}
+.phalanx__face--left {
+  width: 0.75vw;
+  transform: rotateY(-90deg) translateZ(0.375vw);
+  background-color: purple;
+}
+.phalanx__face--top {
+  height: 0.75vw;
+  transform: rotateX(90deg) translateZ(0.375vw);
+  background-color: red;
+}
+.phalanx__face--bottom {
+  height: 0.75vw;
+  transform: rotateX(-90deg) translateZ(2.625vw);
+  background-color: green;
+}
+
 .remote-control {
   z-index: 1;
   position: absolute;

@@ -1,5 +1,136 @@
 /// <reference path="_variables.scss" />
 
+.palm {
+    z-index: 1;
+    position: absolute;
+    top: 80%;
+    left: 70%;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    perspective: $palm-width*100;
+    transform: rotateX(0deg) rotateY(0deg);
+
+    &__face {
+        position: absolute;
+        width: $palm-width;
+        height: $palm-height;
+
+        &--front {
+            background-color: blue;
+            transform: translateZ($palm-depth/2)
+        }
+
+        &--back {
+            transform: rotateY(180deg) translateZ($palm-depth/2);
+            background-color: grey;
+        }
+
+        &--right {
+            width: $palm-depth;
+            transform: rotateY(90deg) translateZ($palm-width - $palm-depth/2);
+            background-color: orange;
+        }
+
+        &--left {
+            width: $palm-depth;
+            transform: rotateY(-90deg) translateZ($palm-depth/2);
+            background-color: purple;
+        }
+
+        &--top {
+            height: $palm-depth;
+            transform: rotateX(90deg) translateZ($palm-depth/2);
+            background-color: red;
+        }
+
+        &--bottom {
+            height: $palm-depth;
+            transform: rotateX(-90deg) translateZ($palm-height - $palm-depth/2);
+            background-color: green;
+        }
+    }
+}
+
+.finger {
+    position: absolute;
+    bottom: $phalanx-height*3;
+}
+
+.index {
+    left: 0;
+}
+
+.middle {
+    left: $phalanx-width*1.5;
+}
+
+.ring {
+    left: $phalanx-width*3;
+}
+
+.little {
+    left: $phalanx-width*4.5;
+}
+
+.phalanx {
+    position: absolute;
+    width: $phalanx-width;
+    height: $phalanx-height;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    perspective: $phalanx-height*100;
+
+    &_middle {
+        position: absolute;
+        top: $phalanx-height;
+    }
+
+    &_inferior {
+        position: absolute;
+        top: $phalanx-height*2;
+    }
+
+    &__face {
+        position: absolute;
+        width: $phalanx-width;
+        height: $phalanx-height;
+
+        &--front {
+            background-color: blue;
+            transform: translateZ($phalanx-depth/2);
+        }
+
+        &--back {
+            transform: rotateY(180deg) translateZ($phalanx-depth/2);
+            background-color: grey;
+        }
+
+        &--right {
+            width: $phalanx-depth;
+            transform: rotateY(90deg) translateZ($phalanx-width - $phalanx-depth/2);
+            background-color: orange;
+        }
+
+        &--left {
+            width: $phalanx-depth;
+            transform: rotateY(-90deg) translateZ($phalanx-depth/2);
+            background-color: purple;
+        }
+
+        &--top {
+            height: $phalanx-depth;
+            transform: rotateX(90deg) translateZ($phalanx-depth/2);
+            background-color: red;
+        }
+
+        &--bottom {
+            height: $phalanx-depth;
+            transform: rotateX(-90deg) translateZ($phalanx-height - $phalanx-depth/2);
+            background-color: green;
+        }
+    }
+}
+
 .remote-control {
     z-index: 1;
     position: absolute;

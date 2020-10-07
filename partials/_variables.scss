@@ -18,6 +18,13 @@ $color-suit: black;
 $color-tie: red;
 $color-suit-shoe: #481d20;
 
+$phalanx-width: 1.5vw;
+$phalanx-height: $phalanx-width*2;
+$phalanx-depth: $phalanx-width/2;
+$palm-width: $phalanx-width*5.5;
+$palm-height: $palm-width/1.5;
+$palm-depth: $phalanx-depth;
+
 $remote-width: 7vw;
 $remote-height: $remote-width*3;
 $button-size: $remote-width/5;
