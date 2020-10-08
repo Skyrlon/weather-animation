@@ -6,6 +6,7 @@ const numberButtonParts = 24;
 const tornadoRadius = 20 * 4 / 100;
 const buttonRadius = (7 / 5) /2;
 let finger = document.getElementsByClassName('finger');
+let thumb = document.getElementsByClassName('thumb');
 let phalanx = document.getElementsByClassName('phalanx');
 let palm = document.getElementsByClassName('palm');
 const position = ['superior', 'middle', 'inferior'];
@@ -94,9 +95,13 @@ function createTornadoMouth(parent, number) {
     parent.appendChild(div);
 };
 
+
+
 for (let i = 0; i < finger.length; i++) {
     createChildren(finger[i], 3, 'phalanx phalanx_', position);
 };
+
+createChildren(thumb[0], 2, 'phalanx phalanx_', position);
 
 for (let i = 0; i < phalanx.length; i++) {
     createChildren(phalanx[i], 6, 'phalanx__face phalanx__face--', faces);

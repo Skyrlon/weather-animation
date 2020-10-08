@@ -43,7 +43,9 @@
   z-index: 1;
   position: absolute;
   top: 80%;
-  left: 70%;
+  left: 60%;
+  width: 8.25vw;
+  height: 5.5vw;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 825vw;
@@ -56,36 +58,53 @@
 }
 .palm__face--front {
   background-color: blue;
-  transform: translateZ(0.375vw);
+  transform: translateZ(0.5vw);
 }
 .palm__face--back {
-  transform: rotateY(180deg) translateZ(0.375vw);
+  transform: rotateY(180deg) translateZ(0.5vw);
   background-color: grey;
 }
 .palm__face--right {
-  width: 0.75vw;
-  transform: rotateY(90deg) translateZ(7.875vw);
+  width: 1vw;
+  transform: rotateY(90deg) translateZ(7.75vw);
   background-color: orange;
 }
 .palm__face--left {
-  width: 0.75vw;
-  transform: rotateY(-90deg) translateZ(0.375vw);
+  width: 1vw;
+  transform: rotateY(-90deg) translateZ(0.5vw);
   background-color: purple;
 }
 .palm__face--top {
-  height: 0.75vw;
-  transform: rotateX(90deg) translateZ(0.375vw);
+  height: 1vw;
+  transform: rotateX(90deg) translateZ(0.5vw);
   background-color: red;
 }
 .palm__face--bottom {
-  height: 0.75vw;
-  transform: rotateX(-90deg) translateZ(5.125vw);
+  height: 1vw;
+  transform: rotateX(-90deg) translateZ(5vw);
   background-color: green;
+}
+
+.thumb {
+  position: absolute;
+  bottom: 0.75vw;
+  left: 0;
+  width: 1.5vw;
+  height: 6vw;
+  transform-origin: bottom;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 825vw;
+  transform: rotate(-45deg) rotateX(0deg) rotateY(0deg);
 }
 
 .finger {
   position: absolute;
-  bottom: 9vw;
+  top: -9vw;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 825vw;
+  transform: rotateX(0deg) rotateY(0deg);
 }
 
 .index {
@@ -127,30 +146,30 @@
 }
 .phalanx__face--front {
   background-color: blue;
-  transform: translateZ(0.375vw);
+  transform: translateZ(0.5vw);
 }
 .phalanx__face--back {
-  transform: rotateY(180deg) translateZ(0.375vw);
+  transform: rotateY(180deg) translateZ(0.5vw);
   background-color: grey;
 }
 .phalanx__face--right {
-  width: 0.75vw;
-  transform: rotateY(90deg) translateZ(1.125vw);
+  width: 1vw;
+  transform: rotateY(90deg) translateZ(1vw);
   background-color: orange;
 }
 .phalanx__face--left {
-  width: 0.75vw;
-  transform: rotateY(-90deg) translateZ(0.375vw);
+  width: 1vw;
+  transform: rotateY(-90deg) translateZ(0.5vw);
   background-color: purple;
 }
 .phalanx__face--top {
-  height: 0.75vw;
-  transform: rotateX(90deg) translateZ(0.375vw);
+  height: 1vw;
+  transform: rotateX(90deg) translateZ(0.5vw);
   background-color: red;
 }
 .phalanx__face--bottom {
-  height: 0.75vw;
-  transform: rotateX(-90deg) translateZ(2.625vw);
+  height: 1vw;
+  transform: rotateX(-90deg) translateZ(2.5vw);
   background-color: green;
 }
 

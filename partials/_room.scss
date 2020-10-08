@@ -4,7 +4,9 @@
     z-index: 1;
     position: absolute;
     top: 80%;
-    left: 70%;
+    left: 60%;
+    width: $palm-width;
+    height: $palm-height;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
@@ -51,9 +53,26 @@
     }
 }
 
+.thumb {
+    position: absolute;
+    bottom: $phalanx-width/2;
+    left: 0;
+    width: $phalanx-width;
+    height: $phalanx-height*2;
+    transform-origin: bottom;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    perspective: $palm-width*100;
+    transform: rotate(-45deg) rotateX(0deg) rotateY(0deg);
+}
+
 .finger {
     position: absolute;
-    bottom: $phalanx-height*3;
+    top: -$phalanx-height*3;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    perspective: $palm-width*100;
+    transform: rotateX(0deg) rotateY(0deg);
 }
 
 .index {
