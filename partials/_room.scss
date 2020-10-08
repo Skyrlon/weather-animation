@@ -3,8 +3,8 @@
 .palm {
     z-index: 1;
     position: absolute;
-    top: 80%;
-    left: 60%;
+    top: 40%;
+    left: 70%;
     width: $palm-width;
     height: $palm-height;
     perspective-origin: 50% 50%;
@@ -145,6 +145,58 @@
         &--bottom {
             height: $phalanx-depth;
             transform: rotateX(-90deg) translateZ($phalanx-height - $phalanx-depth/2);
+            background-color: green;
+        }
+    }
+}
+
+.forearm {
+    position: absolute;
+    bottom: -$forearm-height;
+    left: ($palm-width - $forearm-width)/2;
+    width: $forearm-width;
+    height: $forearm-height;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    perspective: $palm-width*100;
+    transform: rotateX(0deg) rotateY(0deg);
+
+    &__face {
+        position: absolute;
+        width: $forearm-width;
+        height: $forearm-height;
+
+        &--front {
+            background-color: blue;
+            transform: translateZ($forearm-depth/2)
+        }
+
+        &--back {
+            transform: rotateY(180deg) translateZ($forearm-depth/2);
+            background-color: grey;
+        }
+
+        &--right {
+            width: $forearm-depth;
+            transform: rotateY(90deg) translateZ($forearm-width - $forearm-depth/2);
+            background-color: orange;
+        }
+
+        &--left {
+            width: $forearm-depth;
+            transform: rotateY(-90deg) translateZ($forearm-depth/2);
+            background-color: purple;
+        }
+
+        &--top {
+            height: $forearm-depth;
+            transform: rotateX(90deg) translateZ($forearm-depth/2);
+            background-color: red;
+        }
+
+        &--bottom {
+            height: $forearm-depth;
+            transform: rotateX(-90deg) translateZ($forearm-height - $forearm-depth/2);
             background-color: green;
         }
     }

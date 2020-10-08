@@ -24,6 +24,9 @@ $phalanx-depth: $phalanx-width/1.5;
 $palm-width: $phalanx-width*5.5;
 $palm-height: $palm-width/1.5;
 $palm-depth: $phalanx-depth;
+$forearm-width: $palm-width*0.85;
+$forearm-height: $forearm-width*2.5;
+$forearm-depth: $palm-depth;
 
 $remote-width: 7vw;
 $remote-height: $remote-width*3;

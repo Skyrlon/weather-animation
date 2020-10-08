@@ -9,6 +9,7 @@ let finger = document.getElementsByClassName('finger');
 let thumb = document.getElementsByClassName('thumb');
 let phalanx = document.getElementsByClassName('phalanx');
 let palm = document.getElementsByClassName('palm');
+let forearm = document.getElementsByClassName('forearm');
 const position = ['superior', 'middle', 'inferior'];
 const faces = ['front', 'back', 'right', 'left', 'top', 'bottom'];
 
@@ -95,8 +96,6 @@ function createTornadoMouth(parent, number) {
     parent.appendChild(div);
 };
 
-
-
 for (let i = 0; i < finger.length; i++) {
     createChildren(finger[i], 3, 'phalanx phalanx_', position);
 };
@@ -108,3 +107,5 @@ for (let i = 0; i < phalanx.length; i++) {
 };
 
 createChildren(palm[0], 6, 'palm__face palm__face--', faces);
+
+createChildren(forearm[0], 6, 'forearm__face forearm__face--', faces);
