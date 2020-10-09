@@ -4,13 +4,13 @@
     z-index: 1;
     position: absolute;
     top: 40%;
-    left: 70%;
+    left: 60%;
     width: $palm-width;
     height: $palm-height;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
-    transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(0deg) rotateY(180deg);
 
     &__face {
         position: absolute;
@@ -63,15 +63,52 @@
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
-    transform: rotate(-45deg) rotateX(0deg) rotateY(0deg);
+    transform: rotate(-90deg) rotateX(0deg) rotateY(0deg);
+
+    .phalanx {
+        position: absolute;
+        width: $phalanx-width;
+        height: $phalanx-height;
+        perspective-origin: 50% 50%;
+        transform-style: preserve-3d;
+        perspective: $phalanx-height*100;
+        transform-origin: bottom;
+
+        &_inferior {
+            position: absolute;
+            bottom: 0;
+            width: $phalanx-width;
+            height: $phalanx-height;
+            perspective-origin: 50% 50%;
+            transform-style: preserve-3d;
+            perspective: $phalanx-height*100;
+            transform-origin: bottom;
+            transform: rotateX(90deg) rotateY(0deg);
+        }
+
+        &_middle {
+            position: absolute;
+            top: -$phalanx-height;
+            width: $phalanx-width;
+            height: $phalanx-height;
+            perspective-origin: 50% 50%;
+            transform-style: preserve-3d;
+            perspective: $phalanx-height*100;
+            transform-origin: bottom;
+            transform: rotateX(90deg) rotateY(0deg);
+        }
+    }
 }
 
 .finger {
     position: absolute;
     top: -$phalanx-height*3;
+    width: $phalanx-width;
+    height: $phalanx-height*3;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
+    transform-origin: bottom;
     transform: rotateX(0deg) rotateY(0deg);
 }
 
@@ -98,15 +135,38 @@
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $phalanx-height*100;
-
-    &_middle {
-        position: absolute;
-        top: $phalanx-height;
-    }
+    transform-origin: bottom;
 
     &_inferior {
         position: absolute;
-        top: $phalanx-height*2;
+        bottom: 0;
+        width: $phalanx-width;
+        height: $phalanx-height;
+        perspective-origin: 50% 50%;
+        transform-style: preserve-3d;
+        perspective: $phalanx-height*100;
+        transform-origin: bottom;
+        transform: rotateX(90deg) rotateY(0deg);
+    }
+
+    &_middle {
+        position: absolute;
+        top: -$phalanx-height;
+        width: $phalanx-width;
+        height: $phalanx-height;
+        perspective-origin: 50% 50%;
+        transform-style: preserve-3d;
+        perspective: $phalanx-height*100;
+        transform-origin: bottom;
+        transform: rotateX(90deg) rotateY(0deg);
+    }
+
+    &_superior {
+        position: absolute;
+        top: -$phalanx-height;
+        width: $phalanx-width;
+        height: $phalanx-height;
+        transform: rotateX(130deg) rotateY(0deg);
     }
 
     &__face {
@@ -206,7 +266,7 @@
     z-index: 1;
     position: absolute;
     top: 50%;
-    left: 80%;
+    left: 70%;
     width: $remote-width;
     height: $remote-height;
     perspective-origin: 50% 50%;

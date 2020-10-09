@@ -96,12 +96,6 @@ function createTornadoMouth(parent, number) {
     parent.appendChild(div);
 };
 
-for (let i = 0; i < finger.length; i++) {
-    createChildren(finger[i], 3, 'phalanx phalanx_', position);
-};
-
-createChildren(thumb[0], 2, 'phalanx phalanx_', position);
-
 for (let i = 0; i < phalanx.length; i++) {
     createChildren(phalanx[i], 6, 'phalanx__face phalanx__face--', faces);
 };

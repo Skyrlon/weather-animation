@@ -43,13 +43,13 @@
   z-index: 1;
   position: absolute;
   top: 40%;
-  left: 70%;
+  left: 60%;
   width: 8.25vw;
   height: 5.5vw;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 825vw;
-  transform: rotateX(0deg) rotateY(0deg);
+  transform: rotateX(0deg) rotateY(180deg);
 }
 .palm__face {
   position: absolute;
@@ -95,15 +95,49 @@
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 825vw;
-  transform: rotate(-45deg) rotateX(0deg) rotateY(0deg);
+  transform: rotate(-90deg) rotateX(0deg) rotateY(0deg);
+}
+.thumb .phalanx {
+  position: absolute;
+  width: 1.5vw;
+  height: 3vw;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 300vw;
+  transform-origin: bottom;
+}
+.thumb .phalanx_inferior {
+  position: absolute;
+  bottom: 0;
+  width: 1.5vw;
+  height: 3vw;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 300vw;
+  transform-origin: bottom;
+  transform: rotateX(90deg) rotateY(0deg);
+}
+.thumb .phalanx_middle {
+  position: absolute;
+  top: -3vw;
+  width: 1.5vw;
+  height: 3vw;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 300vw;
+  transform-origin: bottom;
+  transform: rotateX(90deg) rotateY(0deg);
 }
 
 .finger {
   position: absolute;
   top: -9vw;
+  width: 1.5vw;
+  height: 9vw;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 825vw;
+  transform-origin: bottom;
   transform: rotateX(0deg) rotateY(0deg);
 }
 
@@ -130,14 +164,36 @@
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 300vw;
-}
-.phalanx_middle {
-  position: absolute;
-  top: 3vw;
+  transform-origin: bottom;
 }
 .phalanx_inferior {
   position: absolute;
-  top: 6vw;
+  bottom: 0;
+  width: 1.5vw;
+  height: 3vw;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 300vw;
+  transform-origin: bottom;
+  transform: rotateX(90deg) rotateY(0deg);
+}
+.phalanx_middle {
+  position: absolute;
+  top: -3vw;
+  width: 1.5vw;
+  height: 3vw;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 300vw;
+  transform-origin: bottom;
+  transform: rotateX(90deg) rotateY(0deg);
+}
+.phalanx_superior {
+  position: absolute;
+  top: -3vw;
+  width: 1.5vw;
+  height: 3vw;
+  transform: rotateX(130deg) rotateY(0deg);
 }
 .phalanx__face {
   position: absolute;
@@ -222,7 +278,7 @@
   z-index: 1;
   position: absolute;
   top: 50%;
-  left: 80%;
+  left: 70%;
   width: 7vw;
   height: 21vw;
   perspective-origin: 50% 50%;
