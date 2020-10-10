@@ -39,17 +39,63 @@
     left: 0.4vw;
   }
 }
-.palm {
+.forearm {
   z-index: 1;
   position: absolute;
-  top: 40%;
-  left: 60%;
+  top: 60%;
+  left: 80%;
+  width: 7.0125vw;
+  height: 17.53125vw;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 825vw;
+  transform: rotate(-50deg) rotateY(180deg) rotateX(0deg);
+}
+.forearm__face {
+  position: absolute;
+  width: 7.0125vw;
+  height: 17.53125vw;
+}
+.forearm__face--front {
+  background-color: blue;
+  transform: translateZ(0.5vw);
+}
+.forearm__face--back {
+  transform: rotateY(180deg) translateZ(0.5vw);
+  background-color: grey;
+}
+.forearm__face--right {
+  width: 1vw;
+  transform: rotateY(90deg) translateZ(6.5125vw);
+  background-color: orange;
+}
+.forearm__face--left {
+  width: 1vw;
+  transform: rotateY(-90deg) translateZ(0.5vw);
+  background-color: purple;
+}
+.forearm__face--top {
+  height: 1vw;
+  transform: rotateX(90deg) translateZ(0.5vw);
+  background-color: red;
+}
+.forearm__face--bottom {
+  height: 1vw;
+  transform: rotateX(-90deg) translateZ(17.03125vw);
+  background-color: green;
+}
+
+.palm {
+  position: absolute;
+  top: -5.5vw;
+  left: -0.61875vw;
   width: 8.25vw;
   height: 5.5vw;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 825vw;
-  transform: rotateX(0deg) rotateY(180deg);
+  transform-origin: left bottom;
+  transform: rotate(40deg) rotateY(0deg);
 }
 .palm__face {
   position: absolute;
@@ -95,7 +141,7 @@
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 825vw;
-  transform: rotate(-90deg) rotateX(0deg) rotateY(0deg);
+  transform: rotate(-90deg) rotateX(90deg) rotateY(-90deg);
 }
 .thumb .phalanx {
   position: absolute;
@@ -115,7 +161,7 @@
   transform-style: preserve-3d;
   perspective: 300vw;
   transform-origin: bottom;
-  transform: rotateX(90deg) rotateY(0deg);
+  transform: rotateX(0deg) rotateY(0deg);
 }
 .thumb .phalanx_middle {
   position: absolute;
@@ -175,7 +221,7 @@
   transform-style: preserve-3d;
   perspective: 300vw;
   transform-origin: bottom;
-  transform: rotateX(90deg) rotateY(0deg);
+  transform: rotateX(0deg) rotateY(0deg);
 }
 .phalanx_middle {
   position: absolute;
@@ -193,7 +239,7 @@
   top: -3vw;
   width: 1.5vw;
   height: 3vw;
-  transform: rotateX(130deg) rotateY(0deg);
+  transform: rotateX(90deg) rotateY(0deg);
 }
 .phalanx__face {
   position: absolute;
@@ -229,63 +275,17 @@
   background-color: green;
 }
 
-.forearm {
-  position: absolute;
-  bottom: -17.53125vw;
-  left: 0.61875vw;
-  width: 7.0125vw;
-  height: 17.53125vw;
-  perspective-origin: 50% 50%;
-  transform-style: preserve-3d;
-  perspective: 825vw;
-  transform: rotateX(0deg) rotateY(0deg);
-}
-.forearm__face {
-  position: absolute;
-  width: 7.0125vw;
-  height: 17.53125vw;
-}
-.forearm__face--front {
-  background-color: blue;
-  transform: translateZ(0.5vw);
-}
-.forearm__face--back {
-  transform: rotateY(180deg) translateZ(0.5vw);
-  background-color: grey;
-}
-.forearm__face--right {
-  width: 1vw;
-  transform: rotateY(90deg) translateZ(6.5125vw);
-  background-color: orange;
-}
-.forearm__face--left {
-  width: 1vw;
-  transform: rotateY(-90deg) translateZ(0.5vw);
-  background-color: purple;
-}
-.forearm__face--top {
-  height: 1vw;
-  transform: rotateX(90deg) translateZ(0.5vw);
-  background-color: red;
-}
-.forearm__face--bottom {
-  height: 1vw;
-  transform: rotateX(-90deg) translateZ(17.03125vw);
-  background-color: green;
-}
-
 .remote-control {
-  z-index: 1;
   position: absolute;
-  top: 50%;
-  left: 70%;
+  top: -10vw;
+  left: 0;
   width: 7vw;
   height: 21vw;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 2100vw;
   background-color: black;
-  transform: rotateX(45deg);
+  transform: rotate(-90deg) translateZ(-2vw);
 }
 .remote-control::before {
   content: "";
@@ -299,16 +299,15 @@
 }
 
 .remote-button {
-  z-index: 1;
   position: absolute;
   top: 10%;
-  left: 10%;
+  right: 10%;
   width: 1.4vw;
   height: 1.4vw;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 140vw;
-  transform: translateZ(0.7vw);
+  transform: translateZ(-0.7vw);
 }
 .remote-button-top {
   position: absolute;
@@ -324,13 +323,13 @@
   height: 100%;
   background-color: red;
   border-radius: 100%;
-  transform: rotateY(180deg) translateZ(0.7vw);
+  transform: rotateY(180deg) translateZ(-0.7vw);
 }
 .remote-button-center {
   position: absolute;
   left: 0.7vw;
   transform-style: preserve-3d;
-  transform: rotateX(-90deg) translateZ(0.7vw);
+  transform: rotateX(90deg) translateZ(-0.7vw);
 }
 
 .remote-button-center div {

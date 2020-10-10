@@ -1,16 +1,69 @@
 /// <reference path="_variables.scss" />
 
-.palm {
+.forearm {
     z-index: 1;
     position: absolute;
-    top: 40%;
-    left: 60%;
+    top: 60%;
+    left: 80%;
+    width: $forearm-width;
+    height: $forearm-height;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    perspective: $palm-width*100;
+    transform: rotate(-50deg) rotateY(180deg) rotateX(-0deg);
+
+    &__face {
+        position: absolute;
+        width: $forearm-width;
+        height: $forearm-height;
+
+        &--front {
+            background-color: blue;
+            transform: translateZ($forearm-depth/2)
+        }
+
+        &--back {
+            transform: rotateY(180deg) translateZ($forearm-depth/2);
+            background-color: grey;
+        }
+
+        &--right {
+            width: $forearm-depth;
+            transform: rotateY(90deg) translateZ($forearm-width - $forearm-depth/2);
+            background-color: orange;
+        }
+
+        &--left {
+            width: $forearm-depth;
+            transform: rotateY(-90deg) translateZ($forearm-depth/2);
+            background-color: purple;
+        }
+
+        &--top {
+            height: $forearm-depth;
+            transform: rotateX(90deg) translateZ($forearm-depth/2);
+            background-color: red;
+        }
+
+        &--bottom {
+            height: $forearm-depth;
+            transform: rotateX(-90deg) translateZ($forearm-height - $forearm-depth/2);
+            background-color: green;
+        }
+    }
+}
+
+.palm {   
+    position: absolute;
+    top: -$palm-height;
+    left: ($forearm-width - $palm-width)/2;
     width: $palm-width;
     height: $palm-height;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
-    transform: rotateX(0deg) rotateY(180deg);
+    transform-origin:left bottom;
+    transform: rotate(40deg) rotateY(0deg);
 
     &__face {
         position: absolute;
@@ -63,7 +116,7 @@
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
-    transform: rotate(-90deg) rotateX(0deg) rotateY(0deg);
+    transform: rotate(-90deg) rotateX(90deg) rotateY(-90deg);
 
     .phalanx {
         position: absolute;
@@ -83,7 +136,7 @@
             transform-style: preserve-3d;
             perspective: $phalanx-height*100;
             transform-origin: bottom;
-            transform: rotateX(90deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
         }
 
         &_middle {
@@ -146,7 +199,7 @@
         transform-style: preserve-3d;
         perspective: $phalanx-height*100;
         transform-origin: bottom;
-        transform: rotateX(90deg) rotateY(0deg);
+        transform: rotateX(0deg) rotateY(0deg);
     }
 
     &_middle {
@@ -166,7 +219,7 @@
         top: -$phalanx-height;
         width: $phalanx-width;
         height: $phalanx-height;
-        transform: rotateX(130deg) rotateY(0deg);
+        transform: rotateX(90deg) rotateY(0deg);
     }
 
     &__face {
@@ -210,70 +263,17 @@
     }
 }
 
-.forearm {
-    position: absolute;
-    bottom: -$forearm-height;
-    left: ($palm-width - $forearm-width)/2;
-    width: $forearm-width;
-    height: $forearm-height;
-    perspective-origin: 50% 50%;
-    transform-style: preserve-3d;
-    perspective: $palm-width*100;
-    transform: rotateX(0deg) rotateY(0deg);
-
-    &__face {
-        position: absolute;
-        width: $forearm-width;
-        height: $forearm-height;
-
-        &--front {
-            background-color: blue;
-            transform: translateZ($forearm-depth/2)
-        }
-
-        &--back {
-            transform: rotateY(180deg) translateZ($forearm-depth/2);
-            background-color: grey;
-        }
-
-        &--right {
-            width: $forearm-depth;
-            transform: rotateY(90deg) translateZ($forearm-width - $forearm-depth/2);
-            background-color: orange;
-        }
-
-        &--left {
-            width: $forearm-depth;
-            transform: rotateY(-90deg) translateZ($forearm-depth/2);
-            background-color: purple;
-        }
-
-        &--top {
-            height: $forearm-depth;
-            transform: rotateX(90deg) translateZ($forearm-depth/2);
-            background-color: red;
-        }
-
-        &--bottom {
-            height: $forearm-depth;
-            transform: rotateX(-90deg) translateZ($forearm-height - $forearm-depth/2);
-            background-color: green;
-        }
-    }
-}
-
 .remote-control {
-    z-index: 1;
     position: absolute;
-    top: 50%;
-    left: 70%;
+    top: -$remote-height/2.1;
+    left: 0;
     width: $remote-width;
     height: $remote-height;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $remote-height*100;
     background-color: black;
-    transform: rotateX(45deg);
+    transform: rotate(-90deg) translateZ(-$palm-depth*2);
 
     &::before {
         content: '';
@@ -288,16 +288,15 @@
 }
 
 .remote-button {
-    z-index: 1;
     position: absolute;
     top: 10%;
-    left: 10%;
+    right: 10%;
     width: $button-size;
     height: $button-size;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $button-size*100;
-    transform: translateZ($button-size/2);
+    transform: translateZ(-$button-size/2);
 
     &-top {
         position: absolute;
@@ -314,14 +313,14 @@
         height: 100%;
         background-color: red;
         border-radius: 100%;
-        transform: rotateY(180deg) translateZ($button-size/2);
+        transform: rotateY(180deg) translateZ(-$button-size/2);
     }
 
     &-center {
         position: absolute;
         left: $button-size/2;
         transform-style: preserve-3d;
-        transform: rotateX(-90deg) translateZ($button-size/2);
+        transform: rotateX(90deg) translateZ(-$button-size/2);
     }
 }
 
