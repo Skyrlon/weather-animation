@@ -39,13 +39,21 @@
     left: 0.4vw;
   }
 }
-.forearm {
+.container-forearm {
   z-index: 1;
   position: absolute;
   top: 60%;
   left: 80%;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  perspective: 825vw;
+  transform: rotateX(10deg);
+}
+
+.forearm {
+  position: absolute;
   width: 7.0125vw;
-  height: 17.53125vw;
+  height: 28.05vw;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 825vw;
@@ -54,7 +62,7 @@
 .forearm__face {
   position: absolute;
   width: 7.0125vw;
-  height: 17.53125vw;
+  height: 28.05vw;
 }
 .forearm__face--front {
   background-color: blue;
@@ -81,7 +89,7 @@
 }
 .forearm__face--bottom {
   height: 1vw;
-  transform: rotateX(-90deg) translateZ(17.03125vw);
+  transform: rotateX(-90deg) translateZ(27.55vw);
   background-color: green;
 }
 
