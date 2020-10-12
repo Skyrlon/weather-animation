@@ -10,8 +10,13 @@ let thumb = document.getElementsByClassName('thumb');
 let phalanx = document.getElementsByClassName('phalanx');
 let palm = document.getElementsByClassName('palm');
 let forearm = document.getElementsByClassName('forearm');
+let phalanxMiddleFrontFace = document.querySelectorAll('.phalanx_middle');
+let thumbMiddleFrontFace = Array.prototype.slice.call(phalanxMiddleFrontFace, 0);
+let phalanxSuperiorFrontFace = document.querySelectorAll('.phalanx_superior');
+phalanxSuperiorFrontFace = Array.prototype.slice.call(phalanxSuperiorFrontFace, 0);
 const position = ['superior', 'middle', 'inferior'];
 const faces = ['front', 'back', 'right', 'left', 'top', 'bottom'];
+const blank = [''];
 
 
 function drawSuitShirt() {
@@ -103,3 +108,9 @@ for (let i = 0; i < phalanx.length; i++) {
 createChildren(palm[0], 6, 'palm__face palm__face--', faces);
 
 createChildren(forearm[0], 6, 'forearm__face forearm__face--', faces);
+
+createChildren(thumbMiddleFrontFace[0].childNodes[0], 1, 'nail', blank)
+
+for (let i = 0; i < phalanxSuperiorFrontFace.length; i++) {
+    createChildren(phalanxSuperiorFrontFace[i].childNodes[0], 1, 'nail', blank);
+};

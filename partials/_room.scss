@@ -8,7 +8,7 @@
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
-    transform: rotateX(10deg);
+    transform: rotateX(0deg);
 }
 
 .forearm {    
@@ -269,6 +269,18 @@
             background-color: green;
         }
     }
+}
+
+.nail {
+    position: absolute;
+    top: 0;
+    left: $phalanx-width*0.1;
+    width: $phalanx-width*0.8;
+    height: $phalanx-width*0.8;
+    border-radius: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: pink;
 }
 
 .remote-control {
