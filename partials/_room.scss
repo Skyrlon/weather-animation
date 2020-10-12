@@ -1,5 +1,58 @@
 /// <reference path="_variables.scss" />
 
+.thought__bubble {
+    z-index: 1;
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    width: $thought-bubble-width;
+    height: $thought-bubble-height;
+    border: $thought-bubble-height/30 solid;
+    border-radius: 50%;
+    background-color: white;
+    & > p {
+        position: absolute;
+        top: 10%;
+        left: 20%;
+        font-size: 1.1em;
+    }
+
+    &--tail {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: $thought-bubble-width/10;
+        height: $thought-bubble-height/10;
+        border: $thought-bubble-height/60 solid;
+        border-radius: 50%;
+        background-color: white;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -$thought-bubble-height/15;
+            right: -$thought-bubble-width/10;
+            width: $thought-bubble-width/15;
+            height: $thought-bubble-height/15;
+            border: $thought-bubble-height/60 solid;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -$thought-bubble-height/15*2;
+            right: -$thought-bubble-width/11*2;
+            width: $thought-bubble-width/20;
+            height: $thought-bubble-height/20;
+            border: $thought-bubble-height/60 solid;
+            border-radius: 50%;
+            background-color: white;
+        }
+    }
+}
+
 .container-forearm {
     z-index: 1;
     position: absolute;
