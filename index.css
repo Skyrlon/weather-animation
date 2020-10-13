@@ -52,9 +52,17 @@
 }
 .thought__bubble > p {
   position: absolute;
-  top: 10%;
-  left: 20%;
-  font-size: 1.1em;
+  top: 0.7142857143vw;
+  left: 3.75vw;
+  width: 15vw;
+  height: 7.1428571429vw;
+  font-size: 1.3vw;
+}
+.thought__bubble > p #cities {
+  font-size: 1vw;
+}
+.thought__bubble > p #cities-choice {
+  font-size: 1vw;
 }
 .thought__bubble--tail {
   position: absolute;

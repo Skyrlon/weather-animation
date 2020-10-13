@@ -10,12 +10,25 @@
     border: $thought-bubble-height/30 solid;
     border-radius: 50%;
     background-color: white;
+
     & > p {
         position: absolute;
-        top: 10%;
-        left: 20%;
-        font-size: 1.1em;
+        top: $thought-bubble-height*0.05;
+        left: $thought-bubble-width*0.15;
+        width: $thought-bubble-width*0.6;
+        height: $thought-bubble-height*0.5;
+        font-size: 1.3vw;
+
+        & #cities {
+            font-size: 1vw;
+
+            &-choice {
+                font-size: 1vw;
+            }
+        }
     }
+
+
 
     &--tail {
         position: absolute;
@@ -64,8 +77,8 @@
     transform: rotateX(0deg);
 }
 
-.forearm {    
-    position: absolute; 
+.forearm {
+    position: absolute;
     width: $forearm-width;
     height: $forearm-height;
     perspective-origin: 50% 50%;
@@ -114,7 +127,7 @@
     }
 }
 
-.palm {   
+.palm {
     position: absolute;
     top: -$palm-height;
     left: ($forearm-width - $palm-width)/2;
@@ -123,7 +136,7 @@
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
-    transform-origin:left bottom;
+    transform-origin: left bottom;
     transform: rotate(40deg) rotateY(0deg);
 
     &__face {
