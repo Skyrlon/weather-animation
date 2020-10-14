@@ -10,34 +10,14 @@
 <body>
 
     <div class="thought__bubble">
-        <p>
-            Quel temps, il fait à 
-            <input list="cities" id="cities-choice" name="cities-choice" placeholder="Choisisez votre ville"/>
-            <datalist id="cities">
-                <option value="jour_ciel-clair">Jour Ciel Clair</option>
-                <option value="jour_nuageux">Jour Nuageux</option>
-                <option value="jour_pluie">Jour Pluie</option>
-                <option value="jour_orage">Jour Orage</option>
-                <option value="jour_neige">Jour Neige</option>
-                <option value="jour_brouillard">Jour Brouillard</option>
-                <option value="jour_fumee">Jour Fumée</option>
-                <option value="jour_sable">Jour Sable</option>
-                <option value="jour_volcan">Jour Volcan</option>
-                <option value="jour_tornade">Jour Tornade</option>
-                <option value="nuit_ciel-clair">Nuit Ciel Clair</option>
-                <option value="nuit_nuageux">Nuit Nuageux</option>
-                <option value="nuit_pluie">Nuit Pluie</option>
-                <option value="nuit_orage">Nuit Orage</option>
-                <option value="nuit_neige">Nuit Neige</option>
-                <option value="nuit_brouillard">Nuit Brouillard</option>
-                <option value="nuit_fumee">Nuit Fumée</option>
-                <option value="nuit_sable">Nuit Sable</option>
-                <option value="nuit_volcan">Nuit Volcan</option>
-                <option value="nuit_tornade">Nuit Tornade</option>
-            </datalist>
-            <br>
-            en ce moment ?
-        </p>
+        <div class="thought__bubble--text">
+            <p>Quel temps, il fait à </p>
+            <div id="cities-datalist">
+                <input id="cities-datalist-input" type="text" placeholder="Entrez le nom d'une ville">
+                <ul id="cities-datalist-ul"></ul>
+            </div>
+            <p>en ce moment ?</p>
+        </div>
         <div class="thought__bubble--tail"></div>
     </div>
 

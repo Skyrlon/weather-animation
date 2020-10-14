@@ -42,27 +42,13 @@
 .thought__bubble {
   z-index: 1;
   position: absolute;
-  top: 60%;
+  bottom: 5%;
   left: 5%;
   width: 25vw;
   height: 14.2857142857vw;
   border: 0.4761904762vw solid;
   border-radius: 50%;
   background-color: white;
-}
-.thought__bubble > p {
-  position: absolute;
-  top: 0.7142857143vw;
-  left: 3.75vw;
-  width: 15vw;
-  height: 7.1428571429vw;
-  font-size: 1.3vw;
-}
-.thought__bubble > p #cities {
-  font-size: 1vw;
-}
-.thought__bubble > p #cities-choice {
-  font-size: 1vw;
 }
 .thought__bubble--tail {
   position: absolute;
@@ -96,12 +82,56 @@
   border-radius: 50%;
   background-color: white;
 }
+.thought__bubble--text {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 60%;
+  height: 70%;
+  font-size: 1.3vw;
+}
+.thought__bubble--text #cities-datalist {
+  margin: 0.25vw 0 0 0;
+  width: 100%;
+}
+.thought__bubble--text #cities-datalist.active #cities-datalist-ul {
+  display: block;
+}
+.thought__bubble--text #cities-datalist-input {
+  margin: 0.25vw 0 0 0;
+  width: 100%;
+  font-size: 1.3vw;
+  border-radius: 0.26vw;
+}
+.thought__bubble--text #cities-datalist-ul {
+  display: none;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 50%;
+  font-size: 1.3vw;
+  list-style: none;
+  background: #fff;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.thought__bubble--text #cities-datalist-ul li {
+  display: block;
+  text-align: left;
+  color: #999;
+  cursor: pointer;
+}
+.thought__bubble--text #cities-datalist > p {
+  margin: 0.5vw 0 0 0;
+  font-size: 1.3vw;
+}
 
 .container-forearm {
   z-index: 1;
   position: absolute;
-  top: 60%;
-  left: 80%;
+  bottom: 35%;
+  right: 10%;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   perspective: 825vw;

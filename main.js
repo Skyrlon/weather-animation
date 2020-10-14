@@ -1,10 +1,10 @@
-const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+﻿const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 let tornadoParts = document.getElementsByClassName('tornado-parts');
 const numberTornadoParts = 24;
 const buttonRemote = document.getElementsByClassName('remote-button-center');
 const numberButtonParts = 24;
 const tornadoRadius = 20 * 4 / 100;
-const buttonRadius = (7 / 5) /2;
+const buttonRadius = (7 / 5) / 2;
 let finger = document.getElementsByClassName('finger');
 let thumb = document.getElementsByClassName('thumb');
 let phalanx = document.getElementsByClassName('phalanx');
@@ -62,7 +62,7 @@ createTornadoEye(tornadoParts[1].childNodes[1], 1);
 createTornadoEye(tornadoParts[1].childNodes[4], 2);
 
 for (let i = 0; i < 5; i++) {
-    createTornadoMouth(tornadoParts[2].childNodes[i], i+1);
+    createTornadoMouth(tornadoParts[2].childNodes[i], i + 1);
 };
 
 function createChildren(parent, numberChildren, nameChildren, arrayChildren) {
@@ -114,3 +114,82 @@ createChildren(thumbMiddleFrontFace[0].childNodes[0], 1, 'nail', blank)
 for (let i = 0; i < phalanxSuperiorFrontFace.length; i++) {
     createChildren(phalanxSuperiorFrontFace[i].childNodes[0], 1, 'nail', blank);
 };
+
+class DataList {
+    constructor(containerId, inputId, listId, options) {
+        this.containerId = containerId;
+        this.inputId = inputId;
+        this.listId = listId;
+        this.options = options;
+    }
+
+    create(filter = "") {
+        const list = document.getElementById(this.listId);
+        const filterOptions = this.options.filter(
+            d => filter === "" || d.text.includes(filter)
+        );
+
+        if (filterOptions.length === 0) {
+            list.classList.remove("active");
+        } else {
+            list.classList.add("active");
+        }
+
+        list.innerHTML = filterOptions
+            .map(o => `<li id=${o.value}>${o.text}</li>`)
+            .join("");
+    }
+
+    addListeners(datalist) {
+        const container = document.getElementById(this.containerId);
+        const input = document.getElementById(this.inputId);
+        const list = document.getElementById(this.listId);       
+
+        input.addEventListener("input", function (e) {
+            if (!container.classList.contains("active")) {
+                container.classList.add("active");
+            }
+
+            datalist.create(input.value);
+        });
+
+        list.addEventListener("click", function (e) {
+            if (e.target.nodeName.toLocaleLowerCase() === "li") {
+                input.value = e.target.innerText;
+                container.classList.remove("active");
+            }
+        });
+    }
+};
+
+const weatherData = [
+    { value: "jour_ciel-clair", text: "Jour Ciel Clair" },
+    { value: "jour_nuageux", text: "Jour Nuageux" },
+    { value: "jour_pluie", text: "Jour Pluie" },
+    { value: "jour_orage", text: "Jour Orage" },
+    { value: "jour_neige", text: "Jour Neige" },
+    { value: "jour_brouillard", text: "Jour Brouillard" },
+    { value: "jour_fumee", text: "Jour Fumée" },
+    { value: "jour_sable", text: "Jour Sable" },
+    { value: "jour_volcan", text: "Jour Volcan" },
+    { value: "jour_tornade", text: "Jour Tornade" },
+    { value: "nuit_ciel-clair", text: "Nuit Ciel Clair" },
+    { value: "nuit_nuageux", text: "Nuit Nuageux" },
+    { value: "nuit_pluie", text: "Nuit Pluie" },
+    { value: "nuit_orage", text: "Nuit Orage" },
+    { value: "nuit_neige", text: "Nuit Neige" },
+    { value: "nuit_brouillard", text: "Nuit Brouillard" },
+    { value: "nuit_fumee", text: "Nuit Fumée" },
+    { value: "nuit_sable", text: "Nuit Sable" },
+    { value: "nuit_volcan", text: "Nuit Volcan" },
+    { value: "nuit_tornade", text: "Nuit Tornade" }
+];
+
+const datalist = new DataList(
+    "cities-datalist",
+    "cities-datalist-input",
+    "cities-datalist-ul",
+    weatherData);
+
+datalist.create();
+datalist.addListeners(datalist);

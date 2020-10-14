@@ -3,32 +3,13 @@
 .thought__bubble {
     z-index: 1;
     position: absolute;
-    top: 60%;
+    bottom: 5%;
     left: 5%;
     width: $thought-bubble-width;
     height: $thought-bubble-height;
     border: $thought-bubble-height/30 solid;
     border-radius: 50%;
     background-color: white;
-
-    & > p {
-        position: absolute;
-        top: $thought-bubble-height*0.05;
-        left: $thought-bubble-width*0.15;
-        width: $thought-bubble-width*0.6;
-        height: $thought-bubble-height*0.5;
-        font-size: 1.3vw;
-
-        & #cities {
-            font-size: 1vw;
-
-            &-choice {
-                font-size: 1vw;
-            }
-        }
-    }
-
-
 
     &--tail {
         position: absolute;
@@ -64,13 +45,67 @@
             background-color: white;
         }
     }
+
+    &--text {
+        position: absolute;
+        top: 15%;
+        left: 20%;
+        width: 60%;
+        height: 70%;
+        font-size: $thought-bubble-font-size;
+
+        & #cities-datalist {
+            margin: 0.25vw 0 0 0;
+            width: 100%;
+
+            &.active #cities-datalist-ul {
+                display: block;
+            }
+
+            &-input {
+                margin: 0.25vw 0 0 0;
+                width: 100%;
+                font-size: $thought-bubble-font-size;
+                border-radius: $thought-bubble-font-size/5;
+            }
+
+            &-ul {
+                display: none;
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 50%;
+                font-size: $thought-bubble-font-size;
+                list-style: none;
+                background: #fff;
+                overflow: hidden;
+                overflow-y: scroll;
+
+                & li {
+                    display: block;
+                    text-align: left;
+                    color: #999;
+                    cursor: pointer;
+                }
+            }
+
+            & > p {
+                margin: 0.5vw 0 0 0;
+                font-size: $thought-bubble-font-size;
+            }
+        }
+    }
 }
+
+
+
 
 .container-forearm {
     z-index: 1;
     position: absolute;
-    top: 60%;
-    left: 80%;
+    bottom: 35%;
+    right: 10%;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
