@@ -452,75 +452,71 @@
     background-color: red;
 }
 
-.wall-front {
+.room {
     position: absolute;
-    top: 10%;
-    left: 30%;
-    width: $front-wall-width;
-    height: $front-wall-height;
+    width: $wall-width;
+    height: $wall-height;
+    perspective-origin: 50% 20%;
+    transform-style: preserve-3d;
+    perspective: $wall-depth/3;
+}
+
+.wall {
+    position: absolute;
+    width: $wall-width;
+    height: $wall-height;
+}
+
+.front {
     background-color: red;
+    transform: rotateY(180deg) translateZ($wall-depth/2);
 }
 
 .ceiling {
-    position: absolute;
-    bottom: $front-wall-height;
-    left: -30vw;
-    width: 100vw;
-    height: 100vh;
+    height: $wall-depth;
     background-color: purple;
+    transform: rotateX(90deg) translateZ($wall-depth/2);
 }
 
 .floor {
-    position: absolute;
-    top: $front-wall-height;
-    left: -30vw;
-    width: 100vw;
-    height: 100vh;
+    height: $wall-depth;
     background-color: yellow;
+    transform: rotateX(-90deg) translateZ($wall-height - $wall-depth/2);
 }
 
-.wall-left {
-    position: absolute;
-    top: 10%;
-    right: 70%;
-    width: 100vw;
-    height: $front-wall-height;
+.right {
+    width: $wall-depth;
+    background-color: green;
+    transform: rotateY(90deg) translateZ($wall-width - $wall-depth/2);
+}
+
+.left {
+    width: $wall-depth;
     background-color: blue;
-    transform-origin: right;
-    transform: perspective(100vw) rotateY(80deg);
+    transform: rotateY(-90deg) translateZ($wall-depth/2);
 
     &::before {
         content: '';
         position: absolute;
         bottom: 0;
-        right: 0;
-        width: $front-wall-width/5;
-        height: $front-wall-height*0.9;
+        left: 0;
+        width: $wall-width/7;
+        height: $wall-height*0.9;
         background-color: #b24018;
     }
 
     &::after {
         content: '';
         position: absolute;
-        top: $front-wall-height/2;
-        right: $front-wall-width/5 - $front-wall-height/20;
-        width: $front-wall-height/20;
-        height: $front-wall-height/20;
-        border-radius: $front-wall-height/20;
+        top: $wall-height/2;
+        left: 0;
+        width: $wall-height/20;
+        height: $wall-height/20;
+        border-radius: $wall-height/20;
         background-color: black;
     }
 }
 
-.wall-right {
-    position: absolute;
-    top: 10%;
-    left: 70%;
-    width: 100vw;
-    height: $front-wall-height;
-    background-color: green;
-    transform-origin: left;
-    transform: perspective(100vw) rotateY(-80deg);
-}
 
 .flat-screen {
     position: absolute;

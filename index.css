@@ -447,72 +447,67 @@
   background-color: red;
 }
 
-.wall-front {
+.room {
   position: absolute;
-  top: 10%;
-  left: 30%;
-  width: 40vw;
-  height: 22.5vw;
+  width: 100vw;
+  height: 50vw;
+  perspective-origin: 50% 20%;
+  transform-style: preserve-3d;
+  perspective: 33.3333333333vw;
+}
+
+.wall {
+  position: absolute;
+  width: 100vw;
+  height: 50vw;
+}
+
+.front {
   background-color: red;
+  transform: rotateY(180deg) translateZ(50vw);
 }
 
 .ceiling {
-  position: absolute;
-  bottom: 22.5vw;
-  left: -30vw;
-  width: 100vw;
-  height: 100vh;
+  height: 100vw;
   background-color: purple;
+  transform: rotateX(90deg) translateZ(50vw);
 }
 
 .floor {
-  position: absolute;
-  top: 22.5vw;
-  left: -30vw;
-  width: 100vw;
-  height: 100vh;
+  height: 100vw;
   background-color: yellow;
+  transform: rotateX(-90deg) translateZ(0vw);
 }
 
-.wall-left {
-  position: absolute;
-  top: 10%;
-  right: 70%;
+.right {
   width: 100vw;
-  height: 22.5vw;
-  background-color: blue;
-  transform-origin: right;
-  transform: perspective(100vw) rotateY(80deg);
+  background-color: green;
+  transform: rotateY(90deg) translateZ(50vw);
 }
-.wall-left::before {
+
+.left {
+  width: 100vw;
+  background-color: blue;
+  transform: rotateY(-90deg) translateZ(50vw);
+}
+.left::before {
   content: "";
   position: absolute;
   bottom: 0;
-  right: 0;
-  width: 8vw;
-  height: 20.25vw;
+  left: 0;
+  width: 14.2857142857vw;
+  height: 45vw;
   background-color: #b24018;
 }
-.wall-left::after {
+.left::after {
   content: "";
   position: absolute;
-  top: 11.25vw;
-  right: 6.875vw;
-  width: 1.125vw;
-  height: 1.125vw;
-  border-radius: 1.125vw;
+  top: 25vw;
+  left: 0;
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 2.5vw;
   background-color: black;
-}
-
-.wall-right {
-  position: absolute;
-  top: 10%;
-  left: 70%;
-  width: 100vw;
-  height: 22.5vw;
-  background-color: green;
-  transform-origin: left;
-  transform: perspective(100vw) rotateY(-80deg);
 }
 
 .flat-screen {

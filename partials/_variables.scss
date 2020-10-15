@@ -36,8 +36,9 @@ $remote-width: 7vw;
 $remote-height: $remote-width*3;
 $button-size: $remote-width/5;
 
-$front-wall-width: 40vw;
-$front-wall-height: $front-wall-width/16*9;
+$wall-width: 100vw;
+$wall-height: $wall-width/2;
+$wall-depth: $wall-width;
 $flat-screen-width: 20vw;
 $flat-screen-height: $flat-screen-width/2;
 $tv-stand-width: 20vw;
