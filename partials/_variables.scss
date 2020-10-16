@@ -41,12 +41,14 @@ $wall-height: $wall-width/2;
 $wall-depth: $wall-width;
 $flat-screen-width: 20vw;
 $flat-screen-height: $flat-screen-width/2;
-$tv-stand-width: 20vw;
-$tv-stand-height: $tv-stand-width/5.5;
+$tv-stand-width: 30vw;
+$tv-stand-height: $tv-stand-width/2;
+$tv-stand-depth: $tv-stand-width/4;
+$color-tv-stand: #a38659;
 $drawer-width: $tv-stand-width/3;
-$drawer-height: $tv-stand-height*0.4;
-$shelf-width: $tv-stand-width/4;
-$shelf-height: $tv-stand-height*0.3;
+$drawer-height: $tv-stand-height - $tv-stand-height*0.2;
+$shelf-width: $tv-stand-width - ($drawer-width + $tv-stand-width/100)*2;
+$shelf-height: $tv-stand-height*0.35;
 
 /*guy size variables*/
 $size: $flat-screen-width*3/100;
