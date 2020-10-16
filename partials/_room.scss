@@ -458,7 +458,7 @@
     height: $wall-height;
     perspective-origin: 45% 20%;
     transform-style: preserve-3d;
-    perspective: $wall-depth/3;
+    perspective: $wall-depth;
 }
 
 .wall {
@@ -520,12 +520,13 @@
 
 .flat-screen {
     position: absolute;
-    bottom: $tv-stand-height*0.95;
-    left: 20%;
+    bottom: $tv-stand-height + $flat-screen-height/20 + $flat-screen-height/11;
+    left: 27.5%;
     width: $flat-screen-width;
     height: $flat-screen-height;
     background-color: black;
     border-radius: 1%;
+    transform: translateZ(-$wall-depth/2 + $tv-stand-depth);
 
     &-support {
         position: absolute;
@@ -648,6 +649,7 @@
     &__right {
         top: $tv-stand-height/10;
         right: $tv-stand-width/100;
+
         &::before {
             left: $drawer-width/10;
         }
