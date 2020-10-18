@@ -98,9 +98,6 @@
     }
 }
 
-
-
-
 .container-forearm {
     z-index: 1;
     position: absolute;
@@ -109,7 +106,7 @@
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
-    transform: rotateX(50deg) rotateY(-0deg);
+    transform: rotateX(20deg) rotateY(-0deg);
 }
 
 .forearm {
@@ -226,7 +223,7 @@
     transform-style: preserve-3d;
     perspective: $palm-width*100;
     transform: rotate(180deg) rotateX(0deg) rotateY(0deg);
-    animation: thumb-click 5s infinite;
+    animation:  5s infinite;
 
     & .phalanx {
         position: absolute;
@@ -259,7 +256,7 @@
             perspective: $phalanx-height*100;
             transform-origin: bottom;
             transform: rotateX(90deg) rotateY(0deg);
-            animation: tumb-middle-click 5s infinite;
+            animation: 5s infinite;
         }
 
         &__face {
@@ -351,6 +348,7 @@
         perspective: $phalanx-height*100;
         transform-origin: bottom;
         transform: rotateX(0deg) rotateY(0deg);
+        animation: phalanx-inferior-loosen 1s linear forwards;
     }
 
     &_middle {
@@ -363,6 +361,7 @@
         perspective: $phalanx-height*100;
         transform-origin: bottom;
         transform: rotateX(90deg) rotateY(0deg);
+        animation: phalanx-middle-loosen 1s linear forwards;
     }
 
     &_superior {
@@ -371,6 +370,7 @@
         width: $phalanx-width;
         height: $phalanx-height;
         transform: rotateX(90deg) rotateY(0deg);
+        animation: phalanx-superior-loosen 1s linear forwards;
     }
 
     &__face {
@@ -428,15 +428,16 @@
 
 .remote-control {
     position: absolute;
-    top: -$remote-height/2.1;
-    left: 0;
+    top: -$remote-height/5;
+    left: -$palm-width*1.5;
     width: $remote-width;
     height: $remote-height;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $remote-height*100;
     background-color: black;
-    transform: rotate(-90deg) translateZ(-$palm-depth*2);
+    transform: rotate(-0deg) translateZ($palm-depth);
+    animation: remote-inclination 1s linear forwards;
 
     &::before {
         content: '';
@@ -446,20 +447,20 @@
         height: $remote-height/10;
         transform-origin: bottom;
         background-color: grey;
-        transform: rotateX(-90deg);
+        transform: rotateX(90deg);
     }
 }
 
 .remote-button {
     position: absolute;
     top: 10%;
-    right: 10%;
+    left: 10%;
     width: $button-size;
     height: $button-size;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $button-size*100;
-    transform: translateZ(-$button-size/2);
+    transform: translateZ($button-size/2);
 
     &-top {
         position: absolute;

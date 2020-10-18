@@ -33,7 +33,7 @@ $forearm-width: $palm-width*0.85;
 $forearm-height: $forearm-width*4;
 $forearm-depth: $palm-depth;
 
-$remote-width: 5vw;
+$remote-width: 6vw;
 $remote-height: $remote-width*4;
 $button-size: $remote-width/5;
 
@@ -206,7 +206,7 @@ $tie-height: $size*0.62;
         transform: rotate(180deg) rotateX(0deg) rotateY(0deg);
     }
     100% {
-        transform: rotate(140deg) rotateX(30deg) rotateY(0deg);
+        transform: rotate(140deg) rotateX(50deg) rotateY(0deg);
     }
 }
 
@@ -215,6 +215,46 @@ $tie-height: $size*0.62;
         transform: rotateX(90deg) rotateY(0deg);
     }
     100% {
-        transform: rotateX(70deg) rotateY(0deg);
+        transform: rotateX(10deg) rotateY(0deg);
+    }
+}
+
+@keyframes remote-inclination {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) translateZ($palm-depth + $remote-height/10);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(40deg) translateZ($palm-depth + $remote-height/10) translateX(-$phalanx-height);
+    }
+}
+
+@keyframes phalanx-inferior-loosen {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(20deg);
+    }
+}
+
+@keyframes phalanx-middle-loosen {
+    0% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(50deg);
+    }
+}
+
+@keyframes phalanx-superior-loosen {
+    0% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(40deg);
     }
 }
