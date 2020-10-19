@@ -25,7 +25,7 @@ $thought-bubble-font-size: 1.3vw;
 $phalanx-width: 1.5vw;
 $phalanx-height: $phalanx-width*2;
 $phalanx-depth: $phalanx-width/1.5;
-$thumb-height: $phalanx-height*1.25;
+$thumb-height: $phalanx-height*1.3;
 $palm-width: $phalanx-width*5.5;
 $palm-height: $palm-width/1.5;
 $palm-depth: $phalanx-depth;
@@ -203,19 +203,22 @@ $tie-height: $size*0.62;
 
 @keyframes thumb-click {
     0% {
-        transform: rotate(180deg) rotateX(0deg) rotateY(0deg);
+        transform: rotate(180deg) rotateX(90deg) rotateY(0deg);
     }
     100% {
-        transform: rotate(140deg) rotateX(50deg) rotateY(0deg);
+        transform: rotate(155deg) rotateX(110deg) rotateY(0deg);
     }
 }
 
-@keyframes tumb-middle-click {
+@keyframes thumb-middle-click {
     0% {
         transform: rotateX(90deg) rotateY(0deg);
     }
+    50% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
     100% {
-        transform: rotateX(10deg) rotateY(0deg);
+        transform: rotateX(40deg) rotateY(0deg);
     }
 }
 
@@ -252,6 +255,20 @@ $tie-height: $size*0.62;
 @keyframes phalanx-superior-loosen {
     0% {
         transform: rotateX(90deg);
+    }
+
+    50% {
+        transform: rotateX(30deg);
+    }
+
+    100% {
+        transform: rotateX(50deg);
+    }
+}
+
+@keyframes hand-swing {
+    0% {
+        transform: rotateX(0deg);
     }
 
     100% {

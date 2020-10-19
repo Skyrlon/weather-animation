@@ -106,7 +106,8 @@
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
-    transform: rotateX(20deg) rotateY(-0deg);
+    transform: rotateX(50deg) rotateY(-0deg);
+    animation:  hand-swing 1s forwards;
 }
 
 .forearm {
@@ -222,8 +223,6 @@
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $palm-width*100;
-    transform: rotate(180deg) rotateX(0deg) rotateY(0deg);
-    animation:  5s infinite;
 
     & .phalanx {
         position: absolute;
@@ -243,7 +242,8 @@
             transform-style: preserve-3d;
             perspective: $phalanx-height*100;
             transform-origin: bottom;
-            transform: rotateX(90deg) rotateY(0deg);
+            transform: rotate(180deg) rotateX(90deg) rotateY(0deg);
+            animation: thumb-click 1s forwards;
         }
 
         &_middle {
@@ -256,7 +256,7 @@
             perspective: $phalanx-height*100;
             transform-origin: bottom;
             transform: rotateX(90deg) rotateY(0deg);
-            animation: 5s infinite;
+            animation: thumb-middle-click 1s forwards;
         }
 
         &__face {
@@ -428,8 +428,8 @@
 
 .remote-control {
     position: absolute;
-    top: -$remote-height/5;
-    left: -$palm-width*1.5;
+    top: -$remote-height/7;
+    left: -$palm-width*1.45;
     width: $remote-width;
     height: $remote-height;
     perspective-origin: 50% 50%;
@@ -449,18 +449,29 @@
         background-color: grey;
         transform: rotateX(90deg);
     }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: $remote-height/10;
+        height: $remote-height;
+        transform-origin: left;
+        background-color: grey;
+        transform: rotateY(90deg);
+    }
 }
 
 .remote-button {
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 15%;
+    left: 25%;
     width: $button-size;
     height: $button-size;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
     perspective: $button-size*100;
-    transform: translateZ($button-size/2);
+    transform: translateZ(0);
 
     &-top {
         position: absolute;
@@ -511,7 +522,7 @@
 }
 
 .front {
-    background-color: red;
+    background-color: #FB08E3;
     transform: rotateY(180deg) translateZ($wall-depth/2);
 }
 
