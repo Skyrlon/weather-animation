@@ -201,7 +201,7 @@ $tie-height: $size*0.62;
     }
 }
 
-@keyframes thumb-click {
+@keyframes thumb-inferior-click {
     0% {
         transform: rotate(180deg) rotateX(90deg) rotateY(0deg);
     }
@@ -272,6 +272,16 @@ $tie-height: $size*0.62;
     }
 
     100% {
-        transform: rotateX(40deg);
+        transform: rotateX(50deg) rotate(-10deg);
+    }
+}
+
+@keyframes button-pressed {
+    0% {
+        transform: translateZ(0);
+    }
+
+    100% {
+        transform: translateZ(-$button-size/2);
     }
 }

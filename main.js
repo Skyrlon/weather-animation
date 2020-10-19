@@ -15,6 +15,7 @@ let thumbMiddleFrontFace = Array.prototype.slice.call(phalanxMiddleFrontFace, 0)
 let phalanxSuperiorFrontFace = document.querySelectorAll('.phalanx_superior');
 phalanxSuperiorFrontFace = Array.prototype.slice.call(phalanxSuperiorFrontFace, 0);
 let shelf = document.getElementsByClassName('shelf');
+let remoteButton = document.getElementsByClassName('remote-button');
 const position = ['superior', 'middle', 'inferior'];
 const faces = ['front', 'back', 'right', 'left', 'top', 'bottom'];
 const blank = [''];
@@ -198,3 +199,20 @@ const datalist = new DataList(
 
 datalist.create();
 datalist.addListeners(datalist);
+
+remoteButton[0].addEventListener("click", function () {
+    document.getElementsByClassName('container-forearm')[0].style.animation = "hand-swing 1s forwards";
+    for (let i = 0; i < document.getElementsByClassName('phalanx_inferior').length; i++) {
+        document.getElementsByClassName('phalanx_inferior')[i].style.animation = "phalanx-inferior-loosen 1s linear forwards";
+    }
+    for (let i = 0; i < document.getElementsByClassName('phalanx_middle').length; i++) {
+        document.getElementsByClassName('phalanx_middle')[i].style.animation = "phalanx-middle-loosen 1s linear forwards";
+    }
+    for (let i = 0; i < document.getElementsByClassName('phalanx_superior').length; i++) {
+        document.getElementsByClassName('phalanx_superior')[i].style.animation = "phalanx-superior-loosen 1s linear forwards";
+    }
+    document.getElementsByClassName('remote-control')[0].style.animation = "remote-inclination 1s linear forwards";
+    remoteButton[0].style.animation = "button-pressed 0.25s 0.75s linear forwards";
+    document.getElementById('thumb_phalanx_inferior').style.animation = "thumb-inferior-click 1s forwards";
+    document.getElementById('thumb_phalanx_middle').style.animation = "thumb-middle-click 1s forwards";
+});
