@@ -109,6 +109,14 @@
     transform: translateZ(-0.6vw);
   }
 }
+@keyframes rain-fall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    top: 100%;
+  }
+}
 .thought__bubble {
   z-index: 1;
   position: absolute;
@@ -671,6 +679,7 @@
   height: 15.75vw;
   background-color: grey;
   border-radius: 1%;
+  overflow: hidden;
 }
 
 .tv_stand {
@@ -1261,12 +1270,13 @@
   box-shadow: 0 -0.5833333333vw 0 0 red;
 }
 
-.water-drop {
+.rain {
   position: absolute;
-  top: 10%;
-  left: 80%;
-  width: 1.75vw;
-  height: 1.75vw;
+}
+.rain-drop {
+  position: absolute;
+  width: 0.175vw;
+  height: 0.175vw;
   background-color: lightblue;
   border-radius: 0 50% 50% 50%;
   transform: rotate(45deg);

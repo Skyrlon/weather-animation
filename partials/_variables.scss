@@ -79,7 +79,7 @@ $volcano-height: $volcano-width/3;
 $volcano-tube-width: $volcano-width/5;
 $volcano-side-width: ($volcano-width - $volcano-tube-width)/2;
 $volcano-side-height: $volcano-width + $volcano-height;
-$water-drop-width: $flat-screen-width * 5/100;
+$rain-drop-width: $flat-screen-width* 0.5/100;
 $snowflake-height: $flat-screen-width * 5/100;
 $snowflake-width: $snowflake-height/10;
 
@@ -285,3 +285,12 @@ $tie-height: $size*0.62;
         transform: translateZ(-$button-size/2);
     }
 }
+
+@keyframes rain-fall {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      top: 100%;
+    }
+  }

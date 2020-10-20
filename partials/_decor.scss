@@ -504,16 +504,17 @@
     }
 }
 
-.water-drop {
+.rain {
     position: absolute;
-    top: 10%;
-    left: 80%;
-    width: $water-drop-width;
-    height: $water-drop-width;
-    background-color: lightblue;
-    border-radius: 0 50% 50% 50%;
-    transform: rotate(45deg);
-}
+    &-drop {
+      position: absolute;
+      width: $rain-drop-width;
+      height: $rain-drop-width;
+      background-color: lightblue;
+      border-radius: 0 50% 50% 50%;
+      transform: rotate(45deg); 
+    }
+  }
 
 .snowflake {
     position: absolute;

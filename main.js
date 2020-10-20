@@ -16,6 +16,7 @@ let phalanxSuperiorFrontFace = document.querySelectorAll('.phalanx_superior');
 phalanxSuperiorFrontFace = Array.prototype.slice.call(phalanxSuperiorFrontFace, 0);
 let shelf = document.getElementsByClassName('shelf');
 let remoteButton = document.getElementsByClassName('remote-button');
+let rain = document.getElementsByClassName('rain');
 const position = ['superior', 'middle', 'inferior'];
 const faces = ['front', 'back', 'right', 'left', 'top', 'bottom'];
 const blank = [''];
@@ -216,3 +217,36 @@ remoteButton[0].addEventListener("click", function () {
     document.getElementById('thumb_phalanx_inferior').style.animation = "thumb-inferior-click 1s forwards";
     document.getElementById('thumb_phalanx_middle').style.animation = "thumb-middle-click 1s forwards";
 });
+
+function createRain () {
+  for (let i = 0; i < 200; i++) {
+    let div = document.createElement('div');
+    div.setAttribute('class', 'rain');
+    document.getElementsByClassName('screen')[0].appendChild(div);
+  }
+}
+
+function createRainDrop (parent) {
+  let div = document.createElement('div');
+  div.setAttribute('class', 'rain-drop');
+  parent.appendChild(div);
+}
+
+function createRainFall() {
+  for (let i = 0; i < rain.length; i++) {
+    let posLeft = Math.random()*99.8;
+    let posTop = Math.random()*100;
+    let delay = Math.random()*20;
+    rain[i].style.left = `${posLeft}%`;
+    rain[i].style.top = `-${posTop}vw`;
+    rain[i].style.animation = `rain-fall 5s ${delay}s linear infinite`
+  }
+}
+
+createRain();
+
+for (let i = 0; i < rain.length; i++) {
+  createRainDrop(rain[i]);
+}
+
+createRainFall();
