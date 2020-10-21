@@ -80,7 +80,7 @@ $volcano-tube-width: $volcano-width/5;
 $volcano-side-width: ($volcano-width - $volcano-tube-width)/2;
 $volcano-side-height: $volcano-width + $volcano-height;
 $rain-drop-width: $flat-screen-width* 0.5/100;
-$snowflake-height: $flat-screen-width * 5/100;
+$snowflake-height: $flat-screen-width * 1/100;
 $snowflake-width: $snowflake-height/10;
 
 /*weather-clothes variables*/
@@ -289,6 +289,18 @@ $tie-height: $size*0.62;
 @keyframes rain-fall {
     0% {
       transform: translateY(0);
+    }
+    100% {
+      top: 100%;
+    }
+  }
+
+  @keyframes snow-fall {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateX($snowflake-height*10);
     }
     100% {
       top: 100%;

@@ -17,6 +17,8 @@ phalanxSuperiorFrontFace = Array.prototype.slice.call(phalanxSuperiorFrontFace, 
 let shelf = document.getElementsByClassName('shelf');
 let remoteButton = document.getElementsByClassName('remote-button');
 let rain = document.getElementsByClassName('rain');
+const snowflake = document.getElementsByClassName('snowflake');
+const snowflakeBranch = ["n", "s", "nw", "ne", "se", "sw"];
 const position = ['superior', 'middle', 'inferior'];
 const faces = ['front', 'back', 'right', 'left', 'top', 'bottom'];
 const blank = [''];
@@ -150,7 +152,7 @@ class DataList {
     addListeners(datalist) {
         const container = document.getElementById(this.containerId);
         const input = document.getElementById(this.inputId);
-        const list = document.getElementById(this.listId);       
+        const list = document.getElementById(this.listId);
 
         input.addEventListener("input", function (e) {
             if (!container.classList.contains("active")) {
@@ -218,35 +220,71 @@ remoteButton[0].addEventListener("click", function () {
     document.getElementById('thumb_phalanx_middle').style.animation = "thumb-middle-click 1s forwards";
 });
 
-function createRain () {
-  for (let i = 0; i < 200; i++) {
-    let div = document.createElement('div');
-    div.setAttribute('class', 'rain');
-    document.getElementsByClassName('screen')[0].appendChild(div);
-  }
+function createRain() {
+    for (let i = 0; i < 200; i++) {
+        let div = document.createElement('div');
+        div.setAttribute('class', 'rain');
+        document.getElementsByClassName('screen')[0].appendChild(div);
+    }
 }
 
-function createRainDrop (parent) {
-  let div = document.createElement('div');
-  div.setAttribute('class', 'rain-drop');
-  parent.appendChild(div);
+function createRainDrop(parent) {
+    let div = document.createElement('div');
+    div.setAttribute('class', 'rain-drop');
+    parent.appendChild(div);
 }
 
 function createRainFall() {
-  for (let i = 0; i < rain.length; i++) {
-    let posLeft = Math.random()*99.8;
-    let posTop = Math.random()*100;
-    let delay = Math.random()*20;
-    rain[i].style.left = `${posLeft}%`;
-    rain[i].style.top = `-${posTop}vw`;
-    rain[i].style.animation = `rain-fall 5s ${delay}s linear infinite`
-  }
+    for (let i = 0; i < rain.length; i++) {
+        let posLeft = Math.random() * 99.8;
+        let posTop = Math.random() * 100;
+        let duration = Math.random() + 0.5;
+        let delay = Math.random();
+        rain[i].style.left = `${posLeft}%`;
+        rain[i].style.top = `-${posTop}vw`;
+        rain[i].style.animation = `rain-fall ${duration}s ${delay}s linear infinite`;
+    }
 }
 
 createRain();
 
 for (let i = 0; i < rain.length; i++) {
-  createRainDrop(rain[i]);
+    createRainDrop(rain[i]);
 }
 
 createRainFall();
+
+function createSnowflake () {
+    for (let i = 0; i < 100; i++) {
+      let div = document.createElement('div');
+      div.setAttribute('class', 'snowflake');
+      document.getElementsByClassName('screen')[0].appendChild(div);
+    }
+  };
+  
+  function createChildren(parent, numberChildren, nameChildren, arrayChildren) {
+      for (let i = 0; i < numberChildren; i++) {
+          let div = document.createElement('div');
+          div.setAttribute('class', nameChildren + arrayChildren[i]);
+          parent.appendChild(div);
+      }
+  };
+  
+  function createSnowflakeFall() {
+      for (let i = 0; i < snowflake.length; i++) {
+          let posLeft = Math.random() * 99.8;
+          let posTop = Math.random() * 100;
+          let duration = Math.random()+3;
+          let delay = Math.random();
+          snowflake[i].style.left = `${posLeft}%`;
+          snowflake[i].style.top = `-${posTop}vw`;
+          snowflake[i].style.animation = `snow-fall ${duration}s ${delay}s linear infinite`;
+      }
+  }
+  
+  createSnowflake();
+  for (let i = 0; i < snowflake.length; i++) {
+    createChildren(snowflake[i], 6, "snowflake-branch-", snowflakeBranch);
+  };
+  
+  createSnowflakeFall();

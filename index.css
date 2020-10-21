@@ -117,6 +117,17 @@
     top: 100%;
   }
 }
+@keyframes snow-fall {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateX(3.5vw);
+  }
+  100% {
+    top: 100%;
+  }
+}
 .thought__bubble {
   z-index: 1;
   position: absolute;
@@ -1284,23 +1295,20 @@
 
 .snowflake {
   position: absolute;
-  top: 5%;
-  left: 70%;
-  background-color: red;
 }
 .snowflake-branch-n {
   position: absolute;
-  width: 0.175vw;
-  height: 1.75vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.35vw;
+  border-radius: 0.35vw;
   background-color: white;
 }
 .snowflake-branch-n::before {
   content: "";
   position: absolute;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: bottom;
   transform: rotate(-45deg);
@@ -1308,28 +1316,28 @@
 .snowflake-branch-n::after {
   content: "";
   position: absolute;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: bottom;
   transform: rotate(45deg);
 }
 .snowflake-branch-s {
   position: absolute;
-  top: 1.75vw;
-  width: 0.175vw;
-  height: 1.75vw;
-  border-radius: 1.75vw;
+  top: 0.35vw;
+  width: 0.035vw;
+  height: 0.35vw;
+  border-radius: 0.35vw;
   background-color: white;
 }
 .snowflake-branch-s::before {
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(45deg);
@@ -1338,19 +1346,19 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-45deg);
 }
 .snowflake-branch-nw {
   position: absolute;
-  top: 1.75vw;
-  width: 0.175vw;
-  height: 1.75vw;
-  border-radius: 1.75vw;
+  top: 0.35vw;
+  width: 0.035vw;
+  height: 0.35vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(120deg);
@@ -1359,9 +1367,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(45deg);
@@ -1370,19 +1378,19 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-45deg);
 }
 .snowflake-branch-ne {
   position: absolute;
-  top: 1.75vw;
-  width: 0.175vw;
-  height: 1.75vw;
-  border-radius: 1.75vw;
+  top: 0.35vw;
+  width: 0.035vw;
+  height: 0.35vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-120deg);
@@ -1391,9 +1399,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(45deg);
@@ -1402,19 +1410,19 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-45deg);
 }
 .snowflake-branch-se {
   position: absolute;
-  top: 1.75vw;
-  width: 0.175vw;
-  height: 1.75vw;
-  border-radius: 1.75vw;
+  top: 0.35vw;
+  width: 0.035vw;
+  height: 0.35vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-60deg);
@@ -1423,9 +1431,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(45deg);
@@ -1434,19 +1442,19 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-45deg);
 }
 .snowflake-branch-sw {
   position: absolute;
-  top: 1.75vw;
-  width: 0.175vw;
-  height: 1.75vw;
-  border-radius: 1.75vw;
+  top: 0.35vw;
+  width: 0.035vw;
+  height: 0.35vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(60deg);
@@ -1455,9 +1463,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(45deg);
@@ -1466,9 +1474,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0.175vw;
-  height: 0.7vw;
-  border-radius: 1.75vw;
+  width: 0.035vw;
+  height: 0.14vw;
+  border-radius: 0.35vw;
   background-color: white;
   transform-origin: top;
   transform: rotate(-45deg);
