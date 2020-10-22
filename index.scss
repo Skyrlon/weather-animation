@@ -1,8 +1,8 @@
-﻿@import "./partials/variables";
-@import "./partials/room";
-@import "./partials/decor";
-@import "./partials/guy";
-@import "./partials/weather-clothes";
+﻿@import "@/style/variables";
+@import "@/style/room";
+@import "@/style/decor";
+@import "@/style/guy";
+@import "@/style/weather-clothes";
 
 body {
     overflow: hidden;
