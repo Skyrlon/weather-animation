@@ -33,7 +33,7 @@ function drawSuitShirt() {
     ctx.lineTo(75, 0);
     ctx.lineTo(50, 100);
     ctx.fill();
-};
+}
 
 function drawTieBottom() {
     const canvas = document.getElementsByClassName('tie-bottom')[0];
@@ -44,14 +44,14 @@ function drawTieBottom() {
     ctx.lineTo(100, 0);
     ctx.lineTo(50, 75);
     ctx.fill();
-};
+}
 
 drawSuitShirt();
 drawTieBottom();
 
 for (let i = 0; i < tornadoParts.length; i++) {
     createChildren(tornadoParts[i], numberTornadoParts, '', alphabet);
-};
+}
 
 styleParts(tornadoParts[0], tornadoRadius, 1, numberTornadoParts);
 styleParts(tornadoParts[1], tornadoRadius, 6 / 5, numberTornadoParts);
@@ -68,7 +68,7 @@ createTornadoEye(tornadoParts[1].childNodes[4], 2);
 
 for (let i = 0; i < 5; i++) {
     createTornadoMouth(tornadoParts[2].childNodes[i], i + 1);
-};
+}
 
 function createChildren(parent, numberChildren, nameChildren, arrayChildren) {
     for (let i = 0; i < numberChildren; i++) {
@@ -76,7 +76,7 @@ function createChildren(parent, numberChildren, nameChildren, arrayChildren) {
         div.setAttribute('class', nameChildren + arrayChildren[i]);
         parent.appendChild(div);
     }
-};
+}
 
 function styleParts(parent, radius, divisorRadius, numberParts) {
     let rotateValue = -(360 / numberParts);
@@ -92,23 +92,23 @@ function styleParts(parent, radius, divisorRadius, numberParts) {
             parent.childNodes[j].style.cssText = `transform: rotateY(${rotateValue}deg) translateZ(${buttonRadius / divisorRadius}vw); width: ${widthValue / divisorRadius}vw`;
         }
     }
-};
+}
 
 function createTornadoEye(parent, number) {
     let div = document.createElement('div');
     div.setAttribute('class', `tornado-eye tornado-eye-${number}`);
     parent.appendChild(div);
-};
+}
 
 function createTornadoMouth(parent, number) {
     let div = document.createElement('div');
     div.setAttribute('class', `tornado-mouth tornado-mouth-${number}`);
     parent.appendChild(div);
-};
+}
 
 for (let i = 0; i < phalanx.length; i++) {
     createChildren(phalanx[i], 6, 'phalanx__face phalanx__face--', faces);
-};
+}
 
 createChildren(palm[0], 6, 'palm__face palm__face--', faces);
 
@@ -118,11 +118,11 @@ createChildren(thumbMiddleFrontFace[0].childNodes[0], 1, 'nail', blank);
 
 for (let i = 0; i < shelf.length; i++) {
     createChildren(shelf[i], 6, 'shelf__face shelf__face--', faces);
-};
+}
 
 for (let i = 0; i < phalanxSuperiorFrontFace.length; i++) {
     createChildren(phalanxSuperiorFrontFace[i].childNodes[0], 1, 'nail', blank);
-};
+}
 
 class DataList {
     constructor(containerId, inputId, listId, options) {
@@ -169,7 +169,7 @@ class DataList {
             }
         });
     }
-};
+}
 
 const weatherData = [
     { value: "jour_ciel-clair", text: "Jour Ciel Clair" },
@@ -254,37 +254,29 @@ for (let i = 0; i < rain.length; i++) {
 
 createRainFall();
 
-function createSnowflake () {
+function createSnowflake() {
     for (let i = 0; i < 100; i++) {
-      let div = document.createElement('div');
-      div.setAttribute('class', 'snowflake');
-      document.getElementsByClassName('screen')[0].appendChild(div);
+        let div = document.createElement('div');
+        div.setAttribute('class', 'snowflake');
+        document.getElementsByClassName('screen')[0].appendChild(div);
     }
-  };
-  
-  function createChildren(parent, numberChildren, nameChildren, arrayChildren) {
-      for (let i = 0; i < numberChildren; i++) {
-          let div = document.createElement('div');
-          div.setAttribute('class', nameChildren + arrayChildren[i]);
-          parent.appendChild(div);
-      }
-  };
-  
-  function createSnowflakeFall() {
-      for (let i = 0; i < snowflake.length; i++) {
-          let posLeft = Math.random() * 99.8;
-          let posTop = Math.random() * 100;
-          let duration = Math.random()+3;
-          let delay = Math.random();
-          snowflake[i].style.left = `${posLeft}%`;
-          snowflake[i].style.top = `-${posTop}vw`;
-          snowflake[i].style.animation = `snow-fall ${duration}s ${delay}s linear infinite`;
-      }
-  }
-  
-  createSnowflake();
-  for (let i = 0; i < snowflake.length; i++) {
+}
+
+function createSnowflakeFall() {
+    for (let i = 0; i < snowflake.length; i++) {
+        let posLeft = Math.random() * 99.8;
+        let posTop = Math.random() * 100;
+        let duration = Math.random() + 3;
+        let delay = Math.random();
+        snowflake[i].style.left = `${posLeft}%`;
+        snowflake[i].style.top = `-${posTop}vw`;
+        snowflake[i].style.animation = `snow-fall ${duration}s ${delay}s linear infinite`;
+    }
+}
+
+createSnowflake();
+for (let i = 0; i < snowflake.length; i++) {
     createChildren(snowflake[i], 6, "snowflake-branch-", snowflakeBranch);
-  };
-  
-  createSnowflakeFall();
+}
+
+createSnowflakeFall();
