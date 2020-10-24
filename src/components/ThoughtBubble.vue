@@ -5,12 +5,17 @@
       <div id="cities-datalist" :class="{ active: isActive }">
         <input
           v-model="searchCity"
+          v-on:keyup="getCities($event)"
           id="cities-datalist-input"
           type="text"
           placeholder="Entrez le nom d'une ville"
         />
         <ul id="cities-datalist-ul">
-          <li :key="weather" v-for="weather in filteredCities" :id="weather.value">
+          <li
+            :key="weather.key"
+            v-for="weather in filteredCities"
+            :id="weather.value"
+          >
             {{ weather.text }}
           </li>
         </ul>
@@ -28,7 +33,7 @@ export default {
     return {
       isActive: undefined,
       searchCity: "",
-      filteredCities : [],
+      filteredCities: [],
       weatherList: [
         { value: "jour_ciel-clair", text: "Jour Ciel Clair" },
         { value: "jour_nuageux", text: "Jour Nuageux" },
@@ -53,14 +58,25 @@ export default {
       ],
     };
   },
-  watch: {
-    searchCity() {
+  methods: {
+    getCities(event) {
+      if (event.key == "Shift" || event.keyCode == 16) {
+        return;
+      }
+      this.filteredCities = [];
       console.log(this.searchCity);
-      this.filteredCities = this.weatherList.filter(x =>
-        x.text.startsWith(this.searchCity)
+      this.filteredCities = this.weatherList.filter((x) =>
+        x.text.toLowerCase().startsWith(this.searchCity.toLowerCase())
       );
-      console.log(this.filteredCities);
-    }
+      console.log(this.filteredCities.length);
+      console.log(this.searchCity.length);
+      if (this.searchCity.length > 0) {
+        this.isActive = true
+      }
+      else if (this.searchCity.length < 1) {
+        this.isActive = undefined;
+      }
+    },
   },
 };
 </script>
@@ -136,11 +152,12 @@ export default {
       }
 
       &-ul {
+        display: none;
         position: absolute;
         margin: 0;
         padding: 0;
         width: 100%;
-        height: 50%;
+        max-height: 50%;
         font-size: $thought-bubble-font-size;
         list-style: none;
         background: #fff;
