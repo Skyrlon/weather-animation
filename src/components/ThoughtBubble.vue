@@ -15,6 +15,7 @@
             :key="weather.key"
             v-for="weather in filteredCities"
             :id="weather.value"
+            @click="selectCity($event)"
           >
             {{ weather.text }}
           </li>
@@ -53,8 +54,8 @@ export default {
         { value: "nuit_brouillard", text: "Nuit Brouillard" },
         { value: "nuit_fumee", text: "Nuit Fumée" },
         { value: "nuit_sable", text: "Nuit Sable" },
-        { value: "nuit_volcan", text: "Nuit Volcan" },
         { value: "nuit_tornade", text: "Nuit Tornade" },
+        { value: "nuit_volcan", text: "Nuit Volcan" },
       ],
     };
   },
@@ -77,6 +78,11 @@ export default {
         this.isActive = undefined;
       }
     },
+    selectCity(event) {
+      console.log(event.target.textContent);
+      this.searchCity = event.target.textContent.replace(/\s+/g, " ").trim(),
+      this.isActive = undefined;
+    }
   },
 };
 </script>
