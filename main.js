@@ -89,7 +89,7 @@ function styleParts(parent, radius, divisorRadius, numberParts) {
     for (let j = 0; j < parent.childNodes.length; j++) {
         rotateValue += (360 / numberParts);
         if (parent.childNodes[j].nodeName.toLowerCase() == 'div') {
-            parent.childNodes[j].style.cssText = `transform: rotateY(${rotateValue}deg) translateZ(${buttonRadius / divisorRadius}vw); width: ${widthValue / divisorRadius}vw`;
+            parent.childNodes[j].style.cssText = `transform: rotateY(${rotateValue}deg) translateZ(${radius / divisorRadius}vw); width: ${widthValue / divisorRadius}vw`;
         }
     }
 }
