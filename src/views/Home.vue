@@ -8,8 +8,6 @@
       :numberOfParts="numberParts"
       :radius="radius"
       :divisorRadius="divisorRadius"
-      :arrayStyleParts="alphabet"
-      :rotateValue="rotateValue"
       :widthValue="widthValue"
     />
   </div>
@@ -35,25 +33,6 @@ export default {
     ThoughtBubble,
     Forearm,
     CreateCylinder,
-  },
-  computed: {
-    widthValue() {
-      let partsAngle = 360 / this.numberParts;
-      let partsAngleRad = ((partsAngle / 2) * Math.PI) / 180;
-      let partsAngleCos = Math.cos(partsAngleRad);
-      let partsHyp = this.radius / partsAngleCos;
-      let partsHalfWidth = Math.sqrt(partsHyp ** 2 - this.radius ** 2);
-      return Math.ceil(partsHalfWidth * 2 * 10) / 10;
-    },
-    rotateValue() {
-      let arrayRotateValue = [];
-      let value = -(360 / this.numberParts);
-      for (let i = 0; i < this.numberParts; i++) {
-        value += 360 / this.numberParts;
-        arrayRotateValue.push(value);
-      }
-      return arrayRotateValue;
-    },
   },
 };
 </script>
