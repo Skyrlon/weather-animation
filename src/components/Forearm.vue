@@ -1,5 +1,8 @@
 <template>
   <div class="container-forearm">
+    
+    <RemoteControl/>
+
     <CreateCuboid
       parentClassName="forearm"
       childrenClassName="forearm__face forearm__face--"
@@ -54,11 +57,12 @@
 </template>
 
 <script>
+import RemoteControl from "./RemoteControl.vue"
 import CreateCuboid from "./CreateCuboid.vue";
 
 export default {
   components: {
-    CreateCuboid,
+    RemoteControl, CreateCuboid
   },
   name: "Forearm",
   data() {
@@ -74,7 +78,7 @@ export default {
 .container-forearm {
   z-index: 1;
   position: absolute;
-  bottom: 35%;
+  bottom: 55%;
   right: 10%;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
