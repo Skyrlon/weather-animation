@@ -1,7 +1,6 @@
 <template>
-  <div class="container-forearm">
-    
-    <RemoteControl/>
+  <div id="container-forearm" :class="{ move: startMoving }">
+    <RemoteControl @change-city="startAnimations" />
 
     <CreateCuboid
       parentClassName="forearm"
@@ -57,25 +56,32 @@
 </template>
 
 <script>
-import RemoteControl from "./RemoteControl.vue"
+import RemoteControl from "./RemoteControl.vue";
 import CreateCuboid from "./CreateCuboid.vue";
 
 export default {
   components: {
-    RemoteControl, CreateCuboid
+    RemoteControl,
+    CreateCuboid,
   },
   name: "Forearm",
   data() {
     return {
+      startMoving: false,
       fingers: ["index", "middle", "ring", "little"],
       faces: ["front", "back", "right", "left", "top", "bottom"],
     };
+  },
+  methods: {
+    startAnimations() {
+      this.startMoving = true;
+    },
   },
 };
 </script>
 
 <style lang="scss">
-.container-forearm {
+#container-forearm {
   z-index: 1;
   position: absolute;
   bottom: 55%;
@@ -84,6 +90,30 @@ export default {
   transform-style: preserve-3d;
   perspective: $palm-width * 100;
   transform: rotateX(0deg) rotateY(-0deg);
+  &.move {
+    animation: hand-swing 1s forwards;
+    & .phalanx_inferior {
+      animation: phalanx-inferior-loosen 1s linear forwards;
+    }
+    & .phalanx_middle {
+      animation: phalanx-middle-loosen 1s linear forwards;
+    }
+    & .phalanx_superior {
+      animation: phalanx-superior-loosen 1s linear forwards;
+    }
+    & .remote-control {
+      animation: remote-inclination 1s linear forwards;
+    }
+    & .remote-button {
+      animation: button-pressed 0.25s 0.75s linear forwards;
+    }
+    & #thumb_phalanx_inferior{
+      animation: thumb-inferior-click 1s forwards;
+    }
+    & #thumb_phalanx_middle {
+      animation: thumb-middle-click 1s forwards;
+    }
+  }
 }
 
 .forearm {

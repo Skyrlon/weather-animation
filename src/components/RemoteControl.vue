@@ -1,6 +1,6 @@
 <template>
   <div class="remote-control">
-    <div class="remote-button">
+    <div class="remote-button" @click="changeCity">
       <div class="remote-button-top"></div>
       <CreateCylinder
         parentClassName="remote-button-center"
@@ -26,8 +26,13 @@ export default {
       numberParts: 24,
       radius: (6 / 5) / 2,
       divisorRadius: 1,
-    };
+    }
   },
+    methods: {
+        changeCity() {
+            this.$emit('change-city')
+        }
+    }
 };
 </script>
 
@@ -48,6 +53,7 @@ export default {
     content: "";
     position: absolute;
     bottom: 0;
+    left: 0;
     width: $remote-width;
     height: $remote-height/10;
     transform-origin: bottom;
@@ -59,6 +65,7 @@ export default {
     content: "";
     position: absolute;
     bottom: 0;
+    left: 0;
     width: $remote-height/10;
     height: $remote-height;
     transform-origin: left;
