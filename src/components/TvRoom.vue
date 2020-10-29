@@ -6,16 +6,19 @@
     <div class="wall right"></div>
     <div class="wall left"></div>
     <TvStand />
+    <FlatScreen />
   </div>
 </template>
 
 <script>
 import TvStand from "./TvStand.vue";
+import FlatScreen from "@/components/FlatScreen";
 
 export default {
   name: "TvRoom",
   components: {
     TvStand,
+    FlatScreen,
   },
 };
 </script>
