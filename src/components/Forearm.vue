@@ -107,7 +107,7 @@ export default {
     & .remote-button {
       animation: button-pressed 0.25s 0.75s linear forwards;
     }
-    & #thumb_phalanx_inferior{
+    & #thumb_phalanx_inferior {
       animation: thumb-inferior-click 1s forwards;
     }
     & #thumb_phalanx_middle {
@@ -261,6 +261,20 @@ export default {
       perspective: $phalanx-height * 100;
       transform-origin: bottom;
       transform: rotateX(90deg) rotateY(0deg);
+      & .phalanx__face--front {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: $phalanx-width * 0.1;
+          width: $phalanx-width * 0.8;
+          height: $phalanx-width * 0.8;
+          border-radius: 100%;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          background-color: pink;
+        }
+      }
     }
 
     &__face {
@@ -373,6 +387,20 @@ export default {
     width: $phalanx-width;
     height: $phalanx-height;
     transform: rotateX(90deg) rotateY(0deg);
+    & .phalanx__face--front {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: $phalanx-width * 0.1;
+        width: $phalanx-width * 0.8;
+        height: $phalanx-width * 0.8;
+        border-radius: 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: pink;
+      }
+    }
   }
 
   &__face {
@@ -414,17 +442,5 @@ export default {
       background-color: green;
     }
   }
-}
-
-.nail {
-  position: absolute;
-  top: 0;
-  left: $phalanx-width * 0.1;
-  width: $phalanx-width * 0.8;
-  height: $phalanx-width * 0.8;
-  border-radius: 100%;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  background-color: pink;
 }
 </style>
