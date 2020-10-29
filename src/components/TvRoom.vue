@@ -5,12 +5,18 @@
     <div class="wall floor"></div>
     <div class="wall right"></div>
     <div class="wall left"></div>
+    <TvStand />
   </div>
 </template>
 
 <script>
+import TvStand from "./TvStand.vue";
+
 export default {
   name: "TvRoom",
+  components: {
+    TvStand,
+  },
 };
 </script>
 
