@@ -84,7 +84,7 @@ export default {
 #container-forearm {
   z-index: 1;
   position: absolute;
-  bottom: 55%;
+  bottom: 40%;
   right: 10%;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;

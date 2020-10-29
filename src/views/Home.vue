@@ -2,6 +2,7 @@
   <div class="home">
     <ThoughtBubble />
     <Forearm />
+    <TvRoom />
   </div>
 </template>
 
@@ -9,6 +10,7 @@
 // @ is an alias to /src
 import ThoughtBubble from "@/components/ThoughtBubble.vue";
 import Forearm from "@/components/Forearm.vue";
+import TvRoom from "@/components/TvRoom.vue";
 
 export default {
   name: "Home",
@@ -22,7 +24,8 @@ export default {
   },
   components: {
     ThoughtBubble,
-    Forearm
+    Forearm,
+    TvRoom,
   },
 };
 </script>
