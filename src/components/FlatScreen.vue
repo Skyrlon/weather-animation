@@ -1,13 +1,20 @@
 <template>
   <div class="flat-screen">
     <div class="flat-screen-support"></div>
-    <div class="screen"></div>
+    <div class="screen">
+<weather-elements/>
+    </div>
   </div>
 </template>
 
 <script>
+import WeatherElements from './WeatherElements.vue';
+
 export default {
   name: "FlatScreen",
+  components: {
+    WeatherElements,
+  }
 };
 </script>
 
