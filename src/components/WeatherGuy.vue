@@ -19,12 +19,18 @@
     <div class="arm arm_right"></div>
     <div class="leg leg_left"></div>
     <div class="leg leg_right"></div>
+    <hot-clothes/>
   </div>
 </template>
 
 <script>
+import HotClothes from './HotClothes.vue';
+
 export default {
   name: "WeatherGuy",
+  components: {
+      HotClothes,
+  }
 };
 </script>
 
