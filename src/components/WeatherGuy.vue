@@ -19,18 +19,26 @@
     <div class="arm arm_right"></div>
     <div class="leg leg_left"></div>
     <div class="leg leg_right"></div>
-    <hot-clothes/>
+    <hot-clothes v-if="temperature > 25" />
+    <suit-clothes v-if="temperature < 25" />
   </div>
 </template>
 
 <script>
-import HotClothes from './HotClothes.vue';
+import HotClothes from "./HotClothes.vue";
+import SuitClothes from "./SuitClothes.vue";
 
 export default {
   name: "WeatherGuy",
   components: {
-      HotClothes,
-  }
+    HotClothes,
+    SuitClothes,
+  },
+  data() {
+    return {
+      temperature: 5,
+    };
+  },
 };
 </script>
 
