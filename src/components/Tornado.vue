@@ -62,9 +62,9 @@ export default {
   data() {
     return {
       alphabet: "abcdefghijklmnopqrstuvwxyz".split(""),
-      numberParts: 24,
+      numberParts: 20,
       radius: (20 * 4) / 100,
-      divisorRadius: [1, 6 / 5, 3 / 2, 2, 3, 15 / 4],
+      divisorRadius: [1, 6 / 5, 3 / 2, 2, 3, 4],
     };
   },
 };
