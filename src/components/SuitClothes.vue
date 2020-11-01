@@ -2,9 +2,9 @@
   <div class="suit">
     <div class="suit-sleeve suit-sleeve_left"></div>
     <div class="suit-sleeve suit-sleeve_right"></div>
-    <canvas class="suit-shirt" width="100" height="100"></canvas>
+    <div class="suit-shirt"></div>
     <div class="tie">
-      <canvas class="tie-bottom" width="100" height="100"></canvas>
+      <div class="tie-bottom"></div>
     </div>
     <div class="suit-pants-leg suit-pants-leg-left">
       <div class="suit-shoe"></div>
@@ -34,11 +34,12 @@ export default {
 
 .suit-shirt {
   position: absolute;
-  background-color: $color-suit;
-  width: $size;
-  height: $size;
-  border-top-left-radius: $size;
-  border-top-right-radius: $size;
+  left: ($size - $size * 0.6)/2;
+  border-radius: $size/4;
+  box-sizing: border-box;
+  border-color: lightblue transparent transparent transparent;
+  border-width: ($size) ($size * 0.3) 0vw ($size * 0.3);
+  border-style: solid;
 }
 
 .tie {
@@ -63,8 +64,10 @@ export default {
   &-bottom {
     position: absolute;
     top: $tie-height;
-    width: $tie-width;
-    height: $size - $tie-height;
+    box-sizing: border-box;
+    border-color: $color-tie transparent transparent transparent;
+    border-width: ($size - $tie-height - $knot-size) (($size - $tie-height - $knot-size) * 0.3) 0vw (($size - $tie-height - $knot-size) * 0.3);
+    border-style: solid;
   }
 }
 
@@ -99,7 +102,7 @@ export default {
 
 .suit-pants-leg {
   position: absolute;
-  top: $body-height;
+  bottom: -$leg-height;
   width: $size * 0.45;
   height: $leg-height;
   background-color: $color-suit;

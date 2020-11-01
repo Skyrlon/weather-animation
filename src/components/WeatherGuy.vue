@@ -20,7 +20,7 @@
     <div class="leg leg_left"></div>
     <div class="leg leg_right"></div>
     <hot-clothes v-if="temperature > 25" />
-    <suit-clothes v-if="temperature < 25" />
+    <suit-clothes v-if="temperature < 25 && temperature > 5" />
   </div>
 </template>
 
@@ -36,7 +36,7 @@ export default {
   },
   data() {
     return {
-      temperature: 5,
+      temperature: 6,
     };
   },
 };
