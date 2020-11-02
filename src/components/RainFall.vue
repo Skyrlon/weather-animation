@@ -1,5 +1,5 @@
 <template>
-  <div class="rain-fall">
+  <div id="rain-fall">
     <div
       class="rain"
       :key="index"
@@ -15,11 +15,11 @@
 export default {
   name: "RainFall",
   props: {
-      numberOfDrops: Number,
+    numberOfDrops: Number,
   },
   methods: {
     makeRainFall(numberOfDrops) {
-        let arrayOfStyle = [];
+      let arrayOfStyle = [];
       for (let i = 0; i < numberOfDrops; i++) {
         let posLeft = Math.random() * 99.8;
         let posTop = Math.random() * 100;
@@ -28,7 +28,9 @@ export default {
         let left = `${posLeft}%`;
         let top = `-${posTop}vw`;
         let animation = `rain-fall ${duration}s ${delay}s linear infinite`;
-        arrayOfStyle.push(`left: ${left}; top: ${top}; animation: ${animation};`);
+        arrayOfStyle.push(
+          `left: ${left}; top: ${top}; animation: ${animation};`
+        );
       }
       return arrayOfStyle;
     },

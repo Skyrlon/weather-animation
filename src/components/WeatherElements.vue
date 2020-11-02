@@ -40,24 +40,29 @@
         <div class="road-status"></div>
       </div>
     </div>
-    <rain-fall :numberOfDrops="numberOfDrops"/>
+    <rain-fall :numberOfDrops="numberOfDrops" v-if="isRaining"/>
+    <snow-fall :numberOfDrops="numberOfDrops" v-if="isSnowing"/>
   </div>
 </template>
 
 <script>
 import Tornado from "./Tornado.vue";
 import RainFall from "./RainFall.vue";
+import SnowFall from "./SnowFall.vue";
 
 export default {
   name: "WeatherElements",
   data() {
     return {
-    numberOfDrops: 100,
-    }
+      numberOfDrops: 100,
+      isRaining: false,
+      isSnowing: true,
+    };
   },
   components: {
     Tornado,
     RainFall,
+    SnowFall,
   },
 };
 </script>
