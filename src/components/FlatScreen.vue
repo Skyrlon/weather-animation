@@ -66,10 +66,10 @@ export default {
 
 .screen {
   position: absolute;
-  top: $flat-screen-height/20;
-  left: $flat-screen-width/30;
-  width: $flat-screen-width - $flat-screen-width/15;
-  height: $flat-screen-height - $flat-screen-height/10;
+  top: ($flat-screen-height - $screen-height)/2;
+  left: ($flat-screen-width - $screen-width)/2;
+  width: $screen-width;
+  height: $screen-height;
   background-color: grey;
   border-radius: 1%;
   overflow: hidden;
