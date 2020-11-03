@@ -1,6 +1,6 @@
 <template>
   <div id="weather_elements">
-    <div class="sky">     
+    <div class="sky">
       <div class="cloud">
         <div class="cloud_eye cloud_eye-left"></div>
         <div class="cloud_eye cloud_eye-right"></div>
@@ -27,9 +27,9 @@
         <div class="road-status"></div>
       </div>
     </div>
-    <rain-fall :numberOfDrops="numberOfDrops" v-if="isRaining"/>
-    <snow-fall :numberOfDrops="numberOfDrops" v-if="isSnowing"/>
-    <celestial-bodies />
+    <rain-fall :numberOfDrops="numberOfDrops" v-if="isRaining" />
+    <snow-fall :numberOfDrops="numberOfDrops" v-if="isSnowing" />
+    <celestial-bodies :celestialBody="celestialBodyName" />
   </div>
 </template>
 
@@ -41,18 +41,19 @@ import CelestialBodies from "./CelestialBodies.vue";
 
 export default {
   name: "WeatherElements",
-  data() {
-    return {
-      numberOfDrops: 100,
-      isRaining: false,
-      isSnowing: false,
-    };
-  },
   components: {
     Tornado,
     RainFall,
     SnowFall,
     CelestialBodies,
+  },
+  data() {
+    return {
+      numberOfDrops: 100,
+      isRaining: false,
+      isSnowing: false,
+      celestialBodyName: "moon",
+    };
   },
 };
 </script>

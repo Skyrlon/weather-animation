@@ -1,17 +1,16 @@
 <template>
-  <div id="celestial-trajectory">
-    <div class="sun">
-      <div class="sun_eye sun_eye-left"></div>
-      <div class="sun_eye sun_eye-right"></div>
-      <div class="sun_mouth"></div>
-    </div>
-    <div class="moon">
-      <div class="moon_eye moon_eye-left"></div>
-      <div class="moon_eye moon_eye-right"></div>
-      <div class="moon_mouth"></div>
-      <div class="moon_crater1"></div>
-      <div class="moon_crater2"></div>
-      <div class="moon_crater3"></div>
+  <div id="celestial_trajectory">
+    <div id="celestial_body">
+      <div :class="celestialBody">
+        <div class="face">
+          <div class="eye eye-left"></div>
+          <div class="eye eye-right"></div>
+          <div class="mouth"></div>
+        </div>
+        <div class="moon_crater1" v-if="celestialBody === 'moon'"></div>
+        <div class="moon_crater2" v-if="celestialBody === 'moon'"></div>
+        <div class="moon_crater3" v-if="celestialBody === 'moon'"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -19,59 +18,66 @@
 <script>
 export default {
   name: "CelestialBodies",
+  props: {
+    celestialBody: String,
+  },
 };
 </script>
 
 <style lang="scss">
-#celestial-trajectory {
+#celestial_trajectory {
   position: absolute;
   top: 0%;
   left: ($screen-width - $screen-width * 1.25)/2;
   width: $screen-width * 1.25;
   height: $screen-width * 1.25;
-  box-sizing: border-box;
   border-radius: $screen-width;
-  border: 5px solid purple;
-  transform: rotate(0deg);
+  transform: rotate(95deg);
+}
+
+#celestial_body {
+  position: absolute;
+  top: ($screen-width * 1.25)/2;
+  left: 0;
+  & .face {
+    & .eye {
+      position: absolute;
+      top: $celestial-size/3;
+      width: $celestial-eye-size;
+      height: $celestial-eye-size;
+      border-radius: $celestial-eye-size;
+      background-color: black;
+
+      &-left {
+        left: $celestial-eye-size;
+      }
+
+      &-right {
+        right: $celestial-eye-size;
+      }
+    }
+
+    & .mouth {
+      position: absolute;
+      top: $celestial-size * 2/3;
+      left: $celestial-mouth-width/2;
+      width: $celestial-mouth-width;
+      height: $celestial-mouth-width/2.5;
+      border-radius: 50% / 100%;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      background-color: black;
+    }
+  }
 }
 
 .sun {
   position: absolute;
-  top: 20%;
-  left: 9.5%;
   width: $celestial-size;
   height: $celestial-size;
   background-color: $color-sun;
   border-radius: $celestial-size;
-
-  &_eye {
-    position: absolute;
-    top: $celestial-size/3;
-    width: $celestial-eye-size;
-    height: $celestial-eye-size;
-    border-radius: $celestial-eye-size;
-    background-color: black;
-
-    &-left {
-      left: $celestial-eye-size;
-    }
-
-    &-right {
-      right: $celestial-eye-size;
-    }
-  }
-
-  &_mouth {
-    position: absolute;
-    top: $celestial-size * 2/3;
-    left: $celestial-mouth-width/2;
-    width: $celestial-mouth-width;
-    height: $celestial-mouth-width/2.5;
-    border-radius: 50% / 100%;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    background-color: black;
-  }
+  transform: rotate(-95deg);
 }
 
 .moon {
@@ -80,35 +86,7 @@ export default {
   height: $celestial-size;
   background-color: $color-moon;
   border-radius: $celestial-size;
-
-  &_eye {
-    position: absolute;
-    top: $celestial-size/3;
-    width: $celestial-eye-size;
-    height: $celestial-eye-size;
-    border-radius: $celestial-eye-size;
-    background-color: black;
-
-    &-left {
-      left: $celestial-eye-size;
-    }
-
-    &-right {
-      right: $celestial-eye-size;
-    }
-  }
-
-  &_mouth {
-    position: absolute;
-    top: $celestial-size * 2/3;
-    left: $celestial-mouth-width/2;
-    width: $celestial-mouth-width;
-    height: $celestial-mouth-width/2.5;
-    border-radius: 50% / 100%;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    background-color: black;
-  }
+  transform: rotate(-95deg);
 
   &_crater1 {
     position: absolute;
