@@ -73,9 +73,8 @@ $cloud-width: $size*5;
 $cloud-height: $cloud-width/3;
 $thunder-width: $cloud-width/8;
 $thunder-height: $thunder-width*1.25;
-$tornado-radius: $flat-screen-width*4/100;
-$tornado-height: $tornado-radius/2;
-$tornado-parts-width: $tornado-radius*6.39/24;
+$tornado-height: $screen-height/2 *0.9;
+$tornado-width: $tornado-height/2;
 $volcano-width: $flat-screen-width*20/100;
 $volcano-height: $volcano-width/3;
 $volcano-tube-width: $volcano-width/5;
@@ -155,52 +154,6 @@ $tie-height: $size*0.6;
     height: $arm-height;
     transform-origin: ($sleeve-inferior-width - $arm-height/2) 50%;
     transform: rotate(90deg);
-}
-
-@keyframes tornado-spin {
-    from {
-        transform: rotateY(0deg);
-    }
-
-    to {
-        transform: rotateY(360deg);
-    }
-}
-
-@keyframes stage-one-rotation {
-    0% {
-        transform: rotateY(0deg) rotateX(4deg);
-        left: -$tornado-radius/3;
-    }
-
-    100% {
-        transform: rotateY(0deg) rotateX(4deg);
-        left: $tornado-radius/3;
-    }
-}
-
-@keyframes stage-two-rotation {
-    0% {
-        transform: rotateY(0deg) rotateX(4deg);
-        left: -$tornado-radius/4;
-    }
-
-    100% {
-        transform: rotateY(0deg) rotateX(4deg);
-        left: $tornado-radius/4;
-    }
-}
-
-@keyframes stage-three-rotation {
-    0% {
-        transform: rotateY(0deg) rotateX(4deg);
-        left: -$tornado-radius/2;
-    }
-
-    100% {
-        transform: rotateY(0deg) rotateX(4deg);
-        left: $tornado-radius/2;
-    }
 }
 
 @keyframes thumb-inferior-click {
