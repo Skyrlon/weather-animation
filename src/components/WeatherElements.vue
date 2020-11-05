@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       numberOfDrops: 100,
-      isRaining: false,
+      isRaining: true,
       isSnowing: false,
       celestialBodyName: "moon",
     };

@@ -4,9 +4,7 @@
       class="rain"
       :key="index"
       v-for="(drop, index) in numberOfDrops"
-      :style="makeRainFall(numberOfDrops)[index]"
     >
-      <div class="rain-drop"></div>
     </div>
   </div>
 </template>
@@ -17,37 +15,49 @@ export default {
   props: {
     numberOfDrops: Number,
   },
-  methods: {
-    makeRainFall(numberOfDrops) {
-      let arrayOfStyle = [];
-      for (let i = 0; i < numberOfDrops; i++) {
-        let posLeft = Math.random() * 99.8;
-        let posTop = Math.random() * 100;
-        let duration = Math.random() + 0.5;
-        let delay = Math.random();
-        let left = `${posLeft}%`;
-        let top = `-${posTop}vw`;
-        let animation = `rain-fall ${duration}s ${delay}s linear infinite`;
-        arrayOfStyle.push(
-          `left: ${left}; top: ${top}; animation: ${animation};`
-        );
-      }
-      return arrayOfStyle;
-    },
-  },
 };
 </script>
 
 <style lang="scss">
 .rain {
   position: absolute;
-  &-drop {
-    position: absolute;
-    width: $rain-drop-width;
-    height: $rain-drop-width;
-    background-color: lightblue;
-    border-radius: 0 50% 50% 50%;
-    transform: rotate(45deg);
+  background: white;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 100%
+  );
+  height: $rain-height;
+
+  width: $rain-width;
+}
+
+@for $i from 1 through 150 {
+  $top: (random(50) + 50) * 1%;
+  $left: random(100) * 1%;
+  $opacity: (random(30) + 30) * 0.01;
+  $delay: random(20) - 1s;
+
+  .rain:nth-of-type(#{$i}) {
+    animation-name: rain-#{$i};
+    animation-delay: $delay;
+    animation-duration: random(6) + 4s;
+    animation-iteration-count: infinite;
+    left: $left;
+    opacity: $opacity;
+    top: -$top;
+  }
+
+  @keyframes rain-#{$i} {
+    0% {
+      left: $left;
+      opacity: $opacity;
+      top: -$top;
+    }
+    100% {
+      opacity: 0;
+      top: $top + 40%;
+    }
   }
 }
 </style>

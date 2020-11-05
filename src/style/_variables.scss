@@ -80,7 +80,8 @@ $volcano-height: $volcano-width/3;
 $volcano-tube-width: $volcano-width/5;
 $volcano-side-width: ($volcano-width - $volcano-tube-width)/2;
 $volcano-side-height: $volcano-width + $volcano-height;
-$rain-drop-width: $flat-screen-width* 0.5/100;
+$rain-width: $screen-width* 0.5/100;
+$rain-height: $rain-width*10;
 $snowflake-height: $flat-screen-width * 1/100;
 $snowflake-width: $snowflake-height/10;
 
