@@ -1,22 +1,26 @@
 <template>
   <div id="tornado">
-    <div :key="stage" v-for="stage in alphabet.slice(0, 20)" :class="stage"></div>
+    <div
+      :key="stage"
+      v-for="stage in alphabet.slice(0, 20)"
+      :class="stage"
+    ></div>
     <div id="face">
-        <div class="container-eye">
-          <div class="eye eye_left"></div>
-          <div class="eye eye_right"></div>
-        </div>
-        <div class="container-eye">
-          <div class="eye eye_left"></div>
-          <div class="eye eye_right"></div>
-        </div>
-        <div class="container-mouth">
-          <div class="mouth"></div>
-        </div>
-        <div class="container-mouth">
-          <div class="mouth"></div>
-        </div>
+      <div class="container-eye">
+        <div class="eye eye_left"></div>
+        <div class="eye eye_right"></div>
       </div>
+      <div class="container-eye">
+        <div class="eye eye_left"></div>
+        <div class="eye eye_right"></div>
+      </div>
+      <div class="container-mouth">
+        <div class="mouth"></div>
+      </div>
+      <div class="container-mouth">
+        <div class="mouth"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -83,13 +87,16 @@ export default {
   background-color: black;
   border-radius: $tornado-height/10;
   animation: face-move 2s infinite linear;
+  &_left {
+    top: 0;
+  }
+  &_right {
+    top: 0;
+    left: $tornado-width/3;
+  }
 }
 
-.eye_right {
-  left: $tornado-width/3;
-}
-
-.container-eye:nth-child(2) {
+#tornado .container-eye:nth-child(2) {
   & .eye {
     top: -$tornado-height/20;
     left: (($tornado-width - $tornado-width * (5)/25)/2) -
@@ -103,6 +110,8 @@ export default {
 
 #tornado .mouth {
   position: absolute;
+  top: 0;
+  left: 0;
   width: $tornado-width/2;
   height: $tornado-height/10;
   border-radius: 50% / 100%;
