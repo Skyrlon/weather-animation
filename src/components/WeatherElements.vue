@@ -49,9 +49,10 @@ export default {
   },
   data() {
     return {
+      numberOfDrops: 100,
       rainIntensity: 'moderate',
-      isRaining: true,
-      isSnowing: false,
+      isRaining: false,
+      isSnowing: true,
       celestialBodyName: "moon",
     };
   },

@@ -8,7 +8,7 @@
     >
       <div
         :key="index"
-        :class="`snowflake-branch-${branch}`"
+        :class="`snowflake__branch snowflake__branch--${branch}`"
         v-for="(branch, index) in snowflakeBranch"
       ></div>
     </div>
@@ -51,209 +51,89 @@ export default {
 .snowflake {
   position: absolute;
 
-  &-branch {
-    &-n {
+  &__branch {
+    position: absolute;
+    width: $snowflake-width;
+    height: $snowflake-height;
+    border-radius: $snowflake-height;
+    background-color: white;
+    &::before {
+      content: "";
       position: absolute;
+      bottom: 0;
       width: $snowflake-width;
-      height: $snowflake-height;
+      height: $snowflake-height/2.5;
       border-radius: $snowflake-height;
       background-color: white;
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: $snowflake-width;
-        height: $snowflake-height/2.5;
-        border-radius: $snowflake-height;
-        background-color: white;
-        transform-origin: bottom;
-        transform: rotate(-45deg);
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        width: $snowflake-width;
-        height: $snowflake-height/2.5;
-        border-radius: $snowflake-height;
-        background-color: white;
-        transform-origin: bottom;
-        transform: rotate(45deg);
-      }
+      transform-origin: top;
+      transform: rotate(45deg);
     }
 
-    &-s {
+    &::after {
+      content: "";
       position: absolute;
-      top: $snowflake-height;
+      bottom: 0;
       width: $snowflake-width;
-      height: $snowflake-height;
+      height: $snowflake-height/2.5;
       border-radius: $snowflake-height;
       background-color: white;
-
+      transform-origin: top;
+      transform: rotate(-45deg);
+    }
+    
+    &--n {
       &::before {
         content: "";
         position: absolute;
-        bottom: 0;
+        top: $snowflake-height/2.5;
         width: $snowflake-width;
         height: $snowflake-height/2.5;
         border-radius: $snowflake-height;
         background-color: white;
         transform-origin: top;
-        transform: rotate(45deg);
+        transform: rotate(135deg);
       }
 
       &::after {
         content: "";
         position: absolute;
-        bottom: 0;
+        top: $snowflake-height/2.5;
         width: $snowflake-width;
         height: $snowflake-height/2.5;
         border-radius: $snowflake-height;
         background-color: white;
         transform-origin: top;
-        transform: rotate(-45deg);
+        transform: rotate(-135deg);
       }
     }
-
-    &-nw {
-      position: absolute;
+    &--s {
       top: $snowflake-height;
-      width: $snowflake-width;
-      height: $snowflake-height;
-      border-radius: $snowflake-height;
-      background-color: white;
+    }
+
+    &--nw {
+      top: $snowflake-height;
       transform-origin: top;
       transform: rotate(120deg);
-
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: $snowflake-width;
-        height: $snowflake-height/2.5;
-        border-radius: $snowflake-height;
-        background-color: white;
-        transform-origin: top;
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: $snowflake-width;
-        height: $snowflake-height/2.5;
-        border-radius: $snowflake-height;
-        background-color: white;
-        transform-origin: top;
-        transform: rotate(-45deg);
-      }
     }
 
-    &-ne {
-      position: absolute;
+    &--ne {
       top: $snowflake-height;
-      width: $snowflake-width;
-      height: $snowflake-height;
-      border-radius: $snowflake-height;
-      background-color: white;
       transform-origin: top;
       transform: rotate(-120deg);
-
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: $snowflake-width;
-        height: $snowflake-height/2.5;
-        border-radius: $snowflake-height;
-        background-color: white;
-        transform-origin: top;
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: $snowflake-width;
-        height: $snowflake-height/2.5;
-        border-radius: $snowflake-height;
-        background-color: white;
-        transform-origin: top;
-        transform: rotate(-45deg);
-      }
     }
 
-    &-se {
-      position: absolute;
+    &--se {
       top: $snowflake-height;
-      width: $snowflake-width;
-      height: $snowflake-height;
-      border-radius: $snowflake-height;
-      background-color: white;
       transform-origin: top;
       transform: rotate(-60deg);
-
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: $snowflake-width;
-        height: $snowflake-height/2.5;
-        border-radius: $snowflake-height;
-        background-color: white;
-        transform-origin: top;
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: $snowflake-width;
-        height: $snowflake-height/2.5;
-        border-radius: $snowflake-height;
-        background-color: white;
-        transform-origin: top;
-        transform: rotate(-45deg);
-      }
     }
 
-    &-sw {
-      position: absolute;
+    &--sw {
       top: $snowflake-height;
-      width: $snowflake-width;
-      height: $snowflake-height;
-      border-radius: $snowflake-height;
-      background-color: white;
       transform-origin: top;
       transform: rotate(60deg);
-
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: $snowflake-width;
-        height: $snowflake-height/2.5;
-        border-radius: $snowflake-height;
-        background-color: white;
-        transform-origin: top;
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: $snowflake-width;
-        height: $snowflake-height/2.5;
-        border-radius: $snowflake-height;
-        background-color: white;
-        transform-origin: top;
-        transform: rotate(-45deg);
-      }
     }
+    
   }
 }
 </style>
