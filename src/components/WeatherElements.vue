@@ -27,7 +27,7 @@
         <div class="road-status"></div>
       </div>
     </div>
-    <rain-fall :numberOfDrops="numberOfDrops" v-if="isRaining" />
+    <rain-fall :rainIntensity="rainIntensity" v-if="isRaining" />
     <snow-fall :numberOfDrops="numberOfDrops" v-if="isSnowing" />
     <celestial-bodies :celestialBody="celestialBodyName" />
   </div>
@@ -49,7 +49,7 @@ export default {
   },
   data() {
     return {
-      numberOfDrops: 100,
+      rainIntensity: 'moderate',
       isRaining: true,
       isSnowing: false,
       celestialBodyName: "moon",

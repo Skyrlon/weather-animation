@@ -1,11 +1,10 @@
 <template>
   <div id="rain-fall">
     <div
-      class="rain"
+      :class="'rain ' + rainIntensity"
       :key="index"
-      v-for="(drop, index) in numberOfDrops"
-    >
-    </div>
+      v-for="(drop, index) in numberOfDrops(rainIntensity)"
+    ></div>
   </div>
 </template>
 
@@ -13,7 +12,26 @@
 export default {
   name: "RainFall",
   props: {
-    numberOfDrops: Number,
+    rainIntensity: String,
+  },
+  methods: {
+    numberOfDrops(rain) {
+      switch (rain) {
+        case "light":
+          return 25;
+          break;
+        case "moderate":
+          return 50;
+          break;
+        case "heavy":
+          return 100;
+          break;
+
+        default:
+          return 25;
+          break;
+      }
+    },
   },
 };
 </script>
@@ -32,16 +50,74 @@ export default {
   width: $rain-width;
 }
 
-@for $i from 1 through 150 {
+@for $i from 1 through 25 {
   $top: (random(50) + 50) * 1%;
   $left: random(100) * 1%;
   $opacity: (random(30) + 30) * 0.01;
   $delay: random(20) - 1s;
 
-  .rain:nth-of-type(#{$i}) {
+  .light.rain:nth-of-type(#{$i}) {
     animation-name: rain-#{$i};
     animation-delay: $delay;
-    animation-duration: random(6) + 4s;
+    animation-duration: random() + 1s;
+    animation-iteration-count: infinite;
+    left: $left;
+    opacity: $opacity;
+    top: -$top;
+  }
+
+  @keyframes rain-#{$i} {
+    0% {
+      left: $left;
+      opacity: $opacity;
+      top: -$top;
+    }
+    100% {
+      opacity: 0;
+      top: $top + 40%;
+    }
+  }
+}
+
+@for $i from 1 through 50 {
+  $top: (random(50) + 50) * 1%;
+  $left: random(100) * 1%;
+  $opacity: (random(30) + 30) * 0.01;
+  $delay: random(20) - 1s;
+
+  .moderate.rain:nth-of-type(#{$i}) {
+    animation-name: rain-#{$i};
+    animation-delay: $delay;
+    animation-duration: random() + 1s;
+    animation-iteration-count: infinite;
+    left: $left;
+    opacity: $opacity;
+    top: -$top;
+  }
+
+  @keyframes rain-#{$i} {
+    0% {
+      left: $left;
+      opacity: $opacity;
+      top: -$top;
+    }
+    100% {
+      opacity: 0;
+      top: $top + 40%;
+    }
+  }
+}
+
+@for $i from 1 through 100 {
+  $top: (random(50) + 50) * 1%;
+  $left: random(100) * 1%;
+  $opacity: (random(30) + 30) * 0.01;
+  $delay: random(20) - 1s;
+
+  .heavy.rain:nth-of-type(#{$i}) {
+    animation-name: rain-#{$i};
+    animation-delay: $delay;
+    animation-duration: random() + 1s;
     animation-iteration-count: infinite;
     left: $left;
     opacity: $opacity;
