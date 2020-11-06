@@ -1,7 +1,7 @@
 <template>
-  <div id="rain-fall">
+  <div :class="'rain-fall ' + rainIntensity">
     <div
-      :class="'rain ' + rainIntensity"
+      class="rain"
       :key="index"
       v-for="(drop, index) in numberOfDrops(rainIntensity)"
     ></div>
@@ -16,20 +16,12 @@ export default {
   },
   methods: {
     numberOfDrops(rain) {
-      switch (rain) {
-        case "light":
-          return 25;
-          break;
-        case "moderate":
-          return 50;
-          break;
-        case "heavy":
-          return 100;
-          break;
-
-        default:
-          return 25;
-          break;
+      if (rain === "light") {
+        return 25;
+      } else if (rain === "moderate") {
+        return 50;
+      } else if (rain === "heavy") {
+        return 100;
       }
     },
   },
@@ -56,7 +48,7 @@ export default {
   $opacity: (random(30) + 30) * 0.01;
   $delay: random(20) - 1s;
 
-  .light.rain:nth-of-type(#{$i}) {
+  .rain-fall.light .rain:nth-of-type(#{$i}) {
     animation-name: rain-#{$i};
     animation-delay: $delay;
     animation-duration: random() + 1s;
@@ -85,7 +77,7 @@ export default {
   $opacity: (random(30) + 30) * 0.01;
   $delay: random(20) - 1s;
 
-  .moderate.rain:nth-of-type(#{$i}) {
+  .rain-fall.moderate .rain:nth-of-type(#{$i}) {
     animation-name: rain-#{$i};
     animation-delay: $delay;
     animation-duration: random() + 1s;
@@ -114,7 +106,7 @@ export default {
   $opacity: (random(30) + 30) * 0.01;
   $delay: random(20) - 1s;
 
-  .heavy.rain:nth-of-type(#{$i}) {
+  .rain-fall.heavy .rain:nth-of-type(#{$i}) {
     animation-name: rain-#{$i};
     animation-delay: $delay;
     animation-duration: random() + 1s;
