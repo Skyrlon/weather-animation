@@ -49,7 +49,7 @@ export default {
   },
   data() {
     return {
-      precipitationIntensity: 'heavy',
+      precipitationIntensity: 'light',
       isRaining: false,
       isSnowing: true,
       celestialBodyName: "moon",

@@ -1,5 +1,5 @@
 <template>
-  <div :class="'snow-fall ' +  snowIntensity">
+  <div :class="'snow-fall ' + snowIntensity">
     <div
       class="snowflake"
       :key="index"
@@ -28,11 +28,11 @@ export default {
   methods: {
     numberOfDrops(rain) {
       if (rain === "light") {
-        return 25;
+        return 15;
       } else if (rain === "moderate") {
-        return 50;
+        return 40;
       } else if (rain === "heavy") {
-        return 100;
+        return 80;
       }
     },
   },
@@ -72,7 +72,7 @@ export default {
       transform-origin: top;
       transform: rotate(-45deg);
     }
-    
+
     &--n {
       &::before {
         content: "";
@@ -125,96 +125,51 @@ export default {
       transform-origin: top;
       transform: rotate(60deg);
     }
-    
   }
 }
 
-@for $i from 1 through 25 {
-  $top: (random(50) + 50) * 1%;
-  $left: random(100) * 1%;
-  $delay: random(20) - 1s;
-
-  .snow-fall.light .snowflake:nth-of-type(#{$i}) {
-    animation-name: snow-#{$i};
-    animation-delay: $delay;
-    animation-duration: random() + 5s;
+.snow-fall {
+  & .snowflake {
+    top: -$snowflake-height * 2;
+    animation-name: snow-fall;
     animation-iteration-count: infinite;
-    left: $left;
-    top: -$top;
+    animation-timing-function: linear;
+  }
+  @for $i from 1 through 15 {
+    &.light .snowflake:nth-of-type(#{$i}) {
+      animation-delay: random(5) + 0s;
+      animation-duration: random() + 5s;
+      left: random(100) * 1%;
+    }
   }
 
-  @keyframes snow-#{$i} {
-    0% {
-      transform: translateX(0);
-      left: $left;
-      top: -$top;
-    }
-    50% {
-      transform: translateX($snowflake-height*10);
-    }
-    100% {
-      top: $top + 40%;
-      transform: translateX(0);
+  @for $i from 1 through 40 {
+    &.moderate .snowflake:nth-of-type(#{$i}) {
+      animation-delay: random(5) + 0s;
+      animation-duration: random() + 5s;
+      left: random(100) * 1%;
     }
   }
-}
 
-@for $i from 1 through 50 {
-  $top: (random(50) + 50) * 1%;
-  $left: random(100) * 1%;
-  $delay: random(20) - 1s;
-
-  .snow-fall.moderate .snowflake:nth-of-type(#{$i}) {
-    animation-name: snow-#{$i};
-    animation-delay: $delay;
-    animation-duration: random() + 5s;
-    animation-iteration-count: infinite;
-    left: $left;
-    top: -$top;
-  }
-
-  @keyframes snow-#{$i} {
-    0% {
-      transform: translateX(0);
-      left: $left;
-      top: -$top;
+  @for $i from 1 through 80 {
+    &.heavy .snowflake:nth-of-type(#{$i}) {
+      animation-delay: random(5) + 0s;
+      animation-duration: random() + 5s;
+      left: random(100) * 1%;
     }
-    50% {
-      transform: translateX($snowflake-height*10);
-    }
-    100% {
-      top: $top + 40%;
-      transform: translateX(0);
-    }
-  }
-}
 
-@for $i from 1 through 100 {
-  $top: (random(50) + 50) * 1%;
-  $left: random(100) * 1%;
-  $delay: random(20) - 1s;
-
-  .snow-fall.heavy .snowflake:nth-of-type(#{$i}) {
-    animation-name: snow-#{$i};
-    animation-delay: $delay;
-    animation-duration: random() + 5s;
-    animation-iteration-count: infinite;
-    left: $left;
-    top: -$top;
-  }
-
-  @keyframes snow-#{$i} {
-    0% {
-      transform: translateX(0);
-      left: $left;
-      top: -$top;
-    }
-    50% {
-      transform: translateX($snowflake-height*10);
-    }
-    100% {
-      top: $top + 40%;
-      transform: translateX(0);
+    @keyframes snow-fall {
+      0% {
+        transform: translateX(0);
+        top: -$snowflake-height * 2;
+      }
+      50% {
+        transform: translateX($snowflake-height * 10);
+      }
+      100% {
+        top: $screen-height + $snowflake-height;
+        transform: translateX(0);
+      }
     }
   }
 }
