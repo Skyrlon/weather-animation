@@ -29,7 +29,7 @@
     </div>
     <rain-fall :rainIntensity="precipitationIntensity" v-if="isRaining" />
     <snow-fall :snowIntensity="precipitationIntensity" v-if="isSnowing" />
-    <celestial-bodies :celestialBody="celestialBodyName" />
+    <celestial-bodies :celestialBody="celestialBodyName" :hour="hourOfTheDay"/>
   </div>
 </template>
 
@@ -51,8 +51,9 @@ export default {
     return {
       precipitationIntensity: 'light',
       isRaining: false,
-      isSnowing: true,
-      celestialBodyName: "moon",
+      isSnowing: false,
+      celestialBodyName: "sun",
+      hourOfTheDay: 12*3600,
     };
   },
 };

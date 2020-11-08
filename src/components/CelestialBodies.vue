@@ -1,5 +1,7 @@
 <template>
-  <div id="celestial_trajectory">
+  <div id="celestial_trajectory"
+  :style="posOfCelestialBody(hour)"
+  >
     <div id="celestial_body">
       <div :class="celestialBody">
         <div class="face">
@@ -20,7 +22,15 @@ export default {
   name: "CelestialBodies",
   props: {
     celestialBody: String,
+    hour: Number,
   },
+  methods: {
+    posOfCelestialBody(time) {
+      let timeAfterSunrise = time - 8*3600;
+      let degree = timeAfterSunrise*110/34200 + 45;
+      return `transform: rotate(${degree}deg);`
+    }
+  }
 };
 </script>
 
@@ -32,7 +42,6 @@ export default {
   width: $screen-width * 1.25;
   height: $screen-width * 1.25;
   border-radius: $screen-width;
-  transform: rotate(95deg);
 }
 
 #celestial_body {
