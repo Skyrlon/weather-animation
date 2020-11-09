@@ -1,6 +1,6 @@
 <template>
   <div id="celestial_trajectory"
-  :style="posOfCelestialBody(hour)"
+  :style="posOfCelestialBody(hour, rise, timeBetweenRiseAndSet)"
   >
     <div id="celestial_body">
       <div :class="celestialBody">
@@ -23,11 +23,13 @@ export default {
   props: {
     celestialBody: String,
     hour: Number,
+    rise: Number,
+    timeBetweenRiseAndSet: Number,
   },
   methods: {
-    posOfCelestialBody(time) {
-      let timeAfterSunrise = time - 8*3600;
-      let degree = timeAfterSunrise*110/34200 + 45;
+    posOfCelestialBody(time, riseTime, riseToSet) {
+      let timeAfterSunrise = time - riseTime;
+      let degree = timeAfterSunrise*110/riseToSet + 45;
       return `transform: rotate(${degree}deg);`
     }
   }

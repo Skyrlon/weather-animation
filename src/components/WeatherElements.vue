@@ -29,7 +29,12 @@
     </div>
     <rain-fall :rainIntensity="precipitationIntensity" v-if="isRaining" />
     <snow-fall :snowIntensity="precipitationIntensity" v-if="isSnowing" />
-    <celestial-bodies :celestialBody="celestialBodyName" :hour="hourOfTheDay"/>
+    <celestial-bodies
+      :celestialBody="celestialBodyName"
+      :hour="unixToSeconds(hourOfTheDay + timeZone)"
+      :rise="unixToSeconds(sunrise + timeZone)"
+      :timeBetweenRiseAndSet="unixToSeconds(durationBetweenRiseAndSet)"
+    />
   </div>
 </template>
 
@@ -49,12 +54,29 @@ export default {
   },
   data() {
     return {
-      precipitationIntensity: 'light',
+      precipitationIntensity: "light",
       isRaining: false,
       isSnowing: false,
       celestialBodyName: "sun",
-      hourOfTheDay: 12*3600,
+      hourOfTheDay: 1604955743, //unix, UTC
+      sunrise: 1604933052, //unix, UTC
+      sunset: 1604970182, //unix, UTC
+      timeZone: -28800, //in seconds
     };
+  },
+  computed: {
+    durationBetweenRiseAndSet() {
+      return this.sunset - this.sunrise;
+    },
+  },
+  methods: {
+    unixToSeconds(time) {
+      let timeInSeconds = new Date(time * 1000);
+      let hours = timeInSeconds.getUTCHours();
+      let minutes = timeInSeconds.getUTCMinutes();
+      let seconds = timeInSeconds.getUTCSeconds();
+      return (hours * 3600 + minutes * 60 + seconds);
+    },
   },
 };
 </script>
