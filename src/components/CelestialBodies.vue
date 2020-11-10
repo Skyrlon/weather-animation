@@ -1,9 +1,21 @@
 <template>
-  <div id="celestial_trajectory"
-  :style="posOfCelestialBody(hour, rise, timeBetweenRiseAndSet)"
+  <div
+    id="celestial_trajectory"
+    :style="`transform: rotate(${posOfCelestialBody(
+      hour,
+      rise,
+      timeBetweenRiseAndSet
+    )}deg);`"
   >
     <div id="celestial_body">
-      <div :class="celestialBody">
+      <div
+        :class="celestialBody"
+        :style="`transform: rotate(-${posOfCelestialBody(
+          hour,
+          rise,
+          timeBetweenRiseAndSet
+        )}deg);`"
+      >
         <div class="face">
           <div class="eye eye-left"></div>
           <div class="eye eye-right"></div>
@@ -12,6 +24,8 @@
         <div class="moon_crater1" v-if="celestialBody === 'moon'"></div>
         <div class="moon_crater2" v-if="celestialBody === 'moon'"></div>
         <div class="moon_crater3" v-if="celestialBody === 'moon'"></div>
+        
+  <div class="moon_hider waning_crescent" v-if="celestialBody === 'moon'"></div>
       </div>
     </div>
   </div>
@@ -29,10 +43,10 @@ export default {
   methods: {
     posOfCelestialBody(time, riseTime, riseToSet) {
       let timeAfterSunrise = time - riseTime;
-      let degree = timeAfterSunrise*110/riseToSet + 40;
-      return `transform: rotate(${degree}deg);`
-    }
-  }
+      let degree = (timeAfterSunrise * 110) / riseToSet + 40;
+      return degree;
+    },
+  },
 };
 </script>
 
@@ -128,6 +142,87 @@ export default {
     border-radius: $celestial-size/5;
     background-color: $color-moon-crater;
     transform: skew(10deg, 10deg) rotate(0.75turn);
+  }
+}
+
+.moon_hider {
+  &.new_moon {
+    position: absolute;
+    width: $celestial-size;
+    height: $celestial-size;
+    background-color: black;
+  }
+  &.waxing_crescent {
+    position: absolute;
+    width: $celestial-size/2;
+    height: $celestial-size;
+    border-radius: 0;
+    background-color: black;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: $celestial-size;
+      height: $celestial-size;
+      border-radius: $celestial-size;
+      background-color: black;
+      transform: rotateY(45deg);
+    }
+  }
+  &.first_quarter {
+    position: absolute;
+    width: $celestial-size/2;
+    height: $celestial-size;
+    border-radius: 0;
+    background-color: black;
+  }
+  &.waxing_gibbous {
+    position: absolute;
+    left: $celestial-size/8;
+    width: $celestial-size;
+    height: $celestial-size;
+    border-radius: 50%;
+    box-shadow: -$celestial-size/8 0 0 0 black;
+  }
+  &.full_moon {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  &.waning_gibbous {
+    position: absolute;
+    right: $celestial-size/8;
+    width: $celestial-size;
+    height: $celestial-size;
+    border-radius: 50%;
+    box-shadow: $celestial-size/8 0 0 0 black;
+  }
+  &.last_quarter {
+    position: absolute;
+    right: 0;
+    width: $celestial-size/2;
+    height: $celestial-size;
+    border-radius: 0;
+    background-color: black;
+  }
+  &.waning_crescent {    
+    position: absolute;
+    right: 0;
+    width: $celestial-size/2;
+    height: $celestial-size;
+    border-radius: 0;
+    background-color: black;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -$celestial-size/2;
+      width: $celestial-size;
+      height: $celestial-size;
+      border-radius: $celestial-size;
+      background-color: black;
+      transform: rotateY(45deg);
+    }
   }
 }
 </style>
