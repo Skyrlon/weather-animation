@@ -1,13 +1,13 @@
 <template>
   <div id="weather_elements">
-    <div class="sky">
+    <div :class="'sky ' + dayOrNight()">
       <div class="cloud">
         <div class="cloud_eye cloud_eye-left"></div>
         <div class="cloud_eye cloud_eye-right"></div>
         <div class="cloud_mouth"></div>
         <div class="thunder"></div>
       </div>
-      <Tornado />
+      <Tornado v-if="hasTornado" />
       <div class="volcano">
         <div class="volcano-tube">
           <div class="lava">
@@ -30,10 +30,10 @@
     <rain-fall :rainIntensity="precipitationIntensity" v-if="isRaining" />
     <snow-fall :snowIntensity="precipitationIntensity" v-if="isSnowing" />
     <celestial-bodies
-      :celestialBody="celestialBodyName"
+      :celestialBody="celestialBodyName()"
       :hour="unixToSeconds(hourOfTheDay + timeZone)"
-      :rise="unixToSeconds(sunrise + timeZone)"
-      :timeBetweenRiseAndSet="unixToSeconds(durationBetweenRiseAndSet)"
+      :rise="unixToSeconds(riseHour() + timeZone)"
+      :timeBetweenRiseAndSet="unixToSeconds(durationBetweenRiseAndSet())"
     />
   </div>
 </template>
@@ -54,28 +54,56 @@ export default {
   },
   data() {
     return {
-      precipitationIntensity: "light",
+      precipitationIntensity: "moderate",
       isRaining: false,
       isSnowing: false,
-      celestialBodyName: "sun",
-      hourOfTheDay: 1604955743, //unix, UTC
-      sunrise: 1604933052, //unix, UTC
-      sunset: 1604970182, //unix, UTC
-      timeZone: -28800, //in seconds
+      hasTornado: false,
+      hourOfTheDay: 1604977200, //unix, UTC
+      sunrise: 1604991139, //unix, UTC
+      sunset: 1605025014, //unix, UTC
+      moonrise: 1604966760, //unix, UTC
+      moonset: 1605018600, //unix, UTC
+      timeZone: 3600, //in seconds
     };
   },
-  computed: {
-    durationBetweenRiseAndSet() {
-      return this.sunset - this.sunrise;
-    },
-  },
   methods: {
+    dayOrNight() {
+      if (this.hourOfTheDay > this.sunrise && this.hourOfTheDay < this.sunset) {
+        return "day";
+      } else if (
+        this.hourOfTheDay < this.sunrise ||
+        this.hourOfTheDay > this.sunset
+      ) {
+        return "night";
+      }
+    },
+    celestialBodyName() {
+      if (this.dayOrNight() == "day") {
+        return "sun";
+      } else if (this.dayOrNight() == "night") {
+        return "moon";
+      }
+    },
+    durationBetweenRiseAndSet() {
+      if (this.dayOrNight() == "day") {
+        return this.sunset - this.sunrise;
+      } else if (this.dayOrNight() == "night") {
+        return this.moonset - this.moonrise;
+      }
+    },
+    riseHour() {
+      if (this.dayOrNight() == "day") {
+        return this.sunrise;
+      } else if (this.dayOrNight() == "night") {
+        return this.moonrise;
+      }
+    },
     unixToSeconds(time) {
       let timeInSeconds = new Date(time * 1000);
       let hours = timeInSeconds.getUTCHours();
       let minutes = timeInSeconds.getUTCMinutes();
       let seconds = timeInSeconds.getUTCSeconds();
-      return (hours * 3600 + minutes * 60 + seconds);
+      return hours * 3600 + minutes * 60 + seconds;
     },
   },
 };
@@ -83,12 +111,17 @@ export default {
 
 <style lang="scss">
 .sky {
-  background: #00bfff;
   position: absolute;
   width: 100%;
   height: 50%;
   top: 0;
   left: 0;
+  &.day {
+    background: #00bfff;
+  }
+  &.night {
+    background: black;
+  }
 }
 
 .ground {

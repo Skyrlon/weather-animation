@@ -29,7 +29,7 @@ export default {
   methods: {
     posOfCelestialBody(time, riseTime, riseToSet) {
       let timeAfterSunrise = time - riseTime;
-      let degree = timeAfterSunrise*110/riseToSet + 45;
+      let degree = timeAfterSunrise*110/riseToSet + 40;
       return `transform: rotate(${degree}deg);`
     }
   }
@@ -88,7 +88,6 @@ export default {
   height: $celestial-size;
   background-color: $color-sun;
   border-radius: $celestial-size;
-  transform: rotate(-95deg);
 }
 
 .moon {
@@ -97,7 +96,6 @@ export default {
   height: $celestial-size;
   background-color: $color-moon;
   border-radius: $celestial-size;
-  transform: rotate(-95deg);
 
   &_crater1 {
     position: absolute;
