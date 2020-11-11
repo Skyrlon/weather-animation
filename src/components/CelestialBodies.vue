@@ -24,8 +24,11 @@
         <div class="moon_crater1" v-if="celestialBody === 'moon'"></div>
         <div class="moon_crater2" v-if="celestialBody === 'moon'"></div>
         <div class="moon_crater3" v-if="celestialBody === 'moon'"></div>
-        
-  <div class="moon_hider waning_crescent" v-if="celestialBody === 'moon'"></div>
+
+        <div
+          :class="'moon_hider ' + moonPhase(hour)"
+          v-if="celestialBody === 'moon'"
+        ></div>
       </div>
     </div>
   </div>
@@ -45,6 +48,54 @@ export default {
       let timeAfterSunrise = time - riseTime;
       let degree = (timeAfterSunrise * 110) / riseToSet + 40;
       return degree;
+    },
+    moonPhase(date) {
+      let timeInMs = new Date(date * 1000);
+      var year = timeInMs.getFullYear(),
+        month = timeInMs.getMonth(),
+        day = timeInMs.getDate();
+
+      if (month < 3) {
+        year--;
+        month += 12;
+      }
+
+      ++month;
+
+      let jd = 365.25 * year + 30.6 * month + day - 694039.09; // jd is total days elapsed
+      jd /= 29.53; // divide by the moon cycle (29.53 days)
+      let phase = parseInt(jd, 10); // int(jd) -> phase, take integer part of jd
+      jd -= phase; // subtract integer part to leave fractional part of original jd
+      phase = Math.ceil(jd * 8); // scale fraction from 0-8 and round by adding 0.5
+      phase = phase & 7; // 0 and 8 are the same so turn 8 into 0
+
+      switch (phase) {
+        case 0:
+          phase = "new_moon";
+          break;
+        case 1:
+          phase = "waxing_crescent";
+          break;
+        case 2:
+          phase = "first_quarter";
+          break;
+        case 3:
+          phase = "waxing_gibbous";
+          break;
+        case 4:
+          phase = "full_moon";
+          break;
+        case 5:
+          phase = "waning_gibbous";
+          break;
+        case 6:
+          phase = "last_quarter";
+          break;
+        case 7:
+          phase = "waning_crescent";
+          break;
+      }
+      return phase;
     },
   },
 };
@@ -160,7 +211,7 @@ export default {
     background-color: black;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       width: $celestial-size;
       height: $celestial-size;
@@ -205,7 +256,7 @@ export default {
     border-radius: 0;
     background-color: black;
   }
-  &.waning_crescent {    
+  &.waning_crescent {
     position: absolute;
     right: 0;
     width: $celestial-size/2;
@@ -214,7 +265,7 @@ export default {
     background-color: black;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: -$celestial-size/2;
       width: $celestial-size;
