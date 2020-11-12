@@ -1,12 +1,11 @@
 <template>
   <div id="weather_elements">
     <div :class="'sky ' + dayOrNight()">
-      <div class="cloud">
-        <div class="cloud_eye cloud_eye-left"></div>
-        <div class="cloud_eye cloud_eye-right"></div>
-        <div class="cloud_mouth"></div>
-        <div class="thunder"></div>
-      </div>
+      <clouds-and-thunder
+        :key="cloud"
+        v-for="cloud in numberOfClouds(cloudsAmount)"
+        :thunder="hasThunder"
+      />
       <Tornado v-if="hasTornado" />
       <div class="volcano">
         <div class="volcano-tube">
@@ -43,6 +42,7 @@ import Tornado from "./Tornado.vue";
 import RainFall from "./RainFall.vue";
 import SnowFall from "./SnowFall.vue";
 import CelestialBodies from "./CelestialBodies.vue";
+import CloudsAndThunder from "./CloudsAndThunder.vue";
 
 export default {
   name: "WeatherElements",
@@ -51,6 +51,7 @@ export default {
     RainFall,
     SnowFall,
     CelestialBodies,
+    CloudsAndThunder,
   },
   data() {
     return {
@@ -58,6 +59,8 @@ export default {
       isRaining: false,
       isSnowing: false,
       hasTornado: false,
+      hasThunder: false,
+      cloudsAmount: "broken", //none, few, scattered, broken, or overcast
       hourOfTheDay: 1604977200, //unix, UTC
       sunrise: 1604991139, //unix, UTC
       sunset: 1605025014, //unix, UTC
@@ -67,6 +70,27 @@ export default {
     };
   },
   methods: {
+    numberOfClouds(amount) {
+      let number;
+      switch (amount) {
+        case "none":
+          number = 0;
+          break;
+        case "few":
+          number = 3;
+          break;
+        case "scattered":
+          number = 6;
+          break;
+        case "broken":
+          number = 12;
+          break;
+        case "overcast":
+          number = 18;
+          break;
+      }
+      return number;
+    },
     dayOrNight() {
       if (this.hourOfTheDay > this.sunrise && this.hourOfTheDay < this.sunset) {
         return "day";
@@ -120,7 +144,7 @@ export default {
     background: #00bfff;
   }
   &.night {
-    background: black;
+    background: blue;
   }
 }
 
@@ -149,107 +173,6 @@ export default {
       left: 45%;
       background-color: brown;
     }
-  }
-}
-
-.cloud {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  height: $cloud-height;
-  width: $cloud-width;
-  background: white;
-  border-radius: $cloud-height;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -$cloud-height/3;
-    box-sizing: border-box;
-    height: $cloud-width/3;
-    width: $cloud-width/3;
-    left: $cloud-width/6;
-    border-radius: 50%;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
-    background: white;
-    transform: rotate(40deg);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    height: $cloud-width/2;
-    width: $cloud-width/2;
-    top: -$cloud-height/2;
-    left: $cloud-width/3;
-    border-radius: 50%;
-    box-sizing: border-box;
-    border-bottom-color: transparent;
-    background: white;
-    border-right-color: transparent;
-    transform: rotate(55deg);
-  }
-
-  &_eye {
-    position: absolute;
-    top: 0;
-    width: $celestial-eye-size;
-    height: $celestial-eye-size;
-    border-radius: $celestial-eye-size;
-    background-color: black;
-
-    &-left {
-      left: $celestial-size/2;
-    }
-
-    &-right {
-      z-index: 2;
-      right: $celestial-size/2;
-    }
-  }
-
-  &_mouth {
-    z-index: 2;
-    position: absolute;
-    top: $cloud-height/2;
-    left: ($cloud-width - $celestial-mouth-width)/2;
-    width: $celestial-mouth-width;
-    height: $celestial-mouth-width/2.5;
-    border-radius: 50% / 100%;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    background-color: black;
-  }
-}
-
-.thunder {
-  position: absolute;
-  top: $cloud-height;
-  left: ($cloud-width - $thunder-width * 2)/2;
-  width: $thunder-width;
-  height: $thunder-height;
-  background-color: yellow;
-  transform: skew(-40deg);
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: $thunder-height * 2/3;
-    left: $thunder-width;
-    width: $thunder-width;
-    height: $thunder-height;
-    background-color: yellow;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: $thunder-height * 2/3 + $thunder-height;
-    left: $thunder-width;
-    border-style: solid;
-    border-width: 0 0 $thunder-height/2 $thunder-width;
-    border-color: transparent transparent transparent yellow;
   }
 }
 
