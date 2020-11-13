@@ -1,11 +1,10 @@
 <template>
-  <div class="cloud">
-    <div class="face">
-      <div class="eye eye-left"></div>
-      <div class="eye eye-right"></div>
-      <div class="mouth"></div>
+  <div id="clouds">
+    <div class="cloud_row" :key="row" v-for="row in 5">
+      <div class="cloud" :key="cloud" v-for="cloud in numberOfClouds">
+        <div class="thunder" v-if="thunder"></div>
+      </div>
     </div>
-    <div class="thunder" v-if="thunder"></div>
   </div>
 </template>
 
@@ -14,11 +13,27 @@ export default {
   name: "CloudsAndThunder",
   props: {
     thunder: Boolean,
+    numberOfClouds: Number,
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@for $i from 0 through 5 {
+  .cloud_row:nth-child(#{$i}) {
+    position: absolute;
+    top: #{-$cloud-height + $cloud-height * $i};
+    width: $screen-width;
+    @for $j from 0 through 3 {
+      & .cloud:nth-child(#{$j}) {
+        left: random(150) / 150 * 100%;
+        opacity: #{1.2 - 0.2 * $i};
+        transform: scale(#{1.2 - 0.2 * $i});
+      }
+    }
+  }
+}
+
 .cloud {
   position: absolute;
   height: $cloud-height;
@@ -117,24 +132,6 @@ export default {
     border-style: solid;
     border-width: 0 0 $thunder-height/2 $thunder-width;
     border-color: transparent transparent transparent yellow;
-  }
-}
-
-$clouds: 12;
-
-@for $i from 0 through $clouds {
-  div.cloud:nth-child(#{$i + 1}) {
-     left: random(100) + 100%;
-     top: random(100) / 100 * 90%;
-     transform: scale(random() + 0.5);
-     opacity: random(1) + 0.1;
-     animation: moveclouds random(20) + 20 + s linear infinite;
-  }
-}
-
-@keyframes moveclouds {
-  100% {
-    left: -100%;
   }
 }
 </style>

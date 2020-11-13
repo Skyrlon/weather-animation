@@ -2,8 +2,7 @@
   <div id="weather_elements">
     <div :class="'sky ' + dayOrNight()">
       <clouds-and-thunder
-        :key="cloud"
-        v-for="cloud in numberOfClouds(cloudsAmount)"
+        :numberOfClouds="numberOfClouds(cloudsAmount)"
         :thunder="hasThunder"
       />
       <Tornado v-if="hasTornado" />
@@ -60,7 +59,7 @@ export default {
       isSnowing: false,
       hasTornado: false,
       hasThunder: false,
-      cloudsAmount: "broken", //none, few, scattered, broken, or overcast
+      cloudsAmount: "few", //none, few, scattered, broken, or overcast
       hourOfTheDay: 1604977200, //unix, UTC
       sunrise: 1604991139, //unix, UTC
       sunset: 1605025014, //unix, UTC
@@ -77,16 +76,16 @@ export default {
           number = 0;
           break;
         case "few":
-          number = 3;
+          number = 1;
           break;
         case "scattered":
-          number = 6;
+          number = 3;
           break;
         case "broken":
-          number = 12;
+          number = 6;
           break;
         case "overcast":
-          number = 18;
+          number = 9;
           break;
       }
       return number;
